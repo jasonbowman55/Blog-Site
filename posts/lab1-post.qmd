@@ -1,0 +1,11 @@
+---
+title: "Lab 1 Reflection"
+description: "Things I learned in Micro Ps Lab 1"
+author: "Jason Bowman"
+date: "9/4/2024"
+categories:
+  - Reflection
+  - Lab Report
+draft: false
+---
+Lab 1 required that I fully assemble 

@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "E155 Blog",
     "section": "",
-    "text": "First Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
+    "text": "Lab 1 Reflection\n\n\n\n\n\nThings I learned in Micro Ps Lab 1\n\n\n\n\n\nSep 4, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -75,5 +75,12 @@
     "title": "E155 Portfolio",
     "section": "",
     "text": "Course Website"
+  },
+  {
+    "objectID": "posts/lab1-post.html",
+    "href": "posts/lab1-post.html",
+    "title": "Lab 1 Reflection",
+    "section": "",
+    "text": "Lab"
   }
 ]
