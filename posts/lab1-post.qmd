@@ -8,4 +8,8 @@ categories:
   - Lab Report
 draft: false
 ---
-Lab 1 required that I fully assemble 
+Lab 1 required that I fully assemble the E155 protoboard and verify the MCU and FPGA is functional.
+
+Making sure the MCU was functional involved running sample code from the E155 website through ARM Segger. The FPGA required a software that is new to me called Lattice Radiant. Lattice Radiant is a hardware synthesis software and allows you to write System Verilog to the chip and use helpful tools to manually assign pin outs on the chip. We used this software to control a 7-segment display, and some on board LEDs. I really enjoyed learning this software, as it re surfaced a lot of System Verilog knowledge I felt was lost from E85.
+
+I think this course is helping me grow as a person professionally and technically. As of now, I would say it had helped me much more in the professional aspect. I learned how to use git and GitHub, which is a very useful tool that will help me in this class a ton and in any future career I have. I have also rienforced valuable lessions about reading before doing, and making calculated calls on how I use my time. I have already had one late night of Micro Ps, and it took a lot of will power in order to set the work down, and come back tomorrow knowing I will be better rested that if I had stayed up all night. 
