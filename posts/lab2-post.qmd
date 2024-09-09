@@ -1,1 +1,10 @@
-In Progress
+---
+title: "Lab 2 Reflection"
+description: "My takeaways"
+author: "Jason Bowman"
+date: "9/9/2024"
+categories:
+  - Reflection
+  - Lab Report
+draft: true
+---

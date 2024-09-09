@@ -1,6 +1,6 @@
 ---
 title: "Lab 1 Reflection"
-description: "Things I learned in Micro Ps Lab 1"
+description: "My takeaways"
 author: "Jason Bowman"
 date: "9/9/2024"
 categories:
@@ -22,5 +22,5 @@ Going forward, I will be more meticulous about reviewing and commenting my code.
 - Ensure that when assigning bits, they are prefaced by their respective size and base specifications.
 - If you encounter issues, double-check that the hardware is functioning as expected to rule out potential malfunctions.
 
-### Lessons for the Future
+### For the Future
 - How to create and use a test bench.
