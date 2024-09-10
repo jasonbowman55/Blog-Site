@@ -174,10 +174,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In Lab 1, I was tasked with fully assembling the E155 protoboard and verifying the functionality of both the MCU and FPGA.</p>
-<p>To confirm the MCU was operational, I ran sample code from the E155 website using ARM Segger. For the FPGA, I used a new software tool called Lattice Radiant, which is designed for hardware synthesis. Lattice Radiant allows for System Verilog programming and provides tools for manually assigning pinouts on the chip. We employed this software to control a 7-segment display and some onboard LEDs. I found learning Lattice Radiant particularly enjoyable, as it helped me reconnect with System Verilog concepts I had previously forgotten from E85.</p>
-<p>This course has been significantly beneficial both professionally and technically. Professionally, I’ve gained valuable experience with Git and GitHub, which are crucial tools for this class and will be beneficial in my future career. Additionally, I’ve reinforced important lessons about the importance of preparation and managing my time effectively. For instance, after a late night working on Micro Ps, I realized the importance of setting aside work to rest and return more refreshed the next day.</p>
-<p>Going forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code was poorly commented, which led to confusion within the submodules. This lab has taught me valuable code management techniques that I will apply from the outset in Lab 2.</p>
+<p>In Lab 1, I was tasked with fully assembling the E155 protoboard and verifying the functionality of both the MCU and FPGA. Additionally, I was required to control a 7-segment display and some onboard LEDs using SystemVerilog via Lattice Radiant. This lab took me approximately 8 hours to complete. <img src="images/lab1_circuit.jpeg" class="img-fluid" alt="test"> After following the setup instructions from <code>resources/course_website/Lab 1</code>, I began planning my approach for the coding portion. I started with a block diagram outlining the SystemVerilog modules and signals I expected to implement. This step helped me stay organized and focused while writing the code.</p>
+<p>For troubleshooting and debugging, I primarily used manual test cases to verify that the correct segments were turning on as expected. I also used a multimeter to check that the pins were behaving as intended. These steps allowed me to trace issues back to the software and debug the code effectively.</p>
+<p>My design meets all the lab’s requirements at an acceptable level. However, one improvement for the future is the accuracy of the oscillation for the onboard LED. Currently, I made the LED oscillate based on the 25th bit of the onboard high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz rather than the specified 2.4 Hz. To fix this, I would implement a second counter to track the exact number of oscillations from the HSOSC and adjust the LED to oscillate at precisely 2.4 Hz.</p>
+<p>I particularly enjoyed learning Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had forgotten from E85.</p>
+<p>Moving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules. This lab taught me valuable code management techniques that I will apply from the start of Lab 2.</p>
 <section id="technical-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="technical-takeaways">Technical Takeaways</h2>
 <section id="what-to-remember" class="level3">
@@ -190,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="for-the-future" class="level3">
 <h3 class="anchored" data-anchor-id="for-the-future">For the Future</h3>
 <ul>
-<li>How to create and use a test bench.</li>
+<li>Learn how to create and use a test bench.</li>
 </ul>
 
 

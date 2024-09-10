@@ -6,10 +6,10 @@ date: "9/9/2024"
 categories:
   - Reflection
   - Lab Report
-draft: false
+draft: true
 ---
 In Lab 1, I was tasked with fully assembling the E155 protoboard and verifying the functionality of both the MCU and FPGA. Additionally, I was required to control a 7-segment display and some onboard LEDs using SystemVerilog via Lattice Radiant. This lab took me approximately 8 hours to complete.
-
+![test](images/lab1_circuit.jpeg)
 After following the setup instructions from `resources/course_website/Lab 1`, I began planning my approach for the coding portion. I started with a block diagram outlining the SystemVerilog modules and signals I expected to implement. This step helped me stay organized and focused while writing the code.
 
 For troubleshooting and debugging, I primarily used manual test cases to verify that the correct segments were turning on as expected. I also used a multimeter to check that the pins were behaving as intended. These steps allowed me to trace issues back to the software and debug the code effectively.
