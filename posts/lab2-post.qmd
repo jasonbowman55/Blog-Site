@@ -8,3 +8,10 @@ categories:
   - Lab Report
 draft: true
 ---
+##Intro & Design Approach
+
+In this lab, I was tasked with time multiplexing between two 7-segment displays, such that each has separate values based on its own separate inputs, respectively. Additionally, I was required to take these 1-F hexadecimal values and display their binary counterparts on a line of 5 independent LEDs. There must also be two simple transistor circuits driving the toggling between the two independent 7-segment displays.
+
+My design approach began with a block diagram, where I created a top module and two submodules: one controlled both 7-segment displays, and the other controlled the line of 5 independent LEDs. The goal was to create a counter that counted up and overflowed repeatedly over time, based on the clock, with a state variable dictating which 7-segment display would be active at any given moment. The 0-1 oscillation of the selected counter bit would allow me to adjust the oscillation speed of the 7-segment displays, with the goal of making each display appear independently powered without flickering. I then used combinational case statements with independent inputs and outputs to control the display under the current state.
+
+I still need to verify that it works. Maybe a test bench?
