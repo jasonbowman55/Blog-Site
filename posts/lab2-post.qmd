@@ -15,7 +15,7 @@ My design approach began with a block diagram, where I created a top module and 
 
 In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. This int_osc signal was then used to alternate between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. The oscillatory behavior of the int_osc signal was used to toggle the I/Os for each independent 7-segment display. A simple assign statement was used to generate the LED binary outputs.
 
-### Blcok Diagram
+### Block Diagram
 ![This block diagram outlines the SystemVerilog modules used in lab 2](../images/lab2_block_diagram.jpeg)
 
 ### Circuit Schematic

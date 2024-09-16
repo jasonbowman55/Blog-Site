@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#intro-design-approach" id="toc-intro-design-approach" class="nav-link active" data-scroll-target="#intro-design-approach">Intro &amp; Design Approach</a>
   <ul class="collapse">
-  <li><a href="#blcok-diagram" id="toc-blcok-diagram" class="nav-link" data-scroll-target="#blcok-diagram">Blcok Diagram</a></li>
+  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
   <li><a href="#circuit-schematic" id="toc-circuit-schematic" class="nav-link" data-scroll-target="#circuit-schematic">Circuit Schematic</a></li>
   </ul></li>
   <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion">Results &amp; Discussion</a></li>
@@ -181,8 +181,8 @@ ul.task-list li input[type="checkbox"] {
 <p>In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.</p>
 <p>My design approach began with a block diagram, where I created a top module and two submodules: one controlled both 7-segment displays, and the other controlled the line of 5 independent LEDs.</p>
 <p>In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. This int_osc signal was then used to alternate between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. The oscillatory behavior of the int_osc signal was used to toggle the I/Os for each independent 7-segment display. A simple assign statement was used to generate the LED binary outputs.</p>
-<section id="blcok-diagram" class="level3">
-<h3 class="anchored" data-anchor-id="blcok-diagram">Blcok Diagram</h3>
+<section id="block-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/lab2_block_diagram.jpeg" class="img-fluid figure-img"></p>

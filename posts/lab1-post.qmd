@@ -6,15 +6,31 @@ date: "9/9/2024"
 categories:
   - Reflection
   - Lab Report
-draft: true
+draft: false
 ---
-In Lab 1, I was tasked with fully assembling the E155 protoboard and verifying the functionality of both the MCU and FPGA. Additionally, I was required to control a 7-segment display and some onboard LEDs using SystemVerilog via Lattice Radiant. This lab took me approximately 8 hours to complete.
-![test](images/lab1_circuit.jpeg)
-After following the setup instructions from `resources/course_website/Lab 1`, I began planning my approach for the coding portion. I started with a block diagram outlining the SystemVerilog modules and signals I expected to implement. This step helped me stay organized and focused while writing the code.
+## Intro & Design Approach
+In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.
 
-For troubleshooting and debugging, I primarily used manual test cases to verify that the correct segments were turning on as expected. I also used a multimeter to check that the pins were behaving as intended. These steps allowed me to trace issues back to the software and debug the code effectively.
+### Micro Ps Protoboard
+![Completed Micro Ps Protoboard](../images/lab1_protoboard.jpeg)
 
-My design meets all the lab's requirements at an acceptable level. However, one improvement for the future is the accuracy of the oscillation for the onboard LED. Currently, I made the LED oscillate based on the 25th bit of the onboard high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz rather than the specified 2.4 Hz. To fix this, I would implement a second counter to track the exact number of oscillations from the HSOSC and adjust the LED to oscillate at precisely 2.4 Hz.
+After following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.
+
+### Block Diagram
+![Block diagram outlining the SystemVerilog modules](../images/lab1_block_diagram.jpeg)
+
+This lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.
+
+### Circuit Diagram
+![A full schematic outlining the lab's hardware, including related signals and pins](../images/lab1_circuit_diagram.jpeg)
+
+### Final Circuit
+![Lab1 hardware implamented on a bread board](../images/lab1_circuit.jpeg)
+
+For troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.
+
+## Results & Reflection
+The design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter would be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.
 
 I particularly enjoyed learning Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had forgotten from E85.
 
