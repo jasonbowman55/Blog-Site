@@ -1,6 +1,6 @@
 ---
-title: "Lab 1 Reflection"
-description: "My takeaways"
+title: "Lab 1 Report"
+description: "7-Segment Display Logic"
 author: "Jason Bowman"
 date: "9/9/2024"
 categories:

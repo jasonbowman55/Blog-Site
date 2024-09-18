@@ -16,10 +16,3 @@ about:
 Hi, I am Jason Bowman. I am a Senior Engineering major at Harvey Mudd College, with a concentration in Russian language.
 I am in Micro Ps to expand my software knowledge and learn skills in computer hardware that will hopefully shape my 
 career and general engineering technical and professional skills.
-
-
-
-
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
