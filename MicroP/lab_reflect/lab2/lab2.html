@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jason Bowman">
+<meta name="dcterms.date" content="2024-09-09">
+<meta name="description" content="Time-Multiplexed Dual 7-Segment Display">
 
-<title>microp_lab_descriptions – Jason Bowman Portfolio</title>
+<title>Lab 2 Report – Jason Bowman Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Jason Bowman Portfolio</span>
     </a>
   </div>
@@ -89,16 +92,24 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../MicroP/microp_lab_reflections"> 
-<span class="menu-text">Micro-P Labs</span></a>
+    <a class="nav-link" href="../../../MicroP"> 
+<span class="menu-text">Micro-Ps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html"> 
+    <a class="nav-link" href="../../../HPR"> 
+<span class="menu-text">HPR</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../resources.html"> 
 <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -116,42 +127,105 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lab-1-fpga-and-mcu-setup-and-testing" id="toc-lab-1-fpga-and-mcu-setup-and-testing" class="nav-link active" data-scroll-target="#lab-1-fpga-and-mcu-setup-and-testing">Lab 1: FPGA and MCU Setup and Testing</a></li>
-  <li><a href="#lab-2-multiplexed-7-segment-display" id="toc-lab-2-multiplexed-7-segment-display" class="nav-link" data-scroll-target="#lab-2-multiplexed-7-segment-display">Lab 2: Multiplexed 7-Segment Display</a></li>
-  <li><a href="#lab-3-keypad-scanner" id="toc-lab-3-keypad-scanner" class="nav-link" data-scroll-target="#lab-3-keypad-scanner">Lab 3: Keypad Scanner</a></li>
-  <li><a href="#lab-4-digital-audio" id="toc-lab-4-digital-audio" class="nav-link" data-scroll-target="#lab-4-digital-audio">Lab 4: Digital Audio</a></li>
-  <li><a href="#lab-5-interrupts" id="toc-lab-5-interrupts" class="nav-link" data-scroll-target="#lab-5-interrupts">Lab 5: Interrupts</a></li>
-  <li><a href="#lab-6-the-internet-of-things-and-serial-peripheral-interface" id="toc-lab-6-the-internet-of-things-and-serial-peripheral-interface" class="nav-link" data-scroll-target="#lab-6-the-internet-of-things-and-serial-peripheral-interface">Lab 6: The Internet of Things and Serial Peripheral Interface</a></li>
-  <li><a href="#lab-7-the-advanced-encryption-standard" id="toc-lab-7-the-advanced-encryption-standard" class="nav-link" data-scroll-target="#lab-7-the-advanced-encryption-standard">Lab 7: The Advanced Encryption Standard</a></li>
+  <li><a href="#intro-design-approach" id="toc-intro-design-approach" class="nav-link active" data-scroll-target="#intro-design-approach">Intro &amp; Design Approach</a>
+  <ul class="collapse">
+  <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
+  <li><a href="#circuit-schematic" id="toc-circuit-schematic" class="nav-link" data-scroll-target="#circuit-schematic">Circuit Schematic</a></li>
+  <li><a href="#hardware-implementation" id="toc-hardware-implementation" class="nav-link" data-scroll-target="#hardware-implementation">Hardware Implementation</a></li>
+  </ul></li>
+  <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion">Results &amp; Discussion</a></li>
+  <li><a href="#for-the-future" id="toc-for-the-future" class="nav-link" data-scroll-target="#for-the-future">For The future</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 2 Report</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Reflection</div>
+    <div class="quarto-category">Lab Report</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Time-Multiplexed Dual 7-Segment Display
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
 
-<section id="lab-1-fpga-and-mcu-setup-and-testing" class="level2">
-<h2 class="anchored" data-anchor-id="lab-1-fpga-and-mcu-setup-and-testing">Lab 1: FPGA and MCU Setup and Testing</h2>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jason Bowman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 9, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="intro-design-approach" class="level2">
+<h2 class="anchored" data-anchor-id="intro-design-approach">Intro &amp; Design Approach</h2>
+<p>In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.</p>
+<p>My design approach began with a block diagram, where I created a top module and two submodules: one controlled both 7-segment displays, and the other controlled the line of 5 independent LEDs.</p>
+<section id="block-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab2_block_diagram.jpeg" class="img-fluid figure-img"></p>
+<figcaption>This block diagram outlines the SystemVerilog modules used in lab 2</figcaption>
+</figure>
+</div>
+<p>In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. This int_osc influenced the counter variable, and was then used to alternate between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. The oscillatory behavior of the int_osc signal was used to toggle the I/Os for each independent 7-segment display. A simple assign statement was used to generate the LED binary outputs.</p>
 </section>
-<section id="lab-2-multiplexed-7-segment-display" class="level2">
-<h2 class="anchored" data-anchor-id="lab-2-multiplexed-7-segment-display">Lab 2: Multiplexed 7-Segment Display</h2>
+<section id="circuit-schematic" class="level3">
+<h3 class="anchored" data-anchor-id="circuit-schematic">Circuit Schematic</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab2_circuit_diagram.jpeg" class="img-fluid figure-img"></p>
+<figcaption>This circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals</figcaption>
+</figure>
+</div>
 </section>
-<section id="lab-3-keypad-scanner" class="level2">
-<h2 class="anchored" data-anchor-id="lab-3-keypad-scanner">Lab 3: Keypad Scanner</h2>
+<section id="hardware-implementation" class="level3">
+<h3 class="anchored" data-anchor-id="hardware-implementation">Hardware Implementation</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab2_circuit.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Hardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line.</figcaption>
+</figure>
+</div>
 </section>
-<section id="lab-4-digital-audio" class="level2">
-<h2 class="anchored" data-anchor-id="lab-4-digital-audio">Lab 4: Digital Audio</h2>
 </section>
-<section id="lab-5-interrupts" class="level2">
-<h2 class="anchored" data-anchor-id="lab-5-interrupts">Lab 5: Interrupts</h2>
+<section id="results-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-discussion">Results &amp; Discussion</h2>
+<p>This lab resulted in a working time-multiplexed dual 7-segment display that coorectly displays hexidecimal digits 1-F independantly, clearly, and without bleeding. As well as a functioning 5-bit LED display showing the binary combination of the two 4-bit inputs.</p>
+<p>The counter variable, incremented by the internal clock signal (int_osc), controls the oscillation speed between two different 7-segment displays using a selector. While this provides adequate control for the current application, developing a more precise counter mechanism could further optimize performance and improve accuracy in future work.</p>
+<p>This lab took approximately 13 hours to complete. Significant challenges were encountered early in the implementation stage, and using test benches could have helped reduce the time spent.</p>
 </section>
-<section id="lab-6-the-internet-of-things-and-serial-peripheral-interface" class="level2">
-<h2 class="anchored" data-anchor-id="lab-6-the-internet-of-things-and-serial-peripheral-interface">Lab 6: The Internet of Things and Serial Peripheral Interface</h2>
-</section>
-<section id="lab-7-the-advanced-encryption-standard" class="level2">
-<h2 class="anchored" data-anchor-id="lab-7-the-advanced-encryption-standard">Lab 7: The Advanced Encryption Standard</h2>
+<section id="for-the-future" class="level2">
+<h2 class="anchored" data-anchor-id="for-the-future">For The future</h2>
+<ul>
+<li>Learn and implament test benches in order to miniimize time wasted</li>
+<li>Create a more clear and concise circuit schematic that is easier to follow when building the circuit.</li>
+</ul>
 
 
 </section>
