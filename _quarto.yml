@@ -7,8 +7,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: blog.qmd
-        text: Blog
+      - href: microp_labs.qmd
+        text: Micro-P Labs
       - href: labs.qmd
         text: Labs
       - href: resources.qmd
