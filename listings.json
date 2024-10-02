@@ -1,10 +1,14 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/microp_labs.html",
+    "items": []
+  },
+  {
+    "listing": "/Micro_Ps.html",
     "items": [
-      "/posts/lab1-post.html",
-      "/posts/lab2-post.html",
-      "/posts/first-post.html"
+      "/MicroP/microp_lab_reflections/lab1-post.html",
+      "/MicroP/microp_lab_reflections/lab2-post.html",
+      "/MicroP/microp_lab_reflections/first-post.html"
     ]
   }
 ]

@@ -2,84 +2,77 @@
   {
     "objectID": "resources.html",
     "href": "resources.html",
-    "title": "E155 Portfolio",
+    "title": "Jason Bowman Portfolio",
     "section": "",
     "text": "Course Website"
   },
   {
-    "objectID": "posts/lab1-post.html",
-    "href": "posts/lab1-post.html",
-    "title": "Lab 1 Report",
+    "objectID": "MicroP/microp_lab_reflections/first-post.html",
+    "href": "MicroP/microp_lab_reflections/first-post.html",
+    "title": "First Post",
     "section": "",
-    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\n\n\nCompleted Micro Ps Protoboard\n\n\nAfter following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins\n\n\n\n\n\n\n\n\nLab1 hardware implamented on a bread board\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging."
+    "text": "My goals for Micro-Ps include higher software proficiency and ability to understand FPGA and Micro Processor functionalities based on thei respective data sheets."
   },
   {
-    "objectID": "posts/lab1-post.html#intro-design-approach",
-    "href": "posts/lab1-post.html#intro-design-approach",
-    "title": "Lab 1 Report",
-    "section": "",
-    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\n\n\nCompleted Micro Ps Protoboard\n\n\nAfter following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins\n\n\n\n\n\n\n\n\nLab1 hardware implamented on a bread board\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging."
-  },
-  {
-    "objectID": "posts/lab1-post.html#results-reflection",
-    "href": "posts/lab1-post.html#results-reflection",
-    "title": "Lab 1 Report",
-    "section": "Results & Reflection",
-    "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter would be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had forgotten from E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules. This lab taught me valuable code management techniques that I will apply from the start of Lab 2."
-  },
-  {
-    "objectID": "posts/lab1-post.html#technical-takeaways",
-    "href": "posts/lab1-post.html#technical-takeaways",
-    "title": "Lab 1 Report",
-    "section": "Technical Takeaways",
-    "text": "Technical Takeaways\n\nWhat to Remember\n\nEnsure that when assigning bits, they are prefaced by their respective size and base specifications.\nIf you encounter issues, double-check that the hardware is functioning as expected to rule out potential malfunctions.\n\n\n\nFor the Future\n\nLearn how to create and use a test bench."
-  },
-  {
-    "objectID": "labs.html#lab-2-multiplexed-7-segment-display",
-    "href": "labs.html#lab-2-multiplexed-7-segment-display",
-    "title": "E155 Portfolio",
+    "objectID": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-2-multiplexed-7-segment-display",
+    "href": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-2-multiplexed-7-segment-display",
+    "title": "Jason Bowman Portfolio",
     "section": "Lab 2: Multiplexed 7-Segment Display",
     "text": "Lab 2: Multiplexed 7-Segment Display"
   },
   {
-    "objectID": "labs.html#lab-3-keypad-scanner",
-    "href": "labs.html#lab-3-keypad-scanner",
-    "title": "E155 Portfolio",
+    "objectID": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-3-keypad-scanner",
+    "href": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-3-keypad-scanner",
+    "title": "Jason Bowman Portfolio",
     "section": "Lab 3: Keypad Scanner",
     "text": "Lab 3: Keypad Scanner"
   },
   {
-    "objectID": "labs.html#lab-4-digital-audio",
-    "href": "labs.html#lab-4-digital-audio",
-    "title": "E155 Portfolio",
+    "objectID": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-4-digital-audio",
+    "href": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-4-digital-audio",
+    "title": "Jason Bowman Portfolio",
     "section": "Lab 4: Digital Audio",
     "text": "Lab 4: Digital Audio"
   },
   {
-    "objectID": "labs.html#lab-5-interrupts",
-    "href": "labs.html#lab-5-interrupts",
-    "title": "E155 Portfolio",
+    "objectID": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-5-interrupts",
+    "href": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-5-interrupts",
+    "title": "Jason Bowman Portfolio",
     "section": "Lab 5: Interrupts",
     "text": "Lab 5: Interrupts"
   },
   {
-    "objectID": "labs.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
-    "href": "labs.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
-    "title": "E155 Portfolio",
+    "objectID": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
+    "href": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
+    "title": "Jason Bowman Portfolio",
     "section": "Lab 6: The Internet of Things and Serial Peripheral Interface",
     "text": "Lab 6: The Internet of Things and Serial Peripheral Interface"
   },
   {
-    "objectID": "labs.html#lab-7-the-advanced-encryption-standard",
-    "href": "labs.html#lab-7-the-advanced-encryption-standard",
-    "title": "E155 Portfolio",
+    "objectID": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-7-the-advanced-encryption-standard",
+    "href": "MicroP/microp_lab_descriptions/microp_lab_descriptions.html#lab-7-the-advanced-encryption-standard",
+    "title": "Jason Bowman Portfolio",
     "section": "Lab 7: The Advanced Encryption Standard",
     "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "E155 Blog",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "E155 Portfolio",
+    "section": "",
+    "text": "Hi, I am Jason Bowman. I am a Senior Engineering major at Harvey Mudd College, with a concentration in Russian language. I am in Micro Ps to expand my software knowledge and learn skills in computer hardware that will hopefully shape my career and general engineering technical and professional skills."
+  },
+  {
+    "objectID": "microp_labs.html",
+    "href": "microp_labs.html",
+    "title": "Micro-P Labs",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "Micro_Ps.html",
+    "href": "Micro_Ps.html",
+    "title": "Micro-P Labs",
     "section": "",
     "text": "Lab 1 Report\n\n\n\n\n\n7-Segment Display Logic\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nLab 2 Report\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   },
@@ -91,43 +84,57 @@
     "text": "About this site"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "E155 Portfolio",
+    "objectID": "MicroP/microp_lab_reflections/lab1-post.html",
+    "href": "MicroP/microp_lab_reflections/lab1-post.html",
+    "title": "Lab 1 Report",
     "section": "",
-    "text": "Hi, I am Jason Bowman. I am a Senior Engineering major at Harvey Mudd College, with a concentration in Russian language. I am in Micro Ps to expand my software knowledge and learn skills in computer hardware that will hopefully shape my career and general engineering technical and professional skills."
+    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\n\n\nCompleted Micro Ps Protoboard\n\n\nAfter following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins\n\n\n\n\n\n\n\n\nLab1 hardware implamented on a bread board\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging."
   },
   {
-    "objectID": "posts/first-post.html",
-    "href": "posts/first-post.html",
-    "title": "First Post",
+    "objectID": "MicroP/microp_lab_reflections/lab1-post.html#intro-design-approach",
+    "href": "MicroP/microp_lab_reflections/lab1-post.html#intro-design-approach",
+    "title": "Lab 1 Report",
     "section": "",
-    "text": "My goals for Micro-Ps include higher software proficiency and ability to understand FPGA and Micro Processor functionalities based on thei respective data sheets."
+    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\n\n\nCompleted Micro Ps Protoboard\n\n\nAfter following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins\n\n\n\n\n\n\n\n\nLab1 hardware implamented on a bread board\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging."
   },
   {
-    "objectID": "posts/lab2-post.html",
-    "href": "posts/lab2-post.html",
+    "objectID": "MicroP/microp_lab_reflections/lab1-post.html#results-reflection",
+    "href": "MicroP/microp_lab_reflections/lab1-post.html#results-reflection",
+    "title": "Lab 1 Report",
+    "section": "Results & Reflection",
+    "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter would be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had forgotten from E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules. This lab taught me valuable code management techniques that I will apply from the start of Lab 2."
+  },
+  {
+    "objectID": "MicroP/microp_lab_reflections/lab1-post.html#technical-takeaways",
+    "href": "MicroP/microp_lab_reflections/lab1-post.html#technical-takeaways",
+    "title": "Lab 1 Report",
+    "section": "Technical Takeaways",
+    "text": "Technical Takeaways\n\nWhat to Remember\n\nEnsure that when assigning bits, they are prefaced by their respective size and base specifications.\nIf you encounter issues, double-check that the hardware is functioning as expected to rule out potential malfunctions.\n\n\n\nFor the Future\n\nLearn how to create and use a test bench."
+  },
+  {
+    "objectID": "MicroP/microp_lab_reflections/lab2-post.html",
+    "href": "MicroP/microp_lab_reflections/lab2-post.html",
     "title": "Lab 2 Report",
     "section": "",
     "text": "In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.\nMy design approach began with a block diagram, where I created a top module and two submodules: one controlled both 7-segment displays, and the other controlled the line of 5 independent LEDs.\n\n\n\n\n\nThis block diagram outlines the SystemVerilog modules used in lab 2\n\n\nIn SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. This int_osc influenced the counter variable, and was then used to alternate between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. The oscillatory behavior of the int_osc signal was used to toggle the I/Os for each independent 7-segment display. A simple assign statement was used to generate the LED binary outputs.\n\n\n\n\n\n\nThis circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals\n\n\n\n\n\n\n\n\nHardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line."
   },
   {
-    "objectID": "posts/lab2-post.html#intro-design-approach",
-    "href": "posts/lab2-post.html#intro-design-approach",
+    "objectID": "MicroP/microp_lab_reflections/lab2-post.html#intro-design-approach",
+    "href": "MicroP/microp_lab_reflections/lab2-post.html#intro-design-approach",
     "title": "Lab 2 Report",
     "section": "",
     "text": "In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.\nMy design approach began with a block diagram, where I created a top module and two submodules: one controlled both 7-segment displays, and the other controlled the line of 5 independent LEDs.\n\n\n\n\n\nThis block diagram outlines the SystemVerilog modules used in lab 2\n\n\nIn SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. This int_osc influenced the counter variable, and was then used to alternate between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. The oscillatory behavior of the int_osc signal was used to toggle the I/Os for each independent 7-segment display. A simple assign statement was used to generate the LED binary outputs.\n\n\n\n\n\n\nThis circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals\n\n\n\n\n\n\n\n\nHardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line."
   },
   {
-    "objectID": "posts/lab2-post.html#results-discussion",
-    "href": "posts/lab2-post.html#results-discussion",
+    "objectID": "MicroP/microp_lab_reflections/lab2-post.html#results-discussion",
+    "href": "MicroP/microp_lab_reflections/lab2-post.html#results-discussion",
     "title": "Lab 2 Report",
     "section": "Results & Discussion",
     "text": "Results & Discussion\nThis lab resulted in a working time-multiplexed dual 7-segment display that coorectly displays hexidecimal digits 1-F independantly, clearly, and without bleeding. As well as a functioning 5-bit LED display showing the binary combination of the two 4-bit inputs.\nThe counter variable, incremented by the internal clock signal (int_osc), controls the oscillation speed between two different 7-segment displays using a selector. While this provides adequate control for the current application, developing a more precise counter mechanism could further optimize performance and improve accuracy in future work.\nThis lab took approximately 13 hours to complete. Significant challenges were encountered early in the implementation stage, and using test benches could have helped reduce the time spent."
   },
   {
-    "objectID": "posts/lab2-post.html#for-the-future",
-    "href": "posts/lab2-post.html#for-the-future",
+    "objectID": "MicroP/microp_lab_reflections/lab2-post.html#for-the-future",
+    "href": "MicroP/microp_lab_reflections/lab2-post.html#for-the-future",
     "title": "Lab 2 Report",
     "section": "For The future",
     "text": "For The future\n\nLearn and implament test benches in order to miniimize time wasted\nCreate a more clear and concise circuit schematic that is easier to follow when building the circuit."
