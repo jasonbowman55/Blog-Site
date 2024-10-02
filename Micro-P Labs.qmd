@@ -1,7 +1,7 @@
 ---
-title: "E155 Blog"
+title: "Micro-P Labs"
 listing:
-  contents: posts
+  contents: MicroP_lab_reflections
   sort: "date desc"
   type: default
   categories: false

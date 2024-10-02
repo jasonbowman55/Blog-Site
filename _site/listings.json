@@ -6,5 +6,23 @@
       "/posts/lab2-post.html",
       "/posts/first-post.html"
     ]
+  },
+  {
+    "listing": "/Lab.html",
+    "items": [
+      "/MicroP_lab_reflections/Micro-Ps Lab Descriptions.html",
+      "/MicroP_lab_reflections/lab1-post.html",
+      "/MicroP_lab_reflections/lab2-post.html",
+      "/MicroP_lab_reflections/first-post.html"
+    ]
+  },
+  {
+    "listing": "/Micro-P Labs.html",
+    "items": [
+      "/MicroP_lab_reflections/Micro-Ps Lab Descriptions.html",
+      "/MicroP_lab_reflections/lab1-post.html",
+      "/MicroP_lab_reflections/lab2-post.html",
+      "/MicroP_lab_reflections/first-post.html"
+    ]
   }
 ]
