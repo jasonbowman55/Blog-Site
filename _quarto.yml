@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Jason Bowman Portfolio"
+  title: "My Portfolio"
   navbar:
     left:
       - href: index.qmd
