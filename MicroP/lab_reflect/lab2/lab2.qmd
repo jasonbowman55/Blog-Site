@@ -14,15 +14,15 @@ In this lab, a design was implemented on an FPGA to time-multiplex between two 7
 My design approach began with a block diagram, where I created a top module and two submodules: one controlled both 7-segment displays, and the other controlled the line of 5 independent LEDs.
 
 ### Block Diagram
-![This block diagram outlines the SystemVerilog modules used in lab 2](../images/lab2_block_diagram.jpeg)
+![This block diagram outlines the SystemVerilog modules used in lab 2](images/lab2_block_diagram.jpeg)
 
 In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. This int_osc influenced the counter variable, and was then used to alternate between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. The oscillatory behavior of the int_osc signal was used to toggle the I/Os for each independent 7-segment display. A simple assign statement was used to generate the LED binary outputs.
 
 ### Circuit Schematic
-![This circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals](../images/lab2_circuit_diagram.jpeg)
+![This circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals](images/lab2_circuit_diagram.jpeg)
 
 ### Hardware Implementation
-![Hardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line.](../images/lab2_circuit.jpeg)
+![Hardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line.](images/lab2_circuit.jpeg)
 
 ## Results & Discussion
 This lab resulted in a working time-multiplexed dual 7-segment display that coorectly displays hexidecimal digits 1-F independantly, clearly, and without bleeding. As well as a functioning 5-bit LED display showing the binary combination of the two 4-bit inputs.

@@ -1,20 +1,10 @@
 [
   {
-    "listing": "/microp_labs.html",
+    "listing": "/MicroP/index.html",
     "items": [
-      "/MicroP_lab_reflections/Micro-Ps Lab Descriptions.html",
-      "/MicroP_lab_reflections/lab1-post.html",
-      "/MicroP_lab_reflections/lab2-post.html",
-      "/MicroP_lab_reflections/first-post.html"
-    ]
-  },
-  {
-    "listing": "/Micro_Ps.html",
-    "items": [
-      "/MicroP_lab_reflections/Micro-Ps Lab Descriptions.html",
-      "/MicroP_lab_reflections/lab1-post.html",
-      "/MicroP_lab_reflections/lab2-post.html",
-      "/MicroP_lab_reflections/first-post.html"
+      "/MicroP/lab_reflect/lab1/lab1.html",
+      "/MicroP/lab_reflect/lab2/lab2.html",
+      "/MicroP/lab_reflect/first-post.html"
     ]
   }
 ]

@@ -1,7 +1,7 @@
 ---
-title: "Micro-P Labs"
+title: "Lab Reflections"
 listing:
-  contents: MicroP_lab_reflections
+  contents: lab_reflect
   sort: "date desc"
   type: default
   categories: false

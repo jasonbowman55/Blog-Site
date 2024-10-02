@@ -1,0 +1,5 @@
+---
+title: "High Power Rocketry"
+contents: hpr.qmd
+---
+![](images/rocket_long.jpeg)
