@@ -1,0 +1,21 @@
+---
+title: "High Power Rocketry"
+contents: hpr.qmd
+---
+## About
+This class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. In this post, I focus on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the 30G environments.
+
+### Launch Day
+![J&J rocket (Jordan & Jason)](images/rocket_long.jpeg)
+
+Structure:
+intro / about
+initial thoughts and ideas
+why we chose what we wanted too
+what rocket we used
+electronics
+mechanical design
+flight day
+fnal presentation / paper
+
+Bringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine. 
