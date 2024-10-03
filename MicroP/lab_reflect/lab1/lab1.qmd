@@ -1,6 +1,6 @@
 ---
-title: "Lab 1 Report"
-description: "7-Segment Display Logic"
+title: "FPGA and MCU Setup and Testing"
+description: "Lab 1"
 author: "Jason Bowman"
 date: "9/9/2024"
 categories:

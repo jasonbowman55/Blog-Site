@@ -1,6 +1,6 @@
 ---
-title: "Lab 2 Report"
-description: "Time-Multiplexed Dual 7-Segment Display"
+title: "Time-Multiplexed Dual 7-Segment Display"
+description: "Lab 2"
 author: "Jason Bowman"
 date: "9/9/2024"
 categories:
