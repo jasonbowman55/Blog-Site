@@ -1,24 +1,10 @@
 [
   {
-    "objectID": "HPR/index.html",
-    "href": "HPR/index.html",
-    "title": "High Power Rocketry",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "My Portfolio",
     "section": "",
-    "text": "This class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. In this post, I focus on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the 30G environments.\n\n\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
-  },
-  {
-    "objectID": "HPR/index.html#about",
-    "href": "HPR/index.html#about",
-    "title": "High Power Rocketry",
-    "section": "",
-    "text": "This class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. In this post, I focus on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the 30G environments.\n\n\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
-  },
-  {
-    "objectID": "MicroP/index.html",
-    "href": "MicroP/index.html",
-    "title": "Lab Reflections",
-    "section": "",
-    "text": "FPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
+    "text": "Course Website"
   },
   {
     "objectID": "MicroP/lab_reflect/lab2/lab2.html",
@@ -49,32 +35,32 @@
     "text": "For The future\n\nLearn and implament test benches in order to miniimize time wasted\nCreate a more clear and concise circuit schematic that is easier to follow when building the circuit."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html",
-    "href": "MicroP/lab_reflect/lab1/lab1.html",
-    "title": "FPGA and MCU Setup and Testing",
+    "objectID": "MicroP/lab_reflect/first-post.html",
+    "href": "MicroP/lab_reflect/first-post.html",
+    "title": "First Post",
     "section": "",
-    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\n\n\nCompleted Micro Ps Protoboard\n\n\nAfter following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins\n\n\n\n\n\n\n\n\nLab1 hardware implamented on a bread board\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging."
+    "text": "My goals for Micro-Ps include higher software proficiency and ability to understand FPGA and Micro Processor functionalities based on thei respective data sheets."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
-    "href": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
-    "title": "FPGA and MCU Setup and Testing",
+    "objectID": "MicroP/index.html",
+    "href": "MicroP/index.html",
+    "title": "Lab Reflections",
     "section": "",
-    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\n\n\nCompleted Micro Ps Protoboard\n\n\nAfter following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins\n\n\n\n\n\n\n\n\nLab1 hardware implamented on a bread board\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging."
+    "text": "FPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
-    "href": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
-    "title": "FPGA and MCU Setup and Testing",
-    "section": "Results & Reflection",
-    "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter would be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had forgotten from E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules. This lab taught me valuable code management techniques that I will apply from the start of Lab 2."
+    "objectID": "HPR/index.html",
+    "href": "HPR/index.html",
+    "title": "High Power Rocketry",
+    "section": "",
+    "text": "This class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. In this post, I focus on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the 30G environments.\n\n\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html#technical-takeaways",
-    "href": "MicroP/lab_reflect/lab1/lab1.html#technical-takeaways",
-    "title": "FPGA and MCU Setup and Testing",
-    "section": "Technical Takeaways",
-    "text": "Technical Takeaways\n\nWhat to Remember\n\nEnsure that when assigning bits, they are prefaced by their respective size and base specifications.\nIf you encounter issues, double-check that the hardware is functioning as expected to rule out potential malfunctions.\n\n\n\nFor the Future\n\nLearn how to create and use a test bench."
+    "objectID": "HPR/index.html#about",
+    "href": "HPR/index.html#about",
+    "title": "High Power Rocketry",
+    "section": "",
+    "text": "This class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. In this post, I focus on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the 30G environments.\n\n\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
   },
   {
     "objectID": "about.html",
@@ -133,17 +119,59 @@
     "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
-    "objectID": "MicroP/lab_reflect/first-post.html",
-    "href": "MicroP/lab_reflect/first-post.html",
-    "title": "First Post",
+    "objectID": "MicroP/lab_reflect/lab1/lab1.html",
+    "href": "MicroP/lab_reflect/lab1/lab1.html",
+    "title": "FPGA and MCU Setup and Testing",
     "section": "",
-    "text": "My goals for Micro-Ps include higher software proficiency and ability to understand FPGA and Micro Processor functionalities based on thei respective data sheets."
+    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\n\n\nCompleted Micro Ps Protoboard\n\n\nAfter following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins\n\n\n\n\n\n\n\n\nLab1 hardware implamented on a bread board\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging."
   },
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "My Portfolio",
+    "objectID": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
+    "href": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
+    "title": "FPGA and MCU Setup and Testing",
     "section": "",
-    "text": "Course Website"
+    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\n\n\nCompleted Micro Ps Protoboard\n\n\nAfter following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins\n\n\n\n\n\n\n\n\nLab1 hardware implamented on a bread board\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
+    "href": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
+    "title": "FPGA and MCU Setup and Testing",
+    "section": "Results & Reflection",
+    "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter would be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had forgotten from E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules. This lab taught me valuable code management techniques that I will apply from the start of Lab 2."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab1/lab1.html#technical-takeaways",
+    "href": "MicroP/lab_reflect/lab1/lab1.html#technical-takeaways",
+    "title": "FPGA and MCU Setup and Testing",
+    "section": "Technical Takeaways",
+    "text": "Technical Takeaways\n\nWhat to Remember\n\nEnsure that when assigning bits, they are prefaced by their respective size and base specifications.\nIf you encounter issues, double-check that the hardware is functioning as expected to rule out potential malfunctions.\n\n\n\nFor the Future\n\nLearn how to create and use a test bench."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab3/lab3.html",
+    "href": "MicroP/lab_reflect/lab3/lab3.html",
+    "title": "Keypad Scanner",
+    "section": "",
+    "text": "This lab utilized a 4x4 keypad scanner in tandem with a time-multiplexed dual 7-segment display, which was developed during Lab 2. The final goal was to update the right 7-segment display with each button press on the keypad, while the left display would show the previously pressed value. This functionality was implemented using a finite state machine (FSM) and next-state logic to simultaneously scan the keypad rows and decode which button was being pressed. Debouncing logic was also implemented to handle button bounce within the keypad.\nPICTURE OF THE HARDWARE"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab3/lab3.html#hardware",
+    "href": "MicroP/lab_reflect/lab3/lab3.html#hardware",
+    "title": "Keypad Scanner",
+    "section": "Hardware",
+    "text": "Hardware\nThe system hardware consists of two main sections: segment control and keypad input. The segment control section is identical to the design from Lab 2, utilizing two 2N3906 PNP transistors and time-multiplexing logic to display two separate outputs on the dual 7-segment display. The keypad input section accesses the desired row and column pins. When a column is powered and a button is pressed in that column, a button press is registered if the corresponding row pin is active low.\nDue to the internal hardware of the keypad, when a column is powered and a key is pressed, the specific row being pressed is unknown, making it difficult to determine the exact button. To resolve this, a row-scanning method is used, which sets one row active low at a time using next state logic described in the FSM section. Since the column pins are active high, if a button is pressed in a column corresponding to an active low row, we can track which row is being scanned and which column pin is pulled down to 0, allowing us to accurately decode the button press.\nPICTURE OF THE CIRCUIT SCHEMATIC"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab3/lab3.html#fsm",
+    "href": "MicroP/lab_reflect/lab3/lab3.html#fsm",
+    "title": "Keypad Scanner",
+    "section": "FSM",
+    "text": "FSM\nTop State (Idle/Row Selection): This state acts as the pathway between all four column states, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed.\nSecond State (Button Detection/Decode): Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated.\nThird State (Hold/Wait): After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.\nFSM DRAWING"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab3/lab3.html#block-diagram",
+    "href": "MicroP/lab_reflect/lab3/lab3.html#block-diagram",
+    "title": "Keypad Scanner",
+    "section": "Block Diagram",
+    "text": "Block Diagram\nFigure# below displays the module communication logic for the System Verilog code that programmed my FPGA. Notibly we have a top, button_decode_bounce, seven_seg_decoder, and a synchronizer module.\ntop: the overseeing connection module and direct communication with I/O.\nbutton_decode_bounce: button decoder and debouncer\nseven_seg_decoder: decodes the button pressed into 7-segment display outputs\nsynchronizer: synchronizes the col input\nPICTURE OF BLOCK DIAGRAM"
   }
 ]
