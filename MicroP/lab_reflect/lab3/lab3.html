@@ -186,7 +186,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="intro-design-approach" class="level1">
 <h1>Intro &amp; Design Approach</h1>
 <p>This lab utilized a 4x4 keypad scanner in tandem with a time-multiplexed dual 7-segment display, which was developed during Lab 2. The final goal was to update the right 7-segment display with each button press on the keypad, while the left display would show the previously pressed value. This functionality was implemented using a finite state machine (FSM) and next-state logic to simultaneously scan the keypad rows and decode which button was being pressed. Debouncing logic was also implemented to handle button bounce within the keypad.</p>
-<p>PICTURE OF THE HARDWARE</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hardware.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Lab 3 hardware</figcaption>
+</figure>
+</div>
 </section>
 <section id="design" class="level1">
 <h1>Design</h1>
@@ -195,14 +200,24 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
 <p>The system hardware consists of two main sections: segment control and keypad input. The segment control section is identical to the design from Lab 2, utilizing two 2N3906 PNP transistors and time-multiplexing logic to display two separate outputs on the dual 7-segment display. The keypad input section accesses the desired row and column pins. When a column is powered and a button is pressed in that column, a button press is registered if the corresponding row pin is active low.</p>
 <p>Due to the internal hardware of the keypad, when a column is powered and a key is pressed, the specific row being pressed is unknown, making it difficult to determine the exact button. To resolve this, a row-scanning method is used, which sets one row active low at a time using next state logic described in the FSM section. Since the column pins are active high, if a button is pressed in a column corresponding to an active low row, we can track which row is being scanned and which column pin is pulled down to 0, allowing us to accurately decode the button press.</p>
-<p><strong>PICTURE OF THE CIRCUIT SCHEMATIC</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/circuit.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Circuit diagram</figcaption>
+</figure>
+</div>
 </section>
 <section id="fsm" class="level2">
 <h2 class="anchored" data-anchor-id="fsm">FSM</h2>
 <p><strong>Top State (Idle/Row Selection):</strong> This state acts as the pathway between all four column states, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed.</p>
 <p><strong>Second State (Button Detection/Decode):</strong> Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated.</p>
 <p><strong>Third State (Hold/Wait):</strong> After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.</p>
-<p><strong>FSM DRAWING</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fsm.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Finite State Machine (FSM)</figcaption>
+</figure>
+</div>
 </section>
 <section id="block-diagram" class="level2">
 <h2 class="anchored" data-anchor-id="block-diagram">Block Diagram</h2>
@@ -211,14 +226,24 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>button_decode_bounce:</strong> button decoder and debouncer</p>
 <p><strong>seven_seg_decoder:</strong> decodes the button pressed into 7-segment display outputs</p>
 <p><strong>synchronizer:</strong> synchronizes the col input</p>
-<p><strong>PICTURE OF BLOCK DIAGRAM</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/block.jpeg" class="img-fluid figure-img"></p>
+<figcaption>System Verilog module block diagram</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="design-simulation" class="level1">
 <h1>Design Simulation</h1>
 <p>ModelSim simulation software was used to simulate the waveforms of my SystemVerilog code. Figure # below shows an example of the waveforms flowing in and out of the top and button_decoder_bounce modules.</p>
 <p>To ensure proper functionality, I began by analyzing the output and worked backward through the waveforms and relationships if the output was unexpected. The waveform below is an example of a successful simulation, where the correct <em>right</em> and <em>left</em> values are fed into <em>select</em> based on <em>col_sync</em> and <em>osc</em>.</p>
-<p><strong>PICTURE OF THE WORKING WAVEFORM</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sim.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Final working version of the ModelSim waveform used for debugging and functional confirmation</figcaption>
+</figure>
+</div>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
