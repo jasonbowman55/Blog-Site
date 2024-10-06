@@ -50,7 +50,7 @@ ModelSim simulation software was used to simulate the waveforms of my SystemVeri
 
 To ensure proper functionality, I began by analyzing the output and worked backward through the waveforms and relationships if the output was unexpected. The waveform below is an example of a successful simulation, where the correct *right* and *left* values are fed into *select* based on *col_sync* and *osc*.
 
-**PICTURE OF THE WORKING WAVEFORM**
+![Final working version of the ModelSim waveform used for debugging and functional confirmation](images/sim.jpeg)
 
 # Results
 The current version does not work. But I will make it work. I spent X hours on this lab.

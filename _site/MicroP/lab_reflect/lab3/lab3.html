@@ -218,7 +218,12 @@ ul.task-list li input[type="checkbox"] {
 <h1>Design Simulation</h1>
 <p>ModelSim simulation software was used to simulate the waveforms of my SystemVerilog code. Figure # below shows an example of the waveforms flowing in and out of the top and button_decoder_bounce modules.</p>
 <p>To ensure proper functionality, I began by analyzing the output and worked backward through the waveforms and relationships if the output was unexpected. The waveform below is an example of a successful simulation, where the correct <em>right</em> and <em>left</em> values are fed into <em>select</em> based on <em>col_sync</em> and <em>osc</em>.</p>
-<p><strong>PICTURE OF THE WORKING WAVEFORM</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sim.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Final working version of the ModelSim waveform used for debugging and functional confirmation</figcaption>
+</figure>
+</div>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
@@ -323,7 +328,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
