@@ -11,7 +11,7 @@ draft: false
 # Intro & Design Approach
 This lab utilized a 4x4 keypad scanner in tandem with a time-multiplexed dual 7-segment display, which was developed during Lab 2. The final goal was to update the right 7-segment display with each button press on the keypad, while the left display would show the previously pressed value. This functionality was implemented using a finite state machine (FSM) and next-state logic to simultaneously scan the keypad rows and decode which button was being pressed. Debouncing logic was also implemented to handle button bounce within the keypad.
 
-PICTURE OF THE HARDWARE
+![Lab 3 hardware](images/hardware.jpeg)
 
 # Design
 *This section goes into the hardware and software design specifics*
@@ -21,7 +21,7 @@ The system hardware consists of two main sections: segment control and keypad in
 
 Due to the internal hardware of the keypad, when a column is powered and a key is pressed, the specific row being pressed is unknown, making it difficult to determine the exact button. To resolve this, a row-scanning method is used, which sets one row active low at a time using next state logic described in the FSM section. Since the column pins are active high, if a button is pressed in a column corresponding to an active low row, we can track which row is being scanned and which column pin is pulled down to 0, allowing us to accurately decode the button press.
 
-**PICTURE OF THE CIRCUIT SCHEMATIC**
+![Circuit diagram](images/circuit.jpeg)
 
 ## FSM
 **Top State (Idle/Row Selection):** This state acts as the pathway between all four column states, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed.
@@ -30,7 +30,7 @@ Due to the internal hardware of the keypad, when a column is powered and a key i
 
 **Third State (Hold/Wait):** After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.
 
-**FSM DRAWING**
+![Finite State Machine (FSM)](images/fsm.jpeg)
 
 ## Block Diagram
 Figure# below displays the module communication logic for the System Verilog code that programmed my FPGA. Notibly we have a top, button_decode_bounce, seven_seg_decoder, and a synchronizer module.
@@ -43,7 +43,7 @@ Figure# below displays the module communication logic for the System Verilog cod
 
 **synchronizer:** synchronizes the col input
 
-**PICTURE OF BLOCK DIAGRAM**
+![System Verilog module block diagram](images/block.jpeg)
 
 # Design Simulation
 ModelSim simulation software was used to simulate the waveforms of my SystemVerilog code. Figure # below shows an example of the waveforms flowing in and out of the top and button_decoder_bounce modules.

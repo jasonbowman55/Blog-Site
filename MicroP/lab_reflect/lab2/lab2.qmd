@@ -11,6 +11,8 @@ draft: false
 ## Intro & Design Approach
 In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.
 
+![Hardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line](images/lab2_circuit.jpeg)
+
 My design approach began with a block diagram, where I created a top module and two submodules: one controlled both 7-segment displays, and the other controlled the line of 5 independent LEDs.
 
 ### Block Diagram
@@ -20,9 +22,6 @@ In SystemVerilog, when programming the UPduino FPGA, a counter was used in conju
 
 ### Circuit Schematic
 ![This circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals](images/lab2_circuit_diagram.jpeg)
-
-### Hardware Implementation
-![Hardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line.](images/lab2_circuit.jpeg)
 
 ## Results & Discussion
 This lab resulted in a working time-multiplexed dual 7-segment display that coorectly displays hexidecimal digits 1-F independantly, clearly, and without bleeding. As well as a functioning 5-bit LED display showing the binary combination of the two 4-bit inputs.

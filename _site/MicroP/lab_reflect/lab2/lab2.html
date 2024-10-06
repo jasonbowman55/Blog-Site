@@ -131,7 +131,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
   <li><a href="#circuit-schematic" id="toc-circuit-schematic" class="nav-link" data-scroll-target="#circuit-schematic">Circuit Schematic</a></li>
-  <li><a href="#hardware-implementation" id="toc-hardware-implementation" class="nav-link" data-scroll-target="#hardware-implementation">Hardware Implementation</a></li>
   </ul></li>
   <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion">Results &amp; Discussion</a></li>
   <li><a href="#for-the-future" id="toc-for-the-future" class="nav-link" data-scroll-target="#for-the-future">For The future</a></li>
@@ -184,6 +183,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="intro-design-approach" class="level2">
 <h2 class="anchored" data-anchor-id="intro-design-approach">Intro &amp; Design Approach</h2>
 <p>In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab2_circuit.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Hardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line</figcaption>
+</figure>
+</div>
 <p>My design approach began with a block diagram, where I created a top module and two submodules: one controlled both 7-segment displays, and the other controlled the line of 5 independent LEDs.</p>
 <section id="block-diagram" class="level3">
 <h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
@@ -201,15 +206,6 @@ ul.task-list li input[type="checkbox"] {
 <figure class="figure">
 <p><img src="images/lab2_circuit_diagram.jpeg" class="img-fluid figure-img"></p>
 <figcaption>This circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals</figcaption>
-</figure>
-</div>
-</section>
-<section id="hardware-implementation" class="level3">
-<h3 class="anchored" data-anchor-id="hardware-implementation">Hardware Implementation</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/lab2_circuit.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Hardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line.</figcaption>
 </figure>
 </div>
 </section>
