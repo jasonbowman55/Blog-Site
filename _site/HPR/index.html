@@ -124,7 +124,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a>
+  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  <li><a href="#project-ideation" id="toc-project-ideation" class="nav-link" data-scroll-target="#project-ideation">Project Ideation</a>
   <ul class="collapse">
   <li><a href="#launch-day" id="toc-launch-day" class="nav-link" data-scroll-target="#launch-day">Launch Day</a></li>
   </ul></li>
@@ -153,9 +154,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>This class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. In this post, I focus on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the 30G environments.</p>
+<p><img src="images/desert.jpeg" class="img-fluid"></p>
+<section id="about" class="level1">
+<h1>About</h1>
+<p>This class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. This page mainly focuses on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the flight environments.</p>
+</section>
+<section id="project-ideation" class="level1">
+<h1>Project Ideation</h1>
+<p>Our project search was kind of all over the place. We had thoughts of dual stage rockets, modal analysis, top speed, max height. Until we found that someone in a previous class attempted a “Gyro Stabilized” rocket, which resulted in the following comment. “Got the gyro to spin up, but it didn’t seem to have much effect.” <em>-E178: High-Power Rocketry/Final Project</em> So we thought, what is stopping up from building a active control system in order to rotationally stabilize our rocket.</p>
 <section id="launch-day" class="level3">
 <h3 class="anchored" data-anchor-id="launch-day">Launch Day</h3>
 <div class="quarto-figure quarto-figure-center">
@@ -264,7 +270,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
