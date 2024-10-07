@@ -189,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/hardware.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Lab 3 hardware</figcaption>
+<figcaption>Figure1: Lab 3 hardware</figcaption>
 </figure>
 </div>
 </section>
@@ -203,54 +203,54 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/circuit.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Circuit diagram</figcaption>
+<figcaption>Figure2: Circuit diagram</figcaption>
 </figure>
 </div>
 </section>
 <section id="fsm" class="level2">
 <h2 class="anchored" data-anchor-id="fsm">FSM</h2>
-<p><strong>Top State (Idle/Row Selection):</strong> This state acts as the pathway between all four column states, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed.</p>
-<p><strong>Second State (Button Detection/Decode):</strong> Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated.</p>
-<p><strong>Third State (Hold/Wait):</strong> After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.</p>
+<p><strong>Top Row States (Idle/Row Selection):</strong> This state acts as the pathway between all four row scans, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed. Delay states are used between the top states to ensure button presses are registered in time.</p>
+<p><strong>Middle Row States (Button Detection/Decode):</strong> Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated. A delay state is used between the middle and bottom state to ensure segment values are assigned correctly.</p>
+<p><strong>Bottom Row States (Hold/Wait):</strong> After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/fsm.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Finite State Machine (FSM)</figcaption>
+<figcaption>Figure3: Finite State Machine (FSM)</figcaption>
 </figure>
 </div>
 </section>
 <section id="block-diagram" class="level2">
 <h2 class="anchored" data-anchor-id="block-diagram">Block Diagram</h2>
-<p>Figure# below displays the module communication logic for the System Verilog code that programmed my FPGA. Notibly we have a top, button_decode_bounce, seven_seg_decoder, and a synchronizer module.</p>
-<p><strong>top:</strong> the overseeing connection module and direct communication with I/O.</p>
-<p><strong>button_decode_bounce:</strong> button decoder and debouncer</p>
-<p><strong>seven_seg_decoder:</strong> decodes the button pressed into 7-segment display outputs</p>
-<p><strong>synchronizer:</strong> synchronizes the col input</p>
+<p>Figure 4 below displays the module communication logic for the System Verilog code that programmed the FPGA. Notibly we have a top, button_decode_bounce, and seven_seg_decoder modules.</p>
+<p><strong>top:</strong> The overseeing connection module and direct communication with I/O. Also includes the time-multiplexer and Low Speed Oscillator (LSOSC) clk source.</p>
+<p><strong>button_decode_bounce:</strong> button decoder, debouncer, and row scan generator.</p>
+<p><strong>seven_seg_decoder:</strong> decodes the button pressed into 7-segment display outputs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/block.jpeg" class="img-fluid figure-img"></p>
-<figcaption>System Verilog module block diagram</figcaption>
+<figcaption>Figure4: System Verilog module block diagram</figcaption>
 </figure>
 </div>
 </section>
 </section>
 <section id="design-simulation" class="level1">
 <h1>Design Simulation</h1>
-<p>ModelSim simulation software was used to simulate the waveforms of my SystemVerilog code. Figure # below shows an example of the waveforms flowing in and out of the top and button_decoder_bounce modules.</p>
-<p>To ensure proper functionality, I began by analyzing the output and worked backward through the waveforms and relationships if the output was unexpected. The waveform below is an example of a successful simulation, where the correct <em>right</em> and <em>left</em> values are fed into <em>select</em> based on <em>col_sync</em> and <em>osc</em>.</p>
+<p>ModelSim simulation software was used to simulate the waveforms of my SystemVerilog code. Figure 5 below shows an example of the waveforms flowing in and out of all included modules.</p>
+<p>To ensure proper functionality, I began by analyzing the output, and worked backward through the waveforms if the output was unexpected. The waveform below is an example of a successful simulation, where the correct <em>right</em> and <em>left</em> values are fed into <em>select</em> based on <em>col_sync</em> and <em>power</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/sim.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Final working version of the ModelSim waveform used for debugging and functional confirmation</figcaption>
+<figcaption>Figure5: Final working version of the ModelSim waveform used for debugging and functional confirmation</figcaption>
 </figure>
 </div>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>The current version does not work. But I will make it work. I spent X hours on this lab.</p>
+<p>This lab resulted in a functioning time-multiplexed dual 7-segment display controlled by a 16-button array using a row scanning strategy. The button debouncing is effective, minimizing any unwanted consecutive inputs due to the button irregularities. This lab took me about 30 hours to complete.</p>
 </section>
 <section id="reflection" class="level1">
 <h1>Reflection</h1>
+<p>I had always heard that this would be a difficult lab, and that was no lie. While I took a long time on this lab, I learned a lot about how to effectively use my time on a technically complex task. This lab served as a vehicle for me to advance my HDL coding skills and simulation debugging. I had a lot of fun; I am glad I had this experience and will go into future projects with more experience in meticulous design, debugging, and time management strategies.</p>
 
 
 </section>
