@@ -132,7 +132,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#micro-ps-protoboard" id="toc-micro-ps-protoboard" class="nav-link" data-scroll-target="#micro-ps-protoboard">Micro Ps Protoboard</a></li>
   <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
   <li><a href="#circuit-diagram" id="toc-circuit-diagram" class="nav-link" data-scroll-target="#circuit-diagram">Circuit Diagram</a></li>
-  <li><a href="#final-circuit" id="toc-final-circuit" class="nav-link" data-scroll-target="#final-circuit">Final Circuit</a></li>
   </ul></li>
   <li><a href="#results-reflection" id="toc-results-reflection" class="nav-link" data-scroll-target="#results-reflection">Results &amp; Reflection</a></li>
   <li><a href="#technical-takeaways" id="toc-technical-takeaways" class="nav-link" data-scroll-target="#technical-takeaways">Technical Takeaways</a>
@@ -189,44 +188,41 @@ ul.task-list li input[type="checkbox"] {
 <section id="intro-design-approach" class="level2">
 <h2 class="anchored" data-anchor-id="intro-design-approach">Intro &amp; Design Approach</h2>
 <p>In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab1_circuit.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Completed lab implementation</figcaption>
+</figure>
+</div>
 <section id="micro-ps-protoboard" class="level3">
 <h3 class="anchored" data-anchor-id="micro-ps-protoboard">Micro Ps Protoboard</h3>
+<p>After following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lab1_protoboard.jpeg" class="img-fluid figure-img"></p>
 <figcaption>Completed Micro Ps Protoboard</figcaption>
 </figure>
 </div>
-<p>After following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.</p>
 </section>
 <section id="block-diagram" class="level3">
 <h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
+<p>This lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lab1_block_diagram.jpeg" class="img-fluid figure-img"></p>
 <figcaption>Block diagram outlining the SystemVerilog modules</figcaption>
 </figure>
 </div>
-<p>This lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.</p>
 </section>
 <section id="circuit-diagram" class="level3">
 <h3 class="anchored" data-anchor-id="circuit-diagram">Circuit Diagram</h3>
+<p>For troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lab1_circuit_diagram.jpeg" class="img-fluid figure-img"></p>
 <figcaption>A full schematic outlining the lab’s hardware, including related signals and pins</figcaption>
 </figure>
 </div>
-</section>
-<section id="final-circuit" class="level3">
-<h3 class="anchored" data-anchor-id="final-circuit">Final Circuit</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/lab1_circuit.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Lab1 hardware implamented on a bread board</figcaption>
-</figure>
-</div>
-<p>For troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.</p>
 </section>
 </section>
 <section id="results-reflection" class="level2">
