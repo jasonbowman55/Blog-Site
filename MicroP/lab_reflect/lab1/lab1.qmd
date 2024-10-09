@@ -7,14 +7,22 @@ categories:
   - Reflection
   - Lab Report
 draft: false
+about:  
+  template: jolla
+  links:
+  - icon: github
+    text: Lab 1 GitHub
+    href: https://github.com/jasonbowman55/microP-lab1.git
+css: styles.css
 ---
+
 ## Intro & Design Approach
 In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.
 
 ![Completed lab implementation](images/lab1_circuit.jpeg)
 
 ### Micro Ps Protoboard
-After following the setup instructions from resources/course_website/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.
+After following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.
 
 ![Completed Micro Ps Protoboard](images/lab1_protoboard.jpeg)
 
@@ -29,17 +37,8 @@ For troubleshooting and debugging, manual test cases were used to verify that th
 ![A full schematic outlining the lab's hardware, including related signals and pins](images/lab1_circuit_diagram.jpeg)
 
 ## Results & Reflection
-The design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter would be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.
+The design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter could be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.
 
-I particularly enjoyed learning Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had forgotten from E85.
+I particularly enjoyed learning how to use Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had learned over a year ago in E85.
 
-Moving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules. This lab taught me valuable code management techniques that I will apply from the start of Lab 2.
-
-## Technical Takeaways
-
-### What to Remember
-- Ensure that when assigning bits, they are prefaced by their respective size and base specifications.
-- If you encounter issues, double-check that the hardware is functioning as expected to rule out potential malfunctions.
-
-### For the Future
-- Learn how to create and use a test bench.
+Moving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules.

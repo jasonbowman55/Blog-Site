@@ -7,6 +7,12 @@ categories:
   - Reflection
   - Lab Report
 draft: false
+about:  
+  template: jolla
+  links:
+  - icon: github
+    text: Lab 3 GitHub
+    href: https://github.com/jasonbowman55/microP-lab3.git
 ---
 # Intro & Design Approach
 This lab utilized a 4x4 keypad scanner in tandem with a time-multiplexed dual 7-segment display, which was developed during Lab 2. The final goal was to update the right 7-segment display with each button press on the keypad, while the left display would show the previously pressed value. This functionality was implemented using a finite state machine (FSM) and next-state logic to simultaneously scan the keypad rows and decode which button was being pressed. Debouncing logic was also implemented to handle button bounce within the keypad.

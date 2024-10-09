@@ -36,7 +36,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
@@ -125,22 +124,20 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
-   
   <ul>
   <li><a href="#intro-design-approach" id="toc-intro-design-approach" class="nav-link active" data-scroll-target="#intro-design-approach">Intro &amp; Design Approach</a>
   <ul class="collapse">
   <li><a href="#block-diagram" id="toc-block-diagram" class="nav-link" data-scroll-target="#block-diagram">Block Diagram</a></li>
   <li><a href="#circuit-schematic" id="toc-circuit-schematic" class="nav-link" data-scroll-target="#circuit-schematic">Circuit Schematic</a></li>
+  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a></li>
   </ul></li>
   <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion">Results &amp; Discussion</a></li>
-  <li><a href="#for-the-future" id="toc-for-the-future" class="nav-link" data-scroll-target="#for-the-future">For The future</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-jolla">
+ <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Time-Multiplexed Dual 7-Segment Display</h1>
   <div class="quarto-categories">
@@ -148,40 +145,29 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-category">Lab Report</div>
   </div>
   </div>
-
 <div>
   <div class="description">
     Lab 2
   </div>
 </div>
-
-
 <div class="quarto-title-meta">
-
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
              <p>Jason Bowman </p>
           </div>
   </div>
-    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
       <p class="date">September 9, 2024</p>
     </div>
   </div>
-  
-    
   </div>
-  
+</header><main class="content" id="quarto-document-content">
 
-
-</header>
-
-
-<section id="intro-design-approach" class="level2">
-<h2 class="anchored" data-anchor-id="intro-design-approach">Intro &amp; Design Approach</h2>
+<section id="intro-design-approach" class="level1">
+<h1>Intro &amp; Design Approach</h1>
 <p>In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -189,19 +175,23 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Hardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line</figcaption>
 </figure>
 </div>
-<p>My design approach began with a block diagram, where I created a top module and two submodules: one controlled both 7-segment displays, and the other controlled the line of 5 independent LEDs.</p>
-<section id="block-diagram" class="level3">
-<h3 class="anchored" data-anchor-id="block-diagram">Block Diagram</h3>
+<p>The design process began with a block diagram, where I created a top module and two submodules:</p>
+<p><strong>- seven_seg_decoder:</strong> decodes inputs to 7-seg pin assignments</p>
+<p><strong>- bin_disp_decoder:</strong> sums input values and writes that sum in binary to led</p>
+<p>I then created a circuit schematic, which allowed me to visualize physical pin assignments and accurately represent those in my SystemVerilog.</p>
+<p>A wavefrom was then used to simulate, debug, and validate system functions.</p>
+<section id="block-diagram" class="level2">
+<h2 data-anchor-id="block-diagram">Block Diagram</h2>
+<p>In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. The int_osc influenced the counter variable, and was then used to time-multiplex between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. A simple assign statement was used to generate the LED binary outputs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lab2_block_diagram.jpeg" class="img-fluid figure-img"></p>
 <figcaption>This block diagram outlines the SystemVerilog modules used in lab 2</figcaption>
 </figure>
 </div>
-<p>In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. This int_osc influenced the counter variable, and was then used to alternate between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. The oscillatory behavior of the int_osc signal was used to toggle the I/Os for each independent 7-segment display. A simple assign statement was used to generate the LED binary outputs.</p>
 </section>
-<section id="circuit-schematic" class="level3">
-<h3 class="anchored" data-anchor-id="circuit-schematic">Circuit Schematic</h3>
+<section id="circuit-schematic" class="level2">
+<h2 data-anchor-id="circuit-schematic">Circuit Schematic</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lab2_circuit_diagram.jpeg" class="img-fluid figure-img"></p>
@@ -209,24 +199,35 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
+<section id="simulation" class="level2">
+<h2 data-anchor-id="simulation">Simulation</h2>
+<p>During the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/wave.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Waveform displaying accurate time-multiplexed functionality</figcaption>
+</figure>
+</div>
 </section>
-<section id="results-discussion" class="level2">
-<h2 class="anchored" data-anchor-id="results-discussion">Results &amp; Discussion</h2>
+</section>
+<section id="results-discussion" class="level1">
+<h1>Results &amp; Discussion</h1>
 <p>This lab resulted in a working time-multiplexed dual 7-segment display that coorectly displays hexidecimal digits 1-F independantly, clearly, and without bleeding. As well as a functioning 5-bit LED display showing the binary combination of the two 4-bit inputs.</p>
 <p>The counter variable, incremented by the internal clock signal (int_osc), controls the oscillation speed between two different 7-segment displays using a selector. While this provides adequate control for the current application, developing a more precise counter mechanism could further optimize performance and improve accuracy in future work.</p>
-<p>This lab took approximately 13 hours to complete. Significant challenges were encountered early in the implementation stage, and using test benches could have helped reduce the time spent.</p>
-</section>
-<section id="for-the-future" class="level2">
-<h2 class="anchored" data-anchor-id="for-the-future">For The future</h2>
-<ul>
-<li>Learn and implament test benches in order to miniimize time wasted</li>
-<li>Create a more clear and concise circuit schematic that is easier to follow when building the circuit.</li>
-</ul>
+<p>This lab took approximately 13 hours to complete. Significant challenges were encountered early in the implementation stage. Utilizing wave forms and test benched earlier on would have helped and I will do so going forward.</p>
 
 
 </section>
-
-</main> <!-- /main -->
+</main> 
+  <hr class="about-sep">
+   <div class="about-links">
+  <a href="https://github.com/jasonbowman55/microP_lab2.git" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Lab 2 GitHub</span>
+  </a>
+</div>
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -247,13 +248,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
