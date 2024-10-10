@@ -7,9 +7,7 @@ categories:
   - Reflection
   - Lab Report
 draft: false
-about:  
-  template: jolla
-  links:
+code-links:
   - icon: github
     text: Lab 3 GitHub
     href: https://github.com/jasonbowman55/microP-lab3.git
