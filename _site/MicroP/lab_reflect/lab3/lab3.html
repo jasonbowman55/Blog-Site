@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
@@ -124,6 +125,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
+   
   <ul>
   <li><a href="#intro-design-approach" id="toc-intro-design-approach" class="nav-link active" data-scroll-target="#intro-design-approach">Intro &amp; Design Approach</a></li>
   <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a>
@@ -136,11 +138,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
   </ul>
-</nav>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/jasonbowman55/microP-lab3.git"><i class="bi bi-github"></i>Lab 3 GitHub</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<div class="quarto-about-jolla">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Keypad Scanner</h1>
   <div class="quarto-categories">
@@ -148,26 +151,37 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-category">Lab Report</div>
   </div>
   </div>
+
 <div>
   <div class="description">
     Lab 3
   </div>
 </div>
+
+
 <div class="quarto-title-meta">
+
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
              <p>Jason Bowman </p>
           </div>
   </div>
+    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
       <p class="date">September 9, 2024</p>
     </div>
   </div>
+  
+    
   </div>
-</header><main class="content" id="quarto-document-content">
+  
+
+
+</header>
+
 
 <section id="intro-design-approach" class="level1">
 <h1>Intro &amp; Design Approach</h1>
@@ -183,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Design</h1>
 <p><em>This section goes into the hardware and software design specifics</em></p>
 <section id="hardware" class="level2">
-<h2 data-anchor-id="hardware">Hardware</h2>
+<h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
 <p>The system hardware consists of two main sections: segment control and keypad input. The segment control section is identical to the design from Lab 2, utilizing two 2N3906 PNP transistors and time-multiplexing logic to display two separate outputs on the dual 7-segment display. The keypad input section accesses the desired row and column pins. When a column is powered and a button is pressed in that column, a button press is registered if the corresponding row pin is active low.</p>
 <p>Due to the internal hardware of the keypad, when a column is powered and a key is pressed, the specific row being pressed is unknown, making it difficult to determine the exact button. To resolve this, a row-scanning method is used, which sets one row active low at a time using next state logic described in the FSM section. Since the column pins are active high, if a button is pressed in a column corresponding to an active low row, we can track which row is being scanned and which column pin is pulled down to 0, allowing us to accurately decode the button press.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -194,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 <section id="fsm" class="level2">
-<h2 data-anchor-id="fsm">FSM</h2>
+<h2 class="anchored" data-anchor-id="fsm">FSM</h2>
 <p><strong>Top Row States (Idle/Row Selection):</strong> This state acts as the pathway between all four row scans, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed. Delay states are used between the top states to ensure button presses are registered in time.</p>
 <p><strong>Middle Row States (Button Detection/Decode):</strong> Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated. A delay state is used between the middle and bottom state to ensure segment values are assigned correctly.</p>
 <p><strong>Bottom Row States (Hold/Wait):</strong> After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.</p>
@@ -206,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 <section id="block-diagram" class="level2">
-<h2 data-anchor-id="block-diagram">Block Diagram</h2>
+<h2 class="anchored" data-anchor-id="block-diagram">Block Diagram</h2>
 <p>Figure 4 below displays the module communication logic for the System Verilog code that programmed the FPGA. Notibly we have a top, button_decode_bounce, and seven_seg_decoder modules.</p>
 <p><strong>top:</strong> The overseeing connection module and direct communication with I/O. Also includes the time-multiplexer and Low Speed Oscillator (LSOSC) clk source.</p>
 <p><strong>button_decode_bounce:</strong> button decoder, debouncer, and row scan generator.</p>
@@ -240,16 +254,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 </section>
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://github.com/jasonbowman55/microP-lab3.git" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Lab 3 GitHub</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -270,6 +276,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -335,7 +348,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
