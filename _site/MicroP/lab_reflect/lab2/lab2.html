@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jason Bowman">
-<meta name="dcterms.date" content="2024-09-09">
+<meta name="dcterms.date" content="2024-09-17">
 <meta name="description" content="Lab 2">
 
 <title>Time-Multiplexed Dual 7-Segment Display – My Portfolio</title>
@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
@@ -124,6 +125,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
+   
   <ul>
   <li><a href="#intro-design-approach" id="toc-intro-design-approach" class="nav-link active" data-scroll-target="#intro-design-approach">Intro &amp; Design Approach</a>
   <ul class="collapse">
@@ -133,11 +135,12 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion">Results &amp; Discussion</a></li>
   </ul>
-</nav>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/jasonbowman55/microP_lab2.git"><i class="bi bi-github"></i>Lab 2 GitHub</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<div class="quarto-about-jolla">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Time-Multiplexed Dual 7-Segment Display</h1>
   <div class="quarto-categories">
@@ -145,26 +148,37 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-category">Lab Report</div>
   </div>
   </div>
+
 <div>
   <div class="description">
     Lab 2
   </div>
 </div>
+
+
 <div class="quarto-title-meta">
+
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
              <p>Jason Bowman </p>
           </div>
   </div>
+    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 9, 2024</p>
+      <p class="date">September 17, 2024</p>
     </div>
   </div>
+  
+    
   </div>
-</header><main class="content" id="quarto-document-content">
+  
+
+
+</header>
+
 
 <section id="intro-design-approach" class="level1">
 <h1>Intro &amp; Design Approach</h1>
@@ -181,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 <p>I then created a circuit schematic, which allowed me to visualize physical pin assignments and accurately represent those in my SystemVerilog.</p>
 <p>A wavefrom was then used to simulate, debug, and validate system functions.</p>
 <section id="block-diagram" class="level2">
-<h2 data-anchor-id="block-diagram">Block Diagram</h2>
+<h2 class="anchored" data-anchor-id="block-diagram">Block Diagram</h2>
 <p>In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. The int_osc influenced the counter variable, and was then used to time-multiplex between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. A simple assign statement was used to generate the LED binary outputs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -191,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 <section id="circuit-schematic" class="level2">
-<h2 data-anchor-id="circuit-schematic">Circuit Schematic</h2>
+<h2 class="anchored" data-anchor-id="circuit-schematic">Circuit Schematic</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lab2_circuit_diagram.jpeg" class="img-fluid figure-img"></p>
@@ -200,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 <section id="simulation" class="level2">
-<h2 data-anchor-id="simulation">Simulation</h2>
+<h2 class="anchored" data-anchor-id="simulation">Simulation</h2>
 <p>During the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -218,16 +232,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 </section>
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://github.com/jasonbowman55/microP_lab2.git" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Lab 2 GitHub</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -248,6 +254,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

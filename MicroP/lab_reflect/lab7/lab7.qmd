@@ -2,9 +2,11 @@
 title: "The Advanced Encryption Standard"
 description: "Lab 7"
 author: "Jason Bowman"
-date: "9/9/2024"
+# date: ""
 categories:
   - Reflection
   - Lab Report
 draft: false
+code-links:
+  - icon: github
 ---

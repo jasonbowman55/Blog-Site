@@ -7,13 +7,10 @@ categories:
   - Reflection
   - Lab Report
 draft: false
-about:  
-  template: jolla
-  links:
+code-links:
   - icon: github
     text: Lab 1 GitHub
     href: https://github.com/jasonbowman55/microP-lab1.git
-css: styles.css
 ---
 
 ## Intro & Design Approach

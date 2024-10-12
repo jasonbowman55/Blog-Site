@@ -1,7 +1,0 @@
-body {
-    text-align: left !important; /* Align all text to the left */
-}
-
-h1, h2, h3, .author, .date, .description {
-    text-align: left !important; /* Ensure specific elements are left-aligned */
-}

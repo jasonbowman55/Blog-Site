@@ -2,14 +2,12 @@
 title: "Time-Multiplexed Dual 7-Segment Display"
 description: "Lab 2"
 author: "Jason Bowman"
-date: "9/9/2024"
+date: "9/17/2024"
 categories:
   - Reflection
   - Lab Report
 draft: false
-about:  
-  template: jolla
-  links:
+code-links:
   - icon: github
     text: Lab 2 GitHub
     href: https://github.com/jasonbowman55/microP_lab2.git

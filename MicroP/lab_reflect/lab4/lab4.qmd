@@ -2,9 +2,11 @@
 title: "Digital Audio"
 description: "Lab 4"
 author: "Jason Bowman"
-date: "9/9/2024"
+# date: ""
 categories:
   - Reflection
   - Lab Report
 draft: false
+code-links:
+  - icon: github
 ---
