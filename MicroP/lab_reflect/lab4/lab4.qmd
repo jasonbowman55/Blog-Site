@@ -2,7 +2,7 @@
 title: "Digital Audio"
 description: "Lab 4"
 author: "Jason Bowman"
-# date: ""
+date: "10-17-24"
 categories:
   - Reflection
   - Lab Report
@@ -10,3 +10,31 @@ draft: false
 code-links:
   - icon: github
 ---
+# Intro & Design Approach
+This lab utilized an SM231508-1 8ohm speaker, and a STM32 Nucleo-32 board with an on board STM32L432KC MCU in order to play a the song "Für Elise". This was done using memory mapped I/O, and accessing specific memory addresses and peripherals in order to initialize and run the code on the MCU.
+
+**PICTURE OF THE FINISHED HARDWARE**
+
+# Design
+*This section goes into the hardware and software design specifics*
+
+## Hardware
+A simple audio amplifier (LM386) chip was used to drive the 8ohm speaker. It was powered by a 5V input and signal input was in the form of a PWM signal 0-5V. Resistors and capacitors were utilized by the data sheet standard for PWM audio driving, which results in a cleaner sound. There also exists a potentiometer in the system in order to act as a volume control interface.
+
+## File Structure
+**This will be a simple file structure diagram**
+
+## Software
+
+## Clock Configuration
+**This will include math to determine why we used the clck at the certain freuqnecy.**
+
+## TIM16 Configuration
+**This will include math and the structure of TIM16 and how we chose what to set what registers in order to get our outputs. As well as how the software relates to this**
+
+## Frequency & Duration Calculations
+**This will include the calculations that shows how accurate the frequencies and delays that we calculated using the TIM16**
+
+## Debugging
+
+## Video of Both Songs
