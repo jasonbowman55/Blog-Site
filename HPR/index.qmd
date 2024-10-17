@@ -3,7 +3,7 @@ title: "High Power Rocketry"
 contents: hpr.qmd
 ---
 ![](images/desert.jpeg)
-
+**THIS POST IS STILL A WORK IN PROGRESS**
 # About
 
 This class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. This page mainly focuses on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the flight environments.
@@ -11,9 +11,22 @@ This class was a thrilling rollercoaster experience during my junior year at Har
 # Project Ideation
 Our project search was kind of all over the place. We had thoughts of dual stage rockets, modal analysis, top speed, max height. Until we found that someone in a previous class attempted a "Gyro Stabilized" rocket, which resulted in the following comment. "Got the gyro to spin up, but it didn't seem to have much effect." *-E178: High-Power Rocketry/Final Project* So we thought, what is stopping up from building a active control system in order to rotationally stabilize our rocket.
 
+# Project Design
+
+All design and implamentation, apart from the build instructions and already on board teensy 4.0 MCU provided by Prof. Spjut, was done by Jason and Jordan at Harvery Mudd College. The main effort of the mechanical design was for the support structure that would hold all of the electronics inside the avionics bay of the rocket. The digital design was mainly focused on communicaiton with a adafruit arduino QTpi and a teensy 4.0, and well as how to save data onto an SD card. The systems design was very simple, and used simple yet proven control calibration techniques to ensure desired function.
+
+## Mechanical Design
+
+The primary focus of the mechanical design was on creating a support structure to house all of the electronics. After determining which electronics needed to be placed in the avionics bay, we created models with the general shape of each component. These models were then added into an assembly, and the support structure was designed around them.
+The main considerations for this design were strength and fit. Strength was crucial because the rocket would experience accelerations of up to 30Gs, and fit was equally important due to the limited space and our ambitious objectives.
+
+## Digital Design
+
+## Systems Design
 
 
-### Launch Day
+
+## Launch Day
 ![J&J rocket (Jordan & Jason)](images/rocket_long.jpeg)
 
 Structure:
