@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jason Bowman">
+<meta name="dcterms.date" content="2024-10-17">
 <meta name="description" content="Lab 4">
 
 <title>Digital Audio – My Portfolio</title>
@@ -122,8 +123,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-github"></i></a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro-design-approach" id="toc-intro-design-approach" class="nav-link active" data-scroll-target="#intro-design-approach">Intro &amp; Design Approach</a></li>
+  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a>
+  <ul class="collapse">
+  <li><a href="#hardware" id="toc-hardware" class="nav-link" data-scroll-target="#hardware">Hardware</a></li>
+  <li><a href="#file-structure" id="toc-file-structure" class="nav-link" data-scroll-target="#file-structure">File Structure</a></li>
+  <li><a href="#high-level-software-description" id="toc-high-level-software-description" class="nav-link" data-scroll-target="#high-level-software-description">High Level Software description</a></li>
+  <li><a href="#clock-configuration-i-need-to-fix-values" id="toc-clock-configuration-i-need-to-fix-values" class="nav-link" data-scroll-target="#clock-configuration-i-need-to-fix-values">Clock Configuration (I NEED TO FIX VALUES)</a></li>
+  <li><a href="#tim16-configuration" id="toc-tim16-configuration" class="nav-link" data-scroll-target="#tim16-configuration">TIM16 Configuration</a></li>
+  <li><a href="#frequency-duration-calculations" id="toc-frequency-duration-calculations" class="nav-link" data-scroll-target="#frequency-duration-calculations">Frequency &amp; Duration Calculations</a></li>
+  <li><a href="#debugging" id="toc-debugging" class="nav-link" data-scroll-target="#debugging">Debugging</a></li>
+  <li><a href="#video-of-both-songs" id="toc-video-of-both-songs" class="nav-link" data-scroll-target="#video-of-both-songs">Video of Both Songs</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-github"></i></a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -152,6 +170,12 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 17, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -161,8 +185,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="intro-design-approach" class="level1">
+<h1>Intro &amp; Design Approach</h1>
+<p>This lab utilized an SM231508-1 8ohm speaker, and a STM32 Nucleo-32 board with an on board STM32L432KC MCU in order to play a the song “Für Elise”. This was done using memory mapped I/O, and accessing specific memory addresses and peripherals in order to initialize and run the code on the MCU.</p>
+<p><strong>PICTURE OF THE FINISHED HARDWARE</strong></p>
+</section>
+<section id="design" class="level1">
+<h1>Design</h1>
+<p><em>This section goes into the hardware and software design specifics</em></p>
+<section id="hardware" class="level2">
+<h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
+<p>A simple audio amplifier (LM386) chip was used to drive an 8-ohm speaker. The amplifier was powered by a 5V supply, and the input signal was a 3.3V PWM signal (0-3.3V). Standard resistors and capacitors, as recommended in the datasheet for PWM audio driving, were utilized to produce cleaner sound output. A potentiometer was also included in the circuit to function as a volume control interface.</p>
+</section>
+<section id="file-structure" class="level2">
+<h2 class="anchored" data-anchor-id="file-structure">File Structure</h2>
+<p>“All files used in the project, including the specifically generated Segger project files, are stored in the same local directory. Within the Segger project, the file structure is organized as shown in Figure 2. Green lines indicate #include directives in the main.c file, while the black arrows show the correlation between header files and their respective .c files. <img src="images/file_map.jpeg" class="img-fluid" alt="Figure2: Segger project file mapping"></p>
+</section>
+<section id="high-level-software-description" class="level2">
+<h2 class="anchored" data-anchor-id="high-level-software-description">High Level Software description</h2>
+<p>The Multi-Speed Internal (MSI) clock was used in tandem with a PLL configuration to achieve the desired system clock (SYSCLK) speed of 4 MHz. The SYSCLK was then routed to the GPIOA and TIM16 peripherals. The TIM16 built-in timer was used both as a delay timer and for PWM generation to drive the speaker. TIM16 has internal registers, the Auto-Reload Register (ARR) and prescaler (PSC), which were the main parameters used to set the output frequency and note duration, in conjunction with a counter variable.</p>
+</section>
+<section id="clock-configuration-i-need-to-fix-values" class="level2">
+<h2 class="anchored" data-anchor-id="clock-configuration-i-need-to-fix-values">Clock Configuration (I NEED TO FIX VALUES)</h2>
+<p>As mentioned, the MSI onboard clock was used as an input to the PLL configuration, which allows for precise SYSCLK speed control. The PLL uses two divisors (M and R) and one multiplier (N), as shown in Figure 3, to achieve this function. With the MSI frequency configured to 1 MHz and setting M=1, N=4, and R=1, we can achieve the desired SYSCLK speed of 4 MHz.</p>
+<p><img src="images/clk_tree_full.jpeg" class="img-fluid"> <img src="images/clk_tree_pll.jpeg" class="img-fluid" alt="Figure3: Full MCU clk tree &amp; PLL module"></p>
+</section>
+<section id="tim16-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="tim16-configuration">TIM16 Configuration</h2>
+<p><strong>This will include math and the structure of TIM16 and how we chose what to set what registers in order to get our outputs. As well as how the software relates to this</strong></p>
+</section>
+<section id="frequency-duration-calculations" class="level2">
+<h2 class="anchored" data-anchor-id="frequency-duration-calculations">Frequency &amp; Duration Calculations</h2>
+<p><strong>This will include the calculations that shows how accurate the frequencies and delays that we calculated using the TIM16</strong></p>
+</section>
+<section id="debugging" class="level2">
+<h2 class="anchored" data-anchor-id="debugging">Debugging</h2>
+</section>
+<section id="video-of-both-songs" class="level2">
+<h2 class="anchored" data-anchor-id="video-of-both-songs">Video of Both Songs</h2>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -257,7 +321,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
