@@ -85,6 +85,24 @@ The built-in debugger was used to directly inspect register values to validate t
 
 # Video of Both Songs
 
+<figure>
+  <figcaption>**Für Elise**</figcaption>
+  <video width="600" controls>
+    <source src="videos/fur_elise.mp4" type="video/mp4">
+    Your browser does not support the video tag. Please try updating your browser or download the video <a href="videos/fur_elise.mp4">here</a>.
+  </video>
+</figure>
+
+<figure>
+  <figcaption>**Happy Birthday**</figcaption>
+  <video width="600" controls>
+    <source src="videos/happy_birthday.mp4" type="video/mp4">
+    Your browser does not support the video tag. Please try updating your browser or download the video <a href="videos/happy_birthday.mp4">here</a>.
+  </video>
+</figure>
+
 # Results
+This lab resulted in a working audio system, including the ability to play "Für Elise" and "Happy Birthday." It effectively utilized the TIM16 and GPIO peripherals in the MCU, accurately playing the notes for each song with correct timing. This lab took me about 15 hours to complete.
 
 # Reflection
+This lab was the first time I had to delve into such extensive documentation—the reference manual for the STM32L432KC MCU chip. Through this experience, I began to gain confidence in my ability to decipher datasheets and reference manuals in a useful way. I started to understand the format and the reasoning behind why developers created these manuals the way they did. I had fun during this lab and found it very interesting that when working at such a low level in the MCU, you can see the true speed at which these components operate. This sparked new ideas for future projects in my mind, and I am glad to have this skill set in my toolbox for both academic and personal project reasons.
