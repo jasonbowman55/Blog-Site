@@ -9,37 +9,41 @@ categories:
 draft: false
 code-links:
   - icon: github
+    text: Lab 4 GitHub
+    href: https://github.com/jasonbowman55/microP-lab4.git
 ---
 # Intro & Design Approach
-This lab utilized an SM231508-1 8ohm speaker, and a STM32 Nucleo-32 board with an on board STM32L432KC MCU in order to play a the song "Für Elise". This was done without using CMSIS, instead using memory mapped I/O, and accessing specific memory addresses and peripherals in order to initialize and run the code on the MCU.
+This lab utilized an SM231508-1 8ohm speaker, and a STM32 Nucleo-32 board with an on board STM32L432KC MCU in order to play a the song "Für Elise" and "Happy Birthday". This was done without using CMSIS, instead using memory mapped I/O, and accessing specific memory addresses and peripherals in order to initialize and run the code on the MCU.
 
-**PICTURE OF THE FINISHED HARDWARE**
+![Figure1: Lab 4 hardware](images/circuit_hardware.jpeg)
 
 # Design
 *This section goes into the hardware and software design specifics*
 
 ## Hardware
-A simple audio amplifier (LM386) chip was used to drive an 8-ohm speaker. The amplifier was powered by a 5V supply, and the input signal was a 3.3V PWM signal. Standard resistors and capacitors, as recommended in the datasheet for PWM audio driving, were utilized to produce cleaner sound output. A **WHAT KIND OF POT** potentiometer was also included in the circuit to function as a volume control interface.
+A simple audio amplifier (LM386) chip was used to drive an 8-ohm speaker. The amplifier was powered by a 5V supply, and the input signal was a 3.3V PWM signal. A 103 4E potentiometer was also included in the circuit to function as a volume control interface.
 
-**CIRCUIT DIAGRAM**
+![Figure2: Circuit schematic](images/circuit_schematic.jpeg)
 
 ## File Structure
 All files used in the project, including the specifically generated Segger project files, are stored in the same local directory. Within the Segger project, the file structure is organized as shown in Figure 3. Green lines indicate #include directives in the main.c file, while the black arrows show the correlation between header files and their respective .c files.
+
 ![Figure3: Segger project file mapping](images/file_map.jpeg)
 
 ## High Level Software description
 The Multi-Speed Internal (MSI) clock, combined with a PLL configuration, was used to achieve the desired system clock (SYSCLK) speed of 4 MHz. The SYSCLK was routed to the GPIOA and TIM16 peripherals. TIM16, a built-in timer, was used for PWM generation to drive the speaker. A simple counter function, implemented in main.c, operated based on the SYSCLK. The key parameters for setting the output frequency and note duration were TIM16's internal registers: the Auto-Reload Register (ARR) and the prescaler (PSC), which worked together with the counter variable to acheive desired output.
 
 ## System Clock Configuration
-As mentioned, the MSI onboard clock was used as an input to the PLL configuration, which allows for precise SYSCLK speed control. The PLL uses two divisors (M and R) and one multiplier (N), as shown in Figure 3, to achieve this function. With the MSI frequency at the default frequency of 4 MHz and setting M=1, N=8, and R=4, we can achieve the desired SYSCLK speed of 8 MHz.
+As mentioned, the MSI onboard clock was used as an input to the PLL configuration, which allows for precise SYSCLK speed control. The PLL uses two divisors (M and R) and one multiplier (N), as shown in Figure 4, to achieve this function. With the MSI frequency at the default frequency of 4 MHz and setting M=1, N=8, and R=4, we can achieve the desired SYSCLK speed of 8 MHz.
 
 ![](images/clk_tree_full.jpeg)
-![Figure3: Full MCU clk tree & PLL module](images/clk_tree_pll.jpeg)
+
+![Figure4: Full MCU clk tree & PLL module](images/clk_tree_pll.jpeg)
 
 ## TIM16 & Frequency Generation
 TIM16 is the peripheral used to produce the desired PWM signal frequency. First, the prescaler (PSC), as shown in Figure 4, was set to 255 to bring the TIM16 counter frequency closer to the desired range. To output a specific frequency, we can refer to Equation [1].
 
-![Figure4: TIM16 Block Diagram](images/TIM16_diagram.jpeg)
+![Figure5: TIM16 Block Diagram](images/TIM16_diagram.jpeg)
 
 [1] $Freq=\frac{SYSCLK}{PSC+1} * \frac{1}{ARR+1}$
 
@@ -75,13 +79,23 @@ The **maximum** frequency corresponds to the smallest value of the 16-bit ARR re
 [8] $Freq_{\text{max}} = 31250*\frac{1}{ARR_{\text{min}}+1} = 31250*\frac{1}{1+1} = 15.625kHz$
 
 ### Duration Accuracy
-**HUH**
+The only thing that affects the accuracy of the duration is the value 'x=887' declared in the software in the delay block, which has already been determined to be accurate.
 
 ### Duration min/max
-**HUH**
+For the following calculations, please consider the relationship given in equation [9].
+
+[9] ${ms_{\text{desired}}} = \frac{ARR}{100}$
+
+The **minimum** duration corresponds to the maximum value of the 16-bit ARR register ($ARR_{\text{max}} = 2^{16} - 1$). This can be calculated using Equation [10] below.
+
+[10] ${ms_{\text{desired}}} = \frac{65535}{100}$ = 655.35ms
+
+The **maximum** duration corresponds to the smallest value of the 16-bit ARR register ($ARR_{\text{min}} = 1$). This can be calculated using Equation [11] below.
+
+[11] ${ms_{\text{desired}}} = \frac{1}{100}$ = 0.01ms
 
 ## Debugging
-The built-in debugger was used to directly inspect register values to validate the design. By stepping through the execution one step at a time, the register values of interest could be monitored to ensure they were functioning as expected.
+The built-in debugger in Segger was used to directly inspect register values to validate the design. By stepping through the execution one step at a time, the register values of interest could be monitored to ensure they were functioning as expected.
 
 # Video of Both Songs
 
