@@ -1,17 +1,66 @@
 [
   {
-    "objectID": "HPR/index.html",
-    "href": "HPR/index.html",
-    "title": "High Power Rocketry",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "My Portfolio",
     "section": "",
-    "text": "THIS POST IS STILL A WORK IN PROGRESS # About\nThis class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. This page mainly focuses on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the flight environments."
+    "text": "E155 (Micro Ps) Course Website"
   },
   {
-    "objectID": "MicroP/index.html",
-    "href": "MicroP/index.html",
-    "title": "Lab Reflections",
+    "objectID": "MicroP/lab_reflect/lab4/lab4.html",
+    "href": "MicroP/lab_reflect/lab4/lab4.html",
+    "title": "Digital Audio",
     "section": "",
-    "text": "Interrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
+    "text": "This lab utilized an SM231508-1 8ohm speaker, and a STM32 Nucleo-32 board with an on board STM32L432KC MCU in order to play a the song “Für Elise”. This was done without using CMSIS, instead using memory mapped I/O, and accessing specific memory addresses and peripherals in order to initialize and run the code on the MCU.\nPICTURE OF THE FINISHED HARDWARE"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab4/lab4.html#hardware",
+    "href": "MicroP/lab_reflect/lab4/lab4.html#hardware",
+    "title": "Digital Audio",
+    "section": "Hardware",
+    "text": "Hardware\nA simple audio amplifier (LM386) chip was used to drive an 8-ohm speaker. The amplifier was powered by a 5V supply, and the input signal was a 3.3V PWM signal. Standard resistors and capacitors, as recommended in the datasheet for PWM audio driving, were utilized to produce cleaner sound output. A WHAT KIND OF POT potentiometer was also included in the circuit to function as a volume control interface.\nCIRCUIT DIAGRAM"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab4/lab4.html#file-structure",
+    "href": "MicroP/lab_reflect/lab4/lab4.html#file-structure",
+    "title": "Digital Audio",
+    "section": "File Structure",
+    "text": "File Structure\nAll files used in the project, including the specifically generated Segger project files, are stored in the same local directory. Within the Segger project, the file structure is organized as shown in Figure 3. Green lines indicate #include directives in the main.c file, while the black arrows show the correlation between header files and their respective .c files."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab4/lab4.html#high-level-software-description",
+    "href": "MicroP/lab_reflect/lab4/lab4.html#high-level-software-description",
+    "title": "Digital Audio",
+    "section": "High Level Software description",
+    "text": "High Level Software description\nThe Multi-Speed Internal (MSI) clock, combined with a PLL configuration, was used to achieve the desired system clock (SYSCLK) speed of 4 MHz. The SYSCLK was routed to the GPIOA and TIM16 peripherals. TIM16, a built-in timer, was used for PWM generation to drive the speaker. A simple counter function, implemented in main.c, operated based on the SYSCLK. The key parameters for setting the output frequency and note duration were TIM16’s internal registers: the Auto-Reload Register (ARR) and the prescaler (PSC), which worked together with the counter variable to acheive desired output."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab4/lab4.html#system-clock-configuration",
+    "href": "MicroP/lab_reflect/lab4/lab4.html#system-clock-configuration",
+    "title": "Digital Audio",
+    "section": "System Clock Configuration",
+    "text": "System Clock Configuration\nAs mentioned, the MSI onboard clock was used as an input to the PLL configuration, which allows for precise SYSCLK speed control. The PLL uses two divisors (M and R) and one multiplier (N), as shown in Figure 3, to achieve this function. With the MSI frequency at the default frequency of 4 MHz and setting M=1, N=8, and R=4, we can achieve the desired SYSCLK speed of 8 MHz."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab4/lab4.html#tim16-frequency-generation",
+    "href": "MicroP/lab_reflect/lab4/lab4.html#tim16-frequency-generation",
+    "title": "Digital Audio",
+    "section": "TIM16 & Frequency Generation",
+    "text": "TIM16 & Frequency Generation\nTIM16 is the peripheral used to produce the desired PWM signal frequency. First, the prescaler (PSC), as shown in Figure 4, was set to 255 to bring the TIM16 counter frequency closer to the desired range. To output a specific frequency, we can refer to Equation [1].\n\n\n\nFigure4: TIM16 Block Diagram\n\n\n[1] \\(Freq=\\frac{SYSCLK}{PSC+1} * \\frac{1}{ARR+1}\\)\nAs shown in Equation [1], Freq represents the desired PWM frequency, and ARR is the 16-bit register used to control this frequency. Therefore, Equation [1] can be simplified into the form of Equation [2], and further reduced to Equation [3]. Equation [3] was implemented in main.c to control the output frequency.\n[2] \\(ARR=\\frac{SYSCLK}{Freq*(PSC+1)}-1\\)\n[3] \\(ARR=\\frac{31250}{Freq}-1\\)"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-analysis",
+    "href": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-analysis",
+    "title": "Digital Audio",
+    "section": "Frequency & Duration Analysis",
+    "text": "Frequency & Duration Analysis\nThis section discusses the frequency accuracies, minimum and maximum frequencies, and their corresponding durations.\n\nFrequency Accuracy\nTo demonstrate the accuracy of the PWM output frequencies, Equation [4] calculates the ARR value for a 659 Hz frequency, which corresponds to a note from Für Elise.\n[4] \\(ARR = \\frac{31250}{659}-1 = 46.42\\)\nThe new value of ARR is internally rounded to the nearest integer, resulting in ARR = 46. By rearranging Equation [3] to solve for Freq, as shown in Equation [5], we can substitute the new ARR value to calculate the output frequency.\n[5] \\(Freq = 31250*\\frac{1}{ARR+1} = 31250*\\frac{1}{46+1} = 664.89\\)\nThe percent error, as calculated in Equation [6], is significantly less than 1%, which is more than sufficient for the accuracy required in this application.\n[6] \\(\\%_\\text{error} = \\frac{664.89 - 659}{664.89} = 0.0089\\)\n\n\nFrequency min/max\nThe minimum frequency corresponds to the maximum value of the 16-bit ARR register (\\(ARR_{\\text{max}} = 2^{16} - 1\\)). This can be calculated using Equation [7] below.\n[7] \\(Freq_{\\text{min}} = 31250*\\frac{1}{ARR_{\\text{max}}+1} = 31250*\\frac{1}{65535+1} = 0.48Hz\\)\nThe maximum frequency corresponds to the smallest value of the 16-bit ARR register (\\(ARR_{\\text{min}} = 1\\)). This can be calculated using Equation [8] below.\n[8] \\(Freq_{\\text{max}} = 31250*\\frac{1}{ARR_{\\text{min}}+1} = 31250*\\frac{1}{1+1} = 15.625kHz\\)\n\n\nDuration Accuracy\nHUH\n\n\nDuration min/max\nHUH"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab4/lab4.html#debugging",
+    "href": "MicroP/lab_reflect/lab4/lab4.html#debugging",
+    "title": "Digital Audio",
+    "section": "Debugging",
+    "text": "Debugging\nThe built-in debugger was used to directly inspect register values to validate the design. By stepping through the execution one step at a time, the register values of interest could be monitored to ensure they were functioning as expected."
   },
   {
     "objectID": "MicroP/lab_reflect/lab2/lab2.html",
@@ -42,25 +91,53 @@
     "text": "During the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.\n\n\n\nWaveform displaying accurate time-multiplexed functionality"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html",
-    "href": "MicroP/lab_reflect/lab1/lab1.html",
-    "title": "FPGA and MCU Setup and Testing",
+    "objectID": "MicroP/lab_reflect/first-post.html",
+    "href": "MicroP/lab_reflect/first-post.html",
+    "title": "First Post",
     "section": "",
-    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
+    "text": "Hello!\nThis is my first post of my personal website.\nThis subpage is dedicated to my Micro-P lab reflections."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
-    "href": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
-    "title": "FPGA and MCU Setup and Testing",
+    "objectID": "MicroP/index.html",
+    "href": "MicroP/index.html",
+    "title": "Lab Reflections",
     "section": "",
-    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
+    "text": "Interrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
-    "href": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
-    "title": "FPGA and MCU Setup and Testing",
-    "section": "Results & Reflection",
-    "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter could be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning how to use Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had learned over a year ago in E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules."
+    "objectID": "HPR/index.html",
+    "href": "HPR/index.html",
+    "title": "High Power Rocketry",
+    "section": "",
+    "text": "THIS POST IS STILL A WORK IN PROGRESS # About\nThis class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. This page mainly focuses on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the flight environments."
+  },
+  {
+    "objectID": "HPR/index.html#mechanical-design",
+    "href": "HPR/index.html#mechanical-design",
+    "title": "High Power Rocketry",
+    "section": "Mechanical Design",
+    "text": "Mechanical Design\nThe primary focus of the mechanical design was on creating a support structure to house all of the electronics. After determining which electronics needed to be placed in the avionics bay, we created models with the general shape of each component. These models were then added into an assembly, and the support structure was designed around them. The main considerations for this design were strength and fit. Strength was crucial because the rocket would experience accelerations of up to 30Gs, and fit was equally important due to the limited space and our ambitious objectives."
+  },
+  {
+    "objectID": "HPR/index.html#digital-design",
+    "href": "HPR/index.html#digital-design",
+    "title": "High Power Rocketry",
+    "section": "Digital Design",
+    "text": "Digital Design"
+  },
+  {
+    "objectID": "HPR/index.html#systems-design",
+    "href": "HPR/index.html#systems-design",
+    "title": "High Power Rocketry",
+    "section": "Systems Design",
+    "text": "Systems Design"
+  },
+  {
+    "objectID": "HPR/index.html#launch-day",
+    "href": "HPR/index.html#launch-day",
+    "title": "High Power Rocketry",
+    "section": "Launch Day",
+    "text": "Launch Day\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
   },
   {
     "objectID": "about.html",
@@ -119,6 +196,27 @@
     "text": "Lab 7: The Advanced Encryption Standard"
   },
   {
+    "objectID": "MicroP/lab_reflect/lab1/lab1.html",
+    "href": "MicroP/lab_reflect/lab1/lab1.html",
+    "title": "FPGA and MCU Setup and Testing",
+    "section": "",
+    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
+    "href": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
+    "title": "FPGA and MCU Setup and Testing",
+    "section": "",
+    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
+    "href": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
+    "title": "FPGA and MCU Setup and Testing",
+    "section": "Results & Reflection",
+    "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter could be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning how to use Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had learned over a year ago in E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules."
+  },
+  {
     "objectID": "MicroP/lab_reflect/lab3/lab3.html",
     "href": "MicroP/lab_reflect/lab3/lab3.html",
     "title": "Keypad Scanner",
@@ -145,152 +243,5 @@
     "title": "Keypad Scanner",
     "section": "Block Diagram",
     "text": "Block Diagram\nFigure 4 below displays the module communication logic for the System Verilog code that programmed the FPGA. Notibly we have a top, button_decode_bounce, and seven_seg_decoder modules.\ntop: The overseeing connection module and direct communication with I/O. Also includes the time-multiplexer and Low Speed Oscillator (LSOSC) clk source.\nbutton_decode_bounce: button decoder, debouncer, and row scan generator.\nseven_seg_decoder: decodes the button pressed into 7-segment display outputs.\n\n\n\nFigure4: System Verilog module block diagram"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/first-post.html",
-    "href": "MicroP/lab_reflect/first-post.html",
-    "title": "First Post",
-    "section": "",
-    "text": "Hello!\nThis is my first post of my personal website.\nThis subpage is dedicated to my Micro-P lab reflections."
-  },
-  {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "My Portfolio",
-    "section": "",
-    "text": "E155 (Micro Ps) Course Website"
-  },
-  {
-    "objectID": "HPR/index.html#mechanical-design",
-    "href": "HPR/index.html#mechanical-design",
-    "title": "High Power Rocketry",
-    "section": "Mechanical Design",
-    "text": "Mechanical Design\nThe primary focus of the mechanical design was on creating a support structure to house all of the electronics. After determining which electronics needed to be placed in the avionics bay, we created models with the general shape of each component. These models were then added into an assembly, and the support structure was designed around them. The main considerations for this design were strength and fit. Strength was crucial because the rocket would experience accelerations of up to 30Gs, and fit was equally important due to the limited space and our ambitious objectives."
-  },
-  {
-    "objectID": "HPR/index.html#digital-design",
-    "href": "HPR/index.html#digital-design",
-    "title": "High Power Rocketry",
-    "section": "Digital Design",
-    "text": "Digital Design"
-  },
-  {
-    "objectID": "HPR/index.html#systems-design",
-    "href": "HPR/index.html#systems-design",
-    "title": "High Power Rocketry",
-    "section": "Systems Design",
-    "text": "Systems Design"
-  },
-  {
-    "objectID": "HPR/index.html#launch-day",
-    "href": "HPR/index.html#launch-day",
-    "title": "High Power Rocketry",
-    "section": "Launch Day",
-    "text": "Launch Day\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html",
-    "href": "MicroP/lab_reflect/lab4/lab4.html",
-    "title": "Digital Audio",
-    "section": "",
-    "text": "This lab utilized an SM231508-1 8ohm speaker, and a STM32 Nucleo-32 board with an on board STM32L432KC MCU in order to play a the song “Für Elise”. This was done without using CMSIS, instead using memory mapped I/O, and accessing specific memory addresses and peripherals in order to initialize and run the code on the MCU.\nPICTURE OF THE FINISHED HARDWARE"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#hardware",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#hardware",
-    "title": "Digital Audio",
-    "section": "Hardware",
-    "text": "Hardware\nA simple audio amplifier (LM386) chip was used to drive an 8-ohm speaker. The amplifier was powered by a 5V supply, and the input signal was a 3.3V PWM signal. Standard resistors and capacitors, as recommended in the datasheet for PWM audio driving, were utilized to produce cleaner sound output. A WHAT KIND OF POT potentiometer was also included in the circuit to function as a volume control interface.\nCIRCUIT DIAGRAM"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#file-structure",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#file-structure",
-    "title": "Digital Audio",
-    "section": "File Structure",
-    "text": "File Structure\nAll files used in the project, including the specifically generated Segger project files, are stored in the same local directory. Within the Segger project, the file structure is organized as shown in Figure 3. Green lines indicate #include directives in the main.c file, while the black arrows show the correlation between header files and their respective .c files."
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#software",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#software",
-    "title": "Digital Audio",
-    "section": "Software",
-    "text": "Software"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#clock-configuration",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#clock-configuration",
-    "title": "Digital Audio",
-    "section": "Clock Configuration",
-    "text": "Clock Configuration\nThis will include math to determine why we used the clck at the certain freuqnecy."
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#tim16-configuration",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#tim16-configuration",
-    "title": "Digital Audio",
-    "section": "TIM16 Configuration",
-    "text": "TIM16 Configuration\nTIM16 is the peripoheral that is used in order to produce the desired frequency PWM signal. First, the prescalar block (PSC) was selected at 255, in order to bring the TIM16 counter frequency closer to the deired range of frequencies. In order to output a desired frequency, we can consider equation [1].\n[1] \\(Freq=\\frac{SYSCLK}{PSC+1} * \\frac{1}{ARR+1}\\)"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-calculations",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-calculations",
-    "title": "Digital Audio",
-    "section": "Frequency & Duration Calculations",
-    "text": "Frequency & Duration Calculations\nThis will include the calculations that shows how accurate the frequencies and delays that we calculated using the TIM16"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#debugging",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#debugging",
-    "title": "Digital Audio",
-    "section": "Debugging",
-    "text": "Debugging\nThe built-in debugger was used to directly inspect register values to validate the design. By stepping through the execution one step at a time, the register values of interest could be monitored to ensure they were functioning as expected."
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#video-of-both-songs",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#video-of-both-songs",
-    "title": "Digital Audio",
-    "section": "Video of Both Songs",
-    "text": "Video of Both Songs"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#high-level-software-description",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#high-level-software-description",
-    "title": "Digital Audio",
-    "section": "High Level Software description",
-    "text": "High Level Software description\nThe Multi-Speed Internal (MSI) clock, combined with a PLL configuration, was used to achieve the desired system clock (SYSCLK) speed of 4 MHz. The SYSCLK was routed to the GPIOA and TIM16 peripherals. TIM16, a built-in timer, was used for PWM generation to drive the speaker. A simple counter function, implemented in main.c, operated based on the SYSCLK. The key parameters for setting the output frequency and note duration were TIM16’s internal registers: the Auto-Reload Register (ARR) and the prescaler (PSC), which worked together with the counter variable to acheive desired output."
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#clock-configuration-i-need-to-fix-values",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#clock-configuration-i-need-to-fix-values",
-    "title": "Digital Audio",
-    "section": "Clock Configuration (I NEED TO FIX VALUES)",
-    "text": "Clock Configuration (I NEED TO FIX VALUES)\nAs mentioned, the MSI onboard clock was used as an input to the PLL configuration, which allows for precise SYSCLK speed control. The PLL uses two divisors (M and R) and one multiplier (N), as shown in Figure 3, to achieve this function. With the MSI frequency configured to 1 MHz and setting M=1, N=4, and R=1, we can achieve the desired SYSCLK speed of 4 MHz."
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#system-clock-configuration",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#system-clock-configuration",
-    "title": "Digital Audio",
-    "section": "System Clock Configuration",
-    "text": "System Clock Configuration\nAs mentioned, the MSI onboard clock was used as an input to the PLL configuration, which allows for precise SYSCLK speed control. The PLL uses two divisors (M and R) and one multiplier (N), as shown in Figure 3, to achieve this function. With the MSI frequency at the default frequency of 4 MHz and setting M=1, N=8, and R=4, we can achieve the desired SYSCLK speed of 8 MHz."
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#tim16-frequency-generation",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#tim16-frequency-generation",
-    "title": "Digital Audio",
-    "section": "TIM16 & Frequency Generation",
-    "text": "TIM16 & Frequency Generation\nTIM16 is the peripheral used to produce the desired PWM signal frequency. First, the prescaler (PSC), as shown in Figure 4, was set to 255 to bring the TIM16 counter frequency closer to the desired range. To output a specific frequency, we can refer to Equation [1].\n\n\n\nFigure4: TIM16 Block Diagram\n\n\n[1] \\(Freq=\\frac{SYSCLK}{PSC+1} * \\frac{1}{ARR+1}\\)\nAs shown in Equation [1], Freq represents the desired PWM frequency, and ARR is the 16-bit register used to control this frequency. Therefore, Equation [1] can be simplified into the form of Equation [2], and further reduced to Equation [3]. Equation [3] was implemented in main.c to control the output frequency.\n[2] \\(ARR=\\frac{SYSCLK}{Freq*(PSC+1)}-1\\)\n[3] \\(ARR=\\frac{31250}{Freq}-1\\)"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-accuracy-analysis",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-accuracy-analysis",
-    "title": "Digital Audio",
-    "section": "Frequency & Duration Accuracy Analysis",
-    "text": "Frequency & Duration Accuracy Analysis\nTo demonstrate the accuracy of the PWM output frequencies, Equation [4] calculates the ARR value for a 659 Hz frequency, which corresponds to a note from Für Elise.\n[4] \\(ARR = \\frac{31250}{659}-1 = 46.42\\)\nThe new value of ARR is internally rounded to the nearest integer, resulting in ARR = 46. By rearranging Equation [3] to solve for Freq, as shown in Equation [5], we can substitute the new ARR value to calculate the output frequency.\n[5] \\(Freq = 31250*\\frac{1}{ARR+1} = 31250*\\frac{1}{46+1} = 664.89\\)\nThe percent error, as calculated in Equation [6], is significantly less than 1%, which is more than sufficient for the accuracy required in this application.\n[6] \\(\\%_\\text{error} = \\frac{664.89 - 659}{664.89} = 0.0089\\)"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-analysis",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-analysis",
-    "title": "Digital Audio",
-    "section": "Frequency & Duration Analysis",
-    "text": "Frequency & Duration Analysis\nThis section discusses the frequency accuracies, minimum and maximum frequencies, and their corresponding durations.\n\nFrequency Accuracy\nTo demonstrate the accuracy of the PWM output frequencies, Equation [4] calculates the ARR value for a 659 Hz frequency, which corresponds to a note from Für Elise.\n[4] \\(ARR = \\frac{31250}{659}-1 = 46.42\\)\nThe new value of ARR is internally rounded to the nearest integer, resulting in ARR = 46. By rearranging Equation [3] to solve for Freq, as shown in Equation [5], we can substitute the new ARR value to calculate the output frequency.\n[5] \\(Freq = 31250*\\frac{1}{ARR+1} = 31250*\\frac{1}{46+1} = 664.89\\)\nThe percent error, as calculated in Equation [6], is significantly less than 1%, which is more than sufficient for the accuracy required in this application.\n[6] \\(\\%_\\text{error} = \\frac{664.89 - 659}{664.89} = 0.0089\\)\n\n\nFrequency min/max\nThe minimum frequency corresponds to the maximum value of the 16-bit ARR register (\\(ARR_{\\text{max}} = 2^{16} - 1\\)). This can be calculated using Equation [7] below.\n[7] \\(Freq_{\\text{min}} = 31250*\\frac{1}{ARR_{\\text{max}}+1} = 31250*\\frac{1}{65535+1} = 0.48Hz\\)\nThe maximum frequency corresponds to the smallest value of the 16-bit ARR register (\\(ARR_{\\text{min}} = 1\\)). This can be calculated using Equation [8] below.\n[8] \\(Freq_{\\text{max}} = 31250*\\frac{1}{ARR_{\\text{min}}+1} = 31250*\\frac{1}{1+1} = 15.625kHz\\)\n\n\nDuration Accuracy\nHUH\n\n\nDuration min/max\nHUH"
   }
 ]
