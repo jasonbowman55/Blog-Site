@@ -45,9 +45,11 @@ TIM16 is the peripheral used to produce the desired PWM signal frequency. First,
 
 ![Figure5: TIM16 Block Diagram](images/TIM16_diagram.jpeg)
 
-[1] $Freq=\frac{SYSCLK}{PSC+1} * \frac{1}{ARR+1}$
+$$
+Freq=\frac{SYSCLK}{PSC+1} * \frac{1}{ARR+1}
+$$ {#eq-freq-gen}
 
-As shown in Equation [1], Freq represents the desired PWM frequency, and ARR is the 16-bit register used to control this frequency. Therefore, Equation [1] can be simplified into the form of Equation [2], and further reduced to Equation [3]. Equation [3] was implemented in main.c to control the output frequency.
+As shown in @eq-freq-gen Equation [1], Freq represents the desired PWM frequency, and ARR is the 16-bit register used to control this frequency. Therefore, Equation [1] can be simplified into the form of Equation [2], and further reduced to Equation [3]. Equation [3] was implemented in main.c to control the output frequency.
 
 [2] $ARR=\frac{SYSCLK}{Freq*(PSC+1)}-1$
 
@@ -86,11 +88,11 @@ For the following calculations, please consider the relationship given in equati
 
 [9] ${ms_{\text{desired}}} = \frac{ARR}{100}$
 
-The **minimum** duration corresponds to the maximum value of the 16-bit ARR register ($ARR_{\text{max}} = 2^{16} - 1$). This can be calculated using Equation [10] below.
+The **maximum** duration corresponds to the maximum value of the 16-bit ARR register ($ARR_{\text{max}} = 2^{16} - 1$). This can be calculated using Equation [10] below.
 
 [10] ${ms_{\text{desired}}} = \frac{65535}{100}$ = 655.35ms
 
-The **maximum** duration corresponds to the smallest value of the 16-bit ARR register ($ARR_{\text{min}} = 1$). This can be calculated using Equation [11] below.
+The **minimum** duration corresponds to the smallest value of the 16-bit ARR register ($ARR_{\text{min}} = 1$). This can be calculated using Equation [11] below.
 
 [11] ${ms_{\text{desired}}} = \frac{1}{100}$ = 0.01ms
 
