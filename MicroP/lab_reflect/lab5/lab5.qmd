@@ -2,11 +2,56 @@
 title: "Interrupts"
 description: "Lab 5"
 author: "Jason Bowman"
-# date: ""
+date: "10-23-24"
 categories:
   - Reflection
   - Lab Report
 draft: false
 code-links:
   - icon: github
+    text: Lab 5 GitHub
+    href: https://github.com/jasonbowman55/microP-lab5.git
 ---
+
+# Intro & Design Approach
+This lab utilized a 25GA-370 DC motor with internal quadrature encoders to output the current RPM and motor spin direction via the debug terminal in Segger. The main focus of the lab was on interrupts, where we treated the encoder signals as interrupt events. These interrupts were then used to calculate the desired information.
+
+**Picture of the final circuit**
+
+# Design
+*This section goes into the hardware and software design specifics*
+
+## Hardware
+This lab features a simple circuit design, consisting of two main components:
+
+(1) The motor must be powered by an external power source, separate from the 5V output pin on the protoboard, allowing us to vary the voltage and observe changes in RPM both in real life and in the terminal.
+
+(2) The quadrature encoders must be powered with a constant 5V and connected to the correct pins that are 5V compatible, as specified in the STM32L432KC reference manual.
+
+Hardware design seen below in Figure 2.
+![Figure2: Circuit schematic](images/circuit_schematic.jpeg)
+
+## Software
+This lab implaments an interupt design, for which there exists a seperate function that can be imediately called in the case where a set external interupt
+
+## Configuration & Setup
+Firstly, all related peripherals must be configured, including FLASH memory, CLK, GPIO, and EXTI. Except for EXTI (external interrupts), these peripherals have been utilized in previous labs. Therefore, the primary focus of the configuration discussion will be on the EXTI peripheral.
+
+There are a few steps associated with the configuration of external register inputs from PA6 and PA8:
+
+(1) Enable the external interrupt mask associated with PA6 and PA8 (EXTI_IMR1_TMx [x=6,8], respectively).
+(2) Enable both rising and falling edge triggers (EXTI_RTSR1_RTx and EXTI_FTSR1_FTx [x=6,8]).
+(3) Enable external interrupt lines 5-9, which include lines 6 and 8, corresponding to the desired GPIO pins. This is accomplished using NVIC->ISER[0] |= (1 << EXTI9_5_IRQn).
+
+Regarding the hardware setup and functionality confirmation, I verified that the A and B encoders output the desired waveforms, as confirmed with the RIGOL MSO1104 oscilloscope, as shown in Figure 3.
+
+![Figure3: Circuit schematic](images/oscilliscope_verify.jpeg)
+
+I was able to confirm that my GPIO and external interrupt handler block in my code worked correctly by embedding a print statement within the EXTI9_5_IRQHandler function. I printed the value of delta, the variable used to measure the time difference between interrupt events. Additionally, I printed the values of my PA6 and PA8 pins, which receive the A and B interrupt signals, verifying that they alternate between 1 and 0 as expected. This confirms that my code is receiving data from the hardware as intended.
+
+## Calculations
+*This section will cover the mathematical portion of this lab*
+
+### RPM Calculation
+
+### Direction Calculation
