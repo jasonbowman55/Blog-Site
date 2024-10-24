@@ -279,10 +279,8 @@ window.Quarto = {
 <figcaption>Figure5: TIM16 Block Diagram</figcaption>
 </figure>
 </div>
-<p><span id="eq-freq-gen"><span class="math display">\[
-Freq=\frac{SYSCLK}{PSC+1} * \frac{1}{ARR+1}
-\tag{1}\]</span></span></p>
-<p>As shown in <a href="#eq-freq-gen" class="quarto-xref">Equation&nbsp;1</a> Equation [1], Freq represents the desired PWM frequency, and ARR is the 16-bit register used to control this frequency. Therefore, Equation [1] can be simplified into the form of Equation [2], and further reduced to Equation [3]. Equation [3] was implemented in main.c to control the output frequency.</p>
+<p>[1] <span class="math inline">\(Freq=\frac{SYSCLK}{PSC+1} * \frac{1}{ARR+1}\)</span></p>
+<p>As shown in Equation [1], Freq represents the desired PWM frequency, and ARR is the 16-bit register used to control this frequency. Therefore, Equation [1] can be simplified into the form of Equation [2], and further reduced to Equation [3]. Equation [3] was implemented in main.c to control the output frequency.</p>
 <p>[2] <span class="math inline">\(ARR=\frac{SYSCLK}{Freq*(PSC+1)}-1\)</span></p>
 <p>[3] <span class="math inline">\(ARR=\frac{31250}{Freq}-1\)</span></p>
 </section>
