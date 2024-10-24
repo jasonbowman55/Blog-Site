@@ -282,8 +282,8 @@ window.Quarto = {
 <p><em>This section will cover the mathematical portion of this lab</em></p>
 <section id="rps-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="rps-calculation">RPS Calculation</h3>
-<p>The calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of 2 binary interrupts (resulting in 4 unique combinations), the RPS is determined by Equation [1].</p>
-<p>[1] <span class="math inline">\(rps = \frac{1000}{PPR*delta*4}\)</span></p>
+<p>The calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of the two interrupts in which they are both high (1), the RPS is determined by Equation [1].</p>
+<p>[1] <span class="math inline">\(rps = \frac{1000}{PPR*delta}\)</span></p>
 </section>
 <section id="ms-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="ms-calculation">m/s Calculation</h3>

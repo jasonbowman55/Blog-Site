@@ -61,9 +61,9 @@ I was able to confirm that my GPIO and external interrupt handler block in my co
 *This section will cover the mathematical portion of this lab*
 
 ### RPS Calculation
-The calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of 2 binary interrupts (resulting in 4 unique combinations), the RPS is determined by Equation [1].
+The calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of the two interrupts in which they are both high (1), the RPS is determined by Equation [1].
 
-[1] $rps = \frac{1000}{PPR*delta*4}$
+[1] $rps = \frac{1000}{PPR*delta}$
 
 ### m/s Calculation
 This code also enables the display of linear velocity in meters per second (m/s) for the DC motor. This is achieved by calculating the radius of the motor shaft from the diameter specified in the data sheet, which is then used to determine the circumference "C". The circumference is multiplied by the RPS value, as shown in Equation [2], to obtain the final linear velocity in m/s.
