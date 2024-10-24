@@ -29,23 +29,31 @@ This lab features a simple circuit design, consisting of two main components:
 (2) The quadrature encoders must be powered with a constant 5V and connected to the correct pins that are 5V compatible, as specified in the STM32L432KC reference manual.
 
 Hardware design seen below in Figure 2.
+
 ![Figure2: Circuit schematic](images/circuit_schematic.jpeg)
 
 ## Software
-This lab implaments an interupt design, for which there exists a seperate function that can be imediately called in the case where a set external interupt
+This lab implements an interrupt design, where a separate function is immediately called when certain external interrupts are triggered. In tandem with the use of an internal timer, this interrupt handler can count the clock cycles between one of the four possible state types determined by the two quadrature encoder combinations. In this case, the scenario occurs when both interrupt A = 1 and interrupt B = 1.
+
+Once an interrupt (either the rising or falling edge of one of the two interrupt signals) is triggered, the interrupt handler is entered. Depending on the direction of the motor, one of the two "if" statements (as shown in Figure 3) is executed. This process repeats every time the interrupt handler is entered under the specified scenario.
+
+The output is a delta value, which provides information about the number of clock cycles between each interrupt. This data can be used to extrapolate speed, with the sign of the delta (positive or negative) indicating the direction of the motor.
+
+![Figure3: Software Block Diagram](images/block_diagram.jpeg)
 
 ## Configuration & Setup
 Firstly, all related peripherals must be configured, including FLASH memory, CLK, GPIO, and EXTI. Except for EXTI (external interrupts), these peripherals have been utilized in previous labs. Therefore, the primary focus of the configuration discussion will be on the EXTI peripheral.
 
 There are a few steps associated with the configuration of external register inputs from PA6 and PA8:
 
-(1) Enable the external interrupt mask associated with PA6 and PA8 (EXTI_IMR1_TMx [x=6,8], respectively).
-(2) Enable both rising and falling edge triggers (EXTI_RTSR1_RTx and EXTI_FTSR1_FTx [x=6,8]).
-(3) Enable external interrupt lines 5-9, which include lines 6 and 8, corresponding to the desired GPIO pins. This is accomplished using NVIC->ISER[0] |= (1 << EXTI9_5_IRQn).
+(1) Enable global interrupts using "__enable_irq();".
+(2) Enable the external interrupt mask associated with PA6 and PA8 (EXTI_IMR1_TMx [x=6,8], respectively).
+(3) Enable both rising and falling edge triggers (EXTI_RTSR1_RTx and EXTI_FTSR1_FTx [x=6,8]).
+(4) Enable external interrupt lines 5-9, which include lines 6 and 8, corresponding to the desired GPIO pins. This is accomplished using NVIC->ISER[0] |= (1 << EXTI9_5_IRQn).
 
-Regarding the hardware setup and functionality confirmation, I verified that the A and B encoders output the desired waveforms, as confirmed with the RIGOL MSO1104 oscilloscope, as shown in Figure 3.
+Regarding the hardware setup and functionality confirmation, I verified that the A and B encoders output the desired waveforms, as confirmed with the RIGOL MSO1104 oscilloscope, as shown in Figure 4.
 
-![Figure3: Circuit schematic](images/oscilliscope_verify.jpeg)
+![Figure4: Circuit schematic](images/oscilliscope_verify.jpeg)
 
 I was able to confirm that my GPIO and external interrupt handler block in my code worked correctly by embedding a print statement within the EXTI9_5_IRQHandler function. I printed the value of delta, the variable used to measure the time difference between interrupt events. Additionally, I printed the values of my PA6 and PA8 pins, which receive the A and B interrupt signals, verifying that they alternate between 1 and 0 as expected. This confirms that my code is receiving data from the hardware as intended.
 
@@ -54,4 +62,11 @@ I was able to confirm that my GPIO and external interrupt handler block in my co
 
 ### RPM Calculation
 
+
 ### Direction Calculation
+The direction calculation is straightforward. Based on observations made with an oscilloscope, the sign of the delta value, assigned within the two different "if" statements in the interrupt handler, determines the motor's direction. Depending on whether the delta is positive or negative, the motor is identified as spinning clockwise or counterclockwise and printed to the terminal.
+
+# Results
+This lab resulted in a functioning implementation of a quadrature encoder on a DC motor, which displayed speed and direction in the Segger debugger terminal.
+
+# Reflection

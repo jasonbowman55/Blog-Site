@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jason Bowman">
+<meta name="dcterms.date" content="2024-10-23">
 <meta name="description" content="Lab 5">
 
 <title>Interrupts – My Portfolio</title>
@@ -122,8 +123,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-github"></i></a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro-design-approach" id="toc-intro-design-approach" class="nav-link active" data-scroll-target="#intro-design-approach">Intro &amp; Design Approach</a></li>
+  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a>
+  <ul class="collapse">
+  <li><a href="#hardware" id="toc-hardware" class="nav-link" data-scroll-target="#hardware">Hardware</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
+  <li><a href="#configuration-setup" id="toc-configuration-setup" class="nav-link" data-scroll-target="#configuration-setup">Configuration &amp; Setup</a></li>
+  <li><a href="#calculations" id="toc-calculations" class="nav-link" data-scroll-target="#calculations">Calculations</a>
+  <ul class="collapse">
+  <li><a href="#rpm-calculation" id="toc-rpm-calculation" class="nav-link" data-scroll-target="#rpm-calculation">RPM Calculation</a></li>
+  <li><a href="#direction-calculation" id="toc-direction-calculation" class="nav-link" data-scroll-target="#direction-calculation">Direction Calculation</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/jasonbowman55/microP-lab5.git"><i class="bi bi-github"></i>Lab 5 GitHub</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -152,6 +170,12 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 23, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -161,8 +185,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="intro-design-approach" class="level1">
+<h1>Intro &amp; Design Approach</h1>
+<p>This lab utilized a 25GA-370 DC motor with internal quadrature encoders to output the current RPM and motor spin direction via the debug terminal in Segger. The main focus of the lab was on interrupts, where we treated the encoder signals as interrupt events. These interrupts were then used to calculate the desired information.</p>
+<p><strong>Picture of the final circuit</strong></p>
+</section>
+<section id="design" class="level1">
+<h1>Design</h1>
+<p><em>This section goes into the hardware and software design specifics</em></p>
+<section id="hardware" class="level2">
+<h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
+<p>This lab features a simple circuit design, consisting of two main components:</p>
+<ol type="1">
+<li><p>The motor must be powered by an external power source, separate from the 5V output pin on the protoboard, allowing us to vary the voltage and observe changes in RPM both in real life and in the terminal.</p></li>
+<li><p>The quadrature encoders must be powered with a constant 5V and connected to the correct pins that are 5V compatible, as specified in the STM32L432KC reference manual.</p></li>
+</ol>
+<p>Hardware design seen below in Figure 2.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/circuit_schematic.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure2: Circuit schematic</figcaption>
+</figure>
+</div>
+</section>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
+<p>This lab implements an interrupt design, where a separate function is immediately called when certain external interrupts are triggered. In tandem with the use of an internal timer, this interrupt handler can count the clock cycles between one of the four possible state types determined by the two quadrature encoder combinations. In this case, the scenario occurs when both interrupt A = 1 and interrupt B = 1.</p>
+<p>Once an interrupt (either the rising or falling edge of one of the two interrupt signals) is triggered, the interrupt handler is entered. Depending on the direction of the motor, one of the two “if” statements (as shown in Figure 3) is executed. This process repeats every time the interrupt handler is entered under the specified scenario.</p>
+<p>The output is a delta value, which provides information about the number of clock cycles between each interrupt. This data can be used to extrapolate speed, with the sign of the delta (positive or negative) indicating the direction of the motor.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/block_diagram.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure3: Software Block Diagram</figcaption>
+</figure>
+</div>
+</section>
+<section id="configuration-setup" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-setup">Configuration &amp; Setup</h2>
+<p>Firstly, all related peripherals must be configured, including FLASH memory, CLK, GPIO, and EXTI. Except for EXTI (external interrupts), these peripherals have been utilized in previous labs. Therefore, the primary focus of the configuration discussion will be on the EXTI peripheral.</p>
+<p>There are a few steps associated with the configuration of external register inputs from PA6 and PA8:</p>
+<ol type="1">
+<li>Enable the external interrupt mask associated with PA6 and PA8 (EXTI_IMR1_TMx [x=6,8], respectively).</li>
+<li>Enable both rising and falling edge triggers (EXTI_RTSR1_RTx and EXTI_FTSR1_FTx [x=6,8]).</li>
+<li>Enable external interrupt lines 5-9, which include lines 6 and 8, corresponding to the desired GPIO pins. This is accomplished using NVIC-&gt;ISER[0] |= (1 &lt;&lt; EXTI9_5_IRQn).</li>
+</ol>
+<p>Regarding the hardware setup and functionality confirmation, I verified that the A and B encoders output the desired waveforms, as confirmed with the RIGOL MSO1104 oscilloscope, as shown in Figure 4.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oscilliscope_verify.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure4: Circuit schematic</figcaption>
+</figure>
+</div>
+<p>I was able to confirm that my GPIO and external interrupt handler block in my code worked correctly by embedding a print statement within the EXTI9_5_IRQHandler function. I printed the value of delta, the variable used to measure the time difference between interrupt events. Additionally, I printed the values of my PA6 and PA8 pins, which receive the A and B interrupt signals, verifying that they alternate between 1 and 0 as expected. This confirms that my code is receiving data from the hardware as intended.</p>
+</section>
+<section id="calculations" class="level2">
+<h2 class="anchored" data-anchor-id="calculations">Calculations</h2>
+<p><em>This section will cover the mathematical portion of this lab</em></p>
+<section id="rpm-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="rpm-calculation">RPM Calculation</h3>
+</section>
+<section id="direction-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="direction-calculation">Direction Calculation</h3>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -257,7 +345,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
