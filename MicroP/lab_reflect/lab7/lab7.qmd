@@ -2,11 +2,42 @@
 title: "The Advanced Encryption Standard"
 description: "Lab 7"
 author: "Jason Bowman"
-# date: ""
+date: "10-30-24"
 categories:
   - Reflection
   - Lab Report
 draft: false
 code-links:
   - icon: github
+    text: Lab 7 GitHub
+    href: https://github.com/jasonbowman55/microP-lab7.git
 ---
+
+# Intro & Design Approach
+The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.
+
+This lab requires implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. A pipelining method was applied to maximize efficiency and minimize storage usage throughout the process.
+
+This lab requires our STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU, to send a 128-bit plaintext and key to the FPGA via SPI. The FPGA will then perform the AES-128 algorithm to standard and return the resulting ciphertext to the MCU. The MCU knows the expected ciphertext and will illuminate an onboard LED if it receives the correct result.
+
+# AES-128 Functionality
+*this section provides an overview of the AES-128 algorithm, and will be referenced in the design section*
+
+## Key Schedule
+
+###
+
+# Design
+*This section goes into the hardware and software design specifics*
+
+## Hardware
+
+## Software
+
+### Block Diagram
+
+### FSM
+
+# Results
+
+# Reflection
