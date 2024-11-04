@@ -102,7 +102,7 @@
     "href": "MicroP/index.html",
     "title": "Lab Reflections",
     "section": "",
-    "text": "The Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nOct 23, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
+    "text": "The Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nOct 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nOct 23, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "HPR/index.html",
@@ -278,5 +278,33 @@
     "title": "Interrupts",
     "section": "Calculations",
     "text": "Calculations\nThis section will cover the mathematical portion of this lab\n\nRPS Calculation\nThe calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of the two interrupts in which they are both high (1), the RPS is determined by Equation [1].\n[1] \\(rps = \\frac{1000}{PPR*delta}\\)\n\n\nm/s Calculation\nThis code also enables the display of linear velocity in meters per second (m/s) for the DC motor. This is achieved by calculating the radius of the motor shaft from the diameter specified in the data sheet, which is then used to determine the circumference “C”. The circumference is multiplied by the RPS value, as shown in Equation [2], to obtain the final linear velocity in m/s.\n[2] \\(m/s = RPS*C\\)\n\n\nDirection Calculation\nThe direction calculation is straightforward. Based on observations made with an oscilloscope, the sign of the delta value, assigned within the two different “if” statements in the interrupt handler, determines the motor’s direction. Depending on whether the delta is positive or negative, the motor is identified as spinning clockwise or counterclockwise and printed to the terminal."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html",
+    "href": "MicroP/lab_reflect/lab7/lab7.html",
+    "title": "The Advanced Encryption Standard",
+    "section": "",
+    "text": "The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.\nThis lab requires implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. A pipelining method was applied to maximize efficiency and minimize storage usage throughout the process.\nThis lab requires our STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU, to send a 128-bit plaintext and key to the FPGA via SPI. The FPGA will then perform the AES-128 algorithm to standard and return the resulting ciphertext to the MCU. The MCU knows the expected ciphertext and will illuminate an onboard LED if it receives the correct result.\n\n\n\nFigure1: Main Block Diagram"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#key-schedule",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#key-schedule",
+    "title": "The Advanced Encryption Standard",
+    "section": "Key Schedule",
+    "text": "Key Schedule\nThe key schedule in AES-128, also known as key expansion, is an essential part of the encryption process. It generates a unique 128-bit round key for each of the 10 rounds, based on the original 128-bit cipher key. The key schedule works through several steps:\nRotWord: This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.\n\n\n\nFigure2: RotWord step in Key Expansion\n\n\nSubWord: Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.\n\n\n\nFigure3: SubWord step in Key Expansion\n\n\nRcon: A round constant specific to each round is XORed with the first word of each four-word block, ensuring each round key is unique.\n\n\n\nFigure4: Rcon step in Key Expansion\n\n\nFill Round Key: The remaining words of each round key are derived by XORing parts of the previous round key, filling out the key material for each round. This is done recusively, as each round is XORed with the previous output from the recursive XOR. This is done until a new round key is produced.\n\n\n\nFigure5: Recursive XOR (aka Fill Round Key) step in Key Expansion\n\n\nAs each new round key is created, it is then used as the basis for generating the next round key. The first word of the new round key goes through the RotWord transformation, followed by other steps in the key expansion process, ensuring that each subsequent round key is derived from the previous one in a recursive, circular fashion. This process continues until all round keys are generated for the encryption."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#hardware",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#hardware",
+    "title": "The Advanced Encryption Standard",
+    "section": "Hardware",
+    "text": "Hardware\nThis will be written after it is connected to the MCU"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#software",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#software",
+    "title": "The Advanced Encryption Standard",
+    "section": "Software",
+    "text": "Software\nThe scope of this lab was mainly the FPGA, SystemVerilog, implamenting the AES-128 onto the FPGA. As seen below\n\nFSM"
   }
 ]

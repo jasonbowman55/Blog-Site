@@ -20,24 +20,51 @@ This lab requires implementing the AES algorithm on our UPduino v3.1 UP5K FPGA u
 
 This lab requires our STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU, to send a 128-bit plaintext and key to the FPGA via SPI. The FPGA will then perform the AES-128 algorithm to standard and return the resulting ciphertext to the MCU. The MCU knows the expected ciphertext and will illuminate an onboard LED if it receives the correct result.
 
+![Figure1: Main Block Diagram](images/main_bd.jpeg)
+
 # AES-128 Functionality
 *this section provides an overview of the AES-128 algorithm, and will be referenced in the design section*
 
 ## Key Schedule
+The key schedule in AES-128, also known as key expansion, is an essential part of the encryption process. It generates a unique 128-bit round key for each of the 10 rounds, based on the original 128-bit cipher key. The key schedule works through several steps:
 
-###
+**RotWord:** This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.
+
+![Figure2: RotWord step in Key Expansion](images/rot_word.jpeg)
+
+**SubWord:** Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte's value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.
+
+![Figure3: SubWord step in Key Expansion](images/sbox.jpeg)
+
+**Rcon:** A round constant specific to each round is XORed with the first word of each four-word block, ensuring each round key is unique.
+
+![Figure4: Rcon step in Key Expansion](images/rcon.jpeg)
+
+**Fill Round Key:** The remaining words of each round key are derived by XORing parts of the previous round key, filling out the key material for each round. This is done recusively, as each round is XORed with the previous output from the recursive XOR. This is done until a new round key is produced.
+
+![Figure5: Recursive XOR (aka Fill Round Key) step in Key Expansion](images/recursive_xor.jpeg)
+
+As each new round key is created, it is then used as the basis for generating the next round key. The first word of the new round key goes through the RotWord transformation, followed by other steps in the key expansion process, ensuring that each subsequent round key is derived from the previous one in a recursive, circular fashion. This process continues until all round keys are generated for the encryption.
+
+## Encryption Process
+
+
 
 # Design
 *This section goes into the hardware and software design specifics*
 
 ## Hardware
+This will be written after it is connected to the MCU
 
 ## Software
+The scope of this lab focused on the FPGA, SystemVerilog, and implementing AES-128 encryption on the FPGA. A pipeline design, shown in Figure 1, was selected for its ability to hold values between rounds using buffer flip-flops. A timer was used to introduce necessary delays between rounds, allowing sufficient time for propagation through each step of the Key Schedule and Encryption Processs.
 
-### Block Diagram
+![Figure5: Recursive XOR (aka Fill Round Key) step in Key Expansion](images/recursive_xor.jpeg)
 
-### FSM
+
 
 # Results
+
+## Simulation
 
 # Reflection

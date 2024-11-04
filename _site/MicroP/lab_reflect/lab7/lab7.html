@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jason Bowman">
+<meta name="dcterms.date" content="2024-10-30">
 <meta name="description" content="Lab 7">
 
 <title>The Advanced Encryption Standard – My Portfolio</title>
@@ -122,8 +123,28 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-github"></i></a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro-design-approach" id="toc-intro-design-approach" class="nav-link active" data-scroll-target="#intro-design-approach">Intro &amp; Design Approach</a></li>
+  <li><a href="#aes-128-functionality" id="toc-aes-128-functionality" class="nav-link" data-scroll-target="#aes-128-functionality">AES-128 Functionality</a>
+  <ul class="collapse">
+  <li><a href="#key-schedule" id="toc-key-schedule" class="nav-link" data-scroll-target="#key-schedule">Key Schedule</a></li>
+  </ul></li>
+  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a>
+  <ul class="collapse">
+  <li><a href="#hardware" id="toc-hardware" class="nav-link" data-scroll-target="#hardware">Hardware</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
+  <ul class="collapse">
+  <li><a href="#fsm" id="toc-fsm" class="nav-link" data-scroll-target="#fsm">FSM</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  </ul>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/jasonbowman55/microP-lab7.git"><i class="bi bi-github"></i>Lab 7 GitHub</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -152,6 +173,12 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 30, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -161,8 +188,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="intro-design-approach" class="level1">
+<h1>Intro &amp; Design Approach</h1>
+<p>The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.</p>
+<p>This lab requires implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. A pipelining method was applied to maximize efficiency and minimize storage usage throughout the process.</p>
+<p>This lab requires our STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU, to send a 128-bit plaintext and key to the FPGA via SPI. The FPGA will then perform the AES-128 algorithm to standard and return the resulting ciphertext to the MCU. The MCU knows the expected ciphertext and will illuminate an onboard LED if it receives the correct result.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/main_bd.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure1: Main Block Diagram</figcaption>
+</figure>
+</div>
+</section>
+<section id="aes-128-functionality" class="level1">
+<h1>AES-128 Functionality</h1>
+<p><em>this section provides an overview of the AES-128 algorithm, and will be referenced in the design section</em></p>
+<section id="key-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="key-schedule">Key Schedule</h2>
+<p>The key schedule in AES-128, also known as key expansion, is an essential part of the encryption process. It generates a unique 128-bit round key for each of the 10 rounds, based on the original 128-bit cipher key. The key schedule works through several steps:</p>
+<p><strong>RotWord:</strong> This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rot_word.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure2: RotWord step in Key Expansion</figcaption>
+</figure>
+</div>
+<p><strong>SubWord:</strong> Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sbox.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure3: SubWord step in Key Expansion</figcaption>
+</figure>
+</div>
+<p><strong>Rcon:</strong> A round constant specific to each round is XORed with the first word of each four-word block, ensuring each round key is unique.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rcon.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure4: Rcon step in Key Expansion</figcaption>
+</figure>
+</div>
+<p><strong>Fill Round Key:</strong> The remaining words of each round key are derived by XORing parts of the previous round key, filling out the key material for each round. This is done recusively, as each round is XORed with the previous output from the recursive XOR. This is done until a new round key is produced.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/recursive_xor.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure5: Recursive XOR (aka Fill Round Key) step in Key Expansion</figcaption>
+</figure>
+</div>
+<p>As each new round key is created, it is then used as the basis for generating the next round key. The first word of the new round key goes through the RotWord transformation, followed by other steps in the key expansion process, ensuring that each subsequent round key is derived from the previous one in a recursive, circular fashion. This process continues until all round keys are generated for the encryption.</p>
+</section>
+</section>
+<section id="design" class="level1">
+<h1>Design</h1>
+<p><em>This section goes into the hardware and software design specifics</em></p>
+<section id="hardware" class="level2">
+<h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
+<p>This will be written after it is connected to the MCU</p>
+</section>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
+<p>The scope of this lab was mainly the FPGA, SystemVerilog, implamenting the AES-128 onto the FPGA. As seen below</p>
+<section id="fsm" class="level3">
+<h3 class="anchored" data-anchor-id="fsm">FSM</h3>
+</section>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+</section>
+<section id="reflection" class="level1">
+<h1>Reflection</h1>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -257,7 +354,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
