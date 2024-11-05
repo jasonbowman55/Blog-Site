@@ -67,4 +67,6 @@ The scope of this lab focused on the FPGA, SystemVerilog, and implementing AES-1
 
 ## Simulation
 
+![FigureXX: Wave form simulation containing relavent variables](images/wave_2.jpeg)
+
 # Reflection

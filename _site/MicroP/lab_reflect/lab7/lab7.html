@@ -131,16 +131,17 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#aes-128-functionality" id="toc-aes-128-functionality" class="nav-link" data-scroll-target="#aes-128-functionality">AES-128 Functionality</a>
   <ul class="collapse">
   <li><a href="#key-schedule" id="toc-key-schedule" class="nav-link" data-scroll-target="#key-schedule">Key Schedule</a></li>
+  <li><a href="#encryption-process" id="toc-encryption-process" class="nav-link" data-scroll-target="#encryption-process">Encryption Process</a></li>
   </ul></li>
   <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a>
   <ul class="collapse">
   <li><a href="#hardware" id="toc-hardware" class="nav-link" data-scroll-target="#hardware">Hardware</a></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
-  <li><a href="#fsm" id="toc-fsm" class="nav-link" data-scroll-target="#fsm">FSM</a></li>
+  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
   </ul>
 <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/jasonbowman55/microP-lab7.git"><i class="bi bi-github"></i>Lab 7 GitHub</a></li></ul></div></nav>
@@ -236,6 +237,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>As each new round key is created, it is then used as the basis for generating the next round key. The first word of the new round key goes through the RotWord transformation, followed by other steps in the key expansion process, ensuring that each subsequent round key is derived from the previous one in a recursive, circular fashion. This process continues until all round keys are generated for the encryption.</p>
 </section>
+<section id="encryption-process" class="level2">
+<h2 class="anchored" data-anchor-id="encryption-process">Encryption Process</h2>
+</section>
 </section>
 <section id="design" class="level1">
 <h1>Design</h1>
@@ -246,14 +250,26 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="software" class="level2">
 <h2 class="anchored" data-anchor-id="software">Software</h2>
-<p>The scope of this lab was mainly the FPGA, SystemVerilog, implamenting the AES-128 onto the FPGA. As seen below</p>
-<section id="fsm" class="level3">
-<h3 class="anchored" data-anchor-id="fsm">FSM</h3>
-</section>
+<p>The scope of this lab focused on the FPGA, SystemVerilog, and implementing AES-128 encryption on the FPGA. A pipeline design, shown in Figure 1, was selected for its ability to hold values between rounds using buffer flip-flops. A timer was used to introduce necessary delays between rounds, allowing sufficient time for propagation through each step of the Key Schedule and Encryption Processs.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/recursive_xor.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure5: Recursive XOR (aka Fill Round Key) step in Key Expansion</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
+<section id="simulation" class="level2">
+<h2 class="anchored" data-anchor-id="simulation">Simulation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/wave_2.jpeg" class="img-fluid figure-img"></p>
+<figcaption>FigureXX: Wave form simulation containing relavent variables</figcaption>
+</figure>
+</div>
+</section>
 </section>
 <section id="reflection" class="level1">
 <h1>Reflection</h1>

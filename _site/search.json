@@ -305,6 +305,20 @@
     "href": "MicroP/lab_reflect/lab7/lab7.html#software",
     "title": "The Advanced Encryption Standard",
     "section": "Software",
-    "text": "Software\nThe scope of this lab was mainly the FPGA, SystemVerilog, implamenting the AES-128 onto the FPGA. As seen below\n\nFSM"
+    "text": "Software\nThe scope of this lab focused on the FPGA, SystemVerilog, and implementing AES-128 encryption on the FPGA. A pipeline design, shown in Figure 1, was selected for its ability to hold values between rounds using buffer flip-flops. A timer was used to introduce necessary delays between rounds, allowing sufficient time for propagation through each step of the Key Schedule and Encryption Processs.\n\n\n\nFigure5: Recursive XOR (aka Fill Round Key) step in Key Expansion"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
+    "title": "The Advanced Encryption Standard",
+    "section": "Encryption Process",
+    "text": "Encryption Process"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#simulation",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#simulation",
+    "title": "The Advanced Encryption Standard",
+    "section": "Simulation",
+    "text": "Simulation\n\n\n\nFigureXX: Wave form simulation containing relavent variables"
   }
 ]
