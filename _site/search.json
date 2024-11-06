@@ -305,27 +305,6 @@
     "href": "MicroP/lab_reflect/lab7/lab7.html#software",
     "title": "The Advanced Encryption Standard",
     "section": "Software",
-    "text": "Software\nThe scope of this lab focused on using the FPGA and SystemVerilog to implement AES-128 encryption. A pipelined design, illustrated in Figure 9 below, was chosen for its ability to store intermediate values between rounds using buffer flip-flops. A timer introduced necessary delays between rounds, ensuring sufficient propagation time through each step of the Key Schedule and Encryption Process.\n\n\n\nFigure9: Block Diagram\n\n\nThe block diagram shows various source signals (in blue) and enable signals (in red), which determine the selection of intermediate versions of the ciphertext or plaintext, as well as the specific round key or original key in use. Each enable signal is configured to store values at the end of 5 clock cycles, providing sufficient propagation time for calculations as previously mentioned. Each round can be represented as shown in Figure 10, with each state labeled as “S”, meaning state, followed by the round number.\nçƒ©"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
-    "title": "The Advanced Encryption Standard",
-    "section": "Encryption Process",
-    "text": "Encryption Process\nThe encryption process is classified as all of the sequential and combinational logic performed on the cyhertext, and intermediate versions of that cyphertext, throughout all rounds in the full AES-128 encryption standard. This process depends on the current round key, which is generated in parallel with the encryption process ensuring that the correct round key is used for its intended encryption round.\nSub Bytes: Similar to Su bWord in the key expansion process, however each byte in the full 128-bit cyphertext undergoes an S-box substitution, adding nonlinearity to the key schedule. Each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid, as done in Figure 3 under key schedule.\nShift Rows: Each row in the 4x4, byte-wise, column-major representation of the 128-bit ciphertext is shifted left by one byte, with any overflow bytes wrapping around to the right side sequentially.\n\n\n\nFigure6: Shift Rows step in the encryption process\n\n\nMix Cols: Each column of the 4x4 byte matrix is transformed using Galois Field (GF(2^8)) arithmetic to mix and spread out the bytes, enhancing diffusion in the encryption.\n\n\n\nFigure7: Mix Cols step in the encryption process\n\n\nAdd Round Key: This step combines the current ciphertext with the current round key using an XOR operation, ensuring all round keys are unique.\n\n\n\nFigure8: Add Ronnd Key step to the encryption process"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#simulation",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#simulation",
-    "title": "The Advanced Encryption Standard",
-    "section": "Simulation",
-    "text": "Simulation"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#aes-128-note",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#aes-128-note",
-    "title": "The Advanced Encryption Standard",
-    "section": "AES-128 Note",
-    "text": "AES-128 Note\nIt is important to note that not all rounds of the AES-128 encrption standard are the same, in particular the first and last round. For informaiton and helpful demonstration of all related steps of AES-128, see this website."
+    "text": "Software\nThe scope of this lab was mainly the FPGA, SystemVerilog, implamenting the AES-128 onto the FPGA. As seen below\n\nFSM"
   }
 ]
