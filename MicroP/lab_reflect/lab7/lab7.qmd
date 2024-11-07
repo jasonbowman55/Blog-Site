@@ -12,7 +12,7 @@ code-links:
     text: Lab 7 GitHub
     href: https://github.com/jasonbowman55/microP-lab7.git
 ---
-
+**THIS POST IS INCOMPLETE**
 # Intro & Design Approach
 The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.
 

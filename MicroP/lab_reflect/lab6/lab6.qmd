@@ -10,3 +10,6 @@ draft: false
 code-links:
   - icon: github
 ---
+**THIS POST IS INCOMPLETE**
+
+![Figure1: RotWord step in Key Expansion](images/warm12.jpeg)
