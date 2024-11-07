@@ -132,6 +132,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#key-schedule" id="toc-key-schedule" class="nav-link" data-scroll-target="#key-schedule">Key Schedule</a></li>
   <li><a href="#encryption-process" id="toc-encryption-process" class="nav-link" data-scroll-target="#encryption-process">Encryption Process</a></li>
+  <li><a href="#aes-128-note" id="toc-aes-128-note" class="nav-link" data-scroll-target="#aes-128-note">AES-128 Note</a></li>
   </ul></li>
   <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a>
   <ul class="collapse">
@@ -140,7 +141,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
-  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a></li>
+  <li><a href="#simulation-results" id="toc-simulation-results" class="nav-link" data-scroll-target="#simulation-results">Simulation Results</a></li>
+  <li><a href="#hardware-results" id="toc-hardware-results" class="nav-link" data-scroll-target="#hardware-results">Hardware Results</a></li>
   </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
   </ul>
@@ -192,12 +194,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="intro-design-approach" class="level1">
 <h1>Intro &amp; Design Approach</h1>
 <p>The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.</p>
-<p>This lab requires implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. A pipelining method was applied to maximize efficiency and minimize storage usage throughout the process.</p>
-<p>This lab requires our STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU, to send a 128-bit plaintext and key to the FPGA via SPI. The FPGA will then perform the AES-128 algorithm to standard and return the resulting ciphertext to the MCU. The MCU knows the expected ciphertext and will illuminate an onboard LED if it receives the correct result.</p>
+<p>This lab involves implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. To maximize efficiency and minimize storage usage, we applied a pipelining method throughout the process. A simple testbench was created for this lab, where our STM32 MCU sends plaintext and a key to the FPGA over SPI. If the FPGA returns the correct ciphertext, an onboard LED is turned on to indicate success.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/main_bd.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Figure1: Main Block Diagram</figcaption>
+<p><img src="images/aes-128.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure1: Top level AES-128 functionality</figcaption>
 </figure>
 </div>
 </section>
@@ -207,14 +208,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="key-schedule" class="level2">
 <h2 class="anchored" data-anchor-id="key-schedule">Key Schedule</h2>
 <p>The key schedule in AES-128, also known as key expansion, is an essential part of the encryption process. It generates a unique 128-bit round key for each of the 10 rounds, based on the original 128-bit cipher key. The key schedule works through several steps:</p>
-<p><strong>RotWord:</strong> This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.</p>
+<p><strong>Rot Word:</strong> This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/rot_word.jpeg" class="img-fluid figure-img"></p>
 <figcaption>Figure2: RotWord step in Key Expansion</figcaption>
 </figure>
 </div>
-<p><strong>SubWord:</strong> Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.</p>
+<p><strong>Sub Word:</strong> Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/sbox.jpeg" class="img-fluid figure-img"></p>
@@ -239,6 +240,33 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="encryption-process" class="level2">
 <h2 class="anchored" data-anchor-id="encryption-process">Encryption Process</h2>
+<p>The encryption process is classified as all of the sequential and combinational logic performed on the cyhertext, and intermediate versions of that cyphertext, throughout all rounds in the full AES-128 encryption standard. This process depends on the current round key, which is generated in parallel with the encryption process ensuring that the correct round key is used for its intended encryption round.</p>
+<p><strong>Sub Bytes:</strong> Similar to Su bWord in the key expansion process, however each byte in the full 128-bit cyphertext undergoes an S-box substitution, adding nonlinearity to the key schedule. Each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid, as done in Figure 3 under key schedule.</p>
+<p><strong>Shift Rows:</strong> Each row in the 4x4, byte-wise, column-major representation of the 128-bit ciphertext is shifted left by one byte, with any overflow bytes wrapping around to the right side sequentially.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/shift_rows.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure6: Shift Rows step in the encryption process</figcaption>
+</figure>
+</div>
+<p><strong>Mix Cols:</strong> Each column of the 4x4 byte matrix is transformed using Galois Field (GF(2^8)) arithmetic to mix and spread out the bytes, enhancing diffusion in the encryption.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mix_cols.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure7: Mix Cols step in the encryption process</figcaption>
+</figure>
+</div>
+<p><strong>Add Round Key:</strong> This step combines the current ciphertext with the current round key using an XOR operation, ensuring all round keys are unique.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/add_round_key.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure8: Add Ronnd Key step to the encryption process</figcaption>
+</figure>
+</div>
+</section>
+<section id="aes-128-note" class="level2">
+<h2 class="anchored" data-anchor-id="aes-128-note">AES-128 Note</h2>
+<p>It is important to note that not all rounds of the AES-128 encrption standard are the same, in particular the first and last round. For informaiton and helpful demonstration of all related steps of AES-128, <a href="https://legacy.cryptool.org/en/cto/aes-animation">see this website.</a></p>
 </section>
 </section>
 <section id="design" class="level1">
@@ -246,33 +274,40 @@ ul.task-list li input[type="checkbox"] {
 <p><em>This section goes into the hardware and software design specifics</em></p>
 <section id="hardware" class="level2">
 <h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
-<p>This will be written after it is connected to the MCU</p>
+<p><strong>This will be written after it is connected to the MCU</strong></p>
 </section>
 <section id="software" class="level2">
 <h2 class="anchored" data-anchor-id="software">Software</h2>
-<p>The scope of this lab focused on the FPGA, SystemVerilog, and implementing AES-128 encryption on the FPGA. A pipeline design, shown in Figure 1, was selected for its ability to hold values between rounds using buffer flip-flops. A timer was used to introduce necessary delays between rounds, allowing sufficient time for propagation through each step of the Key Schedule and Encryption Processs.</p>
+<p>The scope of this lab focused on using the FPGA and SystemVerilog to implement AES-128 encryption. A pipelined design, illustrated in Figure 9 below, was chosen for its ability to store intermediate values between rounds using buffer flip-flops. A timer introduced necessary delays between rounds, ensuring sufficient propagation time through each step of the Key Schedule and Encryption Process.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/recursive_xor.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Figure5: Recursive XOR (aka Fill Round Key) step in Key Expansion</figcaption>
+<p><img src="images/main_bd.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure9: Block Diagram</figcaption>
+</figure>
+</div>
+<p>The block diagram shows various source signals (in blue) and enable signals (in red), which determine the selection of intermediate versions of the ciphertext or plaintext, as well as the specific round key or original key in use. Each enable signal is configured to store values at the end of 5 clock cycles, providing sufficient propagation time for calculations as previously mentioned. Each round can be represented as shown in Figure 10, with each state labeled as “S”, meaning state, followed by the round number.</p>
+<p>The communication protocol between the FPGA and MCU uses SPI. It operates by pulling the “load” signal from 1 to 0 once the full initial plaintext and key are ready to be read by the FPGA. The “done” signal is asserted when the final ciphertext is produced by the FPGA and is available to be read by the MCU. At this point, internal logic on the MCU checks whether the received ciphertext matches the expected value, toggling an onboard LED based on the outcome of the comparison.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fsm.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure10: FSM</figcaption>
 </figure>
 </div>
 </section>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<section id="simulation" class="level2">
-<h2 class="anchored" data-anchor-id="simulation">Simulation</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/wave_2.jpeg" class="img-fluid figure-img"></p>
-<figcaption>FigureXX: Wave form simulation containing relavent variables</figcaption>
-</figure>
-</div>
+<p>This lab resulted in a functional implementation of the AES-128 algorithm on the UPduino v3.1 UP5K FPGA, which passed both the provided encryption process and SPI functionality test benches. The implementation was successfully deployed on hardware, enabling effective communication with the onboard STM32 MCU via SPI on the Micro-Ps protoboard. The system also passed the internal check, causing the PA9 onboard LED to illuminate upon currect encryption. This lab took approximately 22 hours to complete.</p>
+<section id="simulation-results" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-results">Simulation Results</h2>
+</section>
+<section id="hardware-results" class="level2">
+<h2 class="anchored" data-anchor-id="hardware-results">Hardware Results</h2>
 </section>
 </section>
 <section id="reflection" class="level1">
 <h1>Reflection</h1>
+<p>This lab acted as kind of a cummilitive project for a lot of my SystemVerilog and FPGA knowledge. I really enjoyed the implamentation and the final product of this lab as it shows just how powerful these micro chips can be, and I was able to learn about AES-128. I think this was a great lab to end the lab portion of Micro Ps on and I am extremely excited to apply this knowledge into my final project.</p>
 
 
 </section>

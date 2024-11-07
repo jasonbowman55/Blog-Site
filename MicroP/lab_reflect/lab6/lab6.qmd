@@ -2,7 +2,7 @@
 title: "The Internet of Things and Serial Peripheral Interface"
 description: "Lab 6"
 author: "Jason Bowman"
-# date: ""
+date: "11-6-24"
 categories:
   - Reflection
   - Lab Report
@@ -10,6 +10,3 @@ draft: false
 code-links:
   - icon: github
 ---
-**THIS POST IS INCOMPLETE**
-
-![Figure1: RotWord step in Key Expansion](images/warm12.jpeg)

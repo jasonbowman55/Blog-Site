@@ -284,14 +284,14 @@
     "href": "MicroP/lab_reflect/lab7/lab7.html",
     "title": "The Advanced Encryption Standard",
     "section": "",
-    "text": "The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.\nThis lab requires implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. A pipelining method was applied to maximize efficiency and minimize storage usage throughout the process.\nThis lab requires our STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU, to send a 128-bit plaintext and key to the FPGA via SPI. The FPGA will then perform the AES-128 algorithm to standard and return the resulting ciphertext to the MCU. The MCU knows the expected ciphertext and will illuminate an onboard LED if it receives the correct result.\n\n\n\nFigure1: Main Block Diagram"
+    "text": "The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.\nThis lab involves implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. To maximize efficiency and minimize storage usage, we applied a pipelining method throughout the process. A simple testbench was created for this lab, where our STM32 MCU sends plaintext and a key to the FPGA over SPI. If the FPGA returns the correct ciphertext, an onboard LED is turned on to indicate success.\n\n\n\nFigure1: Top level AES-128 functionality"
   },
   {
     "objectID": "MicroP/lab_reflect/lab7/lab7.html#key-schedule",
     "href": "MicroP/lab_reflect/lab7/lab7.html#key-schedule",
     "title": "The Advanced Encryption Standard",
     "section": "Key Schedule",
-    "text": "Key Schedule\nThe key schedule in AES-128, also known as key expansion, is an essential part of the encryption process. It generates a unique 128-bit round key for each of the 10 rounds, based on the original 128-bit cipher key. The key schedule works through several steps:\nRotWord: This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.\n\n\n\nFigure2: RotWord step in Key Expansion\n\n\nSubWord: Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.\n\n\n\nFigure3: SubWord step in Key Expansion\n\n\nRcon: A round constant specific to each round is XORed with the first word of each four-word block, ensuring each round key is unique.\n\n\n\nFigure4: Rcon step in Key Expansion\n\n\nFill Round Key: The remaining words of each round key are derived by XORing parts of the previous round key, filling out the key material for each round. This is done recusively, as each round is XORed with the previous output from the recursive XOR. This is done until a new round key is produced.\n\n\n\nFigure5: Recursive XOR (aka Fill Round Key) step in Key Expansion\n\n\nAs each new round key is created, it is then used as the basis for generating the next round key. The first word of the new round key goes through the RotWord transformation, followed by other steps in the key expansion process, ensuring that each subsequent round key is derived from the previous one in a recursive, circular fashion. This process continues until all round keys are generated for the encryption."
+    "text": "Key Schedule\nThe key schedule in AES-128, also known as key expansion, is an essential part of the encryption process. It generates a unique 128-bit round key for each of the 10 rounds, based on the original 128-bit cipher key. The key schedule works through several steps:\nRot Word: This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.\n\n\n\nFigure2: RotWord step in Key Expansion\n\n\nSub Word: Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.\n\n\n\nFigure3: SubWord step in Key Expansion\n\n\nRcon: A round constant specific to each round is XORed with the first word of each four-word block, ensuring each round key is unique.\n\n\n\nFigure4: Rcon step in Key Expansion\n\n\nFill Round Key: The remaining words of each round key are derived by XORing parts of the previous round key, filling out the key material for each round. This is done recusively, as each round is XORed with the previous output from the recursive XOR. This is done until a new round key is produced.\n\n\n\nFigure5: Recursive XOR (aka Fill Round Key) step in Key Expansion\n\n\nAs each new round key is created, it is then used as the basis for generating the next round key. The first word of the new round key goes through the RotWord transformation, followed by other steps in the key expansion process, ensuring that each subsequent round key is derived from the previous one in a recursive, circular fashion. This process continues until all round keys are generated for the encryption."
   },
   {
     "objectID": "MicroP/lab_reflect/lab7/lab7.html#hardware",
@@ -305,20 +305,34 @@
     "href": "MicroP/lab_reflect/lab7/lab7.html#software",
     "title": "The Advanced Encryption Standard",
     "section": "Software",
-    "text": "Software\nThe scope of this lab focused on the FPGA, SystemVerilog, and implementing AES-128 encryption on the FPGA. A pipeline design, shown in Figure 1, was selected for its ability to hold values between rounds using buffer flip-flops. A timer was used to introduce necessary delays between rounds, allowing sufficient time for propagation through each step of the Key Schedule and Encryption Processs.\n\n\n\nFigure5: Recursive XOR (aka Fill Round Key) step in Key Expansion"
+    "text": "Software\nThe scope of this lab focused on using the FPGA and SystemVerilog to implement AES-128 encryption. A pipelined design, illustrated in Figure 9 below, was chosen for its ability to store intermediate values between rounds using buffer flip-flops. A timer introduced necessary delays between rounds, ensuring sufficient propagation time through each step of the Key Schedule and Encryption Process.\n\n\n\nFigure9: Block Diagram\n\n\nThe block diagram shows various source signals (in blue) and enable signals (in red), which determine the selection of intermediate versions of the ciphertext or plaintext, as well as the specific round key or original key in use. Each enable signal is configured to store values at the end of 5 clock cycles, providing sufficient propagation time for calculations as previously mentioned. Each round can be represented as shown in Figure 10, with each state labeled as “S”, meaning state, followed by the round number.\nThe communication protocol between the FPGA and MCU uses SPI. It operates by pulling the “load” signal from 1 to 0 once the full initial plaintext and key are ready to be read by the FPGA. The “done” signal is asserted when the final ciphertext is produced by the FPGA and is available to be read by the MCU. At this point, internal logic on the MCU checks whether the received ciphertext matches the expected value, toggling an onboard LED based on the outcome of the comparison.\n\n\n\nFigure10: FSM"
   },
   {
     "objectID": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
     "href": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
     "title": "The Advanced Encryption Standard",
     "section": "Encryption Process",
-    "text": "Encryption Process"
+    "text": "Encryption Process\nThe encryption process is classified as all of the sequential and combinational logic performed on the cyhertext, and intermediate versions of that cyphertext, throughout all rounds in the full AES-128 encryption standard. This process depends on the current round key, which is generated in parallel with the encryption process ensuring that the correct round key is used for its intended encryption round.\nSub Bytes: Similar to Su bWord in the key expansion process, however each byte in the full 128-bit cyphertext undergoes an S-box substitution, adding nonlinearity to the key schedule. Each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid, as done in Figure 3 under key schedule.\nShift Rows: Each row in the 4x4, byte-wise, column-major representation of the 128-bit ciphertext is shifted left by one byte, with any overflow bytes wrapping around to the right side sequentially.\n\n\n\nFigure6: Shift Rows step in the encryption process\n\n\nMix Cols: Each column of the 4x4 byte matrix is transformed using Galois Field (GF(2^8)) arithmetic to mix and spread out the bytes, enhancing diffusion in the encryption.\n\n\n\nFigure7: Mix Cols step in the encryption process\n\n\nAdd Round Key: This step combines the current ciphertext with the current round key using an XOR operation, ensuring all round keys are unique.\n\n\n\nFigure8: Add Ronnd Key step to the encryption process"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#simulation",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#simulation",
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#aes-128-note",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#aes-128-note",
     "title": "The Advanced Encryption Standard",
-    "section": "Simulation",
-    "text": "Simulation\n\n\n\nFigureXX: Wave form simulation containing relavent variables"
+    "section": "AES-128 Note",
+    "text": "AES-128 Note\nIt is important to note that not all rounds of the AES-128 encrption standard are the same, in particular the first and last round. For informaiton and helpful demonstration of all related steps of AES-128, see this website."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#simulation-results",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#simulation-results",
+    "title": "The Advanced Encryption Standard",
+    "section": "Simulation Results",
+    "text": "Simulation Results"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#hardware-results",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#hardware-results",
+    "title": "The Advanced Encryption Standard",
+    "section": "Hardware Results",
+    "text": "Hardware Results"
   }
 ]
