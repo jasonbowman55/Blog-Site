@@ -7,6 +7,13 @@
     "text": "E155 (Micro Ps) Course Website"
   },
   {
+    "objectID": "MicroP/lab_reflect/lab6/lab6.html",
+    "href": "MicroP/lab_reflect/lab6/lab6.html",
+    "title": "The Internet of Things and Serial Peripheral Interface",
+    "section": "",
+    "text": "THIS POST IS INCOMPLETE"
+  },
+  {
     "objectID": "MicroP/lab_reflect/lab4/lab4.html",
     "href": "MicroP/lab_reflect/lab4/lab4.html",
     "title": "Digital Audio",
@@ -102,7 +109,7 @@
     "href": "MicroP/index.html",
     "title": "Lab Reflections",
     "section": "",
-    "text": "The Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nOct 23, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
+    "text": "The Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nNov 6, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nOct 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nOct 23, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Post\n\n\n\n\n\nInitial learning goals\n\n\n\n\n\nAug 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "HPR/index.html",
@@ -278,5 +285,61 @@
     "title": "Interrupts",
     "section": "Calculations",
     "text": "Calculations\nThis section will cover the mathematical portion of this lab\n\nRPS Calculation\nThe calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of the two interrupts in which they are both high (1), the RPS is determined by Equation [1].\n[1] \\(rps = \\frac{1000}{PPR*delta}\\)\n\n\nm/s Calculation\nThis code also enables the display of linear velocity in meters per second (m/s) for the DC motor. This is achieved by calculating the radius of the motor shaft from the diameter specified in the data sheet, which is then used to determine the circumference “C”. The circumference is multiplied by the RPS value, as shown in Equation [2], to obtain the final linear velocity in m/s.\n[2] \\(m/s = RPS*C\\)\n\n\nDirection Calculation\nThe direction calculation is straightforward. Based on observations made with an oscilloscope, the sign of the delta value, assigned within the two different “if” statements in the interrupt handler, determines the motor’s direction. Depending on whether the delta is positive or negative, the motor is identified as spinning clockwise or counterclockwise and printed to the terminal."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html",
+    "href": "MicroP/lab_reflect/lab7/lab7.html",
+    "title": "The Advanced Encryption Standard",
+    "section": "",
+    "text": "THIS POST IS INCOMPLETE # Intro & Design Approach The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.\nThis lab involves implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. To maximize efficiency and minimize storage usage, we applied a pipelining method throughout the process. A simple testbench was created for this lab, where our STM32 MCU sends plaintext and a key to the FPGA over SPI. If the FPGA returns the correct ciphertext, an onboard LED is turned on to indicate success."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#key-schedule",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#key-schedule",
+    "title": "The Advanced Encryption Standard",
+    "section": "Key Schedule",
+    "text": "Key Schedule\nThe key schedule in AES-128, also known as key expansion, is an essential part of the encryption process. It generates a unique 128-bit round key for each of the 10 rounds, based on the original 128-bit cipher key. The key schedule works through several steps:\nRot Word: This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.\n\n\n\nFigure2: RotWord step in Key Expansion\n\n\nSub Word: Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.\n\n\n\nFigure3: SubWord step in Key Expansion\n\n\nRcon: A round constant specific to each round is XORed with the first word of each four-word block, ensuring each round key is unique.\n\n\n\nFigure4: Rcon step in Key Expansion\n\n\nFill Round Key: The remaining words of each round key are derived by XORing parts of the previous round key, filling out the key material for each round. This is done recusively, as each round is XORed with the previous output from the recursive XOR. This is done until a new round key is produced.\n\n\n\nFigure5: Recursive XOR (aka Fill Round Key) step in Key Expansion\n\n\nAs each new round key is created, it is then used as the basis for generating the next round key. The first word of the new round key goes through the RotWord transformation, followed by other steps in the key expansion process, ensuring that each subsequent round key is derived from the previous one in a recursive, circular fashion. This process continues until all round keys are generated for the encryption."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
+    "title": "The Advanced Encryption Standard",
+    "section": "Encryption Process",
+    "text": "Encryption Process\nThe encryption process is classified as all of the sequential and combinational logic performed on the cyhertext, and intermediate versions of that cyphertext, throughout all rounds in the full AES-128 encryption standard. This process depends on the current round key, which is generated in parallel with the encryption process ensuring that the correct round key is used for its intended encryption round.\nSub Bytes: Similar to Su bWord in the key expansion process, however each byte in the full 128-bit cyphertext undergoes an S-box substitution, adding nonlinearity to the key schedule. Each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid, as done in Figure 3 under key schedule.\nShift Rows: Each row in the 4x4, byte-wise, column-major representation of the 128-bit ciphertext is shifted left by one byte, with any overflow bytes wrapping around to the right side sequentially.\n\n\n\nFigure6: Shift Rows step in the encryption process\n\n\nMix Cols: Each column of the 4x4 byte matrix is transformed using Galois Field (GF(2^8)) arithmetic to mix and spread out the bytes, enhancing diffusion in the encryption.\n\n\n\nFigure7: Mix Cols step in the encryption process\n\n\nAdd Round Key: This step combines the current ciphertext with the current round key using an XOR operation, ensuring all round keys are unique.\n\n\n\nFigure8: Add Ronnd Key step to the encryption process"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#aes-128-note",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#aes-128-note",
+    "title": "The Advanced Encryption Standard",
+    "section": "AES-128 Note",
+    "text": "AES-128 Note\nIt is important to note that not all rounds of the AES-128 encrption standard are the same, in particular the first and last round. For informaiton and helpful demonstration of all related steps of AES-128, see this website."
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#hardware",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#hardware",
+    "title": "The Advanced Encryption Standard",
+    "section": "Hardware",
+    "text": "Hardware\nThis will be written after it is connected to the MCU"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#software",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#software",
+    "title": "The Advanced Encryption Standard",
+    "section": "Software",
+    "text": "Software\nThe scope of this lab focused on using the FPGA and SystemVerilog to implement AES-128 encryption. A pipelined design, illustrated in Figure 9 below, was chosen for its ability to store intermediate values between rounds using buffer flip-flops. A timer introduced necessary delays between rounds, ensuring sufficient propagation time through each step of the Key Schedule and Encryption Process.\n\n\n\nFigure9: Block Diagram\n\n\nThe block diagram shows various source signals (in blue) and enable signals (in red), which determine the selection of intermediate versions of the ciphertext or plaintext, as well as the specific round key or original key in use. Each enable signal is configured to store values at the end of 5 clock cycles, providing sufficient propagation time for calculations as previously mentioned. Each round can be represented as shown in Figure 10, with each state labeled as “S”, meaning state, followed by the round number.\nThe communication protocol between the FPGA and MCU uses SPI. It operates by pulling the “load” signal from 1 to 0 once the full initial plaintext and key are ready to be read by the FPGA. The “done” signal is asserted when the final ciphertext is produced by the FPGA and is available to be read by the MCU. At this point, internal logic on the MCU checks whether the received ciphertext matches the expected value, toggling an onboard LED based on the outcome of the comparison.\n\n\n\nFigure10: FSM"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#simulation-results",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#simulation-results",
+    "title": "The Advanced Encryption Standard",
+    "section": "Simulation Results",
+    "text": "Simulation Results"
+  },
+  {
+    "objectID": "MicroP/lab_reflect/lab7/lab7.html#hardware-results",
+    "href": "MicroP/lab_reflect/lab7/lab7.html#hardware-results",
+    "title": "The Advanced Encryption Standard",
+    "section": "Hardware Results",
+    "text": "Hardware Results"
   }
 ]
