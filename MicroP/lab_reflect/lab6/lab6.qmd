@@ -9,6 +9,8 @@ categories:
 draft: false
 code-links:
   - icon: github
+    text: Lab 6 GitHub
+    href: https://github.com/jasonbowman55/microP-lab6.git
 ---
 **THIS POST IS INCOMPLETE**
 ![Figure: LA](images/warm12.jpeg)
