@@ -7,116 +7,109 @@
     "text": "E155 (Micro Ps) Course Website"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab6/lab6.html",
-    "href": "MicroP/lab_reflect/lab6/lab6.html",
+    "objectID": "MicroP/lab_reports/lab6/lab6.html",
+    "href": "MicroP/lab_reports/lab6/lab6.html",
     "title": "The Internet of Things and Serial Peripheral Interface",
     "section": "",
     "text": "This lab focused on SPI communication between a DS1722 temperature sensor and an STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU. The goal was to implement a system that displays the temperature on a locally hosted website. The website should be able to update the temperature based on a selected bit-wise resolution (8, 9, 10, 11, or 12 bits). Additionally, the website must include an ON/OFF toggle to control an onboard LED. This setup requires proper configuration of SPI communication, with data being transmitted to and from both the MCU and the temperature sensor.\n\n\n\nFigure1: Lab 6 Tempurature Sensor Circuit"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab6/lab6.html#hardware",
-    "href": "MicroP/lab_reflect/lab6/lab6.html#hardware",
+    "objectID": "MicroP/lab_reports/lab6/lab6.html#hardware",
+    "href": "MicroP/lab_reports/lab6/lab6.html#hardware",
     "title": "The Internet of Things and Serial Peripheral Interface",
     "section": "Hardware",
     "text": "Hardware\nThe hardware used to implement this design, as shown in the circuit schematic in Figure 2, handles the SPI communication between the MCU and the temperature sensor, as well as the UART communication between the MCU and the ESP8266 Wi-Fi chip. The schematic also illustrates the simple hardware used to power the LED based on the input from the website.\n\n\n\nFigure2: Lab 6 Circuit Schematic"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab6/lab6.html#software",
-    "href": "MicroP/lab_reflect/lab6/lab6.html#software",
+    "objectID": "MicroP/lab_reports/lab6/lab6.html#software",
+    "href": "MicroP/lab_reports/lab6/lab6.html#software",
     "title": "The Internet of Things and Serial Peripheral Interface",
     "section": "Software",
     "text": "Software\nThe SPI1 peripheral on the MCU is used to perform the data transfer. A header file and a .c file were created to initialize and manage the send/receive operations through the SPI1 peripheral. The main.c file then utilized this configuration, along with the send/receive functions, to enable the peripheral, configure the temperature sensor, and retrieve the current temperature values. Simple HTML was written to access the button statuses from the website, which was hosted locally on the Wi-Fi chip.\n\nDS1722 Configuration & Temp Read\nThe DS1722 temperature sensor can be configured by sending a 0x80 value over the SPI pins. This value signals to the sensor that the next value sent will be applied to the configuration/status register, enabling different temperature resolutions. Based on the resolution requested from the website, the temperature sensor is configured to output the temperature at the corresponding resolution. The mapping of bit values to resolution configureation can be seen below in Figure 3.\n\n\n\n\n\nFigure3: Access register map & resolution assignment\n\n\nReading the tempurature comes in 2 packets, LSB (least significant byte) and MSB (most significant byte) as seen in the top of Figure 3.\n\n\nTempurature Decoding\nAfter reading the LSB and MSB, the value and its sign (positive or negative) must be decoded. Since the full 16-bit temperature value is in two’s complement form, a simple function was written to detect the most significant bit (MSB), which indicates whether the value is negative. If the MSB is set to 1, the temperature is negative, and the most negative value corresponds to -128°C. The remaining 15 bits of the temperature reading are summed, with each bit contributing its base-10 value, to this -128°C baseline, resulting in the final temperature reading.\nFor positive temperatures, the decoding process is simpler. It follows the same method as the negative temperature decoding, but starts from an initial value of 0°C instead of -128°C."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html",
-    "href": "MicroP/lab_reflect/lab4/lab4.html",
+    "objectID": "MicroP/lab_reports/lab4/lab4.html",
+    "href": "MicroP/lab_reports/lab4/lab4.html",
     "title": "Digital Audio",
     "section": "",
     "text": "This lab utilized an SM231508-1 8ohm speaker, and a STM32 Nucleo-32 board with an on board STM32L432KC MCU in order to play a the song “Für Elise” and “Happy Birthday”. This was done without using CMSIS, instead using memory mapped I/O, and accessing specific memory addresses and peripherals in order to initialize and run the code on the MCU.\n\n\n\nFigure1: Lab 4 hardware"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#hardware",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#hardware",
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#hardware",
+    "href": "MicroP/lab_reports/lab4/lab4.html#hardware",
     "title": "Digital Audio",
     "section": "Hardware",
     "text": "Hardware\nA simple audio amplifier (LM386) chip was used to drive an 8-ohm speaker. The amplifier was powered by a 5V supply, and the input signal was a 3.3V PWM signal. A 103 4E potentiometer was also included in the circuit to function as a volume control interface.\n\n\n\nFigure2: Circuit schematic"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#file-structure",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#file-structure",
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#file-structure",
+    "href": "MicroP/lab_reports/lab4/lab4.html#file-structure",
     "title": "Digital Audio",
     "section": "File Structure",
     "text": "File Structure\nAll files used in the project, including the specifically generated Segger project files, are stored in the same local directory. Within the Segger project, the file structure is organized as shown in Figure 3. Green lines indicate #include directives in the main.c file, while the black arrows show the correlation between header files and their respective .c files.\n\n\n\nFigure3: Segger project file mapping"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#high-level-software-description",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#high-level-software-description",
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#high-level-software-description",
+    "href": "MicroP/lab_reports/lab4/lab4.html#high-level-software-description",
     "title": "Digital Audio",
     "section": "High Level Software description",
     "text": "High Level Software description\nThe Multi-Speed Internal (MSI) clock, combined with a PLL configuration, was used to achieve the desired system clock (SYSCLK) speed of 4 MHz. The SYSCLK was routed to the GPIOA and TIM16 peripherals. TIM16, a built-in timer, was used for PWM generation to drive the speaker. A simple counter function, implemented in main.c, operated based on the SYSCLK. The key parameters for setting the output frequency and note duration were TIM16’s internal registers: the Auto-Reload Register (ARR) and the prescaler (PSC), which worked together with the counter variable to acheive desired output."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#system-clock-configuration",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#system-clock-configuration",
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#system-clock-configuration",
+    "href": "MicroP/lab_reports/lab4/lab4.html#system-clock-configuration",
     "title": "Digital Audio",
     "section": "System Clock Configuration",
     "text": "System Clock Configuration\nAs mentioned, the MSI onboard clock was used as an input to the PLL configuration, which allows for precise SYSCLK speed control. The PLL uses two divisors (M and R) and one multiplier (N), as shown in Figure 4, to achieve this function. With the MSI frequency at the default frequency of 4 MHz and setting M=1, N=8, and R=4, we can achieve the desired SYSCLK speed of 8 MHz.\n\n\n\n\nFigure4: Full MCU clk tree & PLL module"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#tim16-frequency-generation",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#tim16-frequency-generation",
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#tim16-frequency-generation",
+    "href": "MicroP/lab_reports/lab4/lab4.html#tim16-frequency-generation",
     "title": "Digital Audio",
     "section": "TIM16 & Frequency Generation",
     "text": "TIM16 & Frequency Generation\nTIM16 is the peripheral used to produce the desired PWM signal frequency. First, the prescaler (PSC), as shown in Figure 4, was set to 255 to bring the TIM16 counter frequency closer to the desired range. To output a specific frequency, we can refer to Equation [1].\n\n\n\nFigure5: TIM16 Block Diagram\n\n\n[1] \\(Freq=\\frac{SYSCLK}{PSC+1} * \\frac{1}{ARR+1}\\)\nAs shown in Equation [1], Freq represents the desired PWM frequency, and ARR is the 16-bit register used to control this frequency. Therefore, Equation [1] can be simplified into the form of Equation [2], and further reduced to Equation [3]. Equation [3] was implemented in main.c to control the output frequency.\n[2] \\(ARR=\\frac{SYSCLK}{Freq*(PSC+1)}-1\\)\n[3] \\(ARR=\\frac{31250}{Freq}-1\\)"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-analysis",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#frequency-duration-analysis",
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#frequency-duration-analysis",
+    "href": "MicroP/lab_reports/lab4/lab4.html#frequency-duration-analysis",
     "title": "Digital Audio",
     "section": "Frequency & Duration Analysis",
     "text": "Frequency & Duration Analysis\nThis section discusses the frequency accuracies, minimum and maximum frequencies, and their corresponding durations.\n\nFrequency Accuracy\nTo demonstrate the accuracy of the PWM output frequencies, Equation [4] calculates the ARR value for a 659 Hz frequency, which corresponds to a note from Für Elise.\n[4] \\(ARR = \\frac{31250}{659}-1 = 46.42\\)\nThe new value of ARR is internally rounded to the nearest integer, resulting in ARR = 46. By rearranging Equation [3] to solve for Freq, as shown in Equation [5], we can substitute the new ARR value to calculate the output frequency.\n[5] \\(Freq = 31250*\\frac{1}{ARR+1} = 31250*\\frac{1}{46+1} = 664.89\\)\nThe percent error, as calculated in Equation [6], is significantly less than 1%, which is more than sufficient for the accuracy required in this application.\n[6] \\(\\%_\\text{error} = \\frac{664.89 - 659}{664.89} = 0.0089\\)\n\n\nFrequency min/max\nThe minimum frequency corresponds to the maximum value of the 16-bit ARR register (\\(ARR_{\\text{max}} = 2^{16} - 1\\)). This can be calculated using Equation [7] below.\n[7] \\(Freq_{\\text{min}} = 31250*\\frac{1}{ARR_{\\text{max}}+1} = 31250*\\frac{1}{65535+1} = 0.48Hz\\)\nThe maximum frequency corresponds to the smallest value of the 16-bit ARR register (\\(ARR_{\\text{min}} = 1\\)). This can be calculated using Equation [8] below.\n[8] \\(Freq_{\\text{max}} = 31250*\\frac{1}{ARR_{\\text{min}}+1} = 31250*\\frac{1}{1+1} = 15.625kHz\\)\n\n\nDuration Accuracy\nThe only thing that affects the accuracy of the duration is the value ‘x=887’ declared in the software in the delay block, which has already been determined to be accurate.\n\n\nDuration min/max\nFor the following calculations, please consider the relationship given in equation [9].\n[9] \\({ms_{\\text{desired}}} = \\frac{ARR}{100}\\)\nThe maximum duration corresponds to the maximum value of the 16-bit ARR register (\\(ARR_{\\text{max}} = 2^{16} - 1\\)). This can be calculated using Equation [10] below.\n[10] \\({ms_{\\text{desired}}} = \\frac{65535}{100}\\) = 655.35ms\nThe minimum duration corresponds to the smallest value of the 16-bit ARR register (\\(ARR_{\\text{min}} = 1\\)). This can be calculated using Equation [11] below.\n[11] \\({ms_{\\text{desired}}} = \\frac{1}{100}\\) = 0.01ms"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab4/lab4.html#debugging",
-    "href": "MicroP/lab_reflect/lab4/lab4.html#debugging",
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#debugging",
+    "href": "MicroP/lab_reports/lab4/lab4.html#debugging",
     "title": "Digital Audio",
     "section": "Debugging",
     "text": "Debugging\nThe built-in debugger in Segger was used to directly inspect register values to validate the design. By stepping through the execution one step at a time, the register values of interest could be monitored to ensure they were functioning as expected."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab2/lab2.html",
-    "href": "MicroP/lab_reflect/lab2/lab2.html",
+    "objectID": "MicroP/lab_reports/lab2/lab2.html",
+    "href": "MicroP/lab_reports/lab2/lab2.html",
     "title": "Time-Multiplexed Dual 7-Segment Display",
     "section": "",
     "text": "In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.\n\n\n\nHardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line\n\n\nThe design process began with a block diagram, where I created a top module and two submodules:\n- seven_seg_decoder: decodes inputs to 7-seg pin assignments\n- bin_disp_decoder: sums input values and writes that sum in binary to led\nI then created a circuit schematic, which allowed me to visualize physical pin assignments and accurately represent those in my SystemVerilog.\nA wavefrom was then used to simulate, debug, and validate system functions.\n\n\nIn SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. The int_osc influenced the counter variable, and was then used to time-multiplex between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. A simple assign statement was used to generate the LED binary outputs.\n\n\n\nThis block diagram outlines the SystemVerilog modules used in lab 2\n\n\n\n\n\n\n\n\nThis circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals\n\n\n\n\n\nDuring the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.\n\n\n\nWaveform displaying accurate time-multiplexed functionality"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab2/lab2.html#block-diagram",
-    "href": "MicroP/lab_reflect/lab2/lab2.html#block-diagram",
+    "objectID": "MicroP/lab_reports/lab2/lab2.html#block-diagram",
+    "href": "MicroP/lab_reports/lab2/lab2.html#block-diagram",
     "title": "Time-Multiplexed Dual 7-Segment Display",
     "section": "",
     "text": "In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. The int_osc influenced the counter variable, and was then used to time-multiplex between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. A simple assign statement was used to generate the LED binary outputs.\n\n\n\nThis block diagram outlines the SystemVerilog modules used in lab 2"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab2/lab2.html#circuit-schematic",
-    "href": "MicroP/lab_reflect/lab2/lab2.html#circuit-schematic",
+    "objectID": "MicroP/lab_reports/lab2/lab2.html#circuit-schematic",
+    "href": "MicroP/lab_reports/lab2/lab2.html#circuit-schematic",
     "title": "Time-Multiplexed Dual 7-Segment Display",
     "section": "",
     "text": "This circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab2/lab2.html#simulation",
-    "href": "MicroP/lab_reflect/lab2/lab2.html#simulation",
+    "objectID": "MicroP/lab_reports/lab2/lab2.html#simulation",
+    "href": "MicroP/lab_reports/lab2/lab2.html#simulation",
     "title": "Time-Multiplexed Dual 7-Segment Display",
     "section": "",
     "text": "During the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.\n\n\n\nWaveform displaying accurate time-multiplexed functionality"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/first-post.html",
-    "href": "MicroP/lab_reflect/first-post.html",
-    "title": "First Post",
-    "section": "",
-    "text": "Hello!\nThis is my first post of my personal website.\nThis subpage is dedicated to my Micro-P lab reflections."
   },
   {
     "objectID": "MicroP/index.html",
@@ -175,183 +168,141 @@
     "text": "Hi, I am Jason Bowman. I am a Senior Engineering major at Harvey Mudd College, with a concentration in Russian language. I have technical experience with Embedded Systems Engineering, Mechanical Design and SolidWorks CAD design and simulation, and Control Systems to name a few.\nThis portfolio began as a means of displaying progress in a class called Micro Processor Application & Design (aka “Micro Ps”)."
   },
   {
-    "objectID": "MicroP/lab_descript/microp_lab_descriptions.html#lab-2-multiplexed-7-segment-display",
-    "href": "MicroP/lab_descript/microp_lab_descriptions.html#lab-2-multiplexed-7-segment-display",
-    "title": "My Portfolio",
-    "section": "Lab 2: Multiplexed 7-Segment Display",
-    "text": "Lab 2: Multiplexed 7-Segment Display"
-  },
-  {
-    "objectID": "MicroP/lab_descript/microp_lab_descriptions.html#lab-3-keypad-scanner",
-    "href": "MicroP/lab_descript/microp_lab_descriptions.html#lab-3-keypad-scanner",
-    "title": "My Portfolio",
-    "section": "Lab 3: Keypad Scanner",
-    "text": "Lab 3: Keypad Scanner"
-  },
-  {
-    "objectID": "MicroP/lab_descript/microp_lab_descriptions.html#lab-4-digital-audio",
-    "href": "MicroP/lab_descript/microp_lab_descriptions.html#lab-4-digital-audio",
-    "title": "My Portfolio",
-    "section": "Lab 4: Digital Audio",
-    "text": "Lab 4: Digital Audio"
-  },
-  {
-    "objectID": "MicroP/lab_descript/microp_lab_descriptions.html#lab-5-interrupts",
-    "href": "MicroP/lab_descript/microp_lab_descriptions.html#lab-5-interrupts",
-    "title": "My Portfolio",
-    "section": "Lab 5: Interrupts",
-    "text": "Lab 5: Interrupts"
-  },
-  {
-    "objectID": "MicroP/lab_descript/microp_lab_descriptions.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
-    "href": "MicroP/lab_descript/microp_lab_descriptions.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
-    "title": "My Portfolio",
-    "section": "Lab 6: The Internet of Things and Serial Peripheral Interface",
-    "text": "Lab 6: The Internet of Things and Serial Peripheral Interface"
-  },
-  {
-    "objectID": "MicroP/lab_descript/microp_lab_descriptions.html#lab-7-the-advanced-encryption-standard",
-    "href": "MicroP/lab_descript/microp_lab_descriptions.html#lab-7-the-advanced-encryption-standard",
-    "title": "My Portfolio",
-    "section": "Lab 7: The Advanced Encryption Standard",
-    "text": "Lab 7: The Advanced Encryption Standard"
-  },
-  {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html",
-    "href": "MicroP/lab_reflect/lab1/lab1.html",
+    "objectID": "MicroP/lab_reports/lab1/lab1.html",
+    "href": "MicroP/lab_reports/lab1/lab1.html",
     "title": "FPGA and MCU Setup and Testing",
     "section": "",
     "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
-    "href": "MicroP/lab_reflect/lab1/lab1.html#intro-design-approach",
+    "objectID": "MicroP/lab_reports/lab1/lab1.html#intro-design-approach",
+    "href": "MicroP/lab_reports/lab1/lab1.html#intro-design-approach",
     "title": "FPGA and MCU Setup and Testing",
     "section": "",
     "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
-    "href": "MicroP/lab_reflect/lab1/lab1.html#results-reflection",
+    "objectID": "MicroP/lab_reports/lab1/lab1.html#results-reflection",
+    "href": "MicroP/lab_reports/lab1/lab1.html#results-reflection",
     "title": "FPGA and MCU Setup and Testing",
     "section": "Results & Reflection",
     "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter could be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning how to use Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had learned over a year ago in E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab3/lab3.html",
-    "href": "MicroP/lab_reflect/lab3/lab3.html",
+    "objectID": "MicroP/lab_reports/lab3/lab3.html",
+    "href": "MicroP/lab_reports/lab3/lab3.html",
     "title": "Keypad Scanner",
     "section": "",
     "text": "This lab utilized a 4x4 keypad scanner in tandem with a time-multiplexed dual 7-segment display, which was developed during Lab 2. The final goal was to update the right 7-segment display with each button press on the keypad, while the left display would show the previously pressed value. This functionality was implemented using a finite state machine (FSM) and next-state logic to simultaneously scan the keypad rows and decode which button was being pressed. Debouncing logic was also implemented to handle button bounce within the keypad.\n\n\n\nFigure1: Lab 3 hardware"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab3/lab3.html#hardware",
-    "href": "MicroP/lab_reflect/lab3/lab3.html#hardware",
+    "objectID": "MicroP/lab_reports/lab3/lab3.html#hardware",
+    "href": "MicroP/lab_reports/lab3/lab3.html#hardware",
     "title": "Keypad Scanner",
     "section": "Hardware",
     "text": "Hardware\nThe system hardware consists of two main sections: segment control and keypad input. The segment control section is identical to the design from Lab 2, utilizing two 2N3906 PNP transistors and time-multiplexing logic to display two separate outputs on the dual 7-segment display. The keypad input section accesses the desired row and column pins. When a column is powered and a button is pressed in that column, a button press is registered if the corresponding row pin is active low.\nDue to the internal hardware of the keypad, when a column is powered and a key is pressed, the specific row being pressed is unknown, making it difficult to determine the exact button. To resolve this, a row-scanning method is used, which sets one row active low at a time using next state logic described in the FSM section. Since the column pins are active high, if a button is pressed in a column corresponding to an active low row, we can track which row is being scanned and which column pin is pulled down to 0, allowing us to accurately decode the button press.\n\n\n\nFigure2: Circuit diagram"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab3/lab3.html#fsm",
-    "href": "MicroP/lab_reflect/lab3/lab3.html#fsm",
+    "objectID": "MicroP/lab_reports/lab3/lab3.html#fsm",
+    "href": "MicroP/lab_reports/lab3/lab3.html#fsm",
     "title": "Keypad Scanner",
     "section": "FSM",
     "text": "FSM\nTop Row States (Idle/Row Selection): This state acts as the pathway between all four row scans, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed. Delay states are used between the top states to ensure button presses are registered in time.\nMiddle Row States (Button Detection/Decode): Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated. A delay state is used between the middle and bottom state to ensure segment values are assigned correctly.\nBottom Row States (Hold/Wait): After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.\n\n\n\nFigure3: Finite State Machine (FSM)"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab3/lab3.html#block-diagram",
-    "href": "MicroP/lab_reflect/lab3/lab3.html#block-diagram",
+    "objectID": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
+    "href": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
     "title": "Keypad Scanner",
     "section": "Block Diagram",
     "text": "Block Diagram\nFigure 4 below displays the module communication logic for the System Verilog code that programmed the FPGA. Notibly we have a top, button_decode_bounce, and seven_seg_decoder modules.\ntop: The overseeing connection module and direct communication with I/O. Also includes the time-multiplexer and Low Speed Oscillator (LSOSC) clk source.\nbutton_decode_bounce: button decoder, debouncer, and row scan generator.\nseven_seg_decoder: decodes the button pressed into 7-segment display outputs.\n\n\n\nFigure4: System Verilog module block diagram"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab5/lab5.html",
-    "href": "MicroP/lab_reflect/lab5/lab5.html",
+    "objectID": "MicroP/lab_reports/lab5/lab5.html",
+    "href": "MicroP/lab_reports/lab5/lab5.html",
     "title": "Interrupts",
     "section": "",
     "text": "This lab utilized a 25GA-370 DC motor with internal quadrature encoders to output the current RPM and motor spin direction via the debug terminal in Segger. The main focus of the lab was on interrupts, where we treated the encoder signals as interrupt events. These interrupts were then used to calculate the desired information.\n\n\n\nFigure1: Lab5 Hardware"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab5/lab5.html#hardware",
-    "href": "MicroP/lab_reflect/lab5/lab5.html#hardware",
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#hardware",
+    "href": "MicroP/lab_reports/lab5/lab5.html#hardware",
     "title": "Interrupts",
     "section": "Hardware",
     "text": "Hardware\nThis lab features a simple circuit design, consisting of two main components:\n\nThe motor must be powered by an external power source, separate from the 5V output pin on the protoboard, allowing us to vary the voltage and observe changes in RPM both in real life and in the terminal.\nThe quadrature encoders must be powered with a constant 5V and connected to the correct pins that are 5V compatible, as specified in the STM32L432KC reference manual.\n\nHardware design seen below in Figure 2.\n\n\n\nFigure2: Circuit schematic"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab5/lab5.html#software",
-    "href": "MicroP/lab_reflect/lab5/lab5.html#software",
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#software",
+    "href": "MicroP/lab_reports/lab5/lab5.html#software",
     "title": "Interrupts",
     "section": "Software",
     "text": "Software\nThis lab implements an interrupt design, where a separate function is immediately called when certain external interrupts are triggered. In tandem with the use of an internal timer, this interrupt handler can count the clock cycles between one of the four possible state types determined by the two quadrature encoder combinations. In this case, the scenario occurs when both interrupt A = 1 and interrupt B = 1.\nOnce an interrupt (either the rising or falling edge of one of the two interrupt signals) is triggered, the interrupt handler is entered. Depending on the direction of the motor, one of the two “if” statements (as shown in Figure 3) is executed. This process repeats every time the interrupt handler is entered under the specified scenario.\nThe output is a delta value, which provides information about the number of clock cycles between each interrupt. This data can be used to extrapolate speed, with the sign of the delta (positive or negative) indicating the direction of the motor.\n\n\n\nFigure3: Software Block Diagram"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab5/lab5.html#configuration-setup",
-    "href": "MicroP/lab_reflect/lab5/lab5.html#configuration-setup",
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
+    "href": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
     "title": "Interrupts",
     "section": "Configuration & Setup",
     "text": "Configuration & Setup\nFirstly, all related peripherals must be configured, including FLASH memory, CLK, GPIO, and EXTI. Except for EXTI (external interrupts), these peripherals have been utilized in previous labs. Therefore, the primary focus of the configuration discussion will be on the EXTI peripheral.\nThere are a few steps associated with the configuration of external register inputs from PA6 and PA8:\n\nEnable global interrupts using “__enable_irq();“.\nEnable the external interrupt mask associated with PA6 and PA8 (EXTI_IMR1_TMx [x=6,8], respectively).\nEnable both rising and falling edge triggers (EXTI_RTSR1_RTx and EXTI_FTSR1_FTx [x=6,8]).\nEnable external interrupt lines 5-9, which include lines 6 and 8, corresponding to the desired GPIO pins. This is accomplished using NVIC-&gt;ISER[0] |= (1 &lt;&lt; EXTI9_5_IRQn).\n\nRegarding the hardware setup and functionality confirmation, I verified that the A and B encoders output the desired waveforms, as confirmed with the RIGOL MSO1104 oscilloscope, as shown in Figure 4.\n\n\n\nFigure4: Quadrature Encoder Signals\n\n\nI was able to confirm that my GPIO and external interrupt handler block in my code worked correctly by embedding a print statement within the EXTI9_5_IRQHandler function. I printed the value of delta, the variable used to measure the time difference between interrupt events. Additionally, I printed the values of my PA6 and PA8 pins, which receive the A and B interrupt signals, verifying that they alternate between 1 and 0 as expected. This confirms that my code is receiving data from the hardware as intended."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab5/lab5.html#calculations",
-    "href": "MicroP/lab_reflect/lab5/lab5.html#calculations",
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#calculations",
+    "href": "MicroP/lab_reports/lab5/lab5.html#calculations",
     "title": "Interrupts",
     "section": "Calculations",
     "text": "Calculations\nThis section will cover the mathematical portion of this lab\n\nRPS Calculation\nThe calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of the two interrupts in which they are both high (1), the RPS is determined by Equation [1].\n[1] \\(rps = \\frac{1000}{PPR*delta}\\)\n\n\nm/s Calculation\nThis code also enables the display of linear velocity in meters per second (m/s) for the DC motor. This is achieved by calculating the radius of the motor shaft from the diameter specified in the data sheet, which is then used to determine the circumference “C”. The circumference is multiplied by the RPS value, as shown in Equation [2], to obtain the final linear velocity in m/s.\n[2] \\(m/s = RPS*C\\)\n\n\nDirection Calculation\nThe direction calculation is straightforward. Based on observations made with an oscilloscope, the sign of the delta value, assigned within the two different “if” statements in the interrupt handler, determines the motor’s direction. Depending on whether the delta is positive or negative, the motor is identified as spinning clockwise or counterclockwise and printed to the terminal."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html",
-    "href": "MicroP/lab_reflect/lab7/lab7.html",
+    "objectID": "MicroP/lab_reports/lab7/lab7.html",
+    "href": "MicroP/lab_reports/lab7/lab7.html",
     "title": "The Advanced Encryption Standard",
     "section": "",
     "text": "The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.\nThis lab involves implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. To maximize efficiency and minimize storage usage, a pipelining method was utilized throughout the design and implementation process. A simple testbench was created for this lab, where our STM32 MCU sends plaintext and a key to the FPGA over SPI. If the FPGA returns the correct ciphertext, an onboard LED is turned on to indicate success.\n\n\n\nFigure1: Top level AES-128 functionality"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#key-schedule",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#key-schedule",
+    "objectID": "MicroP/lab_reports/lab7/lab7.html#key-schedule",
+    "href": "MicroP/lab_reports/lab7/lab7.html#key-schedule",
     "title": "The Advanced Encryption Standard",
     "section": "Key Schedule",
     "text": "Key Schedule\nThe key schedule in AES-128, also known as key expansion, is an essential part of the encryption process. It generates a unique 128-bit round key for each of the 10 rounds, based on the original 128-bit cipher key. The key schedule works through several steps:\nRot Word: This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.\n\n\n\nFigure2: RotWord step in Key Expansion\n\n\nSub Word: Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.\n\n\n\nFigure3: SubWord step in Key Expansion\n\n\nRcon: A round constant specific to each round is XORed with the first word of each four-word block, ensuring each round key is unique.\n\n\n\nFigure4: Rcon step in Key Expansion\n\n\nFill Round Key: The remaining words of each round key are derived by XORing parts of the previous round key, filling out the key material for each round. This is done recusively, as each round is XORed with the previous output from the recursive XOR. This is done until a new round key is produced.\n\n\n\nFigure5: Recursive XOR (aka Fill Round Key) step in Key Expansion\n\n\nAs each new round key is created, it is then used as the basis for generating the next round key. The first word of the new round key goes through the RotWord transformation, followed by other steps in the key expansion process, ensuring that each subsequent round key is derived from the previous one in a recursive, circular fashion. This process continues until all round keys are generated for the encryption."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#encryption-process",
+    "objectID": "MicroP/lab_reports/lab7/lab7.html#encryption-process",
+    "href": "MicroP/lab_reports/lab7/lab7.html#encryption-process",
     "title": "The Advanced Encryption Standard",
     "section": "Encryption Process",
     "text": "Encryption Process\nThe encryption process is classified as all of the sequential and combinational logic performed on the cyhertext, and intermediate versions of that cyphertext, throughout all rounds in the full AES-128 encryption standard. This process depends on the current round key, which is generated in parallel with the encryption process ensuring that the correct round key is used for its intended encryption round.\nSub Bytes: Similar to Su bWord in the key expansion process, however each byte in the full 128-bit cyphertext undergoes an S-box substitution, adding nonlinearity to the key schedule. Each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid, as done in Figure 3 under key schedule.\nShift Rows: Each row in the 4x4, byte-wise, column-major representation of the 128-bit ciphertext is shifted left by one byte, with any overflow bytes wrapping around to the right side sequentially.\n\n\n\nFigure6: Shift Rows step in the encryption process\n\n\nMix Cols: Each column of the 4x4 byte matrix is transformed using Galois Field (GF(2^8)) arithmetic to mix and spread out the bytes, enhancing diffusion in the encryption.\n\n\n\nFigure7: Mix Cols step in the encryption process\n\n\nAdd Round Key: This step combines the current ciphertext with the current round key using an XOR operation, ensuring all round keys are unique.\n\n\n\nFigure8: Add Ronnd Key step to the encryption process"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#aes-128-note",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#aes-128-note",
+    "objectID": "MicroP/lab_reports/lab7/lab7.html#aes-128-note",
+    "href": "MicroP/lab_reports/lab7/lab7.html#aes-128-note",
     "title": "The Advanced Encryption Standard",
     "section": "AES-128 Note",
     "text": "AES-128 Note\nIt is important to note that not all rounds of the AES-128 encrption standard are the same, in particular the first and last round. For informaiton and helpful demonstration of all related steps of AES-128, see this website."
   },
   {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#hardware",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#hardware",
+    "objectID": "MicroP/lab_reports/lab7/lab7.html#hardware",
+    "href": "MicroP/lab_reports/lab7/lab7.html#hardware",
     "title": "The Advanced Encryption Standard",
     "section": "Hardware",
     "text": "Hardware\nThis deisgn was implamented on the Micro Ps protoboard as developed in lab1 and shown belwin Figure 9. The 8 pin dip-switch must also assume the position shown in the bottom of Figure 9 in order to properly communicate between the on board MCU and FPGA via SPI.\n\n\n\n\nFigure9: Lab 7 Hardware"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#software",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#software",
+    "objectID": "MicroP/lab_reports/lab7/lab7.html#software",
+    "href": "MicroP/lab_reports/lab7/lab7.html#software",
     "title": "The Advanced Encryption Standard",
     "section": "Software",
     "text": "Software\nFor this lab, a simple testbench was provided, which verifies the correctness of the output from the implemented AES-128 algorithm on the FPGA.\nThe following block diagram, as seen in Figure 10, features a pipelined design, where delay and hold flip-flops are used to store the previous round values for use in the following round calculations. The controller block contains the finite state machine (FSM) logic, as shown in Figure 11, and generates register enable and multiplexer (MUX) control signals based on the current round requirements. The key schedule and the remaining logic that handles the main ciphertext operations run in parallel, allowing the pipeline to be synchronized between both functions. This results in a clear and efficient design that is easily replicated across rounds.\n\n\n\nFigure10: Pipeline Style Block Diagram\n\n\nThe FSM, as shown in Figure 11 below, was used to design the AES-128 implementation in terms of the current round, corresponding to the state number. This FSM features an S0 state, which waits for a reset signal generated by the controller module based on the ‘load’ signal, which goes to 0 when all bits are ready to be read by the FPGA through its SPI interface. An S12 state holds the ‘done’ signal and the ciphertext output once the AES-128 encryption is complete. All round states from S1 to S11 correspond to the rounds required to correctly implement the AES-128 encryption algorithm.\n\n\n\nFigure11: FSM"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#simulation-results",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#simulation-results",
+    "objectID": "MicroP/lab_reports/lab7/lab7.html#simulation-results",
+    "href": "MicroP/lab_reports/lab7/lab7.html#simulation-results",
     "title": "The Advanced Encryption Standard",
     "section": "Simulation Results",
     "text": "Simulation Results\nThe following ModelSim waveforms demonstrate successful testbench results for both the AES-128 encryption algorithm and the implemented SPI protocol, respectively.\n\n\n\nFigure12: aes_core successful testbench (functional AES-128 encryption algorithm)\n\n\n\n\n\nFigure13: aes_spi successful testbench (expected input / ouput and SPI controll signals)"
   },
   {
-    "objectID": "MicroP/lab_reflect/lab7/lab7.html#hardware-results",
-    "href": "MicroP/lab_reflect/lab7/lab7.html#hardware-results",
+    "objectID": "MicroP/lab_reports/lab7/lab7.html#hardware-results",
+    "href": "MicroP/lab_reports/lab7/lab7.html#hardware-results",
     "title": "The Advanced Encryption Standard",
     "section": "Hardware Results",
     "text": "Hardware Results\nIssues persisted when implementing this encryption algorithm in hardware. The chip select (CS) signal was not performing as expected, resulting in incorrect data transfer from the FPGA to the MCU. In the future, debugging will continue using a logic analyzer and the Segger debug terminal to track down what the CS pin is doing incorrectly and to determine what data (if any) is being sent to the MCU. However, as the class now moves toward final project development, further work on this lab will be halted."
