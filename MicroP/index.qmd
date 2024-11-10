@@ -1,8 +1,15 @@
 ---
-title: "Lab Reflections"
+title: "Lab Reports"
 listing:
-  contents: lab_reflect
-  sort: "date desc"
+  contents:
+    - lab_reports/lab1/lab1.qmd
+    - lab_reports/lab2/lab2.qmd
+    - lab_reports/lab3/lab3.qmd
+    - lab_reports/lab4/lab4.qmd
+    - lab_reports/lab5/lab5.qmd
+    - lab_reports/lab6/lab6.qmd
+    - lab_reports/lab7/lab7.qmd
   type: default
   categories: false
+  sort: none  # Disable automatic sorting if you are specifying the order
 ---

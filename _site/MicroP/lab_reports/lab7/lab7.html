@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jason Bowman">
-<meta name="dcterms.date" content="2024-08-30">
-<meta name="description" content="Initial learning goals">
+<meta name="dcterms.date" content="2024-10-30">
+<meta name="description" content="Lab 7">
 
-<title>First Post – My Portfolio</title>
+<title>The Advanced Encryption Standard – My Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">My Portfolio</span>
     </a>
   </div>
@@ -92,23 +92,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../MicroP"> 
+    <a class="nav-link" href="../../../MicroP"> 
 <span class="menu-text">Micro-Ps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../HPR"> 
+    <a class="nav-link" href="../../../HPR"> 
 <span class="menu-text">HPR</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html"> 
+    <a class="nav-link" href="../../../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -122,15 +122,38 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro-design-approach" id="toc-intro-design-approach" class="nav-link active" data-scroll-target="#intro-design-approach">Intro &amp; Design Approach</a></li>
+  <li><a href="#aes-128-functionality" id="toc-aes-128-functionality" class="nav-link" data-scroll-target="#aes-128-functionality">AES-128 Functionality</a>
+  <ul class="collapse">
+  <li><a href="#key-schedule" id="toc-key-schedule" class="nav-link" data-scroll-target="#key-schedule">Key Schedule</a></li>
+  <li><a href="#encryption-process" id="toc-encryption-process" class="nav-link" data-scroll-target="#encryption-process">Encryption Process</a></li>
+  <li><a href="#aes-128-note" id="toc-aes-128-note" class="nav-link" data-scroll-target="#aes-128-note">AES-128 Note</a></li>
+  </ul></li>
+  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a>
+  <ul class="collapse">
+  <li><a href="#hardware" id="toc-hardware" class="nav-link" data-scroll-target="#hardware">Hardware</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#simulation-results" id="toc-simulation-results" class="nav-link" data-scroll-target="#simulation-results">Simulation Results</a></li>
+  <li><a href="#hardware-results" id="toc-hardware-results" class="nav-link" data-scroll-target="#hardware-results">Hardware Results</a></li>
+  </ul></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  </ul>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/jasonbowman55/microP-lab7.git"><i class="bi bi-github"></i>Lab 7 GitHub</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">First Post</h1>
+<h1 class="title">The Advanced Encryption Standard</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Reflection</div>
     <div class="quarto-category">Lab Report</div>
@@ -139,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Initial learning goals
+    Lab 7
   </div>
 </div>
 
@@ -156,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 30, 2024</p>
+      <p class="date">October 30, 2024</p>
     </div>
   </div>
   
@@ -168,11 +191,147 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Hello!</p>
-<p>This is my first post of my personal website.</p>
-<p>This subpage is dedicated to my Micro-P lab reflections.</p>
+<section id="intro-design-approach" class="level1">
+<h1>Intro &amp; Design Approach</h1>
+<p>The Advanced Encryption Standard (AES) is a widely accepted and NSA-recommended encryption standard for protecting sensitive data, including classified government information. AES-128, used in this lab, is the smallest variant of AES, utilizing 128-bit keys and internal logic. In contrast, newer versions, AES-192 and AES-256, offer higher security levels by using longer key lengths, though all variants operate similarly.</p>
+<p>This lab involves implementing the AES algorithm on our UPduino v3.1 UP5K FPGA using SystemVerilog. To maximize efficiency and minimize storage usage, a pipelining method was utilized throughout the design and implementation process. A simple testbench was created for this lab, where our STM32 MCU sends plaintext and a key to the FPGA over SPI. If the FPGA returns the correct ciphertext, an onboard LED is turned on to indicate success.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/aes-128.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure1: Top level AES-128 functionality</figcaption>
+</figure>
+</div>
+</section>
+<section id="aes-128-functionality" class="level1">
+<h1>AES-128 Functionality</h1>
+<p><em>this section provides an overview of the AES-128 algorithm, and will be referenced in the design section</em></p>
+<section id="key-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="key-schedule">Key Schedule</h2>
+<p>The key schedule in AES-128, also known as key expansion, is an essential part of the encryption process. It generates a unique 128-bit round key for each of the 10 rounds, based on the original 128-bit cipher key. The key schedule works through several steps:</p>
+<p><strong>Rot Word:</strong> This operation rotates a four-byte word by shifting each byte one position to the left, which helps introduce diffusion.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rot_word.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure2: RotWord step in Key Expansion</figcaption>
+</figure>
+</div>
+<p><strong>Sub Word:</strong> Each byte in the word undergoes an S-box substitution, adding nonlinearity to the key schedule. In this substitution, each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid. The byte is then replaced with the value at the corresponding position in the S-box table.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sbox.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure3: SubWord step in Key Expansion</figcaption>
+</figure>
+</div>
+<p><strong>Rcon:</strong> A round constant specific to each round is XORed with the first word of each four-word block, ensuring each round key is unique.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rcon.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure4: Rcon step in Key Expansion</figcaption>
+</figure>
+</div>
+<p><strong>Fill Round Key:</strong> The remaining words of each round key are derived by XORing parts of the previous round key, filling out the key material for each round. This is done recusively, as each round is XORed with the previous output from the recursive XOR. This is done until a new round key is produced.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/recursive_xor.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure5: Recursive XOR (aka Fill Round Key) step in Key Expansion</figcaption>
+</figure>
+</div>
+<p>As each new round key is created, it is then used as the basis for generating the next round key. The first word of the new round key goes through the RotWord transformation, followed by other steps in the key expansion process, ensuring that each subsequent round key is derived from the previous one in a recursive, circular fashion. This process continues until all round keys are generated for the encryption.</p>
+</section>
+<section id="encryption-process" class="level2">
+<h2 class="anchored" data-anchor-id="encryption-process">Encryption Process</h2>
+<p>The encryption process is classified as all of the sequential and combinational logic performed on the cyhertext, and intermediate versions of that cyphertext, throughout all rounds in the full AES-128 encryption standard. This process depends on the current round key, which is generated in parallel with the encryption process ensuring that the correct round key is used for its intended encryption round.</p>
+<p><strong>Sub Bytes:</strong> Similar to Su bWord in the key expansion process, however each byte in the full 128-bit cyphertext undergoes an S-box substitution, adding nonlinearity to the key schedule. Each byte’s value is mapped to a new value by treating the byte as coordinates (x, y) in the S-box grid, as done in Figure 3 under key schedule.</p>
+<p><strong>Shift Rows:</strong> Each row in the 4x4, byte-wise, column-major representation of the 128-bit ciphertext is shifted left by one byte, with any overflow bytes wrapping around to the right side sequentially.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/shift_rows.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure6: Shift Rows step in the encryption process</figcaption>
+</figure>
+</div>
+<p><strong>Mix Cols:</strong> Each column of the 4x4 byte matrix is transformed using Galois Field (GF(2^8)) arithmetic to mix and spread out the bytes, enhancing diffusion in the encryption.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mix_cols.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure7: Mix Cols step in the encryption process</figcaption>
+</figure>
+</div>
+<p><strong>Add Round Key:</strong> This step combines the current ciphertext with the current round key using an XOR operation, ensuring all round keys are unique.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/add_round_key.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure8: Add Ronnd Key step to the encryption process</figcaption>
+</figure>
+</div>
+</section>
+<section id="aes-128-note" class="level2">
+<h2 class="anchored" data-anchor-id="aes-128-note">AES-128 Note</h2>
+<p>It is important to note that not all rounds of the AES-128 encrption standard are the same, in particular the first and last round. For informaiton and helpful demonstration of all related steps of AES-128, <a href="https://legacy.cryptool.org/en/cto/aes-animation">see this website.</a></p>
+</section>
+</section>
+<section id="design" class="level1">
+<h1>Design</h1>
+<p><em>This section goes into the hardware and software design specifics</em></p>
+<section id="hardware" class="level2">
+<h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
+<p>This deisgn was implamented on the Micro Ps protoboard as developed in lab1 and shown belwin Figure 9. The 8 pin dip-switch must also assume the position shown in the bottom of Figure 9 in order to properly communicate between the on board MCU and FPGA via SPI.</p>
+<p><img src="images/lab1_protoboard.jpeg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dip_switch.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure9: Lab 7 Hardware</figcaption>
+</figure>
+</div>
+</section>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
+<p>For this lab, a simple testbench was provided, which verifies the correctness of the output from the implemented AES-128 algorithm on the FPGA.</p>
+<p>The following block diagram, as seen in Figure 10, features a pipelined design, where delay and hold flip-flops are used to store the previous round values for use in the following round calculations. The controller block contains the finite state machine (FSM) logic, as shown in Figure 11, and generates register enable and multiplexer (MUX) control signals based on the current round requirements. The key schedule and the remaining logic that handles the main ciphertext operations run in parallel, allowing the pipeline to be synchronized between both functions. This results in a clear and efficient design that is easily replicated across rounds.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/main_bd.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure10: Pipeline Style Block Diagram</figcaption>
+</figure>
+</div>
+<p>The FSM, as shown in Figure 11 below, was used to design the AES-128 implementation in terms of the current round, corresponding to the state number. This FSM features an S0 state, which waits for a reset signal generated by the controller module based on the ‘load’ signal, which goes to 0 when all bits are ready to be read by the FPGA through its SPI interface. An S12 state holds the ‘done’ signal and the ciphertext output once the AES-128 encryption is complete. All round states from S1 to S11 correspond to the rounds required to correctly implement the AES-128 encryption algorithm.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fsm.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure11: FSM</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>This lab resulted in a functional implementation of the AES-128 algorithm on the UPduino v3.1 UP5K FPGA, which passed both the provided encryption process and SPI functionality test benches. The implementation was successfully deployed on hardware, enabling effective communication with the onboard STM32 MCU via SPI on the Micro-Ps protoboard. The system also passed the internal check, causing the PA9 onboard LED to illuminate upon currect encryption. This lab took approximately 22 hours to complete.</p>
+<section id="simulation-results" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-results">Simulation Results</h2>
+<p>The following ModelSim waveforms demonstrate successful testbench results for both the AES-128 encryption algorithm and the implemented SPI protocol, respectively.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/wave2.2.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure12: aes_core successful testbench (functional AES-128 encryption algorithm)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/wave2.3.jpeg" class="img-fluid figure-img"></p>
+<figcaption>Figure13: aes_spi successful testbench (expected input / ouput and SPI controll signals)</figcaption>
+</figure>
+</div>
+</section>
+<section id="hardware-results" class="level2">
+<h2 class="anchored" data-anchor-id="hardware-results">Hardware Results</h2>
+<p>Issues persisted when implementing this encryption algorithm in hardware. The chip select (CS) signal was not performing as expected, resulting in incorrect data transfer from the FPGA to the MCU. In the future, debugging will continue using a logic analyzer and the Segger debug terminal to track down what the CS pin is doing incorrectly and to determine what data (if any) is being sent to the MCU. However, as the class now moves toward final project development, further work on this lab will be halted.</p>
+</section>
+</section>
+<section id="reflection" class="level1">
+<h1>Reflection</h1>
+<p>This lab served as a cumulative project that brought together much of my SystemVerilog and FPGA knowledge. I really enjoyed the implementation process and the final product, as it demonstrates just how powerful these microchips can be. Additionally, I was very excited to able to learn about the AES-128 encryption algorithm. I think this was a great lab to conclude the lab portion of the Microprocessors course, and I am extremely excited to apply this knowledge to my final project.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
