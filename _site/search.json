@@ -306,5 +306,12 @@
     "title": "The Advanced Encryption Standard",
     "section": "Hardware Results",
     "text": "Hardware Results\nIssues persisted when implementing this encryption algorithm in hardware. The chip select (CS) signal was not performing as expected, resulting in incorrect data transfer from the FPGA to the MCU. In the future, debugging will continue using a logic analyzer and the Segger debug terminal to track down what the CS pin is doing incorrectly and to determine what data (if any) is being sent to the MCU. However, as the class now moves toward final project development, further work on this lab will be halted."
+  },
+  {
+    "objectID": "MicroP/lab_reports/index.html",
+    "href": "MicroP/lab_reports/index.html",
+    "title": "Lab Reports",
+    "section": "",
+    "text": "FPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nOct 23, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nNov 6, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nOct 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   }
 ]

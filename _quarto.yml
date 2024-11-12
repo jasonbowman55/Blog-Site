@@ -7,8 +7,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: MicroP
-        text: Micro-Ps
+      - text: Micro-Ps
+        menu:
+          - text: Lab Reports
+            href: MicroP/lab_reports/index.qmd
+          - text: Final Project
+            href: MicroP/final_proj/index.qmd
       - href: HPR
         text: HPR
       - href: resources.qmd

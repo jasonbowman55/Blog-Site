@@ -1,0 +1,15 @@
+---
+title: "Lab Reports"
+listing:
+  contents:
+    - "lab1/lab1.qmd"
+    - "lab2/lab2.qmd"
+    - "lab3/lab3.qmd"
+    - "lab4/lab4.qmd"
+    - "lab5/lab5.qmd"
+    - "lab6/lab6.qmd"
+    - "lab7/lab7.qmd"
+  type: default
+  categories: false
+  sort: none
+---
