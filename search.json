@@ -1,31 +1,31 @@
 [
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "My Portfolio",
-    "section": "",
-    "text": "E155 (Micro Ps) Course Website"
+    "objectID": "HPR/index.html#mechanical-design",
+    "href": "HPR/index.html#mechanical-design",
+    "title": "E178: High Power Rocketry",
+    "section": "Mechanical Design",
+    "text": "Mechanical Design\nThe primary focus of the mechanical design was on creating a support structure to house all of the electronics. After determining which electronics needed to be placed in the avionics bay, we created models with the general shape of each component. These models were then added into an assembly, and the support structure was designed around them. The main considerations for this design were strength and fit. Strength was crucial because the rocket would experience accelerations of up to 30Gs, and fit was equally important due to the limited space and our ambitious objectives."
   },
   {
-    "objectID": "MicroP/lab_reports/lab6/lab6.html",
-    "href": "MicroP/lab_reports/lab6/lab6.html",
-    "title": "The Internet of Things and Serial Peripheral Interface",
-    "section": "",
-    "text": "This lab focused on SPI communication between a DS1722 temperature sensor and an STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU. The goal was to implement a system that displays the temperature on a locally hosted website. The website should be able to update the temperature based on a selected bit-wise resolution (8, 9, 10, 11, or 12 bits). Additionally, the website must include an ON/OFF toggle to control an onboard LED. This setup requires proper configuration of SPI communication, with data being transmitted to and from both the MCU and the temperature sensor.\n\n\n\nFigure1: Lab 6 Tempurature Sensor Circuit"
+    "objectID": "HPR/index.html#digital-design",
+    "href": "HPR/index.html#digital-design",
+    "title": "E178: High Power Rocketry",
+    "section": "Digital Design",
+    "text": "Digital Design"
   },
   {
-    "objectID": "MicroP/lab_reports/lab6/lab6.html#hardware",
-    "href": "MicroP/lab_reports/lab6/lab6.html#hardware",
-    "title": "The Internet of Things and Serial Peripheral Interface",
-    "section": "Hardware",
-    "text": "Hardware\nThe hardware used to implement this design, as shown in the circuit schematic in Figure 2, handles the SPI communication between the MCU and the temperature sensor, as well as the UART communication between the MCU and the ESP8266 Wi-Fi chip. The schematic also illustrates the simple hardware used to power the LED based on the input from the website.\n\n\n\nFigure2: Lab 6 Circuit Schematic"
+    "objectID": "HPR/index.html#systems-design",
+    "href": "HPR/index.html#systems-design",
+    "title": "E178: High Power Rocketry",
+    "section": "Systems Design",
+    "text": "Systems Design"
   },
   {
-    "objectID": "MicroP/lab_reports/lab6/lab6.html#software",
-    "href": "MicroP/lab_reports/lab6/lab6.html#software",
-    "title": "The Internet of Things and Serial Peripheral Interface",
-    "section": "Software",
-    "text": "Software\nThe SPI1 peripheral on the MCU is used to perform the data transfer. A header file and a .c file were created to initialize and manage the send/receive operations through the SPI1 peripheral. The main.c file then utilized this configuration, along with the send/receive functions, to enable the peripheral, configure the temperature sensor, and retrieve the current temperature values. Simple HTML was written to access the button statuses from the website, which was hosted locally on the Wi-Fi chip.\n\nDS1722 Configuration & Temp Read\nThe DS1722 temperature sensor can be configured by sending a 0x80 value over the SPI pins. This value signals to the sensor that the next value sent will be applied to the configuration/status register, enabling different temperature resolutions. Based on the resolution requested from the website, the temperature sensor is configured to output the temperature at the corresponding resolution. The mapping of bit values to resolution configureation can be seen below in Figure 3.\n\n\n\n\n\nFigure3: Access register map & resolution assignment\n\n\nReading the tempurature comes in 2 packets, LSB (least significant byte) and MSB (most significant byte) as seen in the top of Figure 3.\n\n\nTempurature Decoding\nAfter reading the LSB and MSB, the value and its sign (positive or negative) must be decoded. Since the full 16-bit temperature value is in two’s complement form, a simple function was written to detect the most significant bit (MSB), which indicates whether the value is negative. If the MSB is set to 1, the temperature is negative, and the most negative value corresponds to -128°C. The remaining 15 bits of the temperature reading are summed, with each bit contributing its base-10 value, to this -128°C baseline, resulting in the final temperature reading.\nFor positive temperatures, the decoding process is simpler. It follows the same method as the negative temperature decoding, but starts from an initial value of 0°C instead of -128°C."
+    "objectID": "HPR/index.html#launch-day",
+    "href": "HPR/index.html#launch-day",
+    "title": "E178: High Power Rocketry",
+    "section": "Launch Day",
+    "text": "Launch Day\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
   },
   {
     "objectID": "MicroP/lab_reports/lab4/lab4.html",
@@ -112,53 +112,39 @@
     "text": "During the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.\n\n\n\nWaveform displaying accurate time-multiplexed functionality"
   },
   {
-    "objectID": "MicroP/index.html",
-    "href": "MicroP/index.html",
+    "objectID": "MicroP/lab_reports/index.html",
+    "href": "MicroP/lab_reports/index.html",
     "title": "Lab Reports",
     "section": "",
     "text": "FPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nOct 23, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nNov 6, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nOct 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "HPR/index.html",
-    "href": "HPR/index.html",
-    "title": "High Power Rocketry",
+    "objectID": "MicroP/lab_reports/lab6/lab6.html",
+    "href": "MicroP/lab_reports/lab6/lab6.html",
+    "title": "The Internet of Things and Serial Peripheral Interface",
     "section": "",
-    "text": "THIS POST IS STILL A WORK IN PROGRESS # About\nThis class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. This page mainly focuses on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the flight environments."
+    "text": "This lab focused on SPI communication between a DS1722 temperature sensor and an STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU. The goal was to implement a system that displays the temperature on a locally hosted website. The website should be able to update the temperature based on a selected bit-wise resolution (8, 9, 10, 11, or 12 bits). Additionally, the website must include an ON/OFF toggle to control an onboard LED. This setup requires proper configuration of SPI communication, with data being transmitted to and from both the MCU and the temperature sensor.\n\n\n\nFigure1: Lab 6 Tempurature Sensor Circuit"
   },
   {
-    "objectID": "HPR/index.html#mechanical-design",
-    "href": "HPR/index.html#mechanical-design",
-    "title": "High Power Rocketry",
-    "section": "Mechanical Design",
-    "text": "Mechanical Design\nThe primary focus of the mechanical design was on creating a support structure to house all of the electronics. After determining which electronics needed to be placed in the avionics bay, we created models with the general shape of each component. These models were then added into an assembly, and the support structure was designed around them. The main considerations for this design were strength and fit. Strength was crucial because the rocket would experience accelerations of up to 30Gs, and fit was equally important due to the limited space and our ambitious objectives."
+    "objectID": "MicroP/lab_reports/lab6/lab6.html#hardware",
+    "href": "MicroP/lab_reports/lab6/lab6.html#hardware",
+    "title": "The Internet of Things and Serial Peripheral Interface",
+    "section": "Hardware",
+    "text": "Hardware\nThe hardware used to implement this design, as shown in the circuit schematic in Figure 2, handles the SPI communication between the MCU and the temperature sensor, as well as the UART communication between the MCU and the ESP8266 Wi-Fi chip. The schematic also illustrates the simple hardware used to power the LED based on the input from the website.\n\n\n\nFigure2: Lab 6 Circuit Schematic"
   },
   {
-    "objectID": "HPR/index.html#digital-design",
-    "href": "HPR/index.html#digital-design",
-    "title": "High Power Rocketry",
-    "section": "Digital Design",
-    "text": "Digital Design"
+    "objectID": "MicroP/lab_reports/lab6/lab6.html#software",
+    "href": "MicroP/lab_reports/lab6/lab6.html#software",
+    "title": "The Internet of Things and Serial Peripheral Interface",
+    "section": "Software",
+    "text": "Software\nThe SPI1 peripheral on the MCU is used to perform the data transfer. A header file and a .c file were created to initialize and manage the send/receive operations through the SPI1 peripheral. The main.c file then utilized this configuration, along with the send/receive functions, to enable the peripheral, configure the temperature sensor, and retrieve the current temperature values. Simple HTML was written to access the button statuses from the website, which was hosted locally on the Wi-Fi chip.\n\nDS1722 Configuration & Temp Read\nThe DS1722 temperature sensor can be configured by sending a 0x80 value over the SPI pins. This value signals to the sensor that the next value sent will be applied to the configuration/status register, enabling different temperature resolutions. Based on the resolution requested from the website, the temperature sensor is configured to output the temperature at the corresponding resolution. The mapping of bit values to resolution configureation can be seen below in Figure 3.\n\n\n\n\n\nFigure3: Access register map & resolution assignment\n\n\nReading the tempurature comes in 2 packets, LSB (least significant byte) and MSB (most significant byte) as seen in the top of Figure 3.\n\n\nTempurature Decoding\nAfter reading the LSB and MSB, the value and its sign (positive or negative) must be decoded. Since the full 16-bit temperature value is in two’s complement form, a simple function was written to detect the most significant bit (MSB), which indicates whether the value is negative. If the MSB is set to 1, the temperature is negative, and the most negative value corresponds to -128°C. The remaining 15 bits of the temperature reading are summed, with each bit contributing its base-10 value, to this -128°C baseline, resulting in the final temperature reading.\nFor positive temperatures, the decoding process is simpler. It follows the same method as the negative temperature decoding, but starts from an initial value of 0°C instead of -128°C."
   },
   {
-    "objectID": "HPR/index.html#systems-design",
-    "href": "HPR/index.html#systems-design",
-    "title": "High Power Rocketry",
-    "section": "Systems Design",
-    "text": "Systems Design"
-  },
-  {
-    "objectID": "HPR/index.html#launch-day",
-    "href": "HPR/index.html#launch-day",
-    "title": "High Power Rocketry",
-    "section": "Launch Day",
-    "text": "Launch Day\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "MicroP/final_proj/index.html",
+    "href": "MicroP/final_proj/index.html",
+    "title": "Final Project",
     "section": "",
-    "text": "About this site"
+    "text": "THIS PROJECT IS NOT FINISHED YET"
   },
   {
     "objectID": "index.html",
@@ -166,6 +152,13 @@
     "title": "Welcome!",
     "section": "",
     "text": "Hi, I am Jason Bowman. I am a Senior Engineering major at Harvey Mudd College, with a concentration in Russian language. I have technical experience with Embedded Systems Engineering, Mechanical Design and SolidWorks CAD design and simulation, and Control Systems to name a few.\nThis portfolio began as a means of displaying progress in a class called Micro Processor Application & Design (aka “Micro Ps”)."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   },
   {
     "objectID": "MicroP/lab_reports/lab1/lab1.html",
@@ -187,69 +180,6 @@
     "title": "FPGA and MCU Setup and Testing",
     "section": "Results & Reflection",
     "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter could be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning how to use Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had learned over a year ago in E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules."
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab3/lab3.html",
-    "href": "MicroP/lab_reports/lab3/lab3.html",
-    "title": "Keypad Scanner",
-    "section": "",
-    "text": "This lab utilized a 4x4 keypad scanner in tandem with a time-multiplexed dual 7-segment display, which was developed during Lab 2. The final goal was to update the right 7-segment display with each button press on the keypad, while the left display would show the previously pressed value. This functionality was implemented using a finite state machine (FSM) and next-state logic to simultaneously scan the keypad rows and decode which button was being pressed. Debouncing logic was also implemented to handle button bounce within the keypad.\n\n\n\nFigure1: Lab 3 hardware"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab3/lab3.html#hardware",
-    "href": "MicroP/lab_reports/lab3/lab3.html#hardware",
-    "title": "Keypad Scanner",
-    "section": "Hardware",
-    "text": "Hardware\nThe system hardware consists of two main sections: segment control and keypad input. The segment control section is identical to the design from Lab 2, utilizing two 2N3906 PNP transistors and time-multiplexing logic to display two separate outputs on the dual 7-segment display. The keypad input section accesses the desired row and column pins. When a column is powered and a button is pressed in that column, a button press is registered if the corresponding row pin is active low.\nDue to the internal hardware of the keypad, when a column is powered and a key is pressed, the specific row being pressed is unknown, making it difficult to determine the exact button. To resolve this, a row-scanning method is used, which sets one row active low at a time using next state logic described in the FSM section. Since the column pins are active high, if a button is pressed in a column corresponding to an active low row, we can track which row is being scanned and which column pin is pulled down to 0, allowing us to accurately decode the button press.\n\n\n\nFigure2: Circuit diagram"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab3/lab3.html#fsm",
-    "href": "MicroP/lab_reports/lab3/lab3.html#fsm",
-    "title": "Keypad Scanner",
-    "section": "FSM",
-    "text": "FSM\nTop Row States (Idle/Row Selection): This state acts as the pathway between all four row scans, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed. Delay states are used between the top states to ensure button presses are registered in time.\nMiddle Row States (Button Detection/Decode): Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated. A delay state is used between the middle and bottom state to ensure segment values are assigned correctly.\nBottom Row States (Hold/Wait): After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.\n\n\n\nFigure3: Finite State Machine (FSM)"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
-    "href": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
-    "title": "Keypad Scanner",
-    "section": "Block Diagram",
-    "text": "Block Diagram\nFigure 4 below displays the module communication logic for the System Verilog code that programmed the FPGA. Notibly we have a top, button_decode_bounce, and seven_seg_decoder modules.\ntop: The overseeing connection module and direct communication with I/O. Also includes the time-multiplexer and Low Speed Oscillator (LSOSC) clk source.\nbutton_decode_bounce: button decoder, debouncer, and row scan generator.\nseven_seg_decoder: decodes the button pressed into 7-segment display outputs.\n\n\n\nFigure4: System Verilog module block diagram"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html",
-    "href": "MicroP/lab_reports/lab5/lab5.html",
-    "title": "Interrupts",
-    "section": "",
-    "text": "This lab utilized a 25GA-370 DC motor with internal quadrature encoders to output the current RPM and motor spin direction via the debug terminal in Segger. The main focus of the lab was on interrupts, where we treated the encoder signals as interrupt events. These interrupts were then used to calculate the desired information.\n\n\n\nFigure1: Lab5 Hardware"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html#hardware",
-    "href": "MicroP/lab_reports/lab5/lab5.html#hardware",
-    "title": "Interrupts",
-    "section": "Hardware",
-    "text": "Hardware\nThis lab features a simple circuit design, consisting of two main components:\n\nThe motor must be powered by an external power source, separate from the 5V output pin on the protoboard, allowing us to vary the voltage and observe changes in RPM both in real life and in the terminal.\nThe quadrature encoders must be powered with a constant 5V and connected to the correct pins that are 5V compatible, as specified in the STM32L432KC reference manual.\n\nHardware design seen below in Figure 2.\n\n\n\nFigure2: Circuit schematic"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html#software",
-    "href": "MicroP/lab_reports/lab5/lab5.html#software",
-    "title": "Interrupts",
-    "section": "Software",
-    "text": "Software\nThis lab implements an interrupt design, where a separate function is immediately called when certain external interrupts are triggered. In tandem with the use of an internal timer, this interrupt handler can count the clock cycles between one of the four possible state types determined by the two quadrature encoder combinations. In this case, the scenario occurs when both interrupt A = 1 and interrupt B = 1.\nOnce an interrupt (either the rising or falling edge of one of the two interrupt signals) is triggered, the interrupt handler is entered. Depending on the direction of the motor, one of the two “if” statements (as shown in Figure 3) is executed. This process repeats every time the interrupt handler is entered under the specified scenario.\nThe output is a delta value, which provides information about the number of clock cycles between each interrupt. This data can be used to extrapolate speed, with the sign of the delta (positive or negative) indicating the direction of the motor.\n\n\n\nFigure3: Software Block Diagram"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
-    "href": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
-    "title": "Interrupts",
-    "section": "Configuration & Setup",
-    "text": "Configuration & Setup\nFirstly, all related peripherals must be configured, including FLASH memory, CLK, GPIO, and EXTI. Except for EXTI (external interrupts), these peripherals have been utilized in previous labs. Therefore, the primary focus of the configuration discussion will be on the EXTI peripheral.\nThere are a few steps associated with the configuration of external register inputs from PA6 and PA8:\n\nEnable global interrupts using “__enable_irq();“.\nEnable the external interrupt mask associated with PA6 and PA8 (EXTI_IMR1_TMx [x=6,8], respectively).\nEnable both rising and falling edge triggers (EXTI_RTSR1_RTx and EXTI_FTSR1_FTx [x=6,8]).\nEnable external interrupt lines 5-9, which include lines 6 and 8, corresponding to the desired GPIO pins. This is accomplished using NVIC-&gt;ISER[0] |= (1 &lt;&lt; EXTI9_5_IRQn).\n\nRegarding the hardware setup and functionality confirmation, I verified that the A and B encoders output the desired waveforms, as confirmed with the RIGOL MSO1104 oscilloscope, as shown in Figure 4.\n\n\n\nFigure4: Quadrature Encoder Signals\n\n\nI was able to confirm that my GPIO and external interrupt handler block in my code worked correctly by embedding a print statement within the EXTI9_5_IRQHandler function. I printed the value of delta, the variable used to measure the time difference between interrupt events. Additionally, I printed the values of my PA6 and PA8 pins, which receive the A and B interrupt signals, verifying that they alternate between 1 and 0 as expected. This confirms that my code is receiving data from the hardware as intended."
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html#calculations",
-    "href": "MicroP/lab_reports/lab5/lab5.html#calculations",
-    "title": "Interrupts",
-    "section": "Calculations",
-    "text": "Calculations\nThis section will cover the mathematical portion of this lab\n\nRPS Calculation\nThe calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of the two interrupts in which they are both high (1), the RPS is determined by Equation [1].\n[1] \\(rps = \\frac{1000}{PPR*delta}\\)\n\n\nm/s Calculation\nThis code also enables the display of linear velocity in meters per second (m/s) for the DC motor. This is achieved by calculating the radius of the motor shaft from the diameter specified in the data sheet, which is then used to determine the circumference “C”. The circumference is multiplied by the RPS value, as shown in Equation [2], to obtain the final linear velocity in m/s.\n[2] \\(m/s = RPS*C\\)\n\n\nDirection Calculation\nThe direction calculation is straightforward. Based on observations made with an oscilloscope, the sign of the delta value, assigned within the two different “if” statements in the interrupt handler, determines the motor’s direction. Depending on whether the delta is positive or negative, the motor is identified as spinning clockwise or counterclockwise and printed to the terminal."
   },
   {
     "objectID": "MicroP/lab_reports/lab7/lab7.html",
@@ -306,5 +236,75 @@
     "title": "The Advanced Encryption Standard",
     "section": "Hardware Results",
     "text": "Hardware Results\nIssues persisted when implementing this encryption algorithm in hardware. The chip select (CS) signal was not performing as expected, resulting in incorrect data transfer from the FPGA to the MCU. In the future, debugging will continue using a logic analyzer and the Segger debug terminal to track down what the CS pin is doing incorrectly and to determine what data (if any) is being sent to the MCU. However, as the class now moves toward final project development, further work on this lab will be halted."
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html",
+    "href": "MicroP/lab_reports/lab5/lab5.html",
+    "title": "Interrupts",
+    "section": "",
+    "text": "This lab utilized a 25GA-370 DC motor with internal quadrature encoders to output the current RPM and motor spin direction via the debug terminal in Segger. The main focus of the lab was on interrupts, where we treated the encoder signals as interrupt events. These interrupts were then used to calculate the desired information.\n\n\n\nFigure1: Lab5 Hardware"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#hardware",
+    "href": "MicroP/lab_reports/lab5/lab5.html#hardware",
+    "title": "Interrupts",
+    "section": "Hardware",
+    "text": "Hardware\nThis lab features a simple circuit design, consisting of two main components:\n\nThe motor must be powered by an external power source, separate from the 5V output pin on the protoboard, allowing us to vary the voltage and observe changes in RPM both in real life and in the terminal.\nThe quadrature encoders must be powered with a constant 5V and connected to the correct pins that are 5V compatible, as specified in the STM32L432KC reference manual.\n\nHardware design seen below in Figure 2.\n\n\n\nFigure2: Circuit schematic"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#software",
+    "href": "MicroP/lab_reports/lab5/lab5.html#software",
+    "title": "Interrupts",
+    "section": "Software",
+    "text": "Software\nThis lab implements an interrupt design, where a separate function is immediately called when certain external interrupts are triggered. In tandem with the use of an internal timer, this interrupt handler can count the clock cycles between one of the four possible state types determined by the two quadrature encoder combinations. In this case, the scenario occurs when both interrupt A = 1 and interrupt B = 1.\nOnce an interrupt (either the rising or falling edge of one of the two interrupt signals) is triggered, the interrupt handler is entered. Depending on the direction of the motor, one of the two “if” statements (as shown in Figure 3) is executed. This process repeats every time the interrupt handler is entered under the specified scenario.\nThe output is a delta value, which provides information about the number of clock cycles between each interrupt. This data can be used to extrapolate speed, with the sign of the delta (positive or negative) indicating the direction of the motor.\n\n\n\nFigure3: Software Block Diagram"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
+    "href": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
+    "title": "Interrupts",
+    "section": "Configuration & Setup",
+    "text": "Configuration & Setup\nFirstly, all related peripherals must be configured, including FLASH memory, CLK, GPIO, and EXTI. Except for EXTI (external interrupts), these peripherals have been utilized in previous labs. Therefore, the primary focus of the configuration discussion will be on the EXTI peripheral.\nThere are a few steps associated with the configuration of external register inputs from PA6 and PA8:\n\nEnable global interrupts using “__enable_irq();“.\nEnable the external interrupt mask associated with PA6 and PA8 (EXTI_IMR1_TMx [x=6,8], respectively).\nEnable both rising and falling edge triggers (EXTI_RTSR1_RTx and EXTI_FTSR1_FTx [x=6,8]).\nEnable external interrupt lines 5-9, which include lines 6 and 8, corresponding to the desired GPIO pins. This is accomplished using NVIC-&gt;ISER[0] |= (1 &lt;&lt; EXTI9_5_IRQn).\n\nRegarding the hardware setup and functionality confirmation, I verified that the A and B encoders output the desired waveforms, as confirmed with the RIGOL MSO1104 oscilloscope, as shown in Figure 4.\n\n\n\nFigure4: Quadrature Encoder Signals\n\n\nI was able to confirm that my GPIO and external interrupt handler block in my code worked correctly by embedding a print statement within the EXTI9_5_IRQHandler function. I printed the value of delta, the variable used to measure the time difference between interrupt events. Additionally, I printed the values of my PA6 and PA8 pins, which receive the A and B interrupt signals, verifying that they alternate between 1 and 0 as expected. This confirms that my code is receiving data from the hardware as intended."
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#calculations",
+    "href": "MicroP/lab_reports/lab5/lab5.html#calculations",
+    "title": "Interrupts",
+    "section": "Calculations",
+    "text": "Calculations\nThis section will cover the mathematical portion of this lab\n\nRPS Calculation\nThe calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of the two interrupts in which they are both high (1), the RPS is determined by Equation [1].\n[1] \\(rps = \\frac{1000}{PPR*delta}\\)\n\n\nm/s Calculation\nThis code also enables the display of linear velocity in meters per second (m/s) for the DC motor. This is achieved by calculating the radius of the motor shaft from the diameter specified in the data sheet, which is then used to determine the circumference “C”. The circumference is multiplied by the RPS value, as shown in Equation [2], to obtain the final linear velocity in m/s.\n[2] \\(m/s = RPS*C\\)\n\n\nDirection Calculation\nThe direction calculation is straightforward. Based on observations made with an oscilloscope, the sign of the delta value, assigned within the two different “if” statements in the interrupt handler, determines the motor’s direction. Depending on whether the delta is positive or negative, the motor is identified as spinning clockwise or counterclockwise and printed to the terminal."
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab3/lab3.html",
+    "href": "MicroP/lab_reports/lab3/lab3.html",
+    "title": "Keypad Scanner",
+    "section": "",
+    "text": "This lab utilized a 4x4 keypad scanner in tandem with a time-multiplexed dual 7-segment display, which was developed during Lab 2. The final goal was to update the right 7-segment display with each button press on the keypad, while the left display would show the previously pressed value. This functionality was implemented using a finite state machine (FSM) and next-state logic to simultaneously scan the keypad rows and decode which button was being pressed. Debouncing logic was also implemented to handle button bounce within the keypad.\n\n\n\nFigure1: Lab 3 hardware"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab3/lab3.html#hardware",
+    "href": "MicroP/lab_reports/lab3/lab3.html#hardware",
+    "title": "Keypad Scanner",
+    "section": "Hardware",
+    "text": "Hardware\nThe system hardware consists of two main sections: segment control and keypad input. The segment control section is identical to the design from Lab 2, utilizing two 2N3906 PNP transistors and time-multiplexing logic to display two separate outputs on the dual 7-segment display. The keypad input section accesses the desired row and column pins. When a column is powered and a button is pressed in that column, a button press is registered if the corresponding row pin is active low.\nDue to the internal hardware of the keypad, when a column is powered and a key is pressed, the specific row being pressed is unknown, making it difficult to determine the exact button. To resolve this, a row-scanning method is used, which sets one row active low at a time using next state logic described in the FSM section. Since the column pins are active high, if a button is pressed in a column corresponding to an active low row, we can track which row is being scanned and which column pin is pulled down to 0, allowing us to accurately decode the button press.\n\n\n\nFigure2: Circuit diagram"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab3/lab3.html#fsm",
+    "href": "MicroP/lab_reports/lab3/lab3.html#fsm",
+    "title": "Keypad Scanner",
+    "section": "FSM",
+    "text": "FSM\nTop Row States (Idle/Row Selection): This state acts as the pathway between all four row scans, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed. Delay states are used between the top states to ensure button presses are registered in time.\nMiddle Row States (Button Detection/Decode): Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated. A delay state is used between the middle and bottom state to ensure segment values are assigned correctly.\nBottom Row States (Hold/Wait): After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.\n\n\n\nFigure3: Finite State Machine (FSM)"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
+    "href": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
+    "title": "Keypad Scanner",
+    "section": "Block Diagram",
+    "text": "Block Diagram\nFigure 4 below displays the module communication logic for the System Verilog code that programmed the FPGA. Notibly we have a top, button_decode_bounce, and seven_seg_decoder modules.\ntop: The overseeing connection module and direct communication with I/O. Also includes the time-multiplexer and Low Speed Oscillator (LSOSC) clk source.\nbutton_decode_bounce: button decoder, debouncer, and row scan generator.\nseven_seg_decoder: decodes the button pressed into 7-segment display outputs.\n\n\n\nFigure4: System Verilog module block diagram"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "My Portfolio",
+    "section": "",
+    "text": "E155 (Micro Ps) Course Website"
   }
 ]

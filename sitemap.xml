@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jasonbowman55.github.io/Blog-Site/resources.html</loc>
-    <lastmod>2024-10-09T06:13:51.283Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab6/lab6.html</loc>
-    <lastmod>2024-11-10T00:53:50.384Z</lastmod>
+    <loc>https://jasonbowman55.github.io/Blog-Site/HPR/index.html</loc>
+    <lastmod>2024-11-12T08:46:23.658Z</lastmod>
   </url>
   <url>
     <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab4/lab4.html</loc>
-    <lastmod>2024-10-24T03:17:47.241Z</lastmod>
+    <lastmod>2024-11-12T08:01:35.395Z</lastmod>
   </url>
   <url>
     <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab2/lab2.html</loc>
-    <lastmod>2024-10-18T04:06:24.337Z</lastmod>
+    <lastmod>2024-11-12T08:01:35.327Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/index.html</loc>
-    <lastmod>2024-11-10T01:07:43.685Z</lastmod>
+    <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/index.html</loc>
+    <lastmod>2024-11-12T08:27:06.845Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonbowman55.github.io/Blog-Site/HPR/index.html</loc>
-    <lastmod>2024-10-18T04:06:24.335Z</lastmod>
+    <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab6/lab6.html</loc>
+    <lastmod>2024-11-12T08:01:35.671Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonbowman55.github.io/Blog-Site/about.html</loc>
-    <lastmod>2024-10-02T01:18:31.836Z</lastmod>
+    <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/final_proj/index.html</loc>
+    <lastmod>2024-11-12T08:29:25.408Z</lastmod>
   </url>
   <url>
     <loc>https://jasonbowman55.github.io/Blog-Site/index.html</loc>
-    <lastmod>2024-10-02T05:14:32.387Z</lastmod>
+    <lastmod>2024-11-12T09:02:51.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonbowman55.github.io/Blog-Site/about.html</loc>
+    <lastmod>2024-11-12T08:01:36.112Z</lastmod>
   </url>
   <url>
     <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab1/lab1.html</loc>
-    <lastmod>2024-10-18T04:06:24.336Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab3/lab3.html</loc>
-    <lastmod>2024-10-18T04:06:24.338Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab5/lab5.html</loc>
-    <lastmod>2024-10-24T05:16:27.570Z</lastmod>
+    <lastmod>2024-11-12T08:01:35.312Z</lastmod>
   </url>
   <url>
     <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab7/lab7.html</loc>
-    <lastmod>2024-11-08T21:10:11.677Z</lastmod>
+    <lastmod>2024-11-12T08:01:35.707Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab5/lab5.html</loc>
+    <lastmod>2024-11-12T08:01:35.660Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonbowman55.github.io/Blog-Site/MicroP/lab_reports/lab3/lab3.html</loc>
+    <lastmod>2024-11-12T08:01:35.365Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonbowman55.github.io/Blog-Site/resources.html</loc>
+    <lastmod>2024-11-12T08:01:36.116Z</lastmod>
   </url>
 </urlset>
