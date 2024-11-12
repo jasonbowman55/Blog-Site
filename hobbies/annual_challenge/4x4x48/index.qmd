@@ -1,7 +1,19 @@
 ---
 title: "4 x 4 x 48"
+author: "Jason Bowman"
+draft: true
 ---
 
+# Intro
+Stemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the journey of [Ket Hollingsworth](https://www.linkedin.com/in/ket-hollingsworth/) and [Collin Fitzpatrick](https://www.linkedin.com/in/collin-fitzpatrick-2155a9222/) doing this challenge, putting their own spin on it.
+
+# The Plan
+Run 4 miles every 4 hours for 48 hours with the following 4 hour time breakdown:
+- hour 0-1: Run 4 miles
+- hour 1-3: learn something new / work on a project
+- hour 3-4: sleep
+
+# The Result
 <a href="https://youtu.be/OFPg18zu_NY?si=XFeBVM_6qCzyqBwQ" target="_blank">
   <img src="https://img.youtube.com/vi/OFPg18zu_NY/0.jpg" alt="4 x 4 x 48" width="560" />
 </a>
