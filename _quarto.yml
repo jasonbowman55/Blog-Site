@@ -15,12 +15,15 @@ website:
             href: MicroP/final_proj/index.qmd
       - href: HPR
         text: HPR
+      - href: hobbies/index.qmd
+        text: Hobbies
+        menu:
+          - text: Annual Challenge
+            href: hobbies/annual_challenge
       - href: resources.qmd
         text: Resources
       - href: about.qmd
         text: About
-      - href: hobbies/index.qmd
-        text: Hobbies
 format:
   html:
     theme: cosmo
