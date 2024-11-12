@@ -10,8 +10,11 @@ about:
     -   icon: github
         text: Github
         href: https://github.com/jasonbowman55
----
+    -   icon: fab fa-file-pdf
+        text: Resume
+        href: https://drive.google.com/file/d/1rve4ZzdJ6zfQs7ZBBXW57-R39JYIZEZN/view?usp=sharing
 
+---
 
 Hi, I am Jason Bowman. I am a Senior Engineering major at Harvey Mudd College, with a concentration in Russian language. I have technical experience with Embedded Systems Engineering, Mechanical Design and SolidWorks CAD design and simulation, and Control Systems to name a few.
 

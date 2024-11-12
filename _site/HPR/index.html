@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>High Power Rocketry – My Portfolio</title>
+<title>E178: High Power Rocketry – My Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,10 +92,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../MicroP"> 
-<span class="menu-text">Micro-Ps</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-micro-ps" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Micro-Ps</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-micro-ps">    
+        <li>
+    <a class="dropdown-item" href="../MicroP/lab_reports/index.html">
+ <span class="dropdown-text">Lab Reports</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../MicroP/final_proj/index.html">
+ <span class="dropdown-text">Final Project</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../HPR"> 
 <span class="menu-text">HPR</span></a>
@@ -124,7 +135,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-ideation" id="toc-project-ideation" class="nav-link active" data-scroll-target="#project-ideation">Project Ideation</a></li>
+  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  <li><a href="#project-ideation" id="toc-project-ideation" class="nav-link" data-scroll-target="#project-ideation">Project Ideation</a></li>
   <li><a href="#project-design" id="toc-project-design" class="nav-link" data-scroll-target="#project-design">Project Design</a>
   <ul class="collapse">
   <li><a href="#mechanical-design" id="toc-mechanical-design" class="nav-link" data-scroll-target="#mechanical-design">Mechanical Design</a></li>
@@ -140,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">High Power Rocketry</h1>
+<h1 class="title">E178: High Power Rocketry</h1>
 </div>
 
 
@@ -157,10 +169,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="images/desert.jpeg" class="img-fluid"> <strong>THIS POST IS STILL A WORK IN PROGRESS</strong> # About</p>
-<p>This class was a thrilling rollercoaster experience during my junior year at Harvey Mudd College. This page mainly focuses on the final project portion of the class, where Jordan Stone and I built a PID-controlled rotational stabilization system for a Level 2 high-power model rocket that reached an altitude of 3,000 meters. Throughout this project, I gained extensive knowledge in digital electronics, signal and data processing, control systems, mechanical design, project management, and rigorous testing procedures. I also learned that I really, really, really like to launch rockets and see if my creation can survive the flight environments.</p>
+<p><img src="images/desert.jpeg" class="img-fluid"></p>
+<section id="about" class="level1">
+<h1>About</h1>
+<p>This post highlights my and <a href="https://www.linkedin.com/in/jordan-stone-844a4b1b8/">Jordan Stones</a> final project in E178: High Power Rocketry, taught by <a href="https://www.linkedin.com/in/erikspjut/">Prof.&nbsp;Erik Spjut</a>. This course covered the modeling and design of a stable, reliable high-power rocket, along with construction techniques such as basic machining and composite epoxies for joints and fillets. We also conducted analysis of flight data, sensor verification, and, in our case, implemented active roll control with live data acquisition and a PID feedback loop.</p>
+</section>
 <section id="project-ideation" class="level1">
 <h1>Project Ideation</h1>
+<p>We had a many ideas for our final</p>
 <p>Our project search was kind of all over the place. We had thoughts of dual stage rockets, modal analysis, top speed, max height. Until we found that someone in a previous class attempted a “Gyro Stabilized” rocket, which resulted in the following comment. “Got the gyro to spin up, but it didn’t seem to have much effect.” <em>-E178: High-Power Rocketry/Final Project</em> So we thought, what is stopping up from building a active control system in order to rotationally stabilize our rocket.</p>
 </section>
 <section id="project-design" class="level1">
