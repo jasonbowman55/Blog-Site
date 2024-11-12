@@ -1,0 +1,9 @@
+---
+title: "Hobbies"
+listing:
+  contents:
+    - "annual_challenge/index.qmd"
+  type: default
+  categories: false
+  sort: none
+---

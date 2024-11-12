@@ -19,7 +19,8 @@ website:
         text: Resources
       - href: about.qmd
         text: About
-
+      - href: hobbies/index.qmd
+        text: Hobbies
 format:
   html:
     theme: cosmo

@@ -10,5 +10,18 @@
       "/MicroP/lab_reports/lab6/lab6.html",
       "/MicroP/lab_reports/lab7/lab7.html"
     ]
+  },
+  {
+    "listing": "/hobbies/index.html",
+    "items": [
+      "/hobbies/annual_challenge/index.html"
+    ]
+  },
+  {
+    "listing": "/hobbies/annual_challenge/index.html",
+    "items": [
+      "/hobbies/annual_challenge/4x4x48/index.html",
+      "/hobbies/annual_challenge/claremont-sm/index.html"
+    ]
   }
 ]

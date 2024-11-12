@@ -1,0 +1,10 @@
+---
+title: "Annual Challenge"
+listing:
+  contents:
+    - "4x4x48/index.qmd"
+    - "claremont-sm/index.qmd"
+  type: default
+  categories: false
+  sort: none
+---
