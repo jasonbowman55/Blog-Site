@@ -1,0 +1,5 @@
+---
+title: "Resume"
+---
+[Download Resume (JPEG)](images/resume.jpeg)
+![Resume](images/resume.jpeg)

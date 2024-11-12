@@ -10,9 +10,10 @@ about:
     -   icon: github
         text: Github
         href: https://github.com/jasonbowman55
-    -   icon: fab fa-file-pdf
-        text: Resume
-        href: https://drive.google.com/file/d/1rve4ZzdJ6zfQs7ZBBXW57-R39JYIZEZN/view?usp=sharing
+    -   text: Resume
+        href: resume/index.qmd
+        icon: fab fa-file-pdf
+
 
 ---
 
