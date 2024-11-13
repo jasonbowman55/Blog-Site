@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -225,7 +225,59 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1731471054984" data-listing-reading-time-sort="1" data-listing-word-count-sort="193">
+<div class="thumbnail">
+<p><a href="../../hobbies/annual_challenge/4x4x48/index.html" class="no-external"></a></p><a href="../../hobbies/annual_challenge/4x4x48/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../../hobbies/annual_challenge/4x4x48/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../hobbies/annual_challenge/4x4x48/index.html" class="no-external">4 x 4 x 48</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../hobbies/annual_challenge/4x4x48/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../../hobbies/annual_challenge/4x4x48/index.html" class="no-external">Stemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the journey of Ket…</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../hobbies/annual_challenge/4x4x48/index.html" class="no-external"></a></p><a href="../../hobbies/annual_challenge/4x4x48/index.html" class="no-external">
+<div class="listing-author">
+Jason Bowman
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1731398400000" data-listing-file-modified-sort="1731472074434" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="219">
+<div class="thumbnail">
+<p><a href="../../hobbies/annual_challenge/claremont-sm/index.html" class="no-external"></a></p><a href="../../hobbies/annual_challenge/claremont-sm/index.html" class="no-external">
+<p class="card-img-top"><img src="claremont-sm/images/map_claremont-sm.jpeg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../../hobbies/annual_challenge/claremont-sm/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../hobbies/annual_challenge/claremont-sm/index.html" class="no-external">Claremont to Santa Monica &amp; Back</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../hobbies/annual_challenge/claremont-sm/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../../hobbies/annual_challenge/claremont-sm/index.html" class="no-external">Following up on our previous spring break adventure with the 4x4x48, we wanted to take on another fun and physically challenging journey. This time, I teamed up again with Ke…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../../hobbies/annual_challenge/claremont-sm/index.html" class="no-external">
+<div class="listing-date">
+Nov 12, 2024
+</div>
+<div class="listing-author">
+Jason Bowman
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
@@ -323,7 +375,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

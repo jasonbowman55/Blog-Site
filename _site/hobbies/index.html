@@ -225,10 +225,10 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1731448385384" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1731469758342" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="thumbnail">
 <p><a href="../hobbies/annual_challenge/index.html" class="no-external"></a></p><a href="../hobbies/annual_challenge/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<p class="card-img-top"><img src="annual_challenge/claremont-sm/images/map_claremont-sm.jpeg"  class="thumbnail-image card-img"/></p>
 </a><p><a href="../hobbies/annual_challenge/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -241,12 +241,19 @@ window.Quarto = {
 <div class="listing-description">
 <a href="../hobbies/annual_challenge/index.html" class="no-external">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1731471054984" data-listing-reading-time-sort="1" data-listing-word-count-sort="193">
+<div class="thumbnail">
+<p></p>
+<div class="listing-item-img-placeholder card-img-top">&nbsp;</div>
+<p></p>
+</div>
+<div class="body">
+
+<div class="listing-subtitle">
 
 </div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</a>
+<div class="listing-description">
+Stemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the…</div></div><div class="metadata"><p></p><div class="listing-author"></div></div></div><div class="quarto-post image-right" data-index="1" data-listing-date-sort="1731398400000" data-listing-file-modified-sort="1731472074434" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="219"><div class="thumbnail"><p></p><p class="card-img-top"></p><p></p></div><div class="body"><div class="listing-subtitle"></div><div class="listing-description"></div></div><div class="metadata"><div class="listing-date"></div><div class="listing-author"></div></div></div></div><div class="listing-no-matching d-none"></div></a>
 </div>
 </div>
 <div class="metadata">
@@ -351,7 +358,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -1,1 +1,15 @@
 /* css styles */
+.listing-item a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    background-color: #007BFF; /* Choose your preferred color */
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+  }
+  
+  .listing-item a:hover {
+    background-color: #0056b3; /* Darken color on hover */
+  }
+  
