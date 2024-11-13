@@ -3,6 +3,9 @@ title: "4 x 4 x 48"
 author: "Jason Bowman"
 draft: false
 ---
+
+![Collin & Ket running](images/collin_ket_running.jpeg)
+
 # Intro
 Stemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the journey of [Ket Hollingsworth](https://www.linkedin.com/in/ket-hollingsworth/) and [Collin Fitzpatrick](https://www.linkedin.com/in/collin-fitzpatrick-2155a9222/) doing this challenge, putting their own spin on it.
 

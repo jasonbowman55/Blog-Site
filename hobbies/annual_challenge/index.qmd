@@ -1,5 +1,5 @@
 ---
-title: "Annual Challenge"
+title: "Annual Spring Break Challenge"
 listing:
   contents:
     - "4x4x48/index.qmd"

@@ -1,0 +1,4 @@
+---
+title: THIS HOBBY HAS NOT BEEN FILLED OUT YET
+draft: true
+---
