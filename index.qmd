@@ -11,14 +11,11 @@ about:
         text: Github
         href: https://github.com/jasonbowman55
     -   text: Resume
-        href: resume/index.qmd
+        href: https://drive.google.com/file/d/1mEfJgMeUG4NMKEZRTSkJOuq9oFlL1GmU/view?usp=sharing
         icon: fab fa-file-pdf
     -   text: Email
         href: mailto:jbowman@hmc.edu
         icon: fas fa-envelope
-    -   text: Phone
-        href: (971) 267-6838
-        icon: fas fa-phone
 ---
 
 Hi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College with a concentration in Russian language. I have technical experience in Embedded Systems Engineering, Mechanical Design, SolidWorks CAD design and simulation, and Control Systems, among other areas. I’m also a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm RA.

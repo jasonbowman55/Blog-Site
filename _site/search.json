@@ -140,46 +140,11 @@
     "text": "Software\nThe SPI1 peripheral on the MCU is used to perform the data transfer. A header file and a .c file were created to initialize and manage the send/receive operations through the SPI1 peripheral. The main.c file then utilized this configuration, along with the send/receive functions, to enable the peripheral, configure the temperature sensor, and retrieve the current temperature values. Simple HTML was written to access the button statuses from the website, which was hosted locally on the Wi-Fi chip.\n\nDS1722 Configuration & Temp Read\nThe DS1722 temperature sensor can be configured by sending a 0x80 value over the SPI pins. This value signals to the sensor that the next value sent will be applied to the configuration/status register, enabling different temperature resolutions. Based on the resolution requested from the website, the temperature sensor is configured to output the temperature at the corresponding resolution. The mapping of bit values to resolution configureation can be seen below in Figure 3.\n\n\n\n\n\nFigure3: Access register map & resolution assignment\n\n\nReading the tempurature comes in 2 packets, LSB (least significant byte) and MSB (most significant byte) as seen in the top of Figure 3.\n\n\nTempurature Decoding\nAfter reading the LSB and MSB, the value and its sign (positive or negative) must be decoded. Since the full 16-bit temperature value is in two’s complement form, a simple function was written to detect the most significant bit (MSB), which indicates whether the value is negative. If the MSB is set to 1, the temperature is negative, and the most negative value corresponds to -128°C. The remaining 15 bits of the temperature reading are summed, with each bit contributing its base-10 value, to this -128°C baseline, resulting in the final temperature reading.\nFor positive temperatures, the decoding process is simpler. It follows the same method as the negative temperature decoding, but starts from an initial value of 0°C instead of -128°C."
   },
   {
-    "objectID": "MicroP/final_proj/index.html",
-    "href": "MicroP/final_proj/index.html",
-    "title": "Final Project",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "THIS PROJECT IS NOT FINISHED YET"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome!",
-    "section": "",
-    "text": "Hi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College with a concentration in Russian language. I have technical experience in Embedded Systems Engineering, Mechanical Design, SolidWorks CAD design and simulation, and Control Systems, among other areas. I’m also a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm RA.\nThis website serves as a hub for both my academic and non-academic work, as well as my hobbies. It originally began as a platform for submitting my lab reports for the E155 “Microprocessor Design & Application” course at Harvey Mudd College.\nI’m glad you found my page! Please see the following resources if you’d like to reach out to me."
-  },
-  {
-    "objectID": "hobbies/annual_challenge/index.html",
-    "href": "hobbies/annual_challenge/index.html",
-    "title": "Annual Spring Break Challenge",
-    "section": "",
-    "text": "4 x 4 x 48\n\n\n\n\n\n\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nClaremont to Santa Monica & Back\n\n\n\n\n\n\n\n\n\n\n\nNov 12, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "hobbies/index.html",
-    "href": "hobbies/index.html",
-    "title": "Hobbies",
-    "section": "",
-    "text": "Annual Spring Break Challenge\n\n\n\nFishing"
-  },
-  {
-    "objectID": "hobbies/annual_challenge/claremont-sm/index.html",
-    "href": "hobbies/annual_challenge/claremont-sm/index.html",
-    "title": "Claremont to Santa Monica & Back",
-    "section": "",
-    "text": "Intro\nFollowing up on our previous spring break adventure with the 4x4x48, we wanted to take on another fun and physically challenging journey. This time, I teamed up again with Ket Hollingsworth and Collin Fitzpatrick to bike from Harvey Mudd to Santa Monica and back. Collin’s high school friend and sister both go to UCLA, so we planned to use it as a stopping point on our 2-day, 135-mile journey.\n\n\nThe Plan\n\nTraining: no training\nEquipment: Bikes, water?, bread?\nSleeping: Thors floor\nRoute: Harvey Mudd -&gt; Cal Tech -&gt; JPL -&gt; UCLA -&gt; Santa Monica Pier -&gt; UCLA(sleep) -&gt; Harvey Mudd\n\n\n\n\nRoute\n\n\n\n\nSituation\nHaving done this kind of event last year, we knew it would be a fun experience. We started off a bit rough and unprepared—Collin had just finished a swimming event, Ket stepped on coral and took a 3-hour nap before we left, and I had sprained my ankle at practice the week before. However, nothing was going to stop us from doing Version 2 of our now annual tradition. We unexpectedly ended up getting an in-depth tour of LA County, experiencing the full range of highs and lows the city has to offer. It was truly an immersive experience, and I’d do it again in a heartbeat.\n\n\nThe Result"
-  },
-  {
-    "objectID": "hobbies/annual_challenge/4x4x48/index.html",
-    "href": "hobbies/annual_challenge/4x4x48/index.html",
-    "title": "4 x 4 x 48",
-    "section": "",
-    "text": "Collin & Ket running\n\n\n\nIntro\nStemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the journey of Ket Hollingsworth and Collin Fitzpatrick doing this challenge, putting their own spin on it.\n\n\nThe Plan\nRun 4 miles every 4 hours for 48 hours with the following 4 hour time breakdown: - hour 0-1: Run 4 miles - hour 1-3: learn something new / work on a project - hour 3-4: sleep\n\n\nSituation / My Role\nCollin and Ket, my roommates and close friends from day one at Harvey Mudd, wanted to take on something wild for spring break freshman year. We can’t remember who first threw out the idea, but we were all instantly pumped to see how far we could take it. A mix of sleep deprivation, spending time together, and partaking in such a rediculous task, made for a very fun time. My job was to film and edit the final video, keep them on track, and come up with fun ways to wake them up every 4 hours. Good times.\n\n\nThe Result"
+    "text": "About this site"
   },
   {
     "objectID": "resume/index.html",
@@ -189,11 +154,39 @@
     "text": "Download Resume (JPEG)"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "hobbies/annual_challenge/4x4x48/index.html",
+    "href": "hobbies/annual_challenge/4x4x48/index.html",
+    "title": "4 x 4 x 48",
     "section": "",
-    "text": "About this site"
+    "text": "Collin & Ket running\n\n\n\nIntro\nStemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the journey of Ket Hollingsworth and Collin Fitzpatrick doing this challenge, putting their own spin on it.\n\n\nThe Plan\nRun 4 miles every 4 hours for 48 hours with the following 4 hour time breakdown: - hour 0-1: Run 4 miles - hour 1-3: learn something new / work on a project - hour 3-4: sleep\n\n\nSituation / My Role\nCollin and Ket, my roommates and close friends from day one at Harvey Mudd, wanted to take on something wild for spring break freshman year. We can’t remember who first threw out the idea, but we were all instantly pumped to see how far we could take it. A mix of sleep deprivation, spending time together, and partaking in such a rediculous task, made for a very fun time. My job was to film and edit the final video, keep them on track, and come up with fun ways to wake them up every 4 hours. Good times.\n\n\nThe Result"
+  },
+  {
+    "objectID": "hobbies/annual_challenge/claremont-sm/index.html",
+    "href": "hobbies/annual_challenge/claremont-sm/index.html",
+    "title": "Claremont to Santa Monica & Back",
+    "section": "",
+    "text": "Intro\nFollowing up on our previous spring break adventure with the 4x4x48, we wanted to take on another fun and physically challenging journey. This time, I teamed up again with Ket Hollingsworth and Collin Fitzpatrick to bike from Harvey Mudd to Santa Monica and back. Collin’s high school friend and sister both go to UCLA, so we planned to use it as a stopping point on our 2-day, 135-mile journey.\n\n\nThe Plan\n\nTraining: no training\nEquipment: Bikes, water?, bread?\nSleeping: Thors floor\nRoute: Harvey Mudd -&gt; Cal Tech -&gt; JPL -&gt; UCLA -&gt; Santa Monica Pier -&gt; UCLA(sleep) -&gt; Harvey Mudd\n\n\n\n\nRoute\n\n\n\n\nSituation\nHaving done this kind of event last year, we knew it would be a fun experience. We started off a bit rough and unprepared—Collin had just finished a swimming event, Ket stepped on coral and took a 3-hour nap before we left, and I had sprained my ankle at practice the week before. However, nothing was going to stop us from doing Version 2 of our now annual tradition. We unexpectedly ended up getting an in-depth tour of LA County, experiencing the full range of highs and lows the city has to offer. It was truly an immersive experience, and I’d do it again in a heartbeat.\n\n\nThe Result"
+  },
+  {
+    "objectID": "hobbies/index.html",
+    "href": "hobbies/index.html",
+    "title": "Hobbies",
+    "section": "",
+    "text": "Annual Spring Break Challenge\n\n\n\nFishing"
+  },
+  {
+    "objectID": "hobbies/annual_challenge/index.html",
+    "href": "hobbies/annual_challenge/index.html",
+    "title": "Annual Spring Break Challenge",
+    "section": "",
+    "text": "4 x 4 x 48\n\n\n\n\n\n\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nClaremont to Santa Monica & Back\n\n\n\n\n\n\n\n\n\n\n\nNov 12, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome!",
+    "section": "",
+    "text": "Hi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College with a concentration in Russian language. I have technical experience in Embedded Systems Engineering, Mechanical Design, SolidWorks CAD design and simulation, and Control Systems, among other areas. I’m also a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm RA.\nThis website serves as a hub for both my academic and non-academic work, as well as my hobbies. It originally began as a platform for submitting my lab reports for the E155 “Microprocessor Design & Application” course at Harvey Mudd College.\nI’m glad you found my page! Please see the following resources if you’d like to reach out to me."
   },
   {
     "objectID": "MicroP/lab_reports/lab1/lab1.html",

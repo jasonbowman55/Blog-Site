@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Lab Reports</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./MicroP/final_proj/index.html">
+    <a class="dropdown-item" href="https://jasonbowman55.github.io/squat_hero_website/">
  <span class="dropdown-text">Final Project</span></a>
   </li>  
     </ul>
@@ -161,17 +161,13 @@ ul.task-list li input[type="checkbox"] {
     <i class="bi bi-github"></i>
      <span class="about-link-text">Github</span>
   </a>
-  <a href="/resume/index.html" class="about-link" rel="" target="">
+  <a href="https://drive.google.com/file/d/1mEfJgMeUG4NMKEZRTSkJOuq9oFlL1GmU/view?usp=sharing" class="about-link" rel="" target="">
     <i class="bi bi-fab fa-file-pdf"></i>
      <span class="about-link-text">Resume</span>
   </a>
   <a href="mailto:jbowman@hmc.edu" class="about-link" rel="" target="">
     <i class="bi bi-fas fa-envelope"></i>
      <span class="about-link-text">Email</span>
-  </a>
-  <a href="/(971) 267-6838" class="about-link" rel="" target="">
-    <i class="bi bi-fas fa-phone"></i>
-     <span class="about-link-text">Phone</span>
   </a>
 </div>
 </div>
@@ -261,7 +257,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
