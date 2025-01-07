@@ -13,8 +13,6 @@ website:
             href: MicroP/lab_reports/index.qmd
           - text: Final Project
             href: https://jasonbowman55.github.io/squat_hero_website/
-      #- href: HPR
-      #  text: HPR
       - href: hobbies/index.qmd
         text: Hobbies
         menu:
