@@ -7,8 +7,6 @@ about:
 
 Hi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College with a concentration in Russian language. I have technical experience in Embedded Systems Engineering, Mechanical Design, SolidWorks CAD design and simulation, and Control Systems, among other areas. I’m also a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm RA.
 
-This website serves as a hub for both my academic and non-academic work, as well as my hobbies. It originally began as a platform for submitting my lab reports for the E155 "Microprocessor Design & Application" course at Harvey Mudd College.
-
 I’m glad you found my page! Please see the following resources if you’d like to reach out to me.
 
 <div style="text-align: center;">

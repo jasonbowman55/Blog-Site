@@ -1,1 +1,50 @@
-[E155 (Micro Ps) Course Website](https://hmc-e155.github.io/)
+# My Undergraduate Institution
+[Harvey Mudd College Website](https://www.hmc.edu/)
+
+# Upper-Division Engineering Course Websites
+- [E155 Microprocessor Design & Application (Micro Ps) Course Website](https://hmc-e155.github.io/)
+
+- [E178 Higher Power Rocketry (HPR) Course Website](https://pages.hmc.edu/spjut/AdvRoc/index.md.html)
+
+# Professional References
+<div style="text-align: center;">
+  <img src="images/prof_dato.jpeg" alt="Professor Albert Dato" />  
+  <p>Professor Albert Dato [<a href="mailto:adato@g.hmc.edu">adato@g.hmc.edu</a>]</p>
+</div>
+
+"Albert Dato, PhD, researches the synthesis and applications of nanomaterials. Dato directs the Energy & Nanomaterials Lab, which seeks to develop solutions to energy and environmental challenges through applications of advanced materials./
+
+Dato received a PhD in applied science and technology from the University of California, Berkeley. Founder and CEO of Graphene LLC, Dato has worked as a scientist at Air Liquide Electronics U.S. and as a process development engineer at Novellus Systems Inc." - [HMC Website](https://www.hmc.edu/about/news/experts/albert-dato/)
+
+Aside from the coursework I took with Prof. Dato in a Materials Engineering class, he has been my research advisor for almost two years. As part of a team researching nanomaterials, I have worked under Prof. Dato developing production methods for thin-film UV-curable and thermosetting nanocomposites of resin combined with various forms of graphite and graphene nanomaterials. Working with Prof. Dato has been both enjoyable and rewarding, as he provides his research students with flexibility and independence in designing processes and experiments, while also making himself available for consistent feedback and technical support. During my time in his lab, I have refined my laboratory skills and had the opportunity to work with new equipment, such as his 4-point probe, which I used to confirm the positive conductivity of my thin-film nanocomposites.
+
+---
+
+<div style="text-align: center;">
+  <img src="images/prof_brake.jpeg" alt="Professor Josh Brake" style="width: 45%;" />  
+  <p>Professor Josh Brake [<a href="mailto:jbrake@g.hmc.edu">jbrake@g.hmc.edu</a>]</p>
+</div>
+
+"Hi there, my name is Josh Brake. My professional background is in engineering with specific expertise in electrical engineering and optics. By day, I’m an Assistant Professor in the [Engineering Department](https://www.hmc.edu/engineering/) at [Harvey Mudd College](https://www.hmc.edu/) where I teach across the curriculum with a focus on digital electronics, embedded systems, and optics. You can read more about me on the [about page](https://joshbrake.com/about/)." - [joshbrake.com](https://joshbrake.com/)
+
+My main interaction with Prof. Brake was during his [Microprocessor Design & Application](https://hmc-e155.github.io/) class at Harvey Mudd, where I completed several embedded systems [labs](/MicroP/lab_reports/index.qmd) focusing on the functionality of an [ARM STM32 Nucleo-32 dev board STM32L432KC](https://www.mouser.com/ProductDetail/STMicroelectronics/NUCLEO-L432KC?qs=qzCNEk%252BRr%252BajjPvxjwWK5g%3D%3D&srsltid=AfmBOorqKWv8gEpdcbBhTvPsJiZ0lQv9WA0Trwldps9LTLSq_kT6jbBN) MCU and a [tinyvision.ai UPduino v3.1 & iCE40 UP5K](https://tinyvision.ai/products/fpga-development-board-upduino-v3-1?srsltid=AfmBOoqQX_R89WMDNsr_WHxkRPpw0g-kTpiqbblss8Ays-O0cGIoExKG) FPGA. In this class, I learned how to effectively employ C and SystemVerilog bare-metal programming techniques. Later, my teammate [Ket Hollingsworth](https://www.linkedin.com/in/ket-hollingsworth/) and I completed a final project focused on analyzing the squat form of the user, taking advantage of the MCU, multiple [Adafruit LSM6DSO32 IMUs](https://www.adafruit.com/product/4692), and our FPGA to effectively display user squat depth. You can learn more about this project under [Final Project](https://jasonbowman55.github.io/squat_hero_website/) in the "Micro Ps" tab above, as well as projects from previous years [here](https://hmc-e155.github.io/project/).
+
+Thanks to Prof. Brake's hands-on approach and his availability as a consultant throughout the course, this class was highly effective in developing my embedded hardware and software knowledge. It has also enabled me to effectively and efficiently pursue personal embedded systems and electromechanical projects of my own.
+
+---
+
+<div style="text-align: center;">
+  <img src="images/prof_spjut.jpeg" alt="Professor Erik Spjut" />  
+  <p>Professor Josh Brake [<a href="mailto:spjut@g.hmc.edu">spjut@g.hmc.edu</a>]</p>
+</div>
+
+"Erik Spjut, PhD, professor of engineering and Union Oil Company Engineering Design Fellow, has extensive experience in radiative heat transfer, high-temperature heterogeneous kinetics, containerless processing of materials and non-contact temperature measurement. Spjut also researches process control and optimization, automatic test equipment, computerized data acquisition and processing, and digital audio processing and synthesis. He has published widely in all these areas, including two chapters in the CSound Book from MIT Press.
+
+Spjut has led projects funded by the NSF, the Department of Energy, NASA and Southern California Edison. He has also consulted extensively for the Jet Propulsion Laboratory, Space Systems/LORAL, Radiant Technology Corp. and Advanced Energy Dynamics." - [HMC Website](https://www.hmc.edu/about/news/experts/erik-spjut/)
+
+My interactions with Prof. Spjut primarily involve my coursework in [High Power Rocketry](https://pages.hmc.edu/spjut/AdvRoc/index.md.html), where we learned techniques in construction, calculation, simulation, and data analysis related to generating stable flight for high-power model rockets. For our final project, [Jordan Stone](https://www.linkedin.com/in/jordan-stone-844a4b1b8/) and I worked together to develop and integrate an electromechanical system that involved an actively controlled flywheel, used to counteract rotation during the ascent stage of our final rocket. This project involved mechanical design and construction, data capture, UART communication protocols, as well real time data processing and PID control tuning.
+
+Prof. Spjut is truly a master of high-power rocketry and has spent years of his personal time, in addition to his teaching time, perfecting his craft and expertise in rocket construction, simulation, data collection, and data processing. He was an invaluable resource throughout the class, and we grew close during the trials and tribulations faced when developing these systems.
+
+---
+

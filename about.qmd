@@ -2,4 +2,4 @@
 title: "About"
 ---
 
-About this site
+This website serves as a hub for both my academic and non-academic work, as well as my hobbies. It originally began as a platform for submitting my lab reports and final project work for the E155 "Microprocessor Design & Application" course at Harvey Mudd College.
