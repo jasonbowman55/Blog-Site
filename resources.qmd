@@ -48,3 +48,15 @@ Prof. Spjut is truly a master of high-power rocketry and has spent years of his 
 
 ---
 
+<div style="text-align: center;">
+  <img src="images/prof_gallicchio.jpeg" alt="Professor Jason Gallicchio" />  
+  <p>Professor Josh Brake [<a href="mailto:jason@g.hmc.edu">jason@g.hmc.edu</a>]</p>
+</div>
+
+"Jason Gallicchio, PhD, specializes in experimental cosmology—the study of the origin and evolution of the universe. Gallicchio spent a year at the South Pole Telescope where he researched polarization of the Cosmic Microwave Background (CMB) and served as a South Pole NSF Station Science Leader. He is also interested in devising new ways to conduct fundamental tests of quantum mechanics and has designed improvements for Bell-type tests of quantum entanglement.
+
+Gallicchio has bachelor’s and master’s degrees in electrical engineering from the University of Illinois, Urbana-Champagne, and a PhD in physics from Harvard University." - [HMC Website](https://www.hmc.edu/about/news/experts/jason-gallicchio/)
+
+My interactions with Professor Gallicchio primarily involve him serving as my advisor for my engineering capstone project (Clinic Project), sponsored by the company [Sokil](https://www.linkedin.com/company/sokil-demining/). In this role, I have acted as team lead, conducting in-depth research and making informed technical decisions. I managed a six-person team in evaluating over ten sensor options and led the testing of three ideal sensor types: RADAR, LiDAR, and multispectral sensing. Specifically, I focused on L/S band and mmWave RADAR systems, designing tests to detect PFM-1 landmines. This project centers on drone-deployed sensor systems aimed at supporting humanitarian demining efforts in both civilian and battlefield settings, particularly in Ukraine. The goal is to help demining personnel rule out large unsuspected areas, leading to more efficient and effective use of time and resources during demining operations. This project will continue through May 2025, where we will refine our sensor systems and deploy them on a drone, with the end goal of having a system that can autonomously scan and highlight suspected landmine-dense regions with a high level of confidence.
+
+Professor Gallicchio has been instrumental in the success of our project so far, bringing a high level of knowledge and critical thinking skills to sensor and drone systems. My team and I have developed a strong working relationship with Prof. Gallicchio and look forward to continuing to work with him through May 2025.
