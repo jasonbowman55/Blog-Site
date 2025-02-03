@@ -17,7 +17,7 @@ I’m glad you found my page! Please see the following resources if you’d like
       🔗 LinkedIn
     </button>
   </a>
-  <a href="https://drive.google.com/file/d/1mEfJgMeUG4NMKEZRTSkJOuq9oFlL1GmU/view?usp=sharing" target="_blank" style="text-decoration: none;">
+  <a href="https://drive.google.com/file/d/1bIiG09Pgt2-uvDm266N2ukYNKbI1ET6g/view?usp=sharing" target="_blank" style="text-decoration: none;">
     <button style="margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer;">
       📄 Resume
     </button>
