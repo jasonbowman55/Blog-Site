@@ -13,6 +13,8 @@ website:
             href: MicroP/lab_reports/index.qmd
           - text: Final Project
             href: https://jasonbowman55.github.io/squat_hero_website/
+      - text: Lithuania Study Abroad
+        href: https://sites.google.com/g.hmc.edu/vilnius-helping-ukraine/english
       - href: hobbies/index.qmd
         text: Hobbies
         menu:
