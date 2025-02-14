@@ -193,7 +193,7 @@
     "href": "HPR/index.html#mechanical-design",
     "title": "E178: High Power Rocketry",
     "section": "Mechanical Design",
-    "text": "Mechanical Design\nThe primary focus of the mechanical design was on creating a support structure to house all of the electronics. After determining which electronics needed to be placed in the avionics bay, we created models with the general shape of each component. These models were then added into an assembly, and the support structure was designed around them. The main considerations for this design were strength and fit. Strength was crucial because the rocket would experience accelerations of up to 30Gs, and fit was equally important due to the limited space and our ambitious objectives."
+    "text": "Mechanical Design\nSmall dimensional changes to the original MadCow rocket build were required to fit everything into the avionics section of the rocket. Notably, a slight 1.5” exetension of the avionics bay was needed to make this happen.\nAside from that, the majority of the mechanical design was focsued on the avionis support strucutre itself. As seen below,"
   },
   {
     "objectID": "HPR/index.html#digital-design",
