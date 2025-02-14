@@ -4,23 +4,31 @@ title: "E178: High Power Rocketry"
 ![](images/desert.jpeg)
 
 # About
-This post highlights my and [Jordan Stones](https://www.linkedin.com/in/jordan-stone-844a4b1b8/) final project in [E178: High Power Rocketry](https://pages.hmc.edu/spjut/AdvRoc/index.md.html), taught by [Prof. Erik Spjut](https://www.hmc.edu/about/news/experts/erik-spjut/). This course covered the modeling and design of a stable, reliable high-power rocket, along with construction techniques such as basic machining and the use of composite epoxies for joints and fillets. We also conducted analysis of flight data, sensor verification, and, in our case, implemented active roll control with live data acquisition and a PID feedback loop.
+This post highlights my and [Jordan Stones's](https://www.linkedin.com/in/jordan-stone-844a4b1b8/) final project in E178: [High Power Rocketr](https://pages.hmc.edu/spjut/AdvRoc/index.md.html), taught by [Prof. Erik Spjut](https://www.hmc.edu/about/news/experts/erik-spjut/). This course covered the modeling and design of a stable and reliable high-power rocket, along with construction techniques such as basic machining and the use of composite epoxies for joints and fillets. We also conducted analysis of flight data, sensor verification, and, in our case, implemented active roll control with live data acquisition and a PID feedback loop.
 
 # Project Ideation
-Our project search was kind of all over the place. We had thoughts of dual stage rockets, modal analysis, top speed, max height. Until we found that someone in a previous class attempted a "Gyro Stabilized" rocket, which resulted in the following comment. "Got the gyro to spin up, but it didn't seem to have much effect." - [HPR Website Under "Final Project"](https://pages.hmc.edu/spjut/AdvRoc/finalproject.md.html)
+Our project idea was sparked by reading about a previously attempted project titled "Gyro Stabilized," where a team attempted to stabilize the rocket's rotation using the inherent gyroscopic torque to passively stabilize the rocket. This project did not work well and resulted in the comment that it "Got the gyro to spin up, but it didn't seem to have much effect." - [HPR Website Under "Final Project"](https://pages.hmc.edu/spjut/AdvRoc/finalproject.md.html)
 
-We determined that active roll control, using a motor-controlled flywheel and live data capture, would provide deeper insight into the rocket's rotational characteristics and enable better oversight of its control.
+Given Jordan's and my prior experience with control systems, embedded electronics, and mechanical design, we saw a clear path to an active control system using a brushless drone motor with a steel flywheel attached.
+
+# Proposal
+Like any good engineering project, there was a proposal stage. The simulations, calculations, CAD, and BOMs were developed to ensure that the project was feasible within the budget, timeframe, and the laws of physics.
+
+Firstly, the electrical components must be selected. This system is required to be able to read magnetometer data from the Teensy 4.0 o(in this case over UART), store **TALK ABOUT THIS STUFF MORE AFTER REVIEWING ALL OF THE CODE AGAIN**
+
 
 # Project Design
-All design and implamentation, apart from the build instructions and already on board teensy 4.0 MCU provided by Prof. Spjut, was done by Jason and Jordan. The main effort of the mechanical design was for the support structure that would hold all of the electronics inside the avionics bay of the rocket. The digital design was mainly focused on communicaiton with a adafruit arduino QTpi and a teensy 4.0, and well as how to save data onto an SD card. The systems design was very simple, and used simple yet proven control calibration techniques to ensure desired function.
-
-## Mechanical Design
-The primary focus of the mechanical design was on creating a support structure to house all of the electronics. After determining which electronics needed to be placed in the avionics bay, we created models with the general shape of each component. These models were then added into an assembly, and the support structure was designed around them.
-The main considerations for this design were strength and fit. Strength was crucial because the rocket would experience accelerations of up to 30Gs, and fit was equally important due to the limited space and our ambitious objectives.
+All design and implementation, apart from the build instructions and the pre-installed Teensy 4.0 MCU provided by Prof. Spjut, was done by Jason and Jordan. The main effort of the mechanical design focused on the support structure that would hold all the electronics inside the avionics bay of the rocket. The digital design was primarily concerned with communication between an Adafruit Arduino QT Py and a Teensy 4.0, as well as saving data onto an SD card. The systems design was straightforward and used simple yet proven control calibration techniques to ensure the desired function.
 
 ## Digital Design
 
 ## Systems Design
+
+## Mechanical Design
+Small dimensional changes to the original MadCow rocket build were required to fit everything into the avionics section of the rocket. Notably, a slight 1.5" exetension of the avionics bay was needed to make this happen.
+
+Aside from that, the majority of the mechanical design was focsued on the avionis support strucutre itself. As seen below, 
+
 
 
 
