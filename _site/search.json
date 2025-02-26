@@ -1,213 +1,10 @@
 [
   {
-    "objectID": "HPR/index.html#digital-design",
-    "href": "HPR/index.html#digital-design",
-    "title": "E178: High Power Rocketry",
-    "section": "Digital Design",
-    "text": "Digital Design"
-  },
-  {
-    "objectID": "HPR/index.html#systems-design",
-    "href": "HPR/index.html#systems-design",
-    "title": "E178: High Power Rocketry",
-    "section": "Systems Design",
-    "text": "Systems Design"
-  },
-  {
-    "objectID": "HPR/index.html#mechanical-design",
-    "href": "HPR/index.html#mechanical-design",
-    "title": "E178: High Power Rocketry",
-    "section": "Mechanical Design",
-    "text": "Mechanical Design\nSmall dimensional changes to the original MadCow rocket build were required to fit everything into the avionics section of the rocket. Notably, a slight 1.5” exetension of the avionics bay was needed to make this happen.\nAside from that, the majority of the mechanical design was focsued on the avionis support strucutre itself. As seen below,"
-  },
-  {
-    "objectID": "HPR/index.html#launch-day",
-    "href": "HPR/index.html#launch-day",
-    "title": "E178: High Power Rocketry",
-    "section": "Launch Day",
-    "text": "Launch Day\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab4/lab4.html",
-    "href": "MicroP/lab_reports/lab4/lab4.html",
-    "title": "Digital Audio",
-    "section": "",
-    "text": "This lab utilized an SM231508-1 8ohm speaker, and a STM32 Nucleo-32 board with an on board STM32L432KC MCU in order to play a the song “Für Elise” and “Happy Birthday”. This was done without using CMSIS, instead using memory mapped I/O, and accessing specific memory addresses and peripherals in order to initialize and run the code on the MCU.\n\n\n\nFigure1: Lab 4 hardware"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab4/lab4.html#hardware",
-    "href": "MicroP/lab_reports/lab4/lab4.html#hardware",
-    "title": "Digital Audio",
-    "section": "Hardware",
-    "text": "Hardware\nA simple audio amplifier (LM386) chip was used to drive an 8-ohm speaker. The amplifier was powered by a 5V supply, and the input signal was a 3.3V PWM signal. A 103 4E potentiometer was also included in the circuit to function as a volume control interface.\n\n\n\nFigure2: Circuit schematic"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab4/lab4.html#file-structure",
-    "href": "MicroP/lab_reports/lab4/lab4.html#file-structure",
-    "title": "Digital Audio",
-    "section": "File Structure",
-    "text": "File Structure\nAll files used in the project, including the specifically generated Segger project files, are stored in the same local directory. Within the Segger project, the file structure is organized as shown in Figure 3. Green lines indicate #include directives in the main.c file, while the black arrows show the correlation between header files and their respective .c files.\n\n\n\nFigure3: Segger project file mapping"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab4/lab4.html#high-level-software-description",
-    "href": "MicroP/lab_reports/lab4/lab4.html#high-level-software-description",
-    "title": "Digital Audio",
-    "section": "High Level Software description",
-    "text": "High Level Software description\nThe Multi-Speed Internal (MSI) clock, combined with a PLL configuration, was used to achieve the desired system clock (SYSCLK) speed of 4 MHz. The SYSCLK was routed to the GPIOA and TIM16 peripherals. TIM16, a built-in timer, was used for PWM generation to drive the speaker. A simple counter function, implemented in main.c, operated based on the SYSCLK. The key parameters for setting the output frequency and note duration were TIM16’s internal registers: the Auto-Reload Register (ARR) and the prescaler (PSC), which worked together with the counter variable to acheive desired output."
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab4/lab4.html#system-clock-configuration",
-    "href": "MicroP/lab_reports/lab4/lab4.html#system-clock-configuration",
-    "title": "Digital Audio",
-    "section": "System Clock Configuration",
-    "text": "System Clock Configuration\nAs mentioned, the MSI onboard clock was used as an input to the PLL configuration, which allows for precise SYSCLK speed control. The PLL uses two divisors (M and R) and one multiplier (N), as shown in Figure 4, to achieve this function. With the MSI frequency at the default frequency of 4 MHz and setting M=1, N=8, and R=4, we can achieve the desired SYSCLK speed of 8 MHz.\n\n\n\n\nFigure4: Full MCU clk tree & PLL module"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab4/lab4.html#tim16-frequency-generation",
-    "href": "MicroP/lab_reports/lab4/lab4.html#tim16-frequency-generation",
-    "title": "Digital Audio",
-    "section": "TIM16 & Frequency Generation",
-    "text": "TIM16 & Frequency Generation\nTIM16 is the peripheral used to produce the desired PWM signal frequency. First, the prescaler (PSC), as shown in Figure 4, was set to 255 to bring the TIM16 counter frequency closer to the desired range. To output a specific frequency, we can refer to Equation [1].\n\n\n\nFigure5: TIM16 Block Diagram\n\n\n[1] \\(Freq=\\frac{SYSCLK}{PSC+1} * \\frac{1}{ARR+1}\\)\nAs shown in Equation [1], Freq represents the desired PWM frequency, and ARR is the 16-bit register used to control this frequency. Therefore, Equation [1] can be simplified into the form of Equation [2], and further reduced to Equation [3]. Equation [3] was implemented in main.c to control the output frequency.\n[2] \\(ARR=\\frac{SYSCLK}{Freq*(PSC+1)}-1\\)\n[3] \\(ARR=\\frac{31250}{Freq}-1\\)"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab4/lab4.html#frequency-duration-analysis",
-    "href": "MicroP/lab_reports/lab4/lab4.html#frequency-duration-analysis",
-    "title": "Digital Audio",
-    "section": "Frequency & Duration Analysis",
-    "text": "Frequency & Duration Analysis\nThis section discusses the frequency accuracies, minimum and maximum frequencies, and their corresponding durations.\n\nFrequency Accuracy\nTo demonstrate the accuracy of the PWM output frequencies, Equation [4] calculates the ARR value for a 659 Hz frequency, which corresponds to a note from Für Elise.\n[4] \\(ARR = \\frac{31250}{659}-1 = 46.42\\)\nThe new value of ARR is internally rounded to the nearest integer, resulting in ARR = 46. By rearranging Equation [3] to solve for Freq, as shown in Equation [5], we can substitute the new ARR value to calculate the output frequency.\n[5] \\(Freq = 31250*\\frac{1}{ARR+1} = 31250*\\frac{1}{46+1} = 664.89\\)\nThe percent error, as calculated in Equation [6], is significantly less than 1%, which is more than sufficient for the accuracy required in this application.\n[6] \\(\\%_\\text{error} = \\frac{664.89 - 659}{664.89} = 0.0089\\)\n\n\nFrequency min/max\nThe minimum frequency corresponds to the maximum value of the 16-bit ARR register (\\(ARR_{\\text{max}} = 2^{16} - 1\\)). This can be calculated using Equation [7] below.\n[7] \\(Freq_{\\text{min}} = 31250*\\frac{1}{ARR_{\\text{max}}+1} = 31250*\\frac{1}{65535+1} = 0.48Hz\\)\nThe maximum frequency corresponds to the smallest value of the 16-bit ARR register (\\(ARR_{\\text{min}} = 1\\)). This can be calculated using Equation [8] below.\n[8] \\(Freq_{\\text{max}} = 31250*\\frac{1}{ARR_{\\text{min}}+1} = 31250*\\frac{1}{1+1} = 15.625kHz\\)\n\n\nDuration Accuracy\nThe only thing that affects the accuracy of the duration is the value ‘x=887’ declared in the software in the delay block, which has already been determined to be accurate.\n\n\nDuration min/max\nFor the following calculations, please consider the relationship given in equation [9].\n[9] \\({ms_{\\text{desired}}} = \\frac{ARR}{100}\\)\nThe maximum duration corresponds to the maximum value of the 16-bit ARR register (\\(ARR_{\\text{max}} = 2^{16} - 1\\)). This can be calculated using Equation [10] below.\n[10] \\({ms_{\\text{desired}}} = \\frac{65535}{100}\\) = 655.35ms\nThe minimum duration corresponds to the smallest value of the 16-bit ARR register (\\(ARR_{\\text{min}} = 1\\)). This can be calculated using Equation [11] below.\n[11] \\({ms_{\\text{desired}}} = \\frac{1}{100}\\) = 0.01ms"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab4/lab4.html#debugging",
-    "href": "MicroP/lab_reports/lab4/lab4.html#debugging",
-    "title": "Digital Audio",
-    "section": "Debugging",
-    "text": "Debugging\nThe built-in debugger in Segger was used to directly inspect register values to validate the design. By stepping through the execution one step at a time, the register values of interest could be monitored to ensure they were functioning as expected."
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab2/lab2.html",
-    "href": "MicroP/lab_reports/lab2/lab2.html",
-    "title": "Time-Multiplexed Dual 7-Segment Display",
-    "section": "",
-    "text": "In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.\n\n\n\nHardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line\n\n\nThe design process began with a block diagram, where I created a top module and two submodules:\n- seven_seg_decoder: decodes inputs to 7-seg pin assignments\n- bin_disp_decoder: sums input values and writes that sum in binary to led\nI then created a circuit schematic, which allowed me to visualize physical pin assignments and accurately represent those in my SystemVerilog.\nA wavefrom was then used to simulate, debug, and validate system functions.\n\n\nIn SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. The int_osc influenced the counter variable, and was then used to time-multiplex between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. A simple assign statement was used to generate the LED binary outputs.\n\n\n\nThis block diagram outlines the SystemVerilog modules used in lab 2\n\n\n\n\n\n\n\n\nThis circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals\n\n\n\n\n\nDuring the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.\n\n\n\nWaveform displaying accurate time-multiplexed functionality"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab2/lab2.html#block-diagram",
-    "href": "MicroP/lab_reports/lab2/lab2.html#block-diagram",
-    "title": "Time-Multiplexed Dual 7-Segment Display",
-    "section": "",
-    "text": "In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. The int_osc influenced the counter variable, and was then used to time-multiplex between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. A simple assign statement was used to generate the LED binary outputs.\n\n\n\nThis block diagram outlines the SystemVerilog modules used in lab 2"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab2/lab2.html#circuit-schematic",
-    "href": "MicroP/lab_reports/lab2/lab2.html#circuit-schematic",
-    "title": "Time-Multiplexed Dual 7-Segment Display",
-    "section": "",
-    "text": "This circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab2/lab2.html#simulation",
-    "href": "MicroP/lab_reports/lab2/lab2.html#simulation",
-    "title": "Time-Multiplexed Dual 7-Segment Display",
-    "section": "",
-    "text": "During the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.\n\n\n\nWaveform displaying accurate time-multiplexed functionality"
-  },
-  {
-    "objectID": "MicroP/lab_reports/index.html",
-    "href": "MicroP/lab_reports/index.html",
-    "title": "Lab Reports",
-    "section": "",
-    "text": "FPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nOct 23, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nNov 6, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nOct 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab6/lab6.html",
-    "href": "MicroP/lab_reports/lab6/lab6.html",
-    "title": "The Internet of Things and Serial Peripheral Interface",
-    "section": "",
-    "text": "This lab focused on SPI communication between a DS1722 temperature sensor and an STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU. The goal was to implement a system that displays the temperature on a locally hosted website. The website should be able to update the temperature based on a selected bit-wise resolution (8, 9, 10, 11, or 12 bits). Additionally, the website must include an ON/OFF toggle to control an onboard LED. This setup requires proper configuration of SPI communication, with data being transmitted to and from both the MCU and the temperature sensor.\n\n\n\nFigure1: Lab 6 Tempurature Sensor Circuit"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab6/lab6.html#hardware",
-    "href": "MicroP/lab_reports/lab6/lab6.html#hardware",
-    "title": "The Internet of Things and Serial Peripheral Interface",
-    "section": "Hardware",
-    "text": "Hardware\nThe hardware used to implement this design, as shown in the circuit schematic in Figure 2, handles the SPI communication between the MCU and the temperature sensor, as well as the UART communication between the MCU and the ESP8266 Wi-Fi chip. The schematic also illustrates the simple hardware used to power the LED based on the input from the website.\n\n\n\nFigure2: Lab 6 Circuit Schematic"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab6/lab6.html#software",
-    "href": "MicroP/lab_reports/lab6/lab6.html#software",
-    "title": "The Internet of Things and Serial Peripheral Interface",
-    "section": "Software",
-    "text": "Software\nThe SPI1 peripheral on the MCU is used to perform the data transfer. A header file and a .c file were created to initialize and manage the send/receive operations through the SPI1 peripheral. The main.c file then utilized this configuration, along with the send/receive functions, to enable the peripheral, configure the temperature sensor, and retrieve the current temperature values. Simple HTML was written to access the button statuses from the website, which was hosted locally on the Wi-Fi chip.\n\nDS1722 Configuration & Temp Read\nThe DS1722 temperature sensor can be configured by sending a 0x80 value over the SPI pins. This value signals to the sensor that the next value sent will be applied to the configuration/status register, enabling different temperature resolutions. Based on the resolution requested from the website, the temperature sensor is configured to output the temperature at the corresponding resolution. The mapping of bit values to resolution configureation can be seen below in Figure 3.\n\n\n\n\n\nFigure3: Access register map & resolution assignment\n\n\nReading the tempurature comes in 2 packets, LSB (least significant byte) and MSB (most significant byte) as seen in the top of Figure 3.\n\n\nTempurature Decoding\nAfter reading the LSB and MSB, the value and its sign (positive or negative) must be decoded. Since the full 16-bit temperature value is in two’s complement form, a simple function was written to detect the most significant bit (MSB), which indicates whether the value is negative. If the MSB is set to 1, the temperature is negative, and the most negative value corresponds to -128°C. The remaining 15 bits of the temperature reading are summed, with each bit contributing its base-10 value, to this -128°C baseline, resulting in the final temperature reading.\nFor positive temperatures, the decoding process is simpler. It follows the same method as the negative temperature decoding, but starts from an initial value of 0°C instead of -128°C."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This website serves as a hub for both my academic and non-academic work, as well as my hobbies. It originally began as a platform for submitting my lab reports and final project work for the E155 “Microprocessor Design & Application” course at Harvey Mudd College."
-  },
-  {
     "objectID": "resume/index.html",
     "href": "resume/index.html",
     "title": "Resume",
     "section": "",
     "text": "Download Resume (JPEG)"
-  },
-  {
-    "objectID": "hobbies/annual_challenge/4x4x48/index.html",
-    "href": "hobbies/annual_challenge/4x4x48/index.html",
-    "title": "4 x 4 x 48",
-    "section": "",
-    "text": "Collin & Ket running\n\n\n\nIntro\nStemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the journey of Ket Hollingsworth and Collin Fitzpatrick doing this challenge, putting their own spin on it.\n\n\nThe Plan\nRun 4 miles every 4 hours for 48 hours with the following 4 hour time breakdown: - hour 0-1: Run 4 miles - hour 1-3: learn something new / work on a project - hour 3-4: sleep\n\n\nSituation / My Role\nCollin and Ket, my roommates and close friends from day one at Harvey Mudd, wanted to take on something wild for spring break freshman year. We can’t remember who first threw out the idea, but we were all instantly pumped to see how far we could take it. A mix of sleep deprivation, spending time together, and partaking in such a rediculous task, made for a very fun time. My job was to film and edit the final video, keep them on track, and come up with fun ways to wake them up every 4 hours. Good times.\n\n\nThe Result"
-  },
-  {
-    "objectID": "hobbies/annual_challenge/claremont-sm/index.html",
-    "href": "hobbies/annual_challenge/claremont-sm/index.html",
-    "title": "Claremont to Santa Monica & Back",
-    "section": "",
-    "text": "Intro\nFollowing up on our previous spring break adventure with the 4x4x48, we wanted to take on another fun and physically challenging journey. This time, I teamed up again with Ket Hollingsworth and Collin Fitzpatrick to bike from Harvey Mudd to Santa Monica and back. Collin’s high school friend and sister both go to UCLA, so we planned to use it as a stopping point on our 2-day, 135-mile journey.\n\n\nThe Plan\n\nTraining: no training\nEquipment: Bikes, water?, bread?\nSleeping: Thors floor\nRoute: Harvey Mudd -&gt; Cal Tech -&gt; JPL -&gt; UCLA -&gt; Santa Monica Pier -&gt; UCLA(sleep) -&gt; Harvey Mudd\n\n\n\n\nRoute\n\n\n\n\nSituation\nHaving done this kind of event last year, we knew it would be a fun experience. We started off a bit rough and unprepared—Collin had just finished a swimming event, Ket stepped on coral and took a 3-hour nap before we left, and I had sprained my ankle at practice the week before. However, nothing was going to stop us from doing Version 2 of our now annual tradition. We unexpectedly ended up getting an in-depth tour of LA County, experiencing the full range of highs and lows the city has to offer. It was truly an immersive experience, and I’d do it again in a heartbeat.\n\n\nThe Result"
-  },
-  {
-    "objectID": "hobbies/index.html",
-    "href": "hobbies/index.html",
-    "title": "Hobbies",
-    "section": "",
-    "text": "Annual Spring Break Challenge"
-  },
-  {
-    "objectID": "hobbies/annual_challenge/index.html",
-    "href": "hobbies/annual_challenge/index.html",
-    "title": "Annual Spring Break Challenge",
-    "section": "",
-    "text": "4 x 4 x 48\n\n\n\n\n\n\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nClaremont to Santa Monica & Back\n\n\n\n\n\n\n\n\n\n\n\nNov 12, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome!",
-    "section": "",
-    "text": "Hi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College, graduating in 2025, with a concentration in Russian language. My technical experience spans Embedded Systems Engineering, Analog/Digital Electronics, Mechanical Design, SolidWorks CAD design and simulation, PCB Design, and Control Systems, among other areas. Beyond academics, I am a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm Resident Assistant.\nIn my free time, I enjoy weightlifting, fishing, learning new languages, working on personal projects, spending time outdoors, and being with friends and family.\nI’m glad you found my page! Please see the following resources if you’d like to reach out to me, and do scroll down to view some of my projects!\n\n\n  🔗 LinkedIn     📄 Resume     🖥️ GitHub     ✉️ Email     📞 Phone  \n\n\n\n\nSquat Hero\n\n\n\n\n\nVilnius Helping Ukraine"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab1/lab1.html",
-    "href": "MicroP/lab_reports/lab1/lab1.html",
-    "title": "FPGA and MCU Setup and Testing",
-    "section": "",
-    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab1/lab1.html#intro-design-approach",
-    "href": "MicroP/lab_reports/lab1/lab1.html#intro-design-approach",
-    "title": "FPGA and MCU Setup and Testing",
-    "section": "",
-    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab1/lab1.html#results-reflection",
-    "href": "MicroP/lab_reports/lab1/lab1.html#results-reflection",
-    "title": "FPGA and MCU Setup and Testing",
-    "section": "Results & Reflection",
-    "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter could be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning how to use Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had learned over a year ago in E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules."
   },
   {
     "objectID": "MicroP/lab_reports/lab7/lab7.html",
@@ -327,6 +124,209 @@
     "title": "Keypad Scanner",
     "section": "Block Diagram",
     "text": "Block Diagram\nFigure 4 below displays the module communication logic for the System Verilog code that programmed the FPGA. Notibly we have a top, button_decode_bounce, and seven_seg_decoder modules.\ntop: The overseeing connection module and direct communication with I/O. Also includes the time-multiplexer and Low Speed Oscillator (LSOSC) clk source.\nbutton_decode_bounce: button decoder, debouncer, and row scan generator.\nseven_seg_decoder: decodes the button pressed into 7-segment display outputs.\n\n\n\nFigure4: System Verilog module block diagram"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab1/lab1.html",
+    "href": "MicroP/lab_reports/lab1/lab1.html",
+    "title": "FPGA and MCU Setup and Testing",
+    "section": "",
+    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab1/lab1.html#intro-design-approach",
+    "href": "MicroP/lab_reports/lab1/lab1.html#intro-design-approach",
+    "title": "FPGA and MCU Setup and Testing",
+    "section": "",
+    "text": "In Lab 1, the tasks included assembling the E155 protoboard, verifying the functionality of the MCU and FPGA, controlling a 7-segment display, and controlling onboard LEDs using SystemVerilog with Lattice Radiant. The lab was completed in approximately 8 hours.\n\n\n\nCompleted lab implementation\n\n\n\n\nAfter following the setup instructions from resources/E155 (Micro Ps Course Website)/Lab 1, a block diagram and circuit schematic was created to outline the SystemVerilog modules and signals for implementation. This step facilitated organization during the coding process.\n\n\n\nCompleted Micro Ps Protoboard\n\n\n\n\n\nThis lab involved implementing combinational logic for DIP-switch inputs, with a single 7-segment display showing hexadecimal digits (1-F) based on those inputs. Combinational logic blocks were implemented using case statements for XOR and AND operations, with outputs displayed on the onboard LEDs. The high-speed oscillator (HSOSC) was used to oscillate another onboard LED at approximately 2 Hz. Additionally, a case statement was used for the 7-segment display output, and pin assignments were meticulously configured in the device constraint editor in Lattice Radiant.\n\n\n\nBlock diagram outlining the SystemVerilog modules\n\n\n\n\n\nFor troubleshooting and debugging, manual test cases were used to verify that the correct segments illuminated as expected. A multimeter was also employed to ensure pins were functioning properly. These steps facilitated tracing issues to the software and effective code debugging.\n\n\n\nA full schematic outlining the lab’s hardware, including related signals and pins"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab1/lab1.html#results-reflection",
+    "href": "MicroP/lab_reports/lab1/lab1.html#results-reflection",
+    "title": "FPGA and MCU Setup and Testing",
+    "section": "Results & Reflection",
+    "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter could be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning how to use Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had learned over a year ago in E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome!",
+    "section": "",
+    "text": "Hi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College, graduating in 2025, with a concentration in Russian language. My technical experience spans Embedded Systems Engineering, Analog/Digital Electronics, Mechanical Design, SolidWorks CAD design and simulation, PCB Design, and Control Systems, among other areas. Beyond academics, I am a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm Resident Assistant.\nIn my free time, I enjoy weightlifting, fishing, learning new languages, working on personal projects, spending time outdoors, and being with friends and family.\nI’m glad you found my page! Please see the following resources if you’d like to reach out to me, and do scroll down to view some of my projects!\n\n\n  🔗 LinkedIn     📄 Resume     🖥️ GitHub     ✉️ Email     📞 Phone  \n\n\n\n\nSquat Hero\n\n\n\n\n\nVilnius Helping Ukraine"
+  },
+  {
+    "objectID": "hobbies/annual_challenge/claremont-sm/index.html",
+    "href": "hobbies/annual_challenge/claremont-sm/index.html",
+    "title": "Claremont to Santa Monica & Back",
+    "section": "",
+    "text": "Intro\nFollowing up on our previous spring break adventure with the 4x4x48, we wanted to take on another fun and physically challenging journey. This time, I teamed up again with Ket Hollingsworth and Collin Fitzpatrick to bike from Harvey Mudd to Santa Monica and back. Collin’s high school friend and sister both go to UCLA, so we planned to use it as a stopping point on our 2-day, 135-mile journey.\n\n\nThe Plan\n\nTraining: no training\nEquipment: Bikes, water?, bread?\nSleeping: Thors floor\nRoute: Harvey Mudd -&gt; Cal Tech -&gt; JPL -&gt; UCLA -&gt; Santa Monica Pier -&gt; UCLA(sleep) -&gt; Harvey Mudd\n\n\n\n\nRoute\n\n\n\n\nSituation\nHaving done this kind of event last year, we knew it would be a fun experience. We started off a bit rough and unprepared—Collin had just finished a swimming event, Ket stepped on coral and took a 3-hour nap before we left, and I had sprained my ankle at practice the week before. However, nothing was going to stop us from doing Version 2 of our now annual tradition. We unexpectedly ended up getting an in-depth tour of LA County, experiencing the full range of highs and lows the city has to offer. It was truly an immersive experience, and I’d do it again in a heartbeat.\n\n\nThe Result"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This website serves as a hub for both my academic and non-academic work, as well as my hobbies. It originally began as a platform for submitting my lab reports and final project work for the E155 “Microprocessor Design & Application” course at Harvey Mudd College."
+  },
+  {
+    "objectID": "hobbies/annual_challenge/4x4x48/index.html",
+    "href": "hobbies/annual_challenge/4x4x48/index.html",
+    "title": "4 x 4 x 48",
+    "section": "",
+    "text": "Collin & Ket running\n\n\n\nIntro\nStemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the journey of Ket Hollingsworth and Collin Fitzpatrick doing this challenge, putting their own spin on it.\n\n\nThe Plan\nRun 4 miles every 4 hours for 48 hours with the following 4 hour time breakdown: - hour 0-1: Run 4 miles - hour 1-3: learn something new / work on a project - hour 3-4: sleep\n\n\nSituation / My Role\nCollin and Ket, my roommates and close friends from day one at Harvey Mudd, wanted to take on something wild for spring break freshman year. We can’t remember who first threw out the idea, but we were all instantly pumped to see how far we could take it. A mix of sleep deprivation, spending time together, and partaking in such a rediculous task, made for a very fun time. My job was to film and edit the final video, keep them on track, and come up with fun ways to wake them up every 4 hours. Good times.\n\n\nThe Result"
+  },
+  {
+    "objectID": "hobbies/annual_challenge/index.html",
+    "href": "hobbies/annual_challenge/index.html",
+    "title": "Annual Spring Break Challenge",
+    "section": "",
+    "text": "4 x 4 x 48\n\n\n\n\n\n\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nClaremont to Santa Monica & Back\n\n\n\n\n\n\n\n\n\n\n\nNov 12, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "hobbies/index.html",
+    "href": "hobbies/index.html",
+    "title": "Hobbies",
+    "section": "",
+    "text": "Annual Spring Break Challenge"
+  },
+  {
+    "objectID": "HPR/index.html#digital-design",
+    "href": "HPR/index.html#digital-design",
+    "title": "E178: High Power Rocketry",
+    "section": "Digital Design",
+    "text": "Digital Design"
+  },
+  {
+    "objectID": "HPR/index.html#systems-design",
+    "href": "HPR/index.html#systems-design",
+    "title": "E178: High Power Rocketry",
+    "section": "Systems Design",
+    "text": "Systems Design"
+  },
+  {
+    "objectID": "HPR/index.html#mechanical-design",
+    "href": "HPR/index.html#mechanical-design",
+    "title": "E178: High Power Rocketry",
+    "section": "Mechanical Design",
+    "text": "Mechanical Design\nSmall dimensional changes to the original MadCow rocket build were required to fit everything into the avionics section of the rocket. Notably, a slight 1.5” exetension of the avionics bay was needed to make this happen.\nAside from that, the majority of the mechanical design was focsued on the avionis support strucutre itself. As seen below,"
+  },
+  {
+    "objectID": "HPR/index.html#launch-day",
+    "href": "HPR/index.html#launch-day",
+    "title": "E178: High Power Rocketry",
+    "section": "Launch Day",
+    "text": "Launch Day\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
+  },
+  {
+    "objectID": "MicroP/lab_reports/index.html",
+    "href": "MicroP/lab_reports/index.html",
+    "title": "Lab Reports",
+    "section": "",
+    "text": "FPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nOct 23, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nNov 6, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nOct 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab2/lab2.html",
+    "href": "MicroP/lab_reports/lab2/lab2.html",
+    "title": "Time-Multiplexed Dual 7-Segment Display",
+    "section": "",
+    "text": "In this lab, a design was implemented on an FPGA to time-multiplex between two 7-segment displays, each showing separate values based on its own 4-bit binary input. Two simple transistor circuits were used to alternate between the respective 7-segment displays. Additionally, the design required the sum of these two 4-bit inputs to be displayed in binary on a 5-bit line of LEDs.\n\n\n\nHardware for Lab 2 including time-multiplexed dual 7-segment display and 5-bit binary LED line\n\n\nThe design process began with a block diagram, where I created a top module and two submodules:\n- seven_seg_decoder: decodes inputs to 7-seg pin assignments\n- bin_disp_decoder: sums input values and writes that sum in binary to led\nI then created a circuit schematic, which allowed me to visualize physical pin assignments and accurately represent those in my SystemVerilog.\nA wavefrom was then used to simulate, debug, and validate system functions.\n\n\nIn SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. The int_osc influenced the counter variable, and was then used to time-multiplex between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. A simple assign statement was used to generate the LED binary outputs.\n\n\n\nThis block diagram outlines the SystemVerilog modules used in lab 2\n\n\n\n\n\n\n\n\nThis circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals\n\n\n\n\n\nDuring the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.\n\n\n\nWaveform displaying accurate time-multiplexed functionality"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab2/lab2.html#block-diagram",
+    "href": "MicroP/lab_reports/lab2/lab2.html#block-diagram",
+    "title": "Time-Multiplexed Dual 7-Segment Display",
+    "section": "",
+    "text": "In SystemVerilog, when programming the UPduino FPGA, a counter was used in conjunction with the on-board high-speed oscillator (HSOSC) to generate an internal clock signal named int_osc. The int_osc influenced the counter variable, and was then used to time-multiplex between the displays and manage other internal logic. Combinational logic was subsequently implemented to handle the 7-segment display outputs. A simple assign statement was used to generate the LED binary outputs.\n\n\n\nThis block diagram outlines the SystemVerilog modules used in lab 2"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab2/lab2.html#circuit-schematic",
+    "href": "MicroP/lab_reports/lab2/lab2.html#circuit-schematic",
+    "title": "Time-Multiplexed Dual 7-Segment Display",
+    "section": "",
+    "text": "This circuit schematic shows the hardware connections, related pins, and corresponding SystemVerilog signals"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab2/lab2.html#simulation",
+    "href": "MicroP/lab_reports/lab2/lab2.html#simulation",
+    "title": "Time-Multiplexed Dual 7-Segment Display",
+    "section": "",
+    "text": "During the design process, waveform generation was performed to debug and verify the expected functionality. As shown in the figure below, with both right and left inputs, the output seg correctly provides the decoded signal for the corresponding 7-segment display. The osc, which toggles the time multiplexing behavior, captures the output seg for each display, demonstrating that it accurately reflects the expected decoded input values. We can also observe that the 5-bit summation represented as led correctly gets value sum corresponing to right + left correctly. This validates the functionality of the system.\n\n\n\nWaveform displaying accurate time-multiplexed functionality"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab4/lab4.html",
+    "href": "MicroP/lab_reports/lab4/lab4.html",
+    "title": "Digital Audio",
+    "section": "",
+    "text": "This lab utilized an SM231508-1 8ohm speaker, and a STM32 Nucleo-32 board with an on board STM32L432KC MCU in order to play a the song “Für Elise” and “Happy Birthday”. This was done without using CMSIS, instead using memory mapped I/O, and accessing specific memory addresses and peripherals in order to initialize and run the code on the MCU.\n\n\n\nFigure1: Lab 4 hardware"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#hardware",
+    "href": "MicroP/lab_reports/lab4/lab4.html#hardware",
+    "title": "Digital Audio",
+    "section": "Hardware",
+    "text": "Hardware\nA simple audio amplifier (LM386) chip was used to drive an 8-ohm speaker. The amplifier was powered by a 5V supply, and the input signal was a 3.3V PWM signal. A 103 4E potentiometer was also included in the circuit to function as a volume control interface.\n\n\n\nFigure2: Circuit schematic"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#file-structure",
+    "href": "MicroP/lab_reports/lab4/lab4.html#file-structure",
+    "title": "Digital Audio",
+    "section": "File Structure",
+    "text": "File Structure\nAll files used in the project, including the specifically generated Segger project files, are stored in the same local directory. Within the Segger project, the file structure is organized as shown in Figure 3. Green lines indicate #include directives in the main.c file, while the black arrows show the correlation between header files and their respective .c files.\n\n\n\nFigure3: Segger project file mapping"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#high-level-software-description",
+    "href": "MicroP/lab_reports/lab4/lab4.html#high-level-software-description",
+    "title": "Digital Audio",
+    "section": "High Level Software description",
+    "text": "High Level Software description\nThe Multi-Speed Internal (MSI) clock, combined with a PLL configuration, was used to achieve the desired system clock (SYSCLK) speed of 4 MHz. The SYSCLK was routed to the GPIOA and TIM16 peripherals. TIM16, a built-in timer, was used for PWM generation to drive the speaker. A simple counter function, implemented in main.c, operated based on the SYSCLK. The key parameters for setting the output frequency and note duration were TIM16’s internal registers: the Auto-Reload Register (ARR) and the prescaler (PSC), which worked together with the counter variable to acheive desired output."
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#system-clock-configuration",
+    "href": "MicroP/lab_reports/lab4/lab4.html#system-clock-configuration",
+    "title": "Digital Audio",
+    "section": "System Clock Configuration",
+    "text": "System Clock Configuration\nAs mentioned, the MSI onboard clock was used as an input to the PLL configuration, which allows for precise SYSCLK speed control. The PLL uses two divisors (M and R) and one multiplier (N), as shown in Figure 4, to achieve this function. With the MSI frequency at the default frequency of 4 MHz and setting M=1, N=8, and R=4, we can achieve the desired SYSCLK speed of 8 MHz.\n\n\n\n\nFigure4: Full MCU clk tree & PLL module"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#tim16-frequency-generation",
+    "href": "MicroP/lab_reports/lab4/lab4.html#tim16-frequency-generation",
+    "title": "Digital Audio",
+    "section": "TIM16 & Frequency Generation",
+    "text": "TIM16 & Frequency Generation\nTIM16 is the peripheral used to produce the desired PWM signal frequency. First, the prescaler (PSC), as shown in Figure 4, was set to 255 to bring the TIM16 counter frequency closer to the desired range. To output a specific frequency, we can refer to Equation [1].\n\n\n\nFigure5: TIM16 Block Diagram\n\n\n[1] \\(Freq=\\frac{SYSCLK}{PSC+1} * \\frac{1}{ARR+1}\\)\nAs shown in Equation [1], Freq represents the desired PWM frequency, and ARR is the 16-bit register used to control this frequency. Therefore, Equation [1] can be simplified into the form of Equation [2], and further reduced to Equation [3]. Equation [3] was implemented in main.c to control the output frequency.\n[2] \\(ARR=\\frac{SYSCLK}{Freq*(PSC+1)}-1\\)\n[3] \\(ARR=\\frac{31250}{Freq}-1\\)"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#frequency-duration-analysis",
+    "href": "MicroP/lab_reports/lab4/lab4.html#frequency-duration-analysis",
+    "title": "Digital Audio",
+    "section": "Frequency & Duration Analysis",
+    "text": "Frequency & Duration Analysis\nThis section discusses the frequency accuracies, minimum and maximum frequencies, and their corresponding durations.\n\nFrequency Accuracy\nTo demonstrate the accuracy of the PWM output frequencies, Equation [4] calculates the ARR value for a 659 Hz frequency, which corresponds to a note from Für Elise.\n[4] \\(ARR = \\frac{31250}{659}-1 = 46.42\\)\nThe new value of ARR is internally rounded to the nearest integer, resulting in ARR = 46. By rearranging Equation [3] to solve for Freq, as shown in Equation [5], we can substitute the new ARR value to calculate the output frequency.\n[5] \\(Freq = 31250*\\frac{1}{ARR+1} = 31250*\\frac{1}{46+1} = 664.89\\)\nThe percent error, as calculated in Equation [6], is significantly less than 1%, which is more than sufficient for the accuracy required in this application.\n[6] \\(\\%_\\text{error} = \\frac{664.89 - 659}{664.89} = 0.0089\\)\n\n\nFrequency min/max\nThe minimum frequency corresponds to the maximum value of the 16-bit ARR register (\\(ARR_{\\text{max}} = 2^{16} - 1\\)). This can be calculated using Equation [7] below.\n[7] \\(Freq_{\\text{min}} = 31250*\\frac{1}{ARR_{\\text{max}}+1} = 31250*\\frac{1}{65535+1} = 0.48Hz\\)\nThe maximum frequency corresponds to the smallest value of the 16-bit ARR register (\\(ARR_{\\text{min}} = 1\\)). This can be calculated using Equation [8] below.\n[8] \\(Freq_{\\text{max}} = 31250*\\frac{1}{ARR_{\\text{min}}+1} = 31250*\\frac{1}{1+1} = 15.625kHz\\)\n\n\nDuration Accuracy\nThe only thing that affects the accuracy of the duration is the value ‘x=887’ declared in the software in the delay block, which has already been determined to be accurate.\n\n\nDuration min/max\nFor the following calculations, please consider the relationship given in equation [9].\n[9] \\({ms_{\\text{desired}}} = \\frac{ARR}{100}\\)\nThe maximum duration corresponds to the maximum value of the 16-bit ARR register (\\(ARR_{\\text{max}} = 2^{16} - 1\\)). This can be calculated using Equation [10] below.\n[10] \\({ms_{\\text{desired}}} = \\frac{65535}{100}\\) = 655.35ms\nThe minimum duration corresponds to the smallest value of the 16-bit ARR register (\\(ARR_{\\text{min}} = 1\\)). This can be calculated using Equation [11] below.\n[11] \\({ms_{\\text{desired}}} = \\frac{1}{100}\\) = 0.01ms"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab4/lab4.html#debugging",
+    "href": "MicroP/lab_reports/lab4/lab4.html#debugging",
+    "title": "Digital Audio",
+    "section": "Debugging",
+    "text": "Debugging\nThe built-in debugger in Segger was used to directly inspect register values to validate the design. By stepping through the execution one step at a time, the register values of interest could be monitored to ensure they were functioning as expected."
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab6/lab6.html",
+    "href": "MicroP/lab_reports/lab6/lab6.html",
+    "title": "The Internet of Things and Serial Peripheral Interface",
+    "section": "",
+    "text": "This lab focused on SPI communication between a DS1722 temperature sensor and an STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU. The goal was to implement a system that displays the temperature on a locally hosted website. The website should be able to update the temperature based on a selected bit-wise resolution (8, 9, 10, 11, or 12 bits). Additionally, the website must include an ON/OFF toggle to control an onboard LED. This setup requires proper configuration of SPI communication, with data being transmitted to and from both the MCU and the temperature sensor.\n\n\n\nFigure1: Lab 6 Tempurature Sensor Circuit"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab6/lab6.html#hardware",
+    "href": "MicroP/lab_reports/lab6/lab6.html#hardware",
+    "title": "The Internet of Things and Serial Peripheral Interface",
+    "section": "Hardware",
+    "text": "Hardware\nThe hardware used to implement this design, as shown in the circuit schematic in Figure 2, handles the SPI communication between the MCU and the temperature sensor, as well as the UART communication between the MCU and the ESP8266 Wi-Fi chip. The schematic also illustrates the simple hardware used to power the LED based on the input from the website.\n\n\n\nFigure2: Lab 6 Circuit Schematic"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab6/lab6.html#software",
+    "href": "MicroP/lab_reports/lab6/lab6.html#software",
+    "title": "The Internet of Things and Serial Peripheral Interface",
+    "section": "Software",
+    "text": "Software\nThe SPI1 peripheral on the MCU is used to perform the data transfer. A header file and a .c file were created to initialize and manage the send/receive operations through the SPI1 peripheral. The main.c file then utilized this configuration, along with the send/receive functions, to enable the peripheral, configure the temperature sensor, and retrieve the current temperature values. Simple HTML was written to access the button statuses from the website, which was hosted locally on the Wi-Fi chip.\n\nDS1722 Configuration & Temp Read\nThe DS1722 temperature sensor can be configured by sending a 0x80 value over the SPI pins. This value signals to the sensor that the next value sent will be applied to the configuration/status register, enabling different temperature resolutions. Based on the resolution requested from the website, the temperature sensor is configured to output the temperature at the corresponding resolution. The mapping of bit values to resolution configureation can be seen below in Figure 3.\n\n\n\n\n\nFigure3: Access register map & resolution assignment\n\n\nReading the tempurature comes in 2 packets, LSB (least significant byte) and MSB (most significant byte) as seen in the top of Figure 3.\n\n\nTempurature Decoding\nAfter reading the LSB and MSB, the value and its sign (positive or negative) must be decoded. Since the full 16-bit temperature value is in two’s complement form, a simple function was written to detect the most significant bit (MSB), which indicates whether the value is negative. If the MSB is set to 1, the temperature is negative, and the most negative value corresponds to -128°C. The remaining 15 bits of the temperature reading are summed, with each bit contributing its base-10 value, to this -128°C baseline, resulting in the final temperature reading.\nFor positive temperatures, the decoding process is simpler. It follows the same method as the negative temperature decoding, but starts from an initial value of 0°C instead of -128°C."
   },
   {
     "objectID": "resources.html",
