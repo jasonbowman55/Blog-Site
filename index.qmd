@@ -5,11 +5,13 @@ about:
     template: jolla
 ---
 
-Hi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College, graduating in 2025, with a concentration in Russian language. My technical experience spans Embedded Systems Engineering, Mechanical Design, SolidWorks CAD design and simulation, and Control Systems, among other areas. Beyond academics, I am a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm Resident Assistant.
+Hi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College, graduating in 2025, with a concentration in Russian language. My technical experience spans Embedded Systems Engineering, Analog/Digital Electronics, Mechanical Design, SolidWorks CAD design and simulation, PCB Design, and Control Systems, among other areas. Beyond academics, I am a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm Resident Assistant.
 
 In my free time, I enjoy weightlifting, fishing, learning new languages, working on personal projects, spending time outdoors, and being with friends and family.
 
-I’m glad you found my page! Please see the following resources if you’d like to reach out to me.
+I’m glad you found my page! Please see the following resources if you’d like to reach out to me, and do scroll down to view some of my projects!
+
+----------------------------------------------------------------
 
 <div style="text-align: center;">
   <a href="https://www.linkedin.com/in/jasonbbowman/" target="_blank" style="text-decoration: none;">
@@ -38,3 +40,18 @@ I’m glad you found my page! Please see the following resources if you’d like
     </button>
   </a>
 </div>
+
+----------------------------------------------------------------
+
+<div style="float: left; width: 48%; margin-right: 2%;">
+  <p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">Squat Hero</p>
+  [<img src="images/full_mcu_imu.jpeg" alt="Squat Hero" style="width: 100%;">](https://jasonbowman55.github.io/squat_hero_website/)
+</div>
+
+<div style="float: right; width: 48%; margin-left: 2%;">
+  <p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">Vilnius Helping Ukraine</p>
+  [<img src="images/vilnius_helping_ukraine.jpeg" alt="Vilnius Helping Ukraine" style="width: 100%;">](https://sites.google.com/g.hmc.edu/vilnius-helping-ukraine/english)
+</div>
+
+<div style="clear: both;"></div>
+

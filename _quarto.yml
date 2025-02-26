@@ -7,12 +7,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Micro-Ps
-        menu:
-          - text: Lab Reports
-            href: MicroP/lab_reports/index.qmd
-          - text: Final Project
-            href: https://jasonbowman55.github.io/squat_hero_website/
+      - text: Micro-Ps Lab Reports
+        href: MicroP/lab_reports/index.qmd
       - text: Lithuania Study Abroad
         href: https://sites.google.com/g.hmc.edu/vilnius-helping-ukraine/english
       - href: hobbies/index.qmd
