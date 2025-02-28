@@ -80,7 +80,7 @@ I’m glad you found my page! Please see the following resources if you’d like
 <!-- Roll Stabilization in High-Power Model Rockets -->
 <div class="project">
   <p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">Roll Stabilization in High-Power Model Rockets</p>
-  <a href="ADD LINK HERE"><img src="images/place_holder.jpeg" alt="Roll Stabilization in High-Power Model Rockets"></a>
+  <a href="ADD LINK HERE"><img src="images/HPR_Cover.jpeg" alt="Roll Stabilization in High-Power Model Rockets"></a>
 </div>
 
 <!-- Underwater Autonomous Robot -->

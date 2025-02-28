@@ -179,7 +179,7 @@ Squat Hero
 <p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">
 Roll Stabilization in High-Power Model Rockets
 </p>
-<p><a href="ADD LINK HERE"><img src="images/place_holder.jpeg" alt="Roll Stabilization in High-Power Model Rockets"></a></p>
+<p><a href="ADD LINK HERE"><img src="images/HPR_Cover.jpeg" alt="Roll Stabilization in High-Power Model Rockets"></a></p>
 </div>
 <!-- Underwater Autonomous Robot -->
 <div class="project">
@@ -295,7 +295,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
