@@ -71,6 +71,10 @@ I’m glad you found my page! Please see the following resources if you’d like
   }
 </style>
 
+
+
+
+
 <!-- Squat Hero -->
 <div class="project">
   <p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">Squat Hero</p>
@@ -85,8 +89,8 @@ I’m glad you found my page! Please see the following resources if you’d like
 
 <!-- Underwater Autonomous Robot -->
 <div class="project">
-  <p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">Underwater Autonomous Robot</p>
-  <a href="ADD LINK HERE"><img src="images/place_holder.jpeg" alt="Underwater Autonomous Robot"></a>
+  <p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">Autonomous Underwater Robot</p>
+  <a href="E80/index.qmd"><img src="images/robot_underwater.jpeg" alt="Autonomous Underwater Robot"></a>
 </div>
 
 <!-- Non-Ferrous Landmine detection -->
