@@ -7,15 +7,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Micro-Ps Lab Reports
-        href: MicroP/lab_reports/index.qmd
-      - text: Lithuania Study Abroad
-        href: https://sites.google.com/g.hmc.edu/vilnius-helping-ukraine/english
-      - href: hobbies/index.qmd
-        text: Hobbies
-        menu:
-          - text: Annual Challenge
-            href: hobbies/annual_challenge
       - href: resources.qmd
         text: Resources
       - href: about.qmd
