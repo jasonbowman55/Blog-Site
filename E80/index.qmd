@@ -14,55 +14,92 @@ This team made the experience truly memorable, and we still check in on each oth
 
 Please see the links below for the final details of our project, including our final presentation and report. Also included are the lab reports, which I completed individually after working with a partner during the pre-project lab work. This course took place during my sophomore year of college and showcases my growth in both technical skills and technical writing.
 
-----------------------------------------------------------------
+---
+## Final Results {.text-center}
+---
 
-::: {.columns}
+<div style="display: flex; justify-content: center; gap: 20px;">
 
-::: {.column width="50%" style="text-align: center;"}
+<div style="width: 50%; text-align: center;">
 ### Final Report  
 [![Final Report](images/final_report.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/10z3bwR1xdG-XAJNYut0mEZHobPQbsdvD/view?usp=sharing)  
 *<span style="color: #007BFF;">Click to view</span>*
-:::
+</div>
 
-::: {.column width="50%" style="text-align: center;"}
+<div style="width: 50%; text-align: center;">
 ### Final Presentation  
 [![Final Presentation](images/final_pres.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1SFoDq-4IOvm13Nju7Mgr_akCRxlvOkGa/view?usp=sharing)  
 *<span style="color: #007BFF;">Click to view</span>*
-:::
+</div>
 
-:::
+</div>
 
 ---
+## Videos {.text-center}
+---
 
-::: {.columns}
+<div style="display: flex; justify-content: center; gap: 20px;">
 
-::: {.column width="50%" style="text-align: center;"}
+<div style="width: 50%; text-align: center;">
 ### Real Time Data Video  
 <video width="100%" controls style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;">
   <source src="videos/Flub.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>  
 *<span style="color: #007BFF;">Click to view</span>*
-:::
+</div>
 
-::: {.column width="50%" style="text-align: center;"}
+<div style="width: 50%; text-align: center;">
 ### Deployment  
 <video width="100%" controls style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;">
   <source src="videos/Flub_shore.MOV" type="video/mp4">
   Your browser does not support the video tag.
 </video>  
 *<span style="color: #007BFF;">Click to view</span>*
-:::
+</div>
 
-:::
+</div>
 
+---
+## Lab Reports {.text-center}
+---
 
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
 
+<div style="width: 45%; text-align: center;">
+### Lab 1 Report - Going Autonomous  
+[![Lab 1](images/lab1.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1bCHhOPwuIOd0EJOIRcDaeNcMJkJtW0-J/view?usp=sharing) <!-- ADD LINK HERE -->  
+*<span style="color: #007BFF;">Click to view</span>*
+</div>
 
+<div style="width: 45%; text-align: center;">
+### Lab 2 Report - BEM  
+[![Lab 2](images/lab2.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1jr20M69VYiIHlnWu445LXzpf1TrMCuFO/view?usp=sharing) <!-- ADD LINK HERE -->  
+*<span style="color: #007BFF;">Click to view</span>*
+</div>
 
-------
-THINGS THAT I WANT TO ADD
-- final report
-- final presentation
-- 2 videos
-- 6 lab reports
+<div style="width: 45%; text-align: center;">
+### Lab 3 Report - Turbidity Using Photodiodes and 555-Timer  
+[![Lab 3](images/lab3.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1sJeaYkD4SJebCqQPU-JQpAV48SDGVCz6/view?usp=sharing) <!-- ADD LINK HERE -->  
+*<span style="color: #007BFF;">Click to view</span>*
+</div>
+
+<div style="width: 45%; text-align: center;">
+### Lab 4 Report - Temperature  
+[![Lab 4](images/lab4.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1wmHXs_jkDRqvBVebrnnaE1i3WHQgXmyQ/view?usp=sharing) <!-- ADD LINK HERE -->  
+*<span style="color: #007BFF;">Click to view</span>*
+</div>
+
+<div style="width: 45%; text-align: center;">
+### Lab 5 - Acoustics  
+[![Lab 5](images/lab5.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1S6-E1Udu2Aq7KfW4fAKOh_NWmZMmNDmb/view?usp=sharing) <!-- ADD LINK HERE -->  
+*<span style="color: #007BFF;">Click to view</span>*
+</div>
+
+<div style="width: 45%; text-align: center;">
+### Lab 6 - Fluid Dynamics Technical Memorandum  
+[![Lab 6](images/lab6.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1khie_yhsyVY0-u7opmbmVQnYqpIBjSet/view?usp=sharing) <!-- ADD LINK HERE -->  
+*<span style="color: #007BFF;">Click to view</span>*
+</div>
+
+</div>
