@@ -92,18 +92,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./MicroP/lab_reports/index.html"> 
-<span class="menu-text">Micro-Ps Lab Reports</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://sites.google.com/g.hmc.edu/vilnius-helping-ukraine/english"> 
-<span class="menu-text">Lithuania Study Abroad</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./hobbies/index.html"> 
-<span class="menu-text">Hobbies</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
@@ -145,12 +133,40 @@ ul.task-list li input[type="checkbox"] {
   /* Default layout for larger screens (desktop) */
   .project {
     float: left;
-    width: 48%;
+    width: 48%; /* Two items per row */
     margin-right: 2%;
     margin-bottom: 20px; /* Add margin for separation */
+    text-align: center;
+    background-color: white; /* Set background color to white */
+    border-radius: 10px;
+    border: 3px solid black; /* Set border color to black */
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Stack the content vertically */
+    justify-content: flex-start; /* Align the content at the top */
+    color: black; /* Ensure text is visible */
   }
+  /* Ensure the image grows and takes the available space */
   .project img {
     width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure image fits without stretching */
+    flex-grow: 1; /* Make image fill available space */
+    margin-bottom: 10px; /* Small gap between image and title */
+  }
+  /* Title and "Click to view" text styling */
+  .project .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .project .click-to-view {
+    font-size: 12px;
+    font-style: italic;
+    color: #007BFF;
+    margin-top: 10px;
+    margin-bottom: 0; /* Ensure no extra bottom margin */
   }
   /* Clear floats after every group of 2 items */
   .clear {
@@ -163,43 +179,83 @@ ul.task-list li input[type="checkbox"] {
       width: 100%;
       margin-right: 0;
       margin-left: 0;
+      padding: 10px;
+    }
+    .project img {
+      width: 100%;
+      height: auto; /* Adjust image size for mobile */
     }
   }
 </style>
 <!-- Squat Hero -->
 <div class="project">
-<p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">
+<p class="title">
 Squat Hero
 </p>
-<p><a href="https://jasonbowman55.github.io/squat_hero_website/"><img src="images/full_mcu_imu.jpeg" alt="Squat Hero"></a></p>
+<a href="https://jasonbowman55.github.io/squat_hero_website/"> <img src="images/full_mcu_imu.jpeg" alt="Squat Hero"> </a>
+<p class="click-to-view">
+<em><span>Click to view</span></em>
+</p>
+</div>
+<!-- Micro Processor Design & Application -->
+<div class="project">
+<p class="title">
+Micro Processor Design &amp; Application
+</p>
+<a href="./MicroP/lab_reports/index.html"> <img src="images/microp.jpeg" alt="Micro Processor Design &amp; Application"> </a>
+<p class="click-to-view">
+<em><span>Click to view</span></em>
+</p>
 </div>
 <!-- Roll Stabilization in High-Power Model Rockets -->
 <div class="project">
-<p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">
+<p class="title">
 Roll Stabilization in High-Power Model Rockets
 </p>
-<p><a href="ADD LINK HERE"><img src="images/HPR_Cover.jpeg" alt="Roll Stabilization in High-Power Model Rockets"></a></p>
-</div>
-<!-- Underwater Autonomous Robot -->
-<div class="project">
-<p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">
-Autonomous Underwater Robot
+<a href="ADD LINK HERE"> <img src="images/HPR_Cover.jpeg" alt="Roll Stabilization in High-Power Model Rockets"> </a>
+<p class="click-to-view">
+<em><span>Click to view</span></em>
 </p>
-<p><a href="./E80/index.html"><img src="images/robot_underwater.jpeg" alt="Autonomous Underwater Robot"></a></p>
 </div>
 <!-- Non-Ferrous Landmine detection -->
 <div class="project">
-<p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">
+<p class="title">
 Non-Ferrous Landmine detection
 </p>
-<p><a href="ADD LINK HERE"><img src="images/place_holder.jpeg" alt="Non-Ferrous Landmine detection"></a></p>
+<a href="ADD LINK HERE"> <img src="images/place_holder.jpeg" alt="Non-Ferrous Landmine detection"> </a>
+<p class="click-to-view">
+<em><span>Click to view</span></em>
+</p>
+</div>
+<!-- Underwater Autonomous Robot -->
+<div class="project">
+<p class="title">
+Autonomous Underwater Robot
+</p>
+<a href="./E80/index.html"> <img src="images/robot_underwater.jpeg" alt="Autonomous Underwater Robot"> </a>
+<p class="click-to-view">
+<em><span>Click to view</span></em>
+</p>
 </div>
 <!-- Vilnius Helping Ukraine -->
 <div class="project">
-<p style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">
+<p class="title">
 Vilnius Helping Ukraine
 </p>
-<p><a href="https://sites.google.com/g.hmc.edu/vilnius-helping-ukraine/english"><img src="images/vilnius_helping_ukraine.jpeg" alt="Vilnius Helping Ukraine"></a></p>
+<a href="https://sites.google.com/g.hmc.edu/vilnius-helping-ukraine/english"> <img src="images/vilnius_helping_ukraine.jpeg" alt="Vilnius Helping Ukraine"> </a>
+<p class="click-to-view">
+<em><span>Click to view</span></em>
+</p>
+</div>
+<!-- Hobbies -->
+<div class="project">
+<p class="title">
+Hobbies
+</p>
+<a href="./hobbies/index.html"> <img src="images/shot_put.jpeg" alt="Hobbies"> </a>
+<p class="click-to-view">
+<em><span>Click to view</span></em>
+</p>
 </div>
 <!-- Clear floats to avoid overlap -->
 <div class="clear">
