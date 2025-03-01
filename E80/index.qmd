@@ -18,21 +18,43 @@ Please see the links below for the final details of our project, including our f
 
 ::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="50%" style="text-align: center;"}
 ### Final Report  
-[![Final Report](images/final_report.jpeg){style="border: 3px solid #333; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/10z3bwR1xdG-XAJNYut0mEZHobPQbsdvD/view?usp=sharing)
+[![Final Report](images/final_report.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/10z3bwR1xdG-XAJNYut0mEZHobPQbsdvD/view?usp=sharing)  
+*<span style="color: #007BFF;">Click to view</span>*
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%" style="text-align: center;"}
 ### Final Presentation  
-[![Final Presentation](images/final_pres.jpeg){style="border: 3px solid #333; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1SFoDq-4IOvm13Nju7Mgr_akCRxlvOkGa/view?usp=sharing)
+[![Final Presentation](images/final_pres.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1SFoDq-4IOvm13Nju7Mgr_akCRxlvOkGa/view?usp=sharing)  
+*<span style="color: #007BFF;">Click to view</span>*
 :::
 
 :::
 
+---
 
+::: {.columns}
 
+::: {.column width="50%" style="text-align: center;"}
+### Real Time Data Video  
+<video width="100%" controls style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;">
+  <source src="videos/Flub.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>  
+*<span style="color: #007BFF;">Click to view</span>*
+:::
 
+::: {.column width="50%" style="text-align: center;"}
+### Deployment  
+<video width="100%" controls style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;">
+  <source src="videos/Flub_shore.MOV" type="video/mp4">
+  Your browser does not support the video tag.
+</video>  
+*<span style="color: #007BFF;">Click to view</span>*
+:::
+
+:::
 
 
 
