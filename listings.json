@@ -1,12 +1,5 @@
 [
   {
-    "listing": "/hobbies/annual_challenge/index.html",
-    "items": [
-      "/hobbies/annual_challenge/4x4x48/index.html",
-      "/hobbies/annual_challenge/claremont-sm/index.html"
-    ]
-  },
-  {
     "listing": "/MicroP/lab_reports/index.html",
     "items": [
       "/MicroP/lab_reports/lab1/lab1.html",
@@ -16,6 +9,13 @@
       "/MicroP/lab_reports/lab5/lab5.html",
       "/MicroP/lab_reports/lab6/lab6.html",
       "/MicroP/lab_reports/lab7/lab7.html"
+    ]
+  },
+  {
+    "listing": "/hobbies/annual_challenge/index.html",
+    "items": [
+      "/hobbies/annual_challenge/4x4x48/index.html",
+      "/hobbies/annual_challenge/claremont-sm/index.html"
     ]
   }
 ]
