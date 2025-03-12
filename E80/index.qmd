@@ -14,6 +14,8 @@ This team made the experience truly memorable, and we still check in on each oth
 
 Please see the links below for the final details of our project, including our final presentation and report. Also included are the lab reports, which I completed individually after working with a partner during the pre-project lab work. This course took place during my sophomore year of college and showcases my growth in both technical skills and technical writing.
 
+---
+
 <h1 style="text-align: center;">Final Results</h1>
 
 <!-- Final Results -->
@@ -51,6 +53,8 @@ Please see the links below for the final details of our project, including our f
   </video>
   <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
+
+---
 
 <h1 style="text-align: center;">Lab Reports</h1>
 

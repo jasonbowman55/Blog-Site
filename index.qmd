@@ -46,6 +46,9 @@ I’m glad you found my page! Please see the following resources if you’d like
     </button>
   </a>
 </div>
+
+# Engineering Projects
+
 <!-- Squat Hero -->
 <div class="project">
   <p class="title">Squat Hero</p>
@@ -96,15 +99,6 @@ I’m glad you found my page! Please see the following resources if you’d like
   <p class="title">Vilnius Helping Ukraine</p>
   <a href="https://sites.google.com/g.hmc.edu/vilnius-helping-ukraine/english">
     <img src="images/vilnius_helping_ukraine.jpeg" alt="Vilnius Helping Ukraine">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
-</div>
-
-<!-- Hobbies -->
-<div class="project">
-  <p class="title">Hobbies</p>
-  <a href="hobbies/index.qmd">
-    <img src="images/shot_put.jpeg" alt="Hobbies">
   </a>
   <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>

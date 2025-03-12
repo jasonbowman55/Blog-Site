@@ -147,6 +147,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>This team made the experience truly memorable, and we still check in on each other periodically, reminiscing about our days in E80. We learned a lot, faced challenges, took turns leading and following, stressed over obstacles, and celebrated our successes. I couldn’t have asked for a better team.</p>
 <p>Please see the links below for the final details of our project, including our final presentation and report. Also included are the lab reports, which I completed individually after working with a partner during the pre-project lab work. This course took place during my sophomore year of college and showcases my growth in both technical skills and technical writing.</p>
+<hr>
 <h1 style="text-align: center;">
 Final Results
 </h1>
@@ -188,6 +189,7 @@ Deployment
 <em><span>Click to view</span></em>
 </p>
 </div>
+<hr>
 <h1 style="text-align: center;">
 Lab Reports
 </h1>
@@ -351,7 +353,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

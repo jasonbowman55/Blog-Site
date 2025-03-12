@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Portfolio</title>
+<title>Home Page</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">My Portfolio</span>
+    <span class="navbar-title">Home Page</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -88,12 +88,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./resources.html"> 
 <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./hobbies/index.html"> 
+<span class="menu-text">Hobbies</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -110,12 +110,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+  <ul>
+  <li><a href="#engineering-projects" id="toc-engineering-projects" class="nav-link active" data-scroll-target="#engineering-projects">Engineering Projects</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <div class="quarto-about-jolla">
   <img src="images/headshot2.jpeg" class="about-image
   round " style="height: 15em; width: 15em;">
  <main class="content" id="quarto-document-content">
+
 <!-- Custom spacing with inline HTML and CSS -->
 <div style="margin-bottom: 0px;">
 </div>
@@ -131,6 +139,8 @@ Scroll Down ⬇️
 <div style="text-align: center;">
 <p><a href="https://www.linkedin.com/in/jasonbbowman/" target="_blank" style="text-decoration: none;"> <button style="margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer;"> 🔗 LinkedIn </button> </a> <a href="https://drive.google.com/file/d/10qjjs2CrcpYqNsFiZMWL6zO_XjcaD9cc/view?usp=sharing" target="_blank" style="text-decoration: none;"> <button style="margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer;"> 📄 Resume </button> </a> <a href="https://github.com/jasonbowman55" target="_blank" style="text-decoration: none;"> <button style="margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer;"> 🖥️ GitHub </button> </a> <a href="mailto:jbowman@hmc.edu" target="_blank" style="text-decoration: none;"> <button style="margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer;"> ✉️ Email </button> </a> <a href="tel:+19712676838" target="_blank" style="text-decoration: none;"> <button style="margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer;"> 📞 Phone </button> </a></p>
 </div>
+<section id="engineering-projects" class="level1">
+<h1>Engineering Projects</h1>
 <!-- Squat Hero -->
 <div class="project">
 <p class="title">
@@ -191,21 +201,12 @@ Vilnius Helping Ukraine
 <em><span>Click to view</span></em>
 </p>
 </div>
-<!-- Hobbies -->
-<div class="project">
-<p class="title">
-Hobbies
-</p>
-<a href="./hobbies/index.html"> <img src="images/shot_put.jpeg" alt="Hobbies"> </a>
-<p class="click-to-view">
-<em><span>Click to view</span></em>
-</p>
-</div>
 <!-- Clear floats to avoid overlap -->
 <div class="clear">
 </div>
 
 
+</section>
 </main>  
 </div>
  <!-- /main -->
@@ -294,7 +295,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -1,21 +1,20 @@
 ---
 title: "Hobbies"
-#listing:
-#  contents:
-#    - "annual_challenge/index.qmd"
-#  type: default
-#  categories: false
-#  sort: none
-
 ---
 
-<!-- Annual Spring Break Challenge yellow button -->
-<div style="text-align: center; margin-top: 20px;">
-  <a href="annual_challenge/index.qmd" style="display: inline-block; padding: 15px 30px; font-size: 24px; background-color: #FFC000; color: black; text-align: center; text-decoration: none; border-radius: 5px; width: 100%; max-width: 1000px; margin: 10px 0;">Annual Spring Break Challenge</a>
+<div class="project">
+  <p class="title">Annual Challenge</p>
+  <a href="annual_challenge/index.qmd">
+    <img src="images/map_claremont-sm.jpeg" alt="Annual Challenge">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
-<!-- Fishing -->
-<!-- <div style="text-align: center; margin-top: 20px;">
-  <a href="fishing/index.qmd" style="display: inline-block; padding: 15px 30px; font-size: 24px; background-color: #0000FF; color: white; text-align: center; text-decoration: none; border-radius: 5px; max-width: 1000px; margin: 10px 0;">Fishing</a>
-</div> -->
+<div class="project">
+  <p class="title">Sports</p>
+  <a href="track&field/index.qmd">
+    <img src="images/shot.jpeg" alt="Sports">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
+</div>
 
