@@ -14,92 +14,100 @@ This team made the experience truly memorable, and we still check in on each oth
 
 Please see the links below for the final details of our project, including our final presentation and report. Also included are the lab reports, which I completed individually after working with a partner during the pre-project lab work. This course took place during my sophomore year of college and showcases my growth in both technical skills and technical writing.
 
----
-## Final Results {.text-center}
----
+<h1 style="text-align: center;">Final Results</h1>
 
-<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Final Report  
-[![Final Report](images/final_report.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/10z3bwR1xdG-XAJNYut0mEZHobPQbsdvD/view?usp=sharing)  
-*<span style="color: #007BFF;">Click to view</span>*
+<!-- Final Results -->
+<div class="project">
+  <p class="title">Final Report</p>
+  <a href="https://drive.google.com/file/d/10z3bwR1xdG-XAJNYut0mEZHobPQbsdvD/view?usp=sharing">
+    <img src="images/final_report.jpeg" alt="Final Report">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Final Presentation  
-[![Final Presentation](images/final_pres.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1SFoDq-4IOvm13Nju7Mgr_akCRxlvOkGa/view?usp=sharing)  
-*<span style="color: #007BFF;">Click to view</span>*
+<div class="project">
+  <p class="title">Final Presentation</p>
+  <a href="https://drive.google.com/file/d/1SFoDq-4IOvm13Nju7Mgr_akCRxlvOkGa/view?usp=sharing">
+    <img src="images/final_pres.jpeg" alt="Final Presentation">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
+<!-- Videos -->
+<div class="project">
+  <p class="title">Real Time Data Video</p>
+  <video width="100%" controls>
+    <source src="videos/Flub.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
----
-## Videos {.text-center}
----
-
-<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Real Time Data Video  
-<video width="100%" controls style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;">
-  <source src="videos/Flub.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>  
-*<span style="color: #007BFF;">Click to view</span>*
+<div class="project">
+  <p class="title">Deployment</p>
+  <video width="100%" controls>
+    <source src="videos/Flub_shore.MOV" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Deployment  
-<video width="100%" controls style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;">
-  <source src="videos/Flub_shore.MOV" type="video/mp4">
-  Your browser does not support the video tag.
-</video>  
-*<span style="color: #007BFF;">Click to view</span>*
+<h1 style="text-align: center;">Lab Reports</h1>
+
+<!-- Lab Reports -->
+<div class="project">
+  <p class="title">Lab 1 Report - Going Autonomous</p>
+  <a href="https://drive.google.com/file/d/1bCHhOPwuIOd0EJOIRcDaeNcMJkJtW0-J/view?usp=sharing">
+    <img src="images/lab1.jpeg" alt="Lab 1 Report">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
+<div class="project">
+  <p class="title">Lab 2 Report - BEM</p>
+  <a href="https://drive.google.com/file/d/1jr20M69VYiIHlnWu445LXzpf1TrMCuFO/view?usp=sharing">
+    <img src="images/lab2.jpeg" alt="Lab 2 Report">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
----
-## Lab Reports {.text-center}
----
-
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Lab 1 Report - Going Autonomous  
-[![Lab 1](images/lab1.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1bCHhOPwuIOd0EJOIRcDaeNcMJkJtW0-J/view?usp=sharing)  
-*<span style="color: #007BFF;">Click to view</span>*
+<div class="project">
+  <p class="title">Lab 3 Report - Turbidity Using Photodiodes and 555-Timer</p>
+  <a href="https://drive.google.com/file/d/1sJeaYkD4SJebCqQPU-JQpAV48SDGVCz6/view?usp=sharing">
+    <img src="images/lab3.jpeg" alt="Lab 3 Report">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Lab 2 Report - BEM  
-[![Lab 2](images/lab2.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1jr20M69VYiIHlnWu445LXzpf1TrMCuFO/view?usp=sharing)  
-*<span style="color: #007BFF;">Click to view</span>*
+<div class="project">
+  <p class="title">Lab 4 Report - Temperature</p>
+  <a href="https://drive.google.com/file/d/1wmHXs_jkDRqvBVebrnnaE1i3WHQgXmyQ/view?usp=sharing">
+    <img src="images/lab4.jpeg" alt="Lab 4 Report">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Lab 3 Report - Turbidity Using Photodiodes and 555-Timer  
-[![Lab 3](images/lab3.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1sJeaYkD4SJebCqQPU-JQpAV48SDGVCz6/view?usp=sharing)  
-*<span style="color: #007BFF;">Click to view</span>*
+<div class="project">
+  <p class="title">Lab 5 Report - Acoustics</p>
+  <a href="https://drive.google.com/file/d/1S6-E1Udu2Aq7KfW4fAKOh_NWmZMmNDmb/view?usp=sharing">
+    <img src="images/lab5.jpeg" alt="Lab 5 Report">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Lab 4 Report - Temperature  
-[![Lab 4](images/lab4.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1wmHXs_jkDRqvBVebrnnaE1i3WHQgXmyQ/view?usp=sharing)  
-*<span style="color: #007BFF;">Click to view</span>*
+<div class="project">
+  <p class="title">Lab 6 - Fluid Dynamics Technical Memorandum</p>
+  <a href="https://drive.google.com/file/d/1khie_yhsyVY0-u7opmbmVQnYqpIBjSet/view?usp=sharing">
+    <img src="images/lab6.jpeg" alt="Lab 6 Report">
+  </a>
+  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Lab 5 - Acoustics  
-[![Lab 5](images/lab5.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1S6-E1Udu2Aq7KfW4fAKOh_NWmZMmNDmb/view?usp=sharing)  
-*<span style="color: #007BFF;">Click to view</span>*
-</div>
+<!-- Clear floats to avoid overlap -->
+<div class="clear"></div>
 
-<div style="width: 45%; text-align: center; flex: 1 1 100%; max-width: 45%;">
-### Lab 6 - Fluid Dynamics Technical Memorandum  
-[![Lab 6](images/lab6.jpeg){style="border: 3px solid #007BFF; border-radius: 10px; padding: 5px;"}](https://drive.google.com/file/d/1khie_yhsyVY0-u7opmbmVQnYqpIBjSet/view?usp=sharing)  
-*<span style="color: #007BFF;">Click to view</span>*
-</div>
 
+
+<div style="text-align: center;">
+  <h1>Final Results</h1>
 </div>
