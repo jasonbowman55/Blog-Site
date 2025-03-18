@@ -149,7 +149,7 @@ Annual Challenge
 <p class="title">
 Sports
 </p>
-<a href="../hobbies/track&amp;field/index.html"> <img src="images/shot.jpeg" alt="Sports"> </a>
+ &lt;img src="images/shot.jpeg" alt="Sports"&gt; 
 <p class="click-to-view">
 <em><span>Click to view</span></em>
 </p>
@@ -250,7 +250,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/jasonbowman55\.github\.io\/Blog-Site\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
