@@ -1,31 +1,31 @@
 [
   {
-    "objectID": "HPR/index.html#digital-design",
-    "href": "HPR/index.html#digital-design",
-    "title": "E178: High Power Rocketry",
-    "section": "Digital Design",
-    "text": "Digital Design"
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "My Undergraduate Institution",
+    "section": "",
+    "text": "My Undergraduate Institution\nHarvey Mudd College Website\n\n\nUpper-Division Engineering Course Websites\n\nE155 Microprocessor Design & Application (Micro Ps) Course Website\nE178 Higher Power Rocketry (HPR) Course Website\n\n\n\nProfessional References\n\n\n\n\nProfessor Albert Dato [adato@g.hmc.edu]\n\n\n“Albert Dato, PhD, researches the synthesis and applications of nanomaterials. Dato directs the Energy & Nanomaterials Lab, which seeks to develop solutions to energy and environmental challenges through applications of advanced materials./\nDato received a PhD in applied science and technology from the University of California, Berkeley. Founder and CEO of Graphene LLC, Dato has worked as a scientist at Air Liquide Electronics U.S. and as a process development engineer at Novellus Systems Inc.” - HMC Website\nAside from the coursework I took with Prof. Dato in a Materials Engineering class, he has been my research advisor for almost two years. As part of a team researching nanomaterials, I have worked under Prof. Dato developing production methods for thin-film UV-curable and thermosetting nanocomposites of resin combined with various forms of graphite and graphene nanomaterials. Working with Prof. Dato has been both enjoyable and rewarding, as he provides his research students with flexibility and independence in designing processes and experiments, while also making himself available for consistent feedback and technical support. During my time in his lab, I have refined my laboratory skills and had the opportunity to work with new equipment, such as his 4-point probe, which I used to confirm the positive conductivity of my thin-film nanocomposites.\n\n\n\n\n\nProfessor Josh Brake [jbrake@g.hmc.edu]\n\n\n“Hi there, my name is Josh Brake. My professional background is in engineering with specific expertise in electrical engineering and optics. By day, I’m an Assistant Professor in the Engineering Department at Harvey Mudd College where I teach across the curriculum with a focus on digital electronics, embedded systems, and optics. You can read more about me on the about page.” - joshbrake.com\nMy main interaction with Prof. Brake was during his Microprocessor Design & Application class at Harvey Mudd, where I completed several embedded systems labs focusing on the functionality of an ARM STM32 Nucleo-32 dev board STM32L432KC MCU and a tinyvision.ai UPduino v3.1 & iCE40 UP5K FPGA. In this class, I learned how to effectively employ C and SystemVerilog bare-metal programming techniques. Later, my teammate Ket Hollingsworth and I completed a final project focused on analyzing the squat form of the user, taking advantage of the MCU, multiple Adafruit LSM6DSO32 IMUs, and our FPGA to effectively display user squat depth. You can learn more about this project under Final Project in the “Micro Ps” tab above, as well as projects from previous years here.\nThanks to Prof. Brake’s hands-on approach and his availability as a consultant throughout the course, this class was highly effective in developing my embedded hardware and software knowledge. It has also enabled me to effectively and efficiently pursue personal embedded systems and electromechanical projects of my own.\n\n\n\n\n\nProfessor Josh Brake [spjut@g.hmc.edu]\n\n\n“Erik Spjut, PhD, professor of engineering and Union Oil Company Engineering Design Fellow, has extensive experience in radiative heat transfer, high-temperature heterogeneous kinetics, containerless processing of materials and non-contact temperature measurement. Spjut also researches process control and optimization, automatic test equipment, computerized data acquisition and processing, and digital audio processing and synthesis. He has published widely in all these areas, including two chapters in the CSound Book from MIT Press.\nSpjut has led projects funded by the NSF, the Department of Energy, NASA and Southern California Edison. He has also consulted extensively for the Jet Propulsion Laboratory, Space Systems/LORAL, Radiant Technology Corp. and Advanced Energy Dynamics.” - HMC Website\nMy interactions with Prof. Spjut primarily involve my coursework in High Power Rocketry, where we learned techniques in construction, calculation, simulation, and data analysis related to generating stable flight for high-power model rockets. For our final project, Jordan Stone and I worked together to develop and integrate an electromechanical system that involved an actively controlled flywheel, used to counteract rotation during the ascent stage of our final rocket. This project involved mechanical design and construction, data capture, UART communication protocols, as well real time data processing and PID control tuning.\nProf. Spjut is truly a master of high-power rocketry and has spent years of his personal time, in addition to his teaching time, perfecting his craft and expertise in rocket construction, simulation, data collection, and data processing. He was an invaluable resource throughout the class, and we grew close during the trials and tribulations faced when developing these systems.\n\n\n\n\n\nProfessor Josh Brake [jason@g.hmc.edu]\n\n\n“Jason Gallicchio, PhD, specializes in experimental cosmology—the study of the origin and evolution of the universe. Gallicchio spent a year at the South Pole Telescope where he researched polarization of the Cosmic Microwave Background (CMB) and served as a South Pole NSF Station Science Leader. He is also interested in devising new ways to conduct fundamental tests of quantum mechanics and has designed improvements for Bell-type tests of quantum entanglement.\nGallicchio has bachelor’s and master’s degrees in electrical engineering from the University of Illinois, Urbana-Champagne, and a PhD in physics from Harvard University.” - HMC Website\nMy interactions with Professor Gallicchio primarily involve him serving as my advisor for my engineering capstone project (Clinic Project), sponsored by the company Sokil. In this role, I have acted as team lead, conducting in-depth research and making informed technical decisions. I managed a six-person team in evaluating over ten sensor options and led the testing of three ideal sensor types: RADAR, LiDAR, and multispectral sensing. Specifically, I focused on L/S band and mmWave RADAR systems, designing tests to detect PFM-1 landmines. This project centers on drone-deployed sensor systems aimed at supporting humanitarian demining efforts in both civilian and battlefield settings, particularly in Ukraine. The goal is to help demining personnel rule out large unsuspected areas, leading to more efficient and effective use of time and resources during demining operations. This project will continue through May 2025, where we will refine our sensor systems and deploy them on a drone, with the end goal of having a system that can autonomously scan and highlight suspected landmine-dense regions with a high level of confidence.\nProfessor Gallicchio has been instrumental in the success of our project so far, bringing a high level of knowledge and critical thinking skills to sensor and drone systems. My team and I have developed a strong working relationship with Prof. Gallicchio and look forward to continuing to work with him through May 2025."
   },
   {
-    "objectID": "HPR/index.html#systems-design",
-    "href": "HPR/index.html#systems-design",
-    "title": "E178: High Power Rocketry",
-    "section": "Systems Design",
-    "text": "Systems Design"
+    "objectID": "MicroP/lab_reports/lab6/lab6.html",
+    "href": "MicroP/lab_reports/lab6/lab6.html",
+    "title": "The Internet of Things and Serial Peripheral Interface",
+    "section": "",
+    "text": "This lab focused on SPI communication between a DS1722 temperature sensor and an STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU. The goal was to implement a system that displays the temperature on a locally hosted website. The website should be able to update the temperature based on a selected bit-wise resolution (8, 9, 10, 11, or 12 bits). Additionally, the website must include an ON/OFF toggle to control an onboard LED. This setup requires proper configuration of SPI communication, with data being transmitted to and from both the MCU and the temperature sensor.\n\n\n\nFigure1: Lab 6 Tempurature Sensor Circuit"
   },
   {
-    "objectID": "HPR/index.html#mechanical-design",
-    "href": "HPR/index.html#mechanical-design",
-    "title": "E178: High Power Rocketry",
-    "section": "Mechanical Design",
-    "text": "Mechanical Design\nSmall dimensional changes to the original MadCow rocket build were required to fit everything into the avionics section of the rocket. Notably, a slight 1.5” exetension of the avionics bay was needed to make this happen.\nAside from that, the majority of the mechanical design was focsued on the avionis support strucutre itself. As seen below,"
+    "objectID": "MicroP/lab_reports/lab6/lab6.html#hardware",
+    "href": "MicroP/lab_reports/lab6/lab6.html#hardware",
+    "title": "The Internet of Things and Serial Peripheral Interface",
+    "section": "Hardware",
+    "text": "Hardware\nThe hardware used to implement this design, as shown in the circuit schematic in Figure 2, handles the SPI communication between the MCU and the temperature sensor, as well as the UART communication between the MCU and the ESP8266 Wi-Fi chip. The schematic also illustrates the simple hardware used to power the LED based on the input from the website.\n\n\n\nFigure2: Lab 6 Circuit Schematic"
   },
   {
-    "objectID": "HPR/index.html#launch-day",
-    "href": "HPR/index.html#launch-day",
-    "title": "E178: High Power Rocketry",
-    "section": "Launch Day",
-    "text": "Launch Day\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
+    "objectID": "MicroP/lab_reports/lab6/lab6.html#software",
+    "href": "MicroP/lab_reports/lab6/lab6.html#software",
+    "title": "The Internet of Things and Serial Peripheral Interface",
+    "section": "Software",
+    "text": "Software\nThe SPI1 peripheral on the MCU is used to perform the data transfer. A header file and a .c file were created to initialize and manage the send/receive operations through the SPI1 peripheral. The main.c file then utilized this configuration, along with the send/receive functions, to enable the peripheral, configure the temperature sensor, and retrieve the current temperature values. Simple HTML was written to access the button statuses from the website, which was hosted locally on the Wi-Fi chip.\n\nDS1722 Configuration & Temp Read\nThe DS1722 temperature sensor can be configured by sending a 0x80 value over the SPI pins. This value signals to the sensor that the next value sent will be applied to the configuration/status register, enabling different temperature resolutions. Based on the resolution requested from the website, the temperature sensor is configured to output the temperature at the corresponding resolution. The mapping of bit values to resolution configureation can be seen below in Figure 3.\n\n\n\n\n\nFigure3: Access register map & resolution assignment\n\n\nReading the tempurature comes in 2 packets, LSB (least significant byte) and MSB (most significant byte) as seen in the top of Figure 3.\n\n\nTempurature Decoding\nAfter reading the LSB and MSB, the value and its sign (positive or negative) must be decoded. Since the full 16-bit temperature value is in two’s complement form, a simple function was written to detect the most significant bit (MSB), which indicates whether the value is negative. If the MSB is set to 1, the temperature is negative, and the most negative value corresponds to -128°C. The remaining 15 bits of the temperature reading are summed, with each bit contributing its base-10 value, to this -128°C baseline, resulting in the final temperature reading.\nFor positive temperatures, the decoding process is simpler. It follows the same method as the negative temperature decoding, but starts from an initial value of 0°C instead of -128°C."
   },
   {
     "objectID": "MicroP/lab_reports/lab4/lab4.html",
@@ -119,39 +119,39 @@
     "text": "FPGA and MCU Setup and Testing\n\n\n\n\n\nLab 1\n\n\n\n\n\nSep 9, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nTime-Multiplexed Dual 7-Segment Display\n\n\n\n\n\nLab 2\n\n\n\n\n\nSep 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nKeypad Scanner\n\n\n\n\n\nLab 3\n\n\n\n\n\nOct 3, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Audio\n\n\n\n\n\nLab 4\n\n\n\n\n\nOct 17, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nInterrupts\n\n\n\n\n\nLab 5\n\n\n\n\n\nOct 23, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Internet of Things and Serial Peripheral Interface\n\n\n\n\n\nLab 6\n\n\n\n\n\nNov 6, 2024\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nThe Advanced Encryption Standard\n\n\n\n\n\nLab 7\n\n\n\n\n\nOct 30, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "MicroP/lab_reports/lab6/lab6.html",
-    "href": "MicroP/lab_reports/lab6/lab6.html",
-    "title": "The Internet of Things and Serial Peripheral Interface",
+    "objectID": "HPR/index.html#digital-design",
+    "href": "HPR/index.html#digital-design",
+    "title": "E178: High Power Rocketry",
+    "section": "Digital Design",
+    "text": "Digital Design"
+  },
+  {
+    "objectID": "HPR/index.html#systems-design",
+    "href": "HPR/index.html#systems-design",
+    "title": "E178: High Power Rocketry",
+    "section": "Systems Design",
+    "text": "Systems Design"
+  },
+  {
+    "objectID": "HPR/index.html#mechanical-design",
+    "href": "HPR/index.html#mechanical-design",
+    "title": "E178: High Power Rocketry",
+    "section": "Mechanical Design",
+    "text": "Mechanical Design\nSmall dimensional changes to the original MadCow rocket build were required to fit everything into the avionics section of the rocket. Notably, a slight 1.5” exetension of the avionics bay was needed to make this happen.\nAside from that, the majority of the mechanical design was focsued on the avionis support strucutre itself. As seen below,"
+  },
+  {
+    "objectID": "HPR/index.html#launch-day",
+    "href": "HPR/index.html#launch-day",
+    "title": "E178: High Power Rocketry",
+    "section": "Launch Day",
+    "text": "Launch Day\n\n\n\nJ&J rocket (Jordan & Jason)\n\n\nStructure: intro / about initial thoughts and ideas why we chose what we wanted too what rocket we used electronics mechanical design flight day fnal presentation / paper\nBringing an idea into flurission, in my experience, typically come with extra nick nacks and trinquets than I initially imagine."
+  },
+  {
+    "objectID": "hobbies/index.html",
+    "href": "hobbies/index.html",
+    "title": "Hobbies",
     "section": "",
-    "text": "This lab focused on SPI communication between a DS1722 temperature sensor and an STM32 Nucleo-32 board, featuring an onboard STM32L432KC MCU. The goal was to implement a system that displays the temperature on a locally hosted website. The website should be able to update the temperature based on a selected bit-wise resolution (8, 9, 10, 11, or 12 bits). Additionally, the website must include an ON/OFF toggle to control an onboard LED. This setup requires proper configuration of SPI communication, with data being transmitted to and from both the MCU and the temperature sensor.\n\n\n\nFigure1: Lab 6 Tempurature Sensor Circuit"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab6/lab6.html#hardware",
-    "href": "MicroP/lab_reports/lab6/lab6.html#hardware",
-    "title": "The Internet of Things and Serial Peripheral Interface",
-    "section": "Hardware",
-    "text": "Hardware\nThe hardware used to implement this design, as shown in the circuit schematic in Figure 2, handles the SPI communication between the MCU and the temperature sensor, as well as the UART communication between the MCU and the ESP8266 Wi-Fi chip. The schematic also illustrates the simple hardware used to power the LED based on the input from the website.\n\n\n\nFigure2: Lab 6 Circuit Schematic"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab6/lab6.html#software",
-    "href": "MicroP/lab_reports/lab6/lab6.html#software",
-    "title": "The Internet of Things and Serial Peripheral Interface",
-    "section": "Software",
-    "text": "Software\nThe SPI1 peripheral on the MCU is used to perform the data transfer. A header file and a .c file were created to initialize and manage the send/receive operations through the SPI1 peripheral. The main.c file then utilized this configuration, along with the send/receive functions, to enable the peripheral, configure the temperature sensor, and retrieve the current temperature values. Simple HTML was written to access the button statuses from the website, which was hosted locally on the Wi-Fi chip.\n\nDS1722 Configuration & Temp Read\nThe DS1722 temperature sensor can be configured by sending a 0x80 value over the SPI pins. This value signals to the sensor that the next value sent will be applied to the configuration/status register, enabling different temperature resolutions. Based on the resolution requested from the website, the temperature sensor is configured to output the temperature at the corresponding resolution. The mapping of bit values to resolution configureation can be seen below in Figure 3.\n\n\n\n\n\nFigure3: Access register map & resolution assignment\n\n\nReading the tempurature comes in 2 packets, LSB (least significant byte) and MSB (most significant byte) as seen in the top of Figure 3.\n\n\nTempurature Decoding\nAfter reading the LSB and MSB, the value and its sign (positive or negative) must be decoded. Since the full 16-bit temperature value is in two’s complement form, a simple function was written to detect the most significant bit (MSB), which indicates whether the value is negative. If the MSB is set to 1, the temperature is negative, and the most negative value corresponds to -128°C. The remaining 15 bits of the temperature reading are summed, with each bit contributing its base-10 value, to this -128°C baseline, resulting in the final temperature reading.\nFor positive temperatures, the decoding process is simpler. It follows the same method as the negative temperature decoding, but starts from an initial value of 0°C instead of -128°C."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This website serves as a hub for both my academic and non-academic work, as well as my hobbies. It originally began as a platform for submitting my lab reports and final project work for the E155 “Microprocessor Design & Application” course at Harvey Mudd College."
-  },
-  {
-    "objectID": "resume/index.html",
-    "href": "resume/index.html",
-    "title": "Resume",
-    "section": "",
-    "text": "Download Resume (JPEG)"
+    "text": "Annual Challenge\n\n  \n\nClick to view\n\n\n\n\nSports\n\n &lt;img src=\"images/shot.jpeg\" alt=\"Sports\"&gt; \n\nClick to view"
   },
   {
     "objectID": "hobbies/annual_challenge/index.html",
@@ -161,11 +161,25 @@
     "text": "4 x 4 x 48\n\n\n\n\n\n\n\n\n\n\n\nJason Bowman\n\n\n\n\n\n\n\n\n\n\n\n\nClaremont to Santa Monica & Back\n\n\n\n\n\n\n\n\n\n\n\nNov 12, 2024\n\n\nJason Bowman\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "hobbies/index.html",
-    "href": "hobbies/index.html",
-    "title": "Hobbies",
+    "objectID": "hobbies/annual_challenge/4x4x48/index.html",
+    "href": "hobbies/annual_challenge/4x4x48/index.html",
+    "title": "4 x 4 x 48",
     "section": "",
-    "text": "Annual Spring Break Challenge"
+    "text": "Collin & Ket running\n\n\n\nIntro\nStemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the journey of Ket Hollingsworth and Collin Fitzpatrick doing this challenge, putting their own spin on it.\n\n\nThe Plan\nRun 4 miles every 4 hours for 48 hours with the following 4 hour time breakdown: - hour 0-1: Run 4 miles - hour 1-3: learn something new / work on a project - hour 3-4: sleep\n\n\nSituation / My Role\nCollin and Ket, my roommates and close friends from day one at Harvey Mudd, wanted to take on something wild for spring break freshman year. We can’t remember who first threw out the idea, but we were all instantly pumped to see how far we could take it. A mix of sleep deprivation, spending time together, and partaking in such a rediculous task, made for a very fun time. My job was to film and edit the final video, keep them on track, and come up with fun ways to wake them up every 4 hours. Good times.\n\n\nThe Result"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This website serves as a hub for both my academic and non-academic work, as well as my hobbies. It originally began as a platform for submitting my lab reports and final project work for the E155 “Microprocessor Design & Application” course at Harvey Mudd College."
+  },
+  {
+    "objectID": "E80/index.html",
+    "href": "E80/index.html",
+    "title": "Autonomous Underwater Robot",
+    "section": "",
+    "text": "E80, A course in the Harvey Mudd College Engineering Core program where we first worked in pairs to complete labs, building foundational knowledge. We then formed teams of four for a final project, developing an autonomous underwater robot with a focus on sensor integration. Our project specifically investigated light intensity comparisons between GoPro footage as a baseline and photodiode sensor integrations.\n\nWorking as a team, we successfully developed the electrical, mechanical, and software integrations needed to extract accurate RGB illuminance data at depths of up to 5 meters in Dana Point, CA, using photodiodes. We then compared this data to the RGB-decomposed version of the GoPro footage. For more specifics please see the Final Report linked at the bottom of the page.\n\n\n\nTeam: Jason Bowman(Me) - Rebecca Preis - Mikayla Mann - Zhian Zhou\n\n\nThis team made the experience truly memorable, and we still check in on each other periodically, reminiscing about our days in E80. We learned a lot, faced challenges, took turns leading and following, stressed over obstacles, and celebrated our successes. I couldn’t have asked for a better team.\nPlease see the links below for the final details of our project, including our final presentation and report. Also included are the lab reports, which I completed individually after working with a partner during the pre-project lab work. This course took place during my sophomore year of college and showcases my growth in both technical skills and technical writing.\n\n\nFinal Results\n\n\n\n\nFinal Report\n\n  \n\nClick to view\n\n\n\n\nFinal Presentation\n\n  \n\nClick to view\n\n\n\n\n\nReal Time Data Video\n\n  Your browser does not support the video tag. \n\nClick to view\n\n\n\n\nDeployment\n\n  Your browser does not support the video tag. \n\nClick to view\n\n\n\n\nLab Reports\n\n\n\n\nLab 1 Report - Going Autonomous\n\n  \n\nClick to view\n\n\n\n\nLab 2 Report - BEM\n\n  \n\nClick to view\n\n\n\n\nLab 3 Report - Turbidity Using Photodiodes and 555-Timer\n\n  \n\nClick to view\n\n\n\n\nLab 4 Report - Temperature\n\n  \n\nClick to view\n\n\n\n\nLab 5 Report - Acoustics\n\n  \n\nClick to view\n\n\n\n\nLab 6 - Fluid Dynamics Technical Memorandum\n\n  \n\nClick to view\n\n\n\n\n\n\n\n\nFinal Results"
   },
   {
     "objectID": "hobbies/annual_challenge/claremont-sm/index.html",
@@ -175,25 +189,11 @@
     "text": "Intro\nFollowing up on our previous spring break adventure with the 4x4x48, we wanted to take on another fun and physically challenging journey. This time, I teamed up again with Ket Hollingsworth and Collin Fitzpatrick to bike from Harvey Mudd to Santa Monica and back. Collin’s high school friend and sister both go to UCLA, so we planned to use it as a stopping point on our 2-day, 135-mile journey.\n\n\nThe Plan\n\nTraining: no training\nEquipment: Bikes, water?, bread?\nSleeping: Thors floor\nRoute: Harvey Mudd -&gt; Cal Tech -&gt; JPL -&gt; UCLA -&gt; Santa Monica Pier -&gt; UCLA(sleep) -&gt; Harvey Mudd\n\n\n\n\nRoute\n\n\n\n\nSituation\nHaving done this kind of event last year, we knew it would be a fun experience. We started off a bit rough and unprepared—Collin had just finished a swimming event, Ket stepped on coral and took a 3-hour nap before we left, and I had sprained my ankle at practice the week before. However, nothing was going to stop us from doing Version 2 of our now annual tradition. We unexpectedly ended up getting an in-depth tour of LA County, experiencing the full range of highs and lows the city has to offer. It was truly an immersive experience, and I’d do it again in a heartbeat.\n\n\nThe Result"
   },
   {
-    "objectID": "hobbies/annual_challenge/4x4x48/index.html",
-    "href": "hobbies/annual_challenge/4x4x48/index.html",
-    "title": "4 x 4 x 48",
-    "section": "",
-    "text": "Collin & Ket running\n\n\n\nIntro\nStemming from the challenge started by David Goggins called the 4x4x48, where one runs 4 miles, every 4 hours, for 48 hours. The video attached highlights the journey of Ket Hollingsworth and Collin Fitzpatrick doing this challenge, putting their own spin on it.\n\n\nThe Plan\nRun 4 miles every 4 hours for 48 hours with the following 4 hour time breakdown: - hour 0-1: Run 4 miles - hour 1-3: learn something new / work on a project - hour 3-4: sleep\n\n\nSituation / My Role\nCollin and Ket, my roommates and close friends from day one at Harvey Mudd, wanted to take on something wild for spring break freshman year. We can’t remember who first threw out the idea, but we were all instantly pumped to see how far we could take it. A mix of sleep deprivation, spending time together, and partaking in such a rediculous task, made for a very fun time. My job was to film and edit the final video, keep them on track, and come up with fun ways to wake them up every 4 hours. Good times.\n\n\nThe Result"
-  },
-  {
-    "objectID": "E80/index.html",
-    "href": "E80/index.html",
-    "title": "Autonomous Underwater Robot",
-    "section": "",
-    "text": "E80, A course in the Harvey Mudd College Engineering Core program where we first worked in pairs to complete labs, building foundational knowledge. We then formed teams of four for a final project, developing an autonomous underwater robot with a focus on sensor integration. Our project specifically investigated light intensity comparisons between GoPro footage as a baseline and photodiode sensor integrations.\n\nWorking as a team, we successfully developed the electrical, mechanical, and software integrations needed to extract accurate RGB illuminance data at depths of up to 5 meters in Dana Point, CA, using photodiodes. We then compared this data to the RGB-decomposed version of the GoPro footage. For more specifics please see the Final Report linked at the bottom of the page.\n\n\n\nTeam: Jason Bowman(Me) - Rebecca Preis - Mikayla Mann - Zhian Zhou\n\n\nThis team made the experience truly memorable, and we still check in on each other periodically, reminiscing about our days in E80. We learned a lot, faced challenges, took turns leading and following, stressed over obstacles, and celebrated our successes. I couldn’t have asked for a better team.\nPlease see the links below for the final details of our project, including our final presentation and report. Also included are the lab reports, which I completed individually after working with a partner during the pre-project lab work. This course took place during my sophomore year of college and showcases my growth in both technical skills and technical writing.\n\nFinal Results\n\n\n\n\nFinal Report\n\n  \n\nClick to view\n\n\n\n\nFinal Presentation\n\n  \n\nClick to view\n\n\n\n\n\nReal Time Data Video\n\n  Your browser does not support the video tag. \n\nClick to view\n\n\n\n\nDeployment\n\n  Your browser does not support the video tag. \n\nClick to view\n\n\n\nLab Reports\n\n\n\n\nLab 1 Report - Going Autonomous\n\n  \n\nClick to view\n\n\n\n\nLab 2 Report - BEM\n\n  \n\nClick to view\n\n\n\n\nLab 3 Report - Turbidity Using Photodiodes and 555-Timer\n\n  \n\nClick to view\n\n\n\n\nLab 4 Report - Temperature\n\n  \n\nClick to view\n\n\n\n\nLab 5 Report - Acoustics\n\n  \n\nClick to view\n\n\n\n\nLab 6 - Fluid Dynamics Technical Memorandum\n\n  \n\nClick to view\n\n\n\n\n\n\n\n\nFinal Results"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "My Portfolio",
+    "title": "Engineering Projects",
     "section": "",
-    "text": "Scroll Down ⬇️\n\n\nHi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College, graduating in 2025, with a concentration in Russian language. My technical experience spans Embedded Systems Engineering, Analog/Digital Electronics, Mechanical Design, SolidWorks CAD design and simulation, PCB Design, and Control Systems, among other areas. Beyond academics, I am a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm Resident Assistant.\nIn my free time, I enjoy weightlifting, fishing, learning new languages, working on personal projects, spending time outdoors, and being with friends and family.\nI’m glad you found my page! Please see the following resources if you’d like to reach out to me, and do scroll down to view some of my projects!\n\n  🔗 LinkedIn     📄 Resume     🖥️ GitHub     ✉️ Email     📞 Phone  \n\n\n\n\nSquat Hero\n\n  \n\nClick to view\n\n\n\n\n\nMicro Processor Design & Application\n\n  \n\nClick to view\n\n\n\n\n\nRoll Stabilization in High-Power Model Rockets\n\n  \n\nClick to view\n\n\n\n\n\nNon-Ferrous Landmine detection\n\n  \n\nClick to view\n\n\n\n\n\nAutonomous Underwater Robot\n\n  \n\nClick to view\n\n\n\n\n\nVilnius Helping Ukraine\n\n  \n\nClick to view\n\n\n\n\n\nHobbies\n\n  \n\nClick to view"
+    "text": "Scroll Down ⬇️\n\n\nHi, I’m Jason Bowman, a Senior Engineering major at Harvey Mudd College, graduating in 2025, with a concentration in Russian language. My technical experience spans Embedded Systems Engineering, Analog/Digital Electronics, Mechanical Design, SolidWorks CAD design and simulation, PCB Design, and Control Systems, among other areas. Beyond academics, I am a varsity Track & Field athlete, an Army ROTC Cadet, and a dorm Resident Assistant.\nIn my free time, I enjoy weightlifting, fishing, learning new languages, working on personal projects, spending time outdoors, and being with friends and family.\nI’m glad you found my page! Please see the following resources if you’d like to reach out to me, and do scroll down to view some of my projects!\n\n  🔗 LinkedIn     📄 Resume     🖥️ GitHub     ✉️ Email     📞 Phone  \n\n\nEngineering Projects\n\n\n\nSquat Hero\n\n  \n\nClick to view\n\n\n\n\n\nMicro Processor Design & Application\n\n  \n\nClick to view\n\n\n\n\n\nRoll Stabilization in High-Power Model Rockets\n\n  \n\nClick to view\n\n\n\n\n\nNon-Ferrous Landmine detection\n\n  \n\nClick to view\n\n\n\n\n\nAutonomous Underwater Robot\n\n  \n\nClick to view\n\n\n\n\n\nVilnius Helping Ukraine\n\n  \n\nClick to view"
   },
   {
     "objectID": "MicroP/lab_reports/lab1/lab1.html",
@@ -215,6 +215,69 @@
     "title": "FPGA and MCU Setup and Testing",
     "section": "Results & Reflection",
     "text": "Results & Reflection\nThe design meets all the lab requirements at an acceptable level. However, accuracy in the LED oscillation could be improved. Currently, the LED oscillates based on the 25th bit of the high-speed oscillator (HSOSC), resulting in an approximate frequency of 2 Hz instead of the specified 2.4 Hz. To address this, a second counter could be implemented to track the exact oscillations from the HSOSC and adjust the LED to precisely 2.4 Hz.\nI particularly enjoyed learning how to use Lattice Radiant, as it helped me reconnect with SystemVerilog concepts I had learned over a year ago in E85.\nMoving forward, I will be more meticulous about reviewing and commenting my code. My initial Verilog code lacked sufficient comments, leading to confusion within the submodules."
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab3/lab3.html",
+    "href": "MicroP/lab_reports/lab3/lab3.html",
+    "title": "Keypad Scanner",
+    "section": "",
+    "text": "This lab utilized a 4x4 keypad scanner in tandem with a time-multiplexed dual 7-segment display, which was developed during Lab 2. The final goal was to update the right 7-segment display with each button press on the keypad, while the left display would show the previously pressed value. This functionality was implemented using a finite state machine (FSM) and next-state logic to simultaneously scan the keypad rows and decode which button was being pressed. Debouncing logic was also implemented to handle button bounce within the keypad.\n\n\n\nFigure1: Lab 3 hardware"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab3/lab3.html#hardware",
+    "href": "MicroP/lab_reports/lab3/lab3.html#hardware",
+    "title": "Keypad Scanner",
+    "section": "Hardware",
+    "text": "Hardware\nThe system hardware consists of two main sections: segment control and keypad input. The segment control section is identical to the design from Lab 2, utilizing two 2N3906 PNP transistors and time-multiplexing logic to display two separate outputs on the dual 7-segment display. The keypad input section accesses the desired row and column pins. When a column is powered and a button is pressed in that column, a button press is registered if the corresponding row pin is active low.\nDue to the internal hardware of the keypad, when a column is powered and a key is pressed, the specific row being pressed is unknown, making it difficult to determine the exact button. To resolve this, a row-scanning method is used, which sets one row active low at a time using next state logic described in the FSM section. Since the column pins are active high, if a button is pressed in a column corresponding to an active low row, we can track which row is being scanned and which column pin is pulled down to 0, allowing us to accurately decode the button press.\n\n\n\nFigure2: Circuit diagram"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab3/lab3.html#fsm",
+    "href": "MicroP/lab_reports/lab3/lab3.html#fsm",
+    "title": "Keypad Scanner",
+    "section": "FSM",
+    "text": "FSM\nTop Row States (Idle/Row Selection): This state acts as the pathway between all four row scans, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed. Delay states are used between the top states to ensure button presses are registered in time.\nMiddle Row States (Button Detection/Decode): Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated. A delay state is used between the middle and bottom state to ensure segment values are assigned correctly.\nBottom Row States (Hold/Wait): After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.\n\n\n\nFigure3: Finite State Machine (FSM)"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
+    "href": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
+    "title": "Keypad Scanner",
+    "section": "Block Diagram",
+    "text": "Block Diagram\nFigure 4 below displays the module communication logic for the System Verilog code that programmed the FPGA. Notibly we have a top, button_decode_bounce, and seven_seg_decoder modules.\ntop: The overseeing connection module and direct communication with I/O. Also includes the time-multiplexer and Low Speed Oscillator (LSOSC) clk source.\nbutton_decode_bounce: button decoder, debouncer, and row scan generator.\nseven_seg_decoder: decodes the button pressed into 7-segment display outputs.\n\n\n\nFigure4: System Verilog module block diagram"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html",
+    "href": "MicroP/lab_reports/lab5/lab5.html",
+    "title": "Interrupts",
+    "section": "",
+    "text": "This lab utilized a 25GA-370 DC motor with internal quadrature encoders to output the current RPM and motor spin direction via the debug terminal in Segger. The main focus of the lab was on interrupts, where we treated the encoder signals as interrupt events. These interrupts were then used to calculate the desired information.\n\n\n\nFigure1: Lab5 Hardware"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#hardware",
+    "href": "MicroP/lab_reports/lab5/lab5.html#hardware",
+    "title": "Interrupts",
+    "section": "Hardware",
+    "text": "Hardware\nThis lab features a simple circuit design, consisting of two main components:\n\nThe motor must be powered by an external power source, separate from the 5V output pin on the protoboard, allowing us to vary the voltage and observe changes in RPM both in real life and in the terminal.\nThe quadrature encoders must be powered with a constant 5V and connected to the correct pins that are 5V compatible, as specified in the STM32L432KC reference manual.\n\nHardware design seen below in Figure 2.\n\n\n\nFigure2: Circuit schematic"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#software",
+    "href": "MicroP/lab_reports/lab5/lab5.html#software",
+    "title": "Interrupts",
+    "section": "Software",
+    "text": "Software\nThis lab implements an interrupt design, where a separate function is immediately called when certain external interrupts are triggered. In tandem with the use of an internal timer, this interrupt handler can count the clock cycles between one of the four possible state types determined by the two quadrature encoder combinations. In this case, the scenario occurs when both interrupt A = 1 and interrupt B = 1.\nOnce an interrupt (either the rising or falling edge of one of the two interrupt signals) is triggered, the interrupt handler is entered. Depending on the direction of the motor, one of the two “if” statements (as shown in Figure 3) is executed. This process repeats every time the interrupt handler is entered under the specified scenario.\nThe output is a delta value, which provides information about the number of clock cycles between each interrupt. This data can be used to extrapolate speed, with the sign of the delta (positive or negative) indicating the direction of the motor.\n\n\n\nFigure3: Software Block Diagram"
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
+    "href": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
+    "title": "Interrupts",
+    "section": "Configuration & Setup",
+    "text": "Configuration & Setup\nFirstly, all related peripherals must be configured, including FLASH memory, CLK, GPIO, and EXTI. Except for EXTI (external interrupts), these peripherals have been utilized in previous labs. Therefore, the primary focus of the configuration discussion will be on the EXTI peripheral.\nThere are a few steps associated with the configuration of external register inputs from PA6 and PA8:\n\nEnable global interrupts using “__enable_irq();“.\nEnable the external interrupt mask associated with PA6 and PA8 (EXTI_IMR1_TMx [x=6,8], respectively).\nEnable both rising and falling edge triggers (EXTI_RTSR1_RTx and EXTI_FTSR1_FTx [x=6,8]).\nEnable external interrupt lines 5-9, which include lines 6 and 8, corresponding to the desired GPIO pins. This is accomplished using NVIC-&gt;ISER[0] |= (1 &lt;&lt; EXTI9_5_IRQn).\n\nRegarding the hardware setup and functionality confirmation, I verified that the A and B encoders output the desired waveforms, as confirmed with the RIGOL MSO1104 oscilloscope, as shown in Figure 4.\n\n\n\nFigure4: Quadrature Encoder Signals\n\n\nI was able to confirm that my GPIO and external interrupt handler block in my code worked correctly by embedding a print statement within the EXTI9_5_IRQHandler function. I printed the value of delta, the variable used to measure the time difference between interrupt events. Additionally, I printed the values of my PA6 and PA8 pins, which receive the A and B interrupt signals, verifying that they alternate between 1 and 0 as expected. This confirms that my code is receiving data from the hardware as intended."
+  },
+  {
+    "objectID": "MicroP/lab_reports/lab5/lab5.html#calculations",
+    "href": "MicroP/lab_reports/lab5/lab5.html#calculations",
+    "title": "Interrupts",
+    "section": "Calculations",
+    "text": "Calculations\nThis section will cover the mathematical portion of this lab\n\nRPS Calculation\nThe calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of the two interrupts in which they are both high (1), the RPS is determined by Equation [1].\n[1] \\(rps = \\frac{1000}{PPR*delta}\\)\n\n\nm/s Calculation\nThis code also enables the display of linear velocity in meters per second (m/s) for the DC motor. This is achieved by calculating the radius of the motor shaft from the diameter specified in the data sheet, which is then used to determine the circumference “C”. The circumference is multiplied by the RPS value, as shown in Equation [2], to obtain the final linear velocity in m/s.\n[2] \\(m/s = RPS*C\\)\n\n\nDirection Calculation\nThe direction calculation is straightforward. Based on observations made with an oscilloscope, the sign of the delta value, assigned within the two different “if” statements in the interrupt handler, determines the motor’s direction. Depending on whether the delta is positive or negative, the motor is identified as spinning clockwise or counterclockwise and printed to the terminal."
   },
   {
     "objectID": "MicroP/lab_reports/lab7/lab7.html",
@@ -271,75 +334,5 @@
     "title": "The Advanced Encryption Standard",
     "section": "Hardware Results",
     "text": "Hardware Results\nIssues persisted when implementing this encryption algorithm in hardware. The chip select (CS) signal was not performing as expected, resulting in incorrect data transfer from the FPGA to the MCU. In the future, debugging will continue using a logic analyzer and the Segger debug terminal to track down what the CS pin is doing incorrectly and to determine what data (if any) is being sent to the MCU. However, as the class now moves toward final project development, further work on this lab will be halted."
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html",
-    "href": "MicroP/lab_reports/lab5/lab5.html",
-    "title": "Interrupts",
-    "section": "",
-    "text": "This lab utilized a 25GA-370 DC motor with internal quadrature encoders to output the current RPM and motor spin direction via the debug terminal in Segger. The main focus of the lab was on interrupts, where we treated the encoder signals as interrupt events. These interrupts were then used to calculate the desired information.\n\n\n\nFigure1: Lab5 Hardware"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html#hardware",
-    "href": "MicroP/lab_reports/lab5/lab5.html#hardware",
-    "title": "Interrupts",
-    "section": "Hardware",
-    "text": "Hardware\nThis lab features a simple circuit design, consisting of two main components:\n\nThe motor must be powered by an external power source, separate from the 5V output pin on the protoboard, allowing us to vary the voltage and observe changes in RPM both in real life and in the terminal.\nThe quadrature encoders must be powered with a constant 5V and connected to the correct pins that are 5V compatible, as specified in the STM32L432KC reference manual.\n\nHardware design seen below in Figure 2.\n\n\n\nFigure2: Circuit schematic"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html#software",
-    "href": "MicroP/lab_reports/lab5/lab5.html#software",
-    "title": "Interrupts",
-    "section": "Software",
-    "text": "Software\nThis lab implements an interrupt design, where a separate function is immediately called when certain external interrupts are triggered. In tandem with the use of an internal timer, this interrupt handler can count the clock cycles between one of the four possible state types determined by the two quadrature encoder combinations. In this case, the scenario occurs when both interrupt A = 1 and interrupt B = 1.\nOnce an interrupt (either the rising or falling edge of one of the two interrupt signals) is triggered, the interrupt handler is entered. Depending on the direction of the motor, one of the two “if” statements (as shown in Figure 3) is executed. This process repeats every time the interrupt handler is entered under the specified scenario.\nThe output is a delta value, which provides information about the number of clock cycles between each interrupt. This data can be used to extrapolate speed, with the sign of the delta (positive or negative) indicating the direction of the motor.\n\n\n\nFigure3: Software Block Diagram"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
-    "href": "MicroP/lab_reports/lab5/lab5.html#configuration-setup",
-    "title": "Interrupts",
-    "section": "Configuration & Setup",
-    "text": "Configuration & Setup\nFirstly, all related peripherals must be configured, including FLASH memory, CLK, GPIO, and EXTI. Except for EXTI (external interrupts), these peripherals have been utilized in previous labs. Therefore, the primary focus of the configuration discussion will be on the EXTI peripheral.\nThere are a few steps associated with the configuration of external register inputs from PA6 and PA8:\n\nEnable global interrupts using “__enable_irq();“.\nEnable the external interrupt mask associated with PA6 and PA8 (EXTI_IMR1_TMx [x=6,8], respectively).\nEnable both rising and falling edge triggers (EXTI_RTSR1_RTx and EXTI_FTSR1_FTx [x=6,8]).\nEnable external interrupt lines 5-9, which include lines 6 and 8, corresponding to the desired GPIO pins. This is accomplished using NVIC-&gt;ISER[0] |= (1 &lt;&lt; EXTI9_5_IRQn).\n\nRegarding the hardware setup and functionality confirmation, I verified that the A and B encoders output the desired waveforms, as confirmed with the RIGOL MSO1104 oscilloscope, as shown in Figure 4.\n\n\n\nFigure4: Quadrature Encoder Signals\n\n\nI was able to confirm that my GPIO and external interrupt handler block in my code worked correctly by embedding a print statement within the EXTI9_5_IRQHandler function. I printed the value of delta, the variable used to measure the time difference between interrupt events. Additionally, I printed the values of my PA6 and PA8 pins, which receive the A and B interrupt signals, verifying that they alternate between 1 and 0 as expected. This confirms that my code is receiving data from the hardware as intended."
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab5/lab5.html#calculations",
-    "href": "MicroP/lab_reports/lab5/lab5.html#calculations",
-    "title": "Interrupts",
-    "section": "Calculations",
-    "text": "Calculations\nThis section will cover the mathematical portion of this lab\n\nRPS Calculation\nThe calculations for Revolutions Per Second (RPS) were based on the absolute value of the delta variable. Given that the motor completes one revolution for every 120 pulses, and each pulse corresponds to a unique combination of the two interrupts in which they are both high (1), the RPS is determined by Equation [1].\n[1] \\(rps = \\frac{1000}{PPR*delta}\\)\n\n\nm/s Calculation\nThis code also enables the display of linear velocity in meters per second (m/s) for the DC motor. This is achieved by calculating the radius of the motor shaft from the diameter specified in the data sheet, which is then used to determine the circumference “C”. The circumference is multiplied by the RPS value, as shown in Equation [2], to obtain the final linear velocity in m/s.\n[2] \\(m/s = RPS*C\\)\n\n\nDirection Calculation\nThe direction calculation is straightforward. Based on observations made with an oscilloscope, the sign of the delta value, assigned within the two different “if” statements in the interrupt handler, determines the motor’s direction. Depending on whether the delta is positive or negative, the motor is identified as spinning clockwise or counterclockwise and printed to the terminal."
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab3/lab3.html",
-    "href": "MicroP/lab_reports/lab3/lab3.html",
-    "title": "Keypad Scanner",
-    "section": "",
-    "text": "This lab utilized a 4x4 keypad scanner in tandem with a time-multiplexed dual 7-segment display, which was developed during Lab 2. The final goal was to update the right 7-segment display with each button press on the keypad, while the left display would show the previously pressed value. This functionality was implemented using a finite state machine (FSM) and next-state logic to simultaneously scan the keypad rows and decode which button was being pressed. Debouncing logic was also implemented to handle button bounce within the keypad.\n\n\n\nFigure1: Lab 3 hardware"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab3/lab3.html#hardware",
-    "href": "MicroP/lab_reports/lab3/lab3.html#hardware",
-    "title": "Keypad Scanner",
-    "section": "Hardware",
-    "text": "Hardware\nThe system hardware consists of two main sections: segment control and keypad input. The segment control section is identical to the design from Lab 2, utilizing two 2N3906 PNP transistors and time-multiplexing logic to display two separate outputs on the dual 7-segment display. The keypad input section accesses the desired row and column pins. When a column is powered and a button is pressed in that column, a button press is registered if the corresponding row pin is active low.\nDue to the internal hardware of the keypad, when a column is powered and a key is pressed, the specific row being pressed is unknown, making it difficult to determine the exact button. To resolve this, a row-scanning method is used, which sets one row active low at a time using next state logic described in the FSM section. Since the column pins are active high, if a button is pressed in a column corresponding to an active low row, we can track which row is being scanned and which column pin is pulled down to 0, allowing us to accurately decode the button press.\n\n\n\nFigure2: Circuit diagram"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab3/lab3.html#fsm",
-    "href": "MicroP/lab_reports/lab3/lab3.html#fsm",
-    "title": "Keypad Scanner",
-    "section": "FSM",
-    "text": "FSM\nTop Row States (Idle/Row Selection): This state acts as the pathway between all four row scans, determining which row is selected as active low. The FSM cycles through these top states rapidly when no button is pressed. Delay states are used between the top states to ensure button presses are registered in time.\nMiddle Row States (Button Detection/Decode): Upon detecting a button press, the FSM transitions from the top state to this second state for one clock cycle. Here, the button decoder is engaged, and the corresponding segment display values are updated. A delay state is used between the middle and bottom state to ensure segment values are assigned correctly.\nBottom Row States (Hold/Wait): After the button press is decoded, the FSM moves to the third state, which remains active as long as the button is pressed. No new logic occurs in this state, but it prevents further row scanning while a button is being held. This ensures that when one button is pressed, a second concurrent button press does not update the display.\n\n\n\nFigure3: Finite State Machine (FSM)"
-  },
-  {
-    "objectID": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
-    "href": "MicroP/lab_reports/lab3/lab3.html#block-diagram",
-    "title": "Keypad Scanner",
-    "section": "Block Diagram",
-    "text": "Block Diagram\nFigure 4 below displays the module communication logic for the System Verilog code that programmed the FPGA. Notibly we have a top, button_decode_bounce, and seven_seg_decoder modules.\ntop: The overseeing connection module and direct communication with I/O. Also includes the time-multiplexer and Low Speed Oscillator (LSOSC) clk source.\nbutton_decode_bounce: button decoder, debouncer, and row scan generator.\nseven_seg_decoder: decodes the button pressed into 7-segment display outputs.\n\n\n\nFigure4: System Verilog module block diagram"
-  },
-  {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "My Undergraduate Institution",
-    "section": "",
-    "text": "My Undergraduate Institution\nHarvey Mudd College Website\n\n\nUpper-Division Engineering Course Websites\n\nE155 Microprocessor Design & Application (Micro Ps) Course Website\nE178 Higher Power Rocketry (HPR) Course Website\n\n\n\nProfessional References\n\n\n\n\nProfessor Albert Dato [adato@g.hmc.edu]\n\n\n“Albert Dato, PhD, researches the synthesis and applications of nanomaterials. Dato directs the Energy & Nanomaterials Lab, which seeks to develop solutions to energy and environmental challenges through applications of advanced materials./\nDato received a PhD in applied science and technology from the University of California, Berkeley. Founder and CEO of Graphene LLC, Dato has worked as a scientist at Air Liquide Electronics U.S. and as a process development engineer at Novellus Systems Inc.” - HMC Website\nAside from the coursework I took with Prof. Dato in a Materials Engineering class, he has been my research advisor for almost two years. As part of a team researching nanomaterials, I have worked under Prof. Dato developing production methods for thin-film UV-curable and thermosetting nanocomposites of resin combined with various forms of graphite and graphene nanomaterials. Working with Prof. Dato has been both enjoyable and rewarding, as he provides his research students with flexibility and independence in designing processes and experiments, while also making himself available for consistent feedback and technical support. During my time in his lab, I have refined my laboratory skills and had the opportunity to work with new equipment, such as his 4-point probe, which I used to confirm the positive conductivity of my thin-film nanocomposites.\n\n\n\n\n\nProfessor Josh Brake [jbrake@g.hmc.edu]\n\n\n“Hi there, my name is Josh Brake. My professional background is in engineering with specific expertise in electrical engineering and optics. By day, I’m an Assistant Professor in the Engineering Department at Harvey Mudd College where I teach across the curriculum with a focus on digital electronics, embedded systems, and optics. You can read more about me on the about page.” - joshbrake.com\nMy main interaction with Prof. Brake was during his Microprocessor Design & Application class at Harvey Mudd, where I completed several embedded systems labs focusing on the functionality of an ARM STM32 Nucleo-32 dev board STM32L432KC MCU and a tinyvision.ai UPduino v3.1 & iCE40 UP5K FPGA. In this class, I learned how to effectively employ C and SystemVerilog bare-metal programming techniques. Later, my teammate Ket Hollingsworth and I completed a final project focused on analyzing the squat form of the user, taking advantage of the MCU, multiple Adafruit LSM6DSO32 IMUs, and our FPGA to effectively display user squat depth. You can learn more about this project under Final Project in the “Micro Ps” tab above, as well as projects from previous years here.\nThanks to Prof. Brake’s hands-on approach and his availability as a consultant throughout the course, this class was highly effective in developing my embedded hardware and software knowledge. It has also enabled me to effectively and efficiently pursue personal embedded systems and electromechanical projects of my own.\n\n\n\n\n\nProfessor Josh Brake [spjut@g.hmc.edu]\n\n\n“Erik Spjut, PhD, professor of engineering and Union Oil Company Engineering Design Fellow, has extensive experience in radiative heat transfer, high-temperature heterogeneous kinetics, containerless processing of materials and non-contact temperature measurement. Spjut also researches process control and optimization, automatic test equipment, computerized data acquisition and processing, and digital audio processing and synthesis. He has published widely in all these areas, including two chapters in the CSound Book from MIT Press.\nSpjut has led projects funded by the NSF, the Department of Energy, NASA and Southern California Edison. He has also consulted extensively for the Jet Propulsion Laboratory, Space Systems/LORAL, Radiant Technology Corp. and Advanced Energy Dynamics.” - HMC Website\nMy interactions with Prof. Spjut primarily involve my coursework in High Power Rocketry, where we learned techniques in construction, calculation, simulation, and data analysis related to generating stable flight for high-power model rockets. For our final project, Jordan Stone and I worked together to develop and integrate an electromechanical system that involved an actively controlled flywheel, used to counteract rotation during the ascent stage of our final rocket. This project involved mechanical design and construction, data capture, UART communication protocols, as well real time data processing and PID control tuning.\nProf. Spjut is truly a master of high-power rocketry and has spent years of his personal time, in addition to his teaching time, perfecting his craft and expertise in rocket construction, simulation, data collection, and data processing. He was an invaluable resource throughout the class, and we grew close during the trials and tribulations faced when developing these systems.\n\n\n\n\n\nProfessor Josh Brake [jason@g.hmc.edu]\n\n\n“Jason Gallicchio, PhD, specializes in experimental cosmology—the study of the origin and evolution of the universe. Gallicchio spent a year at the South Pole Telescope where he researched polarization of the Cosmic Microwave Background (CMB) and served as a South Pole NSF Station Science Leader. He is also interested in devising new ways to conduct fundamental tests of quantum mechanics and has designed improvements for Bell-type tests of quantum entanglement.\nGallicchio has bachelor’s and master’s degrees in electrical engineering from the University of Illinois, Urbana-Champagne, and a PhD in physics from Harvard University.” - HMC Website\nMy interactions with Professor Gallicchio primarily involve him serving as my advisor for my engineering capstone project (Clinic Project), sponsored by the company Sokil. In this role, I have acted as team lead, conducting in-depth research and making informed technical decisions. I managed a six-person team in evaluating over ten sensor options and led the testing of three ideal sensor types: RADAR, LiDAR, and multispectral sensing. Specifically, I focused on L/S band and mmWave RADAR systems, designing tests to detect PFM-1 landmines. This project centers on drone-deployed sensor systems aimed at supporting humanitarian demining efforts in both civilian and battlefield settings, particularly in Ukraine. The goal is to help demining personnel rule out large unsuspected areas, leading to more efficient and effective use of time and resources during demining operations. This project will continue through May 2025, where we will refine our sensor systems and deploy them on a drone, with the end goal of having a system that can autonomously scan and highlight suspected landmine-dense regions with a high level of confidence.\nProfessor Gallicchio has been instrumental in the success of our project so far, bringing a high level of knowledge and critical thinking skills to sensor and drone systems. My team and I have developed a strong working relationship with Prof. Gallicchio and look forward to continuing to work with him through May 2025."
   }
 ]
