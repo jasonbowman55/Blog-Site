@@ -1,0 +1,7 @@
+<div class="button-container">
+  [🔗 LinkedIn](https://www.linkedin.com/in/){.button}
+  [📄 Resume](https://example.com/resume.pdf){.button}
+  [🖥️ GitHub](https://github.com/){.button}
+  [✉️ Email](mailto:someone@example.com){.button}
+  [📞 Phone](tel:+1234567890){.button}
+</div>

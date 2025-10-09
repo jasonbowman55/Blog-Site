@@ -2,13 +2,13 @@
 title: "Autonomous Underwater Robot"
 ---
 
-E80, A course in the Harvey Mudd College Engineering Core program where we first worked in pairs to complete labs, building foundational knowledge. We then formed teams of four for a final project, developing an autonomous underwater robot with a focus on sensor integration. Our project specifically investigated light intensity comparisons between GoPro footage as a baseline and photodiode sensor integrations.
+E80, a course in the Harvey Mudd College Engineering Core program where we first worked in pairs to complete labs, building foundational knowledge. We then formed teams of four for a final project, developing an autonomous underwater robot with a focus on sensor integration. Our project specifically investigated light intensity comparisons between GoPro footage as a baseline and photodiode sensor integrations.
 
 ![](images/robot.jpeg)
 
 Working as a team, we successfully developed the electrical, mechanical, and software integrations needed to extract accurate RGB illuminance data at depths of up to 5 meters in Dana Point, CA, using photodiodes. We then compared this data to the RGB-decomposed version of the GoPro footage. For more specifics please see the Final Report linked at the bottom of the page.
 
-![Team: [Jason Bowman](https://www.linkedin.com/in/jasonbbowman/)(Me) - [Rebecca Preis](https://www.linkedin.com/in/rebecca-preis/) - [Mikayla Mann](https://www.linkedin.com/in/mikayla-mann/) - [Zhian Zhou](https://www.linkedin.com/in/zhian-zhou-14ba8b325/)](images/team.jpeg)
+![Team: [Jason Bowman](https://www.linkedin.com/in/jasonbbowman/) (Me) - [Rebecca Preis](https://www.linkedin.com/in/rebecca-preis/) - [Mikayla Mann](https://www.linkedin.com/in/mikayla-mann/) - [Zhian Zhou](https://www.linkedin.com/in/zhian-zhou-14ba8b325/)](images/team.jpeg)
 
 This team made the experience truly memorable, and we still check in on each other periodically, reminiscing about our days in E80. We learned a lot, faced challenges, took turns leading and following, stressed over obstacles, and celebrated our successes. I couldn’t have asked for a better team.
 
@@ -16,33 +16,26 @@ Please see the links below for the final details of our project, including our f
 
 ---
 
-<h1 style="text-align: center;">Final Results</h1>
+# Final Results
 
-<!-- Final Results -->
+<div class="projects-container single-column">
+
 <div class="project">
   <p class="title">Final Report</p>
-  <a href="https://drive.google.com/file/d/10z3bwR1xdG-XAJNYut0mEZHobPQbsdvD/view?usp=sharing">
-    <img src="images/final_report.jpeg" alt="Final Report">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/final_report.jpeg)](https://drive.google.com/file/d/10z3bwR1xdG-XAJNYut0mEZHobPQbsdvD/view?usp=sharing)
 </div>
 
 <div class="project">
   <p class="title">Final Presentation</p>
-  <a href="https://drive.google.com/file/d/1SFoDq-4IOvm13Nju7Mgr_akCRxlvOkGa/view?usp=sharing">
-    <img src="images/final_pres.jpeg" alt="Final Presentation">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/final_pres.jpeg)](https://drive.google.com/file/d/1SFoDq-4IOvm13Nju7Mgr_akCRxlvOkGa/view?usp=sharing)
 </div>
 
-<!-- Videos -->
 <div class="project">
   <p class="title">Real Time Data Video</p>
   <video width="100%" controls>
     <source src="videos/Flub.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
 </div>
 
 <div class="project">
@@ -51,67 +44,44 @@ Please see the links below for the final details of our project, including our f
     <source src="videos/Flub_shore.MOV" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+</div>
+
 </div>
 
 ---
 
-<h1 style="text-align: center;">Lab Reports</h1>
+# Lab Reports
 
-<!-- Lab Reports -->
+<div class="projects-container single-column">
+
 <div class="project">
   <p class="title">Lab 1 Report - Going Autonomous</p>
-  <a href="https://drive.google.com/file/d/1bCHhOPwuIOd0EJOIRcDaeNcMJkJtW0-J/view?usp=sharing">
-    <img src="images/lab1.jpeg" alt="Lab 1 Report">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/lab1.jpeg)](https://drive.google.com/file/d/1bCHhOPwuIOd0EJOIRcDaeNcMJkJtW0-J/view?usp=sharing)
 </div>
 
 <div class="project">
   <p class="title">Lab 2 Report - BEM</p>
-  <a href="https://drive.google.com/file/d/1jr20M69VYiIHlnWu445LXzpf1TrMCuFO/view?usp=sharing">
-    <img src="images/lab2.jpeg" alt="Lab 2 Report">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/lab2.jpeg)](https://drive.google.com/file/d/1jr20M69VYiIHlnWu445LXzpf1TrMCuFO/view?usp=sharing)
 </div>
 
 <div class="project">
   <p class="title">Lab 3 Report - Turbidity Using Photodiodes and 555-Timer</p>
-  <a href="https://drive.google.com/file/d/1sJeaYkD4SJebCqQPU-JQpAV48SDGVCz6/view?usp=sharing">
-    <img src="images/lab3.jpeg" alt="Lab 3 Report">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/lab3.jpeg)](https://drive.google.com/file/d/1sJeaYkD4SJebCqQPU-JQpAV48SDGVCz6/view?usp=sharing)
 </div>
 
 <div class="project">
   <p class="title">Lab 4 Report - Temperature</p>
-  <a href="https://drive.google.com/file/d/1wmHXs_jkDRqvBVebrnnaE1i3WHQgXmyQ/view?usp=sharing">
-    <img src="images/lab4.jpeg" alt="Lab 4 Report">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/lab4.jpeg)](https://drive.google.com/file/d/1wmHXs_jkDRqvBVebrnnaE1i3WHQgXmyQ/view?usp=sharing)
 </div>
 
 <div class="project">
   <p class="title">Lab 5 Report - Acoustics</p>
-  <a href="https://drive.google.com/file/d/1S6-E1Udu2Aq7KfW4fAKOh_NWmZMmNDmb/view?usp=sharing">
-    <img src="images/lab5.jpeg" alt="Lab 5 Report">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/lab5.jpeg)](https://drive.google.com/file/d/1S6-E1Udu2Aq7KfW4fAKOh_NWmZMmNDmb/view?usp=sharing)
 </div>
 
 <div class="project">
   <p class="title">Lab 6 - Fluid Dynamics Technical Memorandum</p>
-  <a href="https://drive.google.com/file/d/1khie_yhsyVY0-u7opmbmVQnYqpIBjSet/view?usp=sharing">
-    <img src="images/lab6.jpeg" alt="Lab 6 Report">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/lab6.jpeg)](https://drive.google.com/file/d/1khie_yhsyVY0-u7opmbmVQnYqpIBjSet/view?usp=sharing)
 </div>
 
-<!-- Clear floats to avoid overlap -->
-<div class="clear"></div>
-
-
-
-<div style="text-align: center;">
-  <h1>Final Results</h1>
 </div>

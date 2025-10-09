@@ -1,10 +1,17 @@
 ---
 title: "Annual Spring Break Challenge"
-listing:
-  contents:
-    - "4x4x48/index.qmd"
-    - "claremont-sm/index.qmd"
-  type: default
-  categories: false
-  sort: none
 ---
+
+<div class="projects-container single-column">
+
+<div class="project">
+  <p class="title">4x4x48 Challenge</p>
+  [![](4x4x48/images/collin_ket_running.jpeg)](4x4x48/index.qmd)
+</div>
+
+<div class="project">
+  <p class="title">Claremont-SM Challenge</p>
+  [![](claremont-sm/images/map_claremont-sm.jpeg)](claremont-sm/index.qmd)
+</div>
+
+</div>

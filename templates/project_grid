@@ -1,0 +1,13 @@
+<div class="projects-container">
+
+<div class="project">
+  <p class="title">Project One</p>
+  [![](images/example1.jpeg)](https://example.com/project1)
+</div>
+
+<div class="project">
+  <p class="title">Project Two</p>
+  [![](images/example2.jpeg)](https://example.com/project2)
+</div>
+
+</div>

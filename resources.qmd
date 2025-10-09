@@ -1,14 +1,20 @@
 # My Undergraduate Institution
-[Harvey Mudd College Website](https://www.hmc.edu/)
+
+<div class="button-container">
+  [🏫 Harvey Mudd College Website](https://www.hmc.edu/){.button}
+</div>
 
 # Upper-Division Engineering Course Websites
-- [E155 Microprocessor Design & Application (Micro Ps) Course Website](https://hmc-e155.github.io/)
 
-- [E178 Higher Power Rocketry (HPR) Course Website](https://pages.hmc.edu/spjut/AdvRoc/index.md.html)
+<div class="button-container">
+  [🖥️ E155 Microprocessor Design & Application (Micro Ps)](https://hmc-e155.github.io/){.button}
+  [🚀 E178 High Power Rocketry (HPR)](https://pages.hmc.edu/spjut/AdvRoc/index.md.html){.button}
+</div>
 
 # Professional References
-<div style="text-align: center;">
-  <img src="images/prof_dato.jpeg" alt="Professor Albert Dato" />  
+
+<div class="profile-card">
+  ![](images/prof_dato.jpeg){width=250px}
   <p>Professor Albert Dato [<a href="mailto:adato@g.hmc.edu">adato@g.hmc.edu</a>]</p>
 </div>
 
@@ -20,8 +26,8 @@ Aside from the coursework I took with Prof. Dato in a Materials Engineering clas
 
 ---
 
-<div style="text-align: center;">
-  <img src="images/prof_brake.jpeg" alt="Professor Josh Brake" style="width: 45%;" />  
+<div class="profile-card">
+  ![](images/prof_brake.jpeg){width=250px}
   <p>Professor Josh Brake [<a href="mailto:jbrake@g.hmc.edu">jbrake@g.hmc.edu</a>]</p>
 </div>
 
@@ -33,9 +39,9 @@ Thanks to Prof. Brake's hands-on approach and his availability as a consultant t
 
 ---
 
-<div style="text-align: center;">
-  <img src="images/prof_spjut.jpeg" alt="Professor Erik Spjut" />  
-  <p>Professor Josh Brake [<a href="mailto:spjut@g.hmc.edu">spjut@g.hmc.edu</a>]</p>
+<div class="profile-card">
+  ![](images/prof_spjut.jpeg){width=250px}
+  <p>Professor Erik Spjut [<a href="mailto:spjut@g.hmc.edu">spjut@g.hmc.edu</a>]</p>
 </div>
 
 "Erik Spjut, PhD, professor of engineering and Union Oil Company Engineering Design Fellow, has extensive experience in radiative heat transfer, high-temperature heterogeneous kinetics, containerless processing of materials and non-contact temperature measurement. Spjut also researches process control and optimization, automatic test equipment, computerized data acquisition and processing, and digital audio processing and synthesis. He has published widely in all these areas, including two chapters in the CSound Book from MIT Press.
@@ -48,9 +54,9 @@ Prof. Spjut is truly a master of high-power rocketry and has spent years of his 
 
 ---
 
-<div style="text-align: center;">
-  <img src="images/prof_gallicchio.jpeg" alt="Professor Jason Gallicchio" />  
-  <p>Professor Josh Brake [<a href="mailto:jason@g.hmc.edu">jason@g.hmc.edu</a>]</p>
+<div class="profile-card">
+  ![](images/prof_gallicchio.jpeg){width=250px}
+  <p>Professor Jason Gallicchio [<a href="mailto:jason@g.hmc.edu">jason@g.hmc.edu</a>]</p>
 </div>
 
 "Jason Gallicchio, PhD, specializes in experimental cosmology—the study of the origin and evolution of the universe. Gallicchio spent a year at the South Pole Telescope where he researched polarization of the Cosmic Microwave Background (CMB) and served as a South Pole NSF Station Science Leader. He is also interested in devising new ways to conduct fundamental tests of quantum mechanics and has designed improvements for Bell-type tests of quantum entanglement.

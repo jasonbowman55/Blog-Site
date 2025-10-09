@@ -6,8 +6,8 @@ website:
   navbar:
     left:
       - href: resources.qmd
-        text: Resources
-      - href:   hobbies/index.qmd
+        text: Academic Background and Advisors
+      - href: hobbies/index.qmd
         text: Hobbies
       - href: about.qmd
         text: About

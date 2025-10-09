@@ -1,0 +1,24 @@
+---
+title: "Page Title"
+subtitle: "Optional Subtitle"
+author: "Your Name"
+date: today
+toc: false
+---
+
+# Introduction
+
+This is your main page content. All text is centered by default.
+
+<div class="button-container">
+  [🔗 Example Button](https://example.com){.button}
+</div>
+
+# Example Section
+
+<div class="projects-container">
+  <div class="project">
+    <p class="title">Sample Project</p>
+    [![](images/example.jpeg)](https://example.com)
+  </div>
+</div>

@@ -1,20 +1,16 @@
 ---
-title: "Hobbies"
 ---
+
+<div class="projects-container single-column">
 
 <div class="project">
   <p class="title">Annual Challenge</p>
-  <a href="annual_challenge/index.qmd">
-    <img src="images/map_claremont-sm.jpeg" alt="Annual Challenge">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/map_claremont-sm.jpeg)](annual_challenge/index.qmd)
 </div>
 
-<div class="project">
+<!-- <div class="project">
   <p class="title">Sports</p>
-  <a href="track&field/index.qmd">
-    <img src="images/shot.jpeg" alt="Sports">
-  </a>
-  <p class="click-to-view">*<span>Click to view</span>*</p>
+  [![](images/shot.jpeg)](track&field/index.qmd)
 </div>
-
+-->
+</div>
